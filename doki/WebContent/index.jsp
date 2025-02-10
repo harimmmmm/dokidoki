@@ -152,13 +152,13 @@
 	                        <p class="mb-0" style="padding-bottom:22px;">ワンクリックで簡単予約！日本語対応だから安心してご利用いただけます。</p> <!-- 서비스 설명 -->
 	                    </div>
 	                </div>
-	
+
 	                <!-- 네 번째 서비스: 24/7 Support -->
 	                <div class="feature-1 d-md-flex"> <!-- 서비스 항목 -->
 	                    <div class="align-self-center"> <!-- 자체 정렬 -->
 	                        <span class="flaticon-phone-call display-4 text-primary"></span> <!-- 아이콘 -->
 	                        <h3>24時間日本語サポート</h3> <!-- 서비스 제목 -->
-	                        <p class="mb-0" style="padding-bottom:58px;">旅行中も安心！24時間対応の日本語カスタマーサポートでいつでもお手伝いします。</p> <!-- 서비스 설명 -->
+	                        <p class="mb-0" style="padding-bottom:58px;">ggg旅行中も安心！24時間対応の日本語カスタマーサポートでいつでもお手伝いします。</p> <!-- 서비스 설명 -->
 	                    </div>
 	                </div>
 	
