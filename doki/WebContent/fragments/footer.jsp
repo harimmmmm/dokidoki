@@ -74,7 +74,7 @@
 				</div>
 				<!-- 리소스 섹션 종료 -->
 
-				<!-- 연락처 정보 (Contact) -->
+				<!-- 연락처 정보 (Contact)) -->
 				<div class="col-md-6 col-lg-4">
 					<div class="widget">
 						<h3 class="heading">Contact</h3>

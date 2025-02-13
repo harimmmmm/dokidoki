@@ -34,7 +34,7 @@
 <!-- Date Range Picker: 날짜 선택기 UI 관련 스타일 -->
 <link rel="stylesheet" href="<%= request.getContextPath() %>/css/daterangepicker.css">
 
-<!-- AOS (Animate On Scroll): 스크롤할 때 애니메이션 효과를 위한 CSS -->
+<!-- AOS (Animate On Scroll): 스크롤할 때 애니메이션 효과를 위한 CSSs -->
 <link rel="stylesheet" href="<%= request.getContextPath() %>/css/aos.css">
 
 <!-- 사이트의 메인 스타일시트 (사용자 정의 CSS) -->
