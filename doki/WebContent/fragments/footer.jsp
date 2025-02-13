@@ -137,21 +137,21 @@
 </div>
 
 
-<script src="./js/jquery-3.4.1.min.js"></script>
-<script src="./js/popper.min.js"></script>
-<script src="./js/bootstrap.min.js"></script>
-<script src="./js/owl.carousel.min.js"></script>
-<script src="./js/jquery.animateNumber.min.js"></script>
-<script src="./js/jquery.waypoints.min.js"></script>
-<script src="./js/jquery.fancybox.min.js"></script>
-<script src="./js/aos.js"></script>
-<script src="./js/moment.min.js"></script>
-<script src="./js/daterangepicker.js"></script>
-<script src="./js/typed.js"></script>
+<script src="<%= request.getContextPath() %>/js/jquery-3.4.1.min.js"></script>
+<script src="<%= request.getContextPath() %>/js/popper.min.js"></script>
+<script src="<%= request.getContextPath() %>/js/bootstrap.min.js"></script>
+<script src="<%= request.getContextPath() %>/js/owl.carousel.min.js"></script>
+<script src="<%= request.getContextPath() %>/js/jquery.animateNumber.min.js"></script>
+<script src="<%= request.getContextPath() %>/js/jquery.waypoints.min.js"></script>
+<script src="<%= request.getContextPath() %>/js/jquery.fancybox.min.js"></script>
+<script src="<%= request.getContextPath() %>/js/aos.js"></script>
+<script src="<%= request.getContextPath() %>/js/moment.min.js"></script>
+<script src="<%= request.getContextPath() %>/js/daterangepicker.js"></script>
+<script src="<%= request.getContextPath() %>/js/typed.js"></script>
 
 <!-- 페이지별 스크립트 실행 여부 체크 -->
 <c:if test="${not empty typedJs}">
-	<script src="./js/typed.js"></script>
+	<script src="<%= request.getContextPath() %>/js/typed.js"></script>
 	<script>
 	        $(function () {
 	            var slides = $('.slides'),
@@ -180,7 +180,7 @@
 	    </script>
 </c:if>
 
-<script src="./js/custom.js"></script>
+<script src="<%= request.getContextPath() %>/js/custom.js"></script>
 
 </body>
 
