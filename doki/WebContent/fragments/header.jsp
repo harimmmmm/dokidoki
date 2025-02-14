@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
 <!doctype html>
 <html lang="ja">
 <head>
@@ -15,29 +16,29 @@
 	rel="stylesheet">
 
 <!-- Bootstrap5 CSS: 반응형 디자인 및 기본 UI 스타일 제공 -->
-<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/bootstrap.min.css">
 
 <!-- Owl Carousel: 이미지 슬라이더 관련 CSS -->
-<link rel="stylesheet" href="./css/owl.carousel.min.css">
-<link rel="stylesheet" href="./css/owl.theme.default.min.css">
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/owl.carousel.min.css">
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/owl.theme.default.min.css">
 
 <!-- Fancybox: 이미지 및 모달 팝업 효과를 위한 CSS -->
-<link rel="stylesheet" href="./css/jquery.fancybox.min.css">
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/jquery.fancybox.min.css">
 
 <!-- Icomoon 아이콘 폰트: 커스텀 아이콘 사용 가능 -->
-<link rel="stylesheet" href="./fonts/icomoon/style.css">
+<link rel="stylesheet" href="<%= request.getContextPath() %>/fonts/icomoon/style.css">
 
 <!-- Flaticon 아이콘 폰트: 추가적인 아이콘 폰트 사용 -->
-<link rel="stylesheet" href="./fonts/flaticon/font/flaticon.css">
+<link rel="stylesheet" href="<%= request.getContextPath() %>/fonts/flaticon/font/flaticon.css">
 
 <!-- Date Range Picker: 날짜 선택기 UI 관련 스타일 -->
-<link rel="stylesheet" href="./css/daterangepicker.css">
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/daterangepicker.css">
 
-<!-- AOS (Animate On Scroll): 스크롤할 때 애니메이션 효과를 위한 CSS -->
-<link rel="stylesheet" href="./css/aos.css">
+<!-- AOS (Animate On Scroll): 스크롤할 때 애니메이션 효과를 위한 CSSs -->
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/aos.css">
 
 <!-- 사이트의 메인 스타일시트 (사용자 정의 CSS) -->
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/style.css">
 
 <title>どきどきkorea</title>
 </head>
