@@ -60,7 +60,7 @@
 		<div class="container">
 			<div class="site-navigation">
 				<!-- 로고 -->
-				<a href="<%= request.getContextPath() %>/index.jsp" class="logo m-0">どきどきkorea<span
+				<a href="/doki" class="logo m-0">どきどきkorea<span
 					class="text-primary"></span></a>
 				<!-- 네비게이션 메뉴 -->
 				<ul
