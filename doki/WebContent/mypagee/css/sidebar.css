@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+.sidebar {
+	width: 250px;
+	height: 800px;
+	background-color: #f2f4f5;
+	/* position: fixed; */
+	/* top: 0;
+    left: 0; */
+	padding-top: 20px;
+	padding-left: 20px;
+	/* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); */
+	color: black;
+	/* border: 1px solid lightgrey;  */
+	border-radius: 20px;
+}
+
+.menu {
+	list-style: none;
+	padding: 0;
+}
+
+.menu li {
+	margin-bottom: 10px;
+}
+
+.menu li a {
+	text-decoration: none;
+	color: black;
+	font-size: 16px;
+	padding: 10px;
+	display: block;
+	border-radius: 5px;
+	transition: background-color 0.3s;
+}
+
+.menu li a:hover {
+	/* text-decoration: underline; */
+	
+}
+
+/* .submenu {
+    position: relative;
+} */
+.submenu-items {
+	/* display: none; */
+	list-style: none;
+	padding-left: 20px;
+}
+
+.submenu:hover .submenu-items {
+	display: block;
+}
+
+.menu li a {
+	font-size: 14px;
+	padding-left: 20px;
+}
+
+.page-content {
+	margin-left: 270px;
+	/* 사이드바의 너비만큼 여백 */
+	padding: 20px;
+}

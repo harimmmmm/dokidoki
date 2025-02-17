@@ -1,0 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f3f4f6;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 100px auto;
+}
+
+.signin-container {
+	background: #fff;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	width: 560px;
+	margin: 100px auto;
+}
+
+.logoimg {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+ 
+.logoimg img{
+    width: 400px;
+}
+
+.login-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-form {
+    flex: 2;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    display: flex;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background: #9dd1ca;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+
+.login-form button:hover {
+    background: #a1cdc7;
+}
+
+.idpwfind {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+} 
+
+.idpwfind a {
+    color: #9dd1ca;
+    margin: 0 30px;
+    text-decoration: none;
+}
+
+.idpwfind a:hover {
+    text-decoration: underline;
+}
+
+.idpwslash{
+	color: lightgray;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.separator::before,
+.separator::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.separator span {
+    padding: 0 10px;
+    color: #888;
+    font-size: 14px;
+}
+
+.social-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-login button {
+    width: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    background: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.social-login button:hover {
+    border-color: #9dd1ca;
+    box-shadow: 0 0 8px rgba(237, 116, 100, 0.3);
+}
+
+.social-login img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}

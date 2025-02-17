@@ -1,0 +1,193 @@
+@charset "UTF-8";
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background: #f3f4f6;
+	/* display: flex; */
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	background-color: #f3f4f6;
+}
+
+/* 회원가입 컨테이너 */
+.signup-container {
+	background: #fff;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	width: 700px;
+	margin: 100px auto;
+}
+
+/* 회원가입 제목 */
+.signup-title {
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+/* 입력 필드 정렬 */
+.input-group {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 15px;
+}
+/* 
+.input-group label {
+	font-weight: bold;
+	margin-bottom: 5px;
+	font-size: 14px;
+} */
+
+.input-group input, .input-group select {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	font-size: 14px;
+}
+
+.input-group button {
+	padding: 10px;
+	background: #9dd1ca;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.input-group button:hover {
+	background: #218838;
+}
+
+/* 우편번호 입력 필드와 버튼 정렬 */
+.address-container {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+}
+
+.address-container input {
+	flex: 1;
+}
+
+.address-container button {
+	flex-shrink: 0;
+	white-space: nowrap;
+	padding: 10px 15px;
+}
+
+/* 인증번호 입력 필드 */
+#errorMsg {
+	color: red;
+	font-size: 12px;
+}
+
+/* 이메일 인증 입력 필드 스타일 */
+.email-container {
+	display: flex;
+	gap: 5px;
+}
+
+.email-container input, .email-container select {
+	flex: 1;
+}
+
+.email-container span {
+	align-self: center;
+	font-size: 16px;
+}
+
+.email-container {
+	display: flex;
+	align-items: center;
+	gap: 5px; /* 입력 필드와 버튼 사이 간격 */
+}
+
+.email-container input[type="text"] {
+	width: 150px; /* 이메일 입력 필드 크기 조정 */
+	flex-shrink: 0; /* 입력 필드 크기 줄어들지 않도록 설정 */
+}
+
+#email_domain {
+	width: 120px; /* 도메인 선택 박스 크기 조정 */
+}
+
+#custom_email {
+	width: 120px; /* 직접 입력 필드 크기 */
+}
+
+#email_verify {
+	height: 38px; /* 버튼 높이를 input과 맞춤 */
+	padding: 5px 10px;
+	white-space: nowrap; /* 버튼이 여러 줄로 내려가지 않도록 설정 */
+}
+
+.verification-container {
+	display: flex;
+	align-items: center;
+	gap: 5px; /* 입력 필드와 버튼 사이 간격 */
+}
+
+#verification_code {
+	width: 542px; /* 인증번호 입력 필드 크기 */
+	flex-shrink: 0;
+}
+
+#verify_code_btn {
+	height: 43px; /* 버튼 높이를 input과 맞춤 */
+	width: 93px;
+	/* padding: 5px 20px; */
+	white-space: nowrap;
+	background-color: #ccc;
+	border: none;
+	cursor: not-allowed; /* 비활성화 상태일 때 커서 변경 */
+}
+
+/* 구분선 */
+.separator {
+	margin: 40px 0 10px 0;
+	font-size: 14px;
+	color: #666;
+	position: relative;
+	text-align: center;
+}
+
+.separator span {
+	background: white;
+	padding: 0 10px;
+}
+
+.separator:before, .separator:after {
+	content: "";
+	display: block;
+	width: 40%;
+	height: 1px;
+	background: #ccc;
+	position: absolute;
+	top: 50%;
+}
+
+.separator:before {
+	left: 0;
+}
+
+.separator:after {
+	right: 0;
+}
+
+.signupsubmitBtn{
+	width: 642px;
+	height: 45px;
+	background: #9dd1ca;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 18px;
+	margin-top: 20px;
+}
