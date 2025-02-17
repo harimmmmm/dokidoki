@@ -84,7 +84,8 @@
 					</li>
 					<!-- 일반 네비게이션 메뉴 -->
 					<li><a href="./services.jsp">旅行先紹介</a></li>
-					<li><a href="./about.jsp">ログイン</a></li>
+					<li><a href="/login/signin.do">ログイン</a></li>
+					<li><a href="/mypage/home.do">마이페이지</a></li>
 					<li><a href="./contact.jsp">お問い合わせ</a></li>
 				</ul>
 
