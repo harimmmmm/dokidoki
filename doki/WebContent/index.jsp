@@ -3,6 +3,8 @@
 <c:set var="typedJs" value="true" />
 <%@ include file="./fragments/header.jsp"%>
 
+<!-- index css -->
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/indexstyle.css">
 
 	<div class="hero"> <!-- 히어로 섹션: 메인 배경 영역 -->
 		<div class="container"> <!-- 컨텐츠를 감싸는 부트스트랩 컨테이너 -->
@@ -40,17 +42,18 @@
 												<option value="">Russia</option>
 											</select>
 										</div>
+										
+										<!-- 인원 수 입력 -->
+										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
+											<input type="text" class="form-control"
+												placeholder="# 参加人数">
+										</div>
 	
 										<!-- 날짜 입력 -->
 										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
 											<input type="text" class="form-control" name="daterange">
 										</div>
 	
-										<!-- 인원 수 입력 -->
-										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
-											<input type="text" class="form-control"
-												placeholder="# 参加人数">
-										</div>
 									</div>
 	
 									<!-- 검색 버튼 및 체크박스 -->

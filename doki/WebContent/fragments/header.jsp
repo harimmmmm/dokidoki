@@ -15,6 +15,9 @@
 	href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Serif+Pro:wght@400;700&display=swap"
 	rel="stylesheet">
 
+<!-- Bootstrap5.3.3 CSS CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
 <!-- Bootstrap5 CSS: 반응형 디자인 및 기본 UI 스타일 제공 -->
 <link rel="stylesheet" href="<%= request.getContextPath() %>/css/bootstrap.min.css">
 
@@ -37,8 +40,11 @@
 <!-- AOS (Animate On Scroll): 스크롤할 때 애니메이션 효과를 위한 CSSs -->
 <link rel="stylesheet" href="<%= request.getContextPath() %>/css/aos.css">
 
+
+
 <!-- 사이트의 메인 스타일시트 (사용자 정의 CSS) -->
 <link rel="stylesheet" href="<%= request.getContextPath() %>/css/style.css">
+
 
 <title>どきどきkorea</title>
 </head>
@@ -68,25 +74,29 @@
 					<li class="active"><a href="<%= request.getContextPath() %>/index.jsp">Home</a></li>
 					<!-- 드롭다운 메뉴 -->
 					<li class="has-children">
-						<!-- 상위 메뉴 --> <a href="#">予約</a> <!-- 드롭다운 하위 메뉴 -->
+						<!-- 상위 메뉴 --> <a href="/product/allproduct.jsp">予約</a> <!-- 드롭다운 하위 메뉴 -->
 						<ul class="dropdown">
-							<li><a href="./elements.jsp">Elements</a></li>
-							<li><a href="#">제주도</a></li>
+							<li><a href="/product/services.jsp">韓国旅行</a></li>
+							<li><a href="#">チェジュ島</a></li>
 							<li class="has-children">
-								<!-- 또 다른 드롭다운 메뉴 --> <a href="#">내륙</a> <!-- 서브 드롭다운 메뉴 -->
+								<!-- 또 다른 드롭다운 메뉴 --> <a href="#">内陸</a> <!-- 서브 드롭다운 메뉴 -->
 								<ul class="dropdown">
-									<li><a href="#">Sub Menu One</a></li>
-									<li><a href="#">Sub Menu Two</a></li>
-									<li><a href="#">Sub Menu Three</a></li>
+									<li><a href="#">チェジュ島</a></li>
+									<li><a href="#">カンウォン</a></li>
+									<li><a href="#">チョルラ </a></li>
+									<li><a href="#">ソウル／インチョン／キョンギ</a></li>
+									<li><a href="#">ウルルン島</a></li>
+									<li><a href="#">キョンサン </a></li>
+									<li><a href="#">チュンチョン </a></li>
 								</ul>
 							</li>
 						</ul>
 					</li>
 					<!-- 일반 네비게이션 메뉴 -->
-					<li><a href="./services.jsp">旅行先紹介</a></li>
+					<li><a href="/services.jsp">旅行先紹介</a></li>
 					<li><a href="/login/signin.do">ログイン</a></li>
 					<li><a href="/mypage/home.do">마이페이지</a></li>
-					<li><a href="./contact.jsp">お問い合わせ</a></li>
+					<li><a href="/contact.jsp">お問い合わせ</a></li>
 				</ul>
 
 				<!-- 모바일에서 표시되는 햄버거 메뉴 버튼 -->
