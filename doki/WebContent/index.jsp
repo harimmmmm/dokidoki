@@ -84,11 +84,11 @@
 				<!-- 오른쪽 이미지 슬라이더 영역 -->
 				<div class="col-lg-5"> <!-- 화면이 큰 경우 5칸을 차지 -->
 					<div class="slides"> <!-- 이미지 슬라이드 영역 -->
-						<img src="images/hero-slider-1.jpg" alt="Image" class="img-fluid active"> 
-						<img src="images/hero-slider-2.jpg" alt="Image" class="img-fluid">
-						<img src="images/hero-slider-3.jpg" alt="Image" class="img-fluid">
-						<img src="images/hero-slider-4.jpg" alt="Image" class="img-fluid">
-						<img src="images/hero-slider-5.jpg" alt="Image" class="img-fluid">
+						<img src="images/hero-slider-11111.jpg" alt="Image" class="img-fluid active"> 
+						<img src="images/hero-slider-222.jpg" alt="Image" class="img-fluid">
+						<img src="images/hero-slider-333.jpg" alt="Image" class="img-fluid">
+						<img src="images/hero-slider-44.jpg" alt="Image" class="img-fluid">
+						<img src="images/hero-slider-55.jpg" alt="Image" class="img-fluid">
 					</div>
 				</div> <!-- 이미지 슬라이드 영역 종료 -->
 	
