@@ -1,11 +1,21 @@
 @charset "UTF-8";
-/* 주간 베스트  */
+.textcolorccc {
+    color: #212529a6;
+
+}
+
+/* 주간 베스트  */ 
 .weeklybesttitle {
     padding-top: 50px;
 }
 
+.weeklyBestfont {
+    line-height: 50px;
+    font-weight: bold;
+}
+
 .weeklyBesticon {
-    width: 10px;
+    width: 50px;
     height: auto;
 }
 .untree_co-section {
