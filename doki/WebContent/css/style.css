@@ -21,7 +21,7 @@ body:before {
 	-o-transition: .3s all ease;
 	transition: .3s all ease;
 }
-
+/*  */
 body.offcanvas-menu:before {
 	opacity: 1;
 	visibility: visible;
