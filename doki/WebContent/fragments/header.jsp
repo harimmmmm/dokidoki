@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="co"%>
 <!doctype html>
 <html lang="ja">
 <head>
@@ -84,8 +84,15 @@
 					</li>
 					<!-- 일반 네비게이션 메뉴 -->
 					<li><a href="./services.jsp">旅行先紹介</a></li>
-					<li><a href="/login/signin.do">ログイン</a></li>
-					<li><a href="/mypage/home.do">마이페이지</a></li>
+					<co:choose>
+						<co:when test="${empty sessionScope.user}">
+							<li><a href="/member/login.do">ログイン</a></li>
+						</co:when>
+						<co:otherwise>
+							<li><a href="/member/logout.do">로그아웃</a></li>
+							<li><a href="/mypage/home.do">마이페이지</a></li>
+						</co:otherwise>
+					</co:choose>
 					<li><a href="./contact.jsp">お問い合わせ</a></li>
 				</ul>
 
