@@ -4,25 +4,8 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/css/boardstyle.css">
 
-<!DOCTYPE html>
-<html>
-<head>
-<title>가나다라마바사</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-body {
-	font-family: "Times New Roman", Georgia, Serif;
-}
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: "Playfair Display";
-	letter-spacing: 5px;
-}
-</style>
-</head>
-<body>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 	<!-- Navbar (sit on top) -->
 	<div class="w3-top">
@@ -142,8 +125,7 @@ h1, h2, h3, h4, h5, h6 {
 			
 		</div>
 	</div>
-</body>
-</html>
+
 
 
 
