@@ -40,10 +40,16 @@
 <!-- AOS (Animate On Scroll): 스크롤할 때 애니메이션 효과를 위한 CSSs -->
 <link rel="stylesheet" href="<%= request.getContextPath() %>/css/aos.css">
 
-
-
 <!-- 사이트의 메인 스타일시트 (사용자 정의 CSS) -->
 <link rel="stylesheet" href="<%= request.getContextPath() %>/css/style.css">
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
 
 
 <title>どきどきkorea</title>
@@ -74,15 +80,14 @@
 					<li class="active"><a href="<%= request.getContextPath() %>/index.jsp">Home</a></li>
 					<!-- 드롭다운 메뉴 -->
 					<li class="has-children">
-						<!-- 상위 메뉴 --> <a href="/product/allproduct.jsp">予約</a> <!-- 드롭다운 하위 메뉴 -->
+						<!-- 상위 메뉴 --> <a href="/product/packagesList.jsp">予約</a> <!-- 드롭다운 하위 메뉴 -->
 						<ul class="dropdown">
-							<li><a href="/product/services.jsp">韓国旅行</a></li>
+							<li><a href="/product/packagesList.jsp">韓国旅行</a></li>
 							<li><a href="#">チェジュ島</a></li>
 							<li class="has-children">
 								<!-- 또 다른 드롭다운 메뉴 --> <a href="#">内陸</a> <!-- 서브 드롭다운 메뉴 -->
 								<ul class="dropdown">
-									<li><a href="#">チェジュ島</a></li>
-									<li><a href="#">カンウォン</a></li>
+									<li><a href="/product/packageSelect.jsp">カンウォン</a></li>
 									<li><a href="#">チョルラ </a></li>
 									<li><a href="#">ソウル／インチョン／キョンギ</a></li>
 									<li><a href="#">ウルルン島</a></li>

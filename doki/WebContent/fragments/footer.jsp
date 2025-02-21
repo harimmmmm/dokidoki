@@ -138,7 +138,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-<script src="<%= request.getContextPath() %>/product/js/sidebars.js"></script>
 <script src="<%= request.getContextPath() %>/js/jquery-3.4.1.min.js"></script>
 <script src="<%= request.getContextPath() %>/js/popper.min.js"></script>
 <script src="<%= request.getContextPath() %>/js/bootstrap.min.js"></script>
@@ -150,6 +149,8 @@
 <script src="<%= request.getContextPath() %>/js/moment.min.js"></script>
 <script src="<%= request.getContextPath() %>/js/daterangepicker.js"></script>
 <script src="<%= request.getContextPath() %>/js/typed.js"></script>
+<script src="<%= request.getContextPath() %>/product/js/dropdown.js"></script>
+<script src="<%= request.getContextPath() %>/product/js/sidebars.js"></script>
 
 <!-- 페이지별 스크립트 실행 여부 체크 -->
 <c:if test="${not empty typedJs}">
@@ -181,6 +182,26 @@
 	        });
 	    </script>
 </c:if>
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function () {
+    var swiper = new Swiper(".swiper", {
+        loop: true,
+        autoplay: {
+            delay: 5000, // 3초마다 자동 슬라이드
+            disableOnInteraction: false, // 유저가 터치해도 자동 슬라이드 유지
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+});
+</script>
 
 <script src="<%= request.getContextPath() %>/js/custom.js"></script>
 
