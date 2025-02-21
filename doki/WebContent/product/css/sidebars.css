@@ -1,87 +1,103 @@
-/* 공통 필터 버튼 스타일 */
-.filter-btn {
-  display: inline-block;
-  margin: 5px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background-color: transparent;
+
+<!--
+기본 스타일 --> <style>.filter-container {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
 
-/* hover 상태 스타일 */
-.filter-btn:hover {
-  border-color: green;
-  color: green;
+.filter {
+	display: flex;
+	flex-direction: column;
+}
+
+label {
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+/* 버튼 그룹을 가로로 나열 */
+.btn-toggle-nav {
+	display: flex;
+	flex-wrap: wrap; /* 버튼이 많을 경우 자동으로 줄 바꿈 */
+	gap: 10px; /* 버튼들 사이에 간격 추가 */
+}
+
+.btn-toggle-nav li {
+	list-style-type: none; /* li 기본 스타일 제거 */
+}
+
+.filter-btn {
+	padding: 8px 16px;
+	border: 1px solid #ccc;
+	background-color: white;
+	color: #333;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+}
+
+.filter-button:hover {
+	border-color: #3498db;
 }
 
 /* 선택된 버튼 스타일 */
 .filter-btn.selected {
-  background-color: #d4edda !important;
-  border-color: green !important;
-  color: green !important;
+	border-color: #3498db;
+	color: #3498db;
+	font-weight: bold;
 }
 
-/* 여행기간 버튼 스타일 */
-.travel-period-btn {
-  display: inline-block;
-  margin: 5px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background-color: transparent;
-}
-
-/* 여행컨셉 버튼 스타일 */
-.travel-concept-btn {
-  display: inline-block;
-  margin: 5px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background-color: transparent;
-}
-
-/* 선택된 여행기간 버튼 스타일 */
-.travel-period-btn.selected {
-  background-color: #d4edda !important;
-  border-color: green !important;
-  color: green !important;
-}
-
-/* 선택된 여행컨셉 버튼 스타일 */
-.travel-concept-btn.selected {
-  background-color: #d4edda !important;
-  border-color: green !important;
-  color: green !important;
-}
-/* 기본 버튼 스타일 */
+/* 버튼 클릭 시 'selected' 클래스 추가/제거 */
 .filter-btn {
-  display: inline-block;
-  margin: 5px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background-color: transparent;
+	padding: 8px 16px;
+	border: 1px solid #ccc;
+	background-color: white;
+	color: #333;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: all 0.3s ease;
 }
 
-/* 선택된 버튼 스타일 */
-.xi-check-circle-o {
-  background-color: #d4edda !important;
-  border-color: green !important;
-  color: green !important;
+.filter-btn:hover {
+	border-color: #3498db;
 }
 
-.xi-check-circle {
-  background-color: transparent;
-  border-color: #ccc;
-  color: #333;
+.btn-secondary {
+	color: #ccc;
+	background-color: white;
+	border-color: white;
 }
 
+.btn-secondary:hover {
+	color: #ccc;
+	background-color: white;
+	border-color: white;
+}
+
+.resetbtn {
+	width: 14px;
+	height: auto;
+	padding-bottom: 5px;
+	margin-left: 4px;
+}
+
+.filterUnderLine {
+	border-bottom: 1px solid #dee2e6;
+}
+
+.border-bottom {
+    border-bottom: 2px solid !important;
+}
+
+.resetbtnform {
+    border: none;
+    background: none;
+    color: #ccc;
+    padding: 4px 15px 4px 0;
+}
+
+.bordernone {
+	border: none;
+}

@@ -10,11 +10,10 @@
 	rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="<%=request.getContextPath()%>/product/css/packageSelect.css"
+<link href="<%=request.getContextPath()%>/product/css/packages.css"
 	rel="stylesheet">
 
-<link href="<%=request.getContextPath()%>/product/css/dropdownstyle.css"
-	rel="stylesheet">
+<link href="<%=request.getContextPath()%>/product/css/dropdownstyle.css" rel="stylesheet">
 
 
 
@@ -23,18 +22,15 @@
 <div class="untree_co-section">
 	<div class="container titleunderLine">
 		<div class="row">
-			<div class="col-12">
-				<!-- 전체 너비를 차지하는 컬럼 -->
-				<form class="form topnav">
-					<!-- 여행 검색을 위한 폼 -->
+			<div class="col-12"> <!-- 전체 너비를 차지하는 컬럼 -->
+				<form class="form topnav"> <!-- 여행 검색을 위한 폼 -->
 
 					<!-- 여행 검색 필드 -->
 					<div class="row mb-2">
 						<div class="col d-flex justify-content-between">
 							<!-- 왼쪽 콘텐츠 (여행지 선택) -->
 							<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
-								<div
-									class="custom-dropdown form-control custom-select packagesSelect">
+								<div class="custom-dropdown form-control custom-select packagesSelect">
 									<div class="selected">여행지 선택</div>
 									<div class="dropdown-menu">
 										<!-- 1단계 -->
@@ -47,8 +43,7 @@
 											<div class="option sub-option" data-target="ulleung">울릉도</div>
 											<div class="option sub-option" data-target="gangwon">강원</div>
 											<div class="option sub-option" data-target="gyeongsang">경상</div>
-											<div class="option sub-option" data-target="jeolla">전라</div>
-											<!-- 전라 추가 -->
+											<div class="option sub-option" data-target="jeolla">전라</div> <!-- 전라 추가 -->
 											<div class="option sub-option" data-target="chungcheong">충청</div>
 											<div class="option sub-option" data-target="seoul">서울/인천/경기</div>
 										</div>
@@ -57,36 +52,29 @@
 											<!-- ✅ "제주도"을 선택하면 보일 3차 메뉴 -->
 											<div class="option detail-option d-none" data-parent="jeju">제주도</div>
 											<!-- ✅ "울릉도"을 선택하면 보일 3차 메뉴 -->
-											<div class="option detail-option d-none"
-												data-parent="ulleung">울릉도</div>
+											<div class="option detail-option d-none" data-parent="ulleung">울릉도</div>
 											<!-- ✅ "강원"을 선택하면 보일 3차 메뉴 -->
-											<div class="option detail-option d-none"
-												data-parent="gangwon">강원</div>
+											<div class="option detail-option d-none" data-parent="gangwon">강원</div>
 											<!-- ✅ "경상"을 선택하면 보일 3차 메뉴 -->
-											<div class="option detail-option d-none"
-												data-parent="gyeongsang">경상북도</div>
-											<div class="option detail-option d-none"
-												data-parent="gyeongsang">경상남도</div>
-											<div class="option detail-option d-none"
-												data-parent="gyeongsang">부산</div>
+											<div class="option detail-option d-none" data-parent="gyeongsang">경상북도</div>
+											<div class="option detail-option d-none" data-parent="gyeongsang">경상남도</div>
+											<div class="option detail-option d-none" data-parent="gyeongsang">부산</div>
 											<!-- ✅ "전라"를 선택하면 보일 3차 메뉴 -->
 											<div class="option detail-option d-none" data-parent="jeolla">전라북도</div>
 											<div class="option detail-option d-none" data-parent="jeolla">전라남도</div>
 											<!-- ✅ "충청"를 선택하면 보일 3차 메뉴 -->
-											<div class="option detail-option d-none"
-												data-parent="chungcheong">충청북도</div>
-											<div class="option detail-option d-none"
-												data-parent="chungcheong">충청남도</div>
+											<div class="option detail-option d-none" data-parent="chungcheong">충청북도</div>
+											<div class="option detail-option d-none" data-parent="chungcheong">충청남도</div>
 											<!-- ✅ "서울/인천/경기"를 선택하면 보일 3차 메뉴 -->
 											<div class="option detail-option d-none" data-parent="seoul">서울</div>
 											<div class="option detail-option d-none" data-parent="seoul">인천</div>
 										</div>
-
-
+										
+										
 									</div>
 								</div>
 							</div>
-
+					
 							<!-- 오른쪽 콘텐츠 (출발지 선택과 날짜 입력을 같이 배치) -->
 							<div class="d-flex col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-8">
 								<!-- 출발지 선택 -->
@@ -101,7 +89,7 @@
 										<option value="">기타</option>
 									</select>
 								</div>
-
+					
 								<!-- 날짜 입력 -->
 								<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-6">
 									<input type="text" class="form-control" name="daterange">
@@ -109,13 +97,15 @@
 							</div>
 						</div>
 					</div>
+					
+					
 
 
-				</form>
-				<!-- 여행 검색 폼 종료 -->
+						
+
+				</form> <!-- 여행 검색 폼 종료 -->
 			</div>
-		</div>
-		<!-- 검색 폼 영역 종료 -->
+		</div> <!-- 검색 폼 영역 종료 -->
 	</div>
 
 	<div class="container">
@@ -126,62 +116,75 @@
 
 			<!-- 사이드바 (최근 글, 아카이브, SNS 링크) -->
 			<div class="col-md-4">
-				<div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-					<span
-						class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom d-flex justify-content-between">
-						<span class="fs-5 fw-semibold">검색 필터</span> <!-- 초기화 버튼 -->
-						<button class="resetbtnform" onclick="resetFilters()">
-							초기화<img class="img-fluid resetbtn" alt="resetbtn"
-								src="/product/img/reset.png">
-						</button>
+				<!-- 중간 크기 이상에서 4/12 너비 차지 -->
+				<div class="position-sticky" style="top: 2rem;">
+					<!-- 스크롤 시 고정되는 스타일 -->
 
-					</span>
-
-					<!-- 여행기간 필터 -->
-					<div class="mb-3 filterUnderLine">
-						<button class="btn btn-toggle bordernone" data-bs-toggle="collapse"
-							data-bs-target="#home-collapse" aria-expanded="false">
-							여행기간</button>
-						<div class="collapse" id="home-collapse">
-							<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-								<li><button class="filter-btn travel-period-btn"
-										data-value="2박 3일">2박 3일</button></li>
-								<li><button class="filter-btn travel-period-btn"
-										data-value="3박 4일">3박 4일</button></li>
-							</ul>
-						</div>
+					<div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+						<span
+							class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+							<span class="fs-5 fw-semibold">Collapsible</span>
+						</span>>
+						<ul class="list-unstyled ps-0">
+							<li class="mb-1">
+								<button
+									class="btn btn-toggle align-items-center rounded collapsed"
+									data-bs-toggle="collapse" data-bs-target="#home-collapse"
+									aria-expanded="false">Home</button>
+								<div class="collapse" id="home-collapse" style="">
+									<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+										<li><a href="#" class="link-dark rounded">Overview</a></li>
+										<li><a href="#" class="link-dark rounded">Updates</a></li>
+										<li><a href="#" class="link-dark rounded">Reports</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="mb-1">
+								<button
+									class="btn btn-toggle align-items-center rounded collapsed"
+									data-bs-toggle="collapse" data-bs-target="#dashboard-collapse"
+									aria-expanded="false">Dashboard</button>
+								<div class="collapse" id="dashboard-collapse" style="">
+									<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+										<li><a href="#" class="link-dark rounded">Overview</a></li>
+										<li><a href="#" class="link-dark rounded">Weekly</a></li>
+										<li><a href="#" class="link-dark rounded">Monthly</a></li>
+										<li><a href="#" class="link-dark rounded">Annually</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="mb-1">
+								<button class="btn btn-toggle align-items-center rounded"
+									data-bs-toggle="collapse" data-bs-target="#orders-collapse"
+									aria-expanded="true">Orders</button>
+								<div class="collapse show" id="orders-collapse" style="">
+									<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+										<li><a href="#" class="link-dark rounded">New</a></li>
+										<li><a href="#" class="link-dark rounded">Processed</a></li>
+										<li><a href="#" class="link-dark rounded">Shipped</a></li>
+										<li><a href="#" class="link-dark rounded">Returned</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="border-top my-3"></li>
+							<li class="mb-1">
+								<button class="btn btn-toggle align-items-center rounded"
+									data-bs-toggle="collapse" data-bs-target="#account-collapse"
+									aria-expanded="true">Account</button>
+								<div class="collapse show" id="account-collapse" style="">
+									<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+										<li><a href="#" class="link-dark rounded">New...</a></li>
+										<li><a href="#" class="link-dark rounded">Profile</a></li>
+										<li><a href="#" class="link-dark rounded">Settings</a></li>
+										<li><a href="#" class="link-dark rounded">Sign out</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
 					</div>
-
-					<!-- 여행컨셉 필터 -->
-					<div class="mb-3 filterUnderLine">
-						<button class="btn btn-toggle bordernone" data-bs-toggle="collapse"
-							data-bs-target="#dashboard-collapse" aria-expanded="false">
-							여행컨셉</button>
-						<div class="collapse" id="dashboard-collapse">
-							<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-								<li><button class="filter-btn travel-concept-btn"
-										data-value="관광">관광</button></li>
-								<li><button class="filter-btn travel-concept-btn"
-										data-value="트레킹">트레킹</button></li>
-								<li><button class="filter-btn travel-concept-btn"
-										data-value="아동동반">아동동반</button></li>
-								<li><button class="filter-btn travel-concept-btn"
-										data-value="효도">효도</button></li>
-								<li><button class="filter-btn travel-concept-btn"
-										data-value="커플">커플</button></li>
-								<li><button class="filter-btn travel-concept-btn"
-										data-value="가족">가족</button></li>
-								<li><button class="filter-btn travel-concept-btn"
-										data-value="친구">친구</button></li>
-							</ul>
-						</div>
-					</div>
-
 
 				</div>
 			</div>
-
-
 
 			<!-- 메인 콘텐츠 영역 (블로그 포스트) -->
 			<div class="col-md-8">
@@ -314,6 +317,7 @@
 	<!-- container 종료 -->
 </div>
 <!-- 메인 섹션 종료 -->
+
 
 
 
