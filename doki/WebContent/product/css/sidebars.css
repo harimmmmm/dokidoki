@@ -17,6 +17,20 @@ label {
 	margin-bottom: 8px;
 }
 
+.searchcountform {
+	padding-left: 16px;
+}
+
+.searchtotalcolor {
+	color: #486988;
+	padding-left: 7px;
+}
+
+.searchtotfontsize {
+	font-size: 15px;
+	font-weight: bold;
+}
+
 /* 버튼 그룹을 가로로 나열 */
 .btn-toggle-nav {
 	display: flex;
@@ -85,19 +99,41 @@ label {
 
 .filterUnderLine {
 	border-bottom: 1px solid #dee2e6;
+	padding: 5px 0;
+	margin-bottom: 0 !important;
 }
 
 .border-bottom {
-    border-bottom: 2px solid !important;
+	border-bottom: 2px solid !important;
 }
 
 .resetbtnform {
-    border: none;
-    background: none;
-    color: #ccc;
-    padding: 4px 15px 4px 0;
+	border: none;
+	background: none;
+	color: #ccc;
+	padding: 4px 15px 4px 0;
 }
 
 .bordernone {
 	border: none;
+}
+
+/* 기본적으로 아이콘이 오른쪽에 위치하도록 설정 */
+.btn-toggle {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+/* 아이콘 이미지 기본 스타일 */
+.toggle-icon img {
+	width: 16px; /* 아이콘 크기 */
+	transition: transform 0.3s ease; /* 부드러운 회전 애니메이션 */
+	padding-bottom: 3px;
+}
+
+/* 필터가 열렸을 때 (▲ 방향) */
+.btn-toggle[aria-expanded="true"] .toggle-icon img {
+	transform: rotate(180deg); /* ▼ → ▲ 회전 */
 }

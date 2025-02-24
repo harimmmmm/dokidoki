@@ -41,7 +41,7 @@
 					<!-- 여행 검색 폼 -->
 					<div class="row">
 						<div class="col-12"> <!-- 전체 너비를 차지하는 컬럼 -->
-							<form class="form"> <!-- 여행 검색을 위한 폼 -->
+							<form class="form" action="/product/packageSelect.jsp"> <!-- 여행 검색을 위한 폼 -->
 
 								<!-- 여행 검색 필드 -->
 								<div class="row mb-2">
@@ -142,7 +142,7 @@
 
 						<div class="col-6 col-md-6 col-lg-3">
 							<div class="media-1">
-								<a href="#" class="d-block mb-3">
+								<a href="/product/packages.jsp" class="d-block mb-3">
 									<img src="/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
 									<div class="d-flex">
 										<div>
@@ -224,7 +224,7 @@
 
 						<div class="col-6 col-md-6 col-lg-3">
 							<div class="media-1">
-								<a href="#" class="d-block mb-3">
+								<a href="/product/packages.jsp" class="d-block mb-3">
 									<img src="/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
 									<div class="d-flex">
 										<div>
