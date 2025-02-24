@@ -1,8 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <c:set var="typedJs" value="true" />
 <%@ include file="./fragments/header.jsp"%>
 
+<!-- index css -->
+<link rel="stylesheet" href="<%= request.getContextPath() %>/css/indexstyle.css">
 
 	<div class="hero"> <!-- 히어로 섹션: 메인 배경 영역 -->
 		<div class="container"> <!-- 컨텐츠를 감싸는 부트스트랩 컨테이너 -->
@@ -40,17 +44,18 @@
 												<option value="">Russia</option>
 											</select>
 										</div>
+										
+										<!-- 인원 수 입력 -->
+										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
+											<input type="text" class="form-control"
+												placeholder="# 参加人数">
+										</div>
 	
 										<!-- 날짜 입력 -->
 										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
 											<input type="text" class="form-control" name="daterange">
 										</div>
 	
-										<!-- 인원 수 입력 -->
-										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
-											<input type="text" class="form-control"
-												placeholder="# 参加人数">
-										</div>
 									</div>
 	
 									<!-- 검색 버튼 및 체크박스 -->
@@ -102,6 +107,14 @@
 	            <div class="col-lg-6 text-center"> <!-- 너비를 6로 설정하고 텍스트 중앙 정렬 -->
 	                <h2 class="section-title text-center mb-3">私たちのサービス</h2> <!-- 섹션 제목 -->
 	                <p>快適で思い出に残る韓国旅行を、私たちがサポートします！</p> <!-- 섹션 설명 -->
+						<c:if test="${empty sessionScope.user}">
+						    <p>로그인되지 않은 상태입니다.</p>
+						</c:if>
+						
+						<%-- 세션에 user가 있을 경우 사용자 이름을 출력 --%>
+						<c:if test="${not empty sessionScope.user}">
+						    <p>안녕하세요, ${sessionScope.user.name}님!</p> <!-- user_name은 AccountVo의 속성 -->
+						</c:if>
 	            </div>
 	        </div>
 	

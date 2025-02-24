@@ -21,7 +21,7 @@ body:before {
 	-o-transition: .3s all ease;
 	transition: .3s all ease;
 }
-
+/*  */
 body.offcanvas-menu:before {
 	opacity: 1;
 	visibility: visible;
@@ -223,8 +223,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 .site-nav {
 	padding-top: 20px;
 	padding-bottom: 20px;
-	background-color: #9dd1ca;
-	margin-bottom: 50px;
+	background-color: #486988;
+    margin-bottom: 50px;
+
 }
 
 .site-nav h1 {

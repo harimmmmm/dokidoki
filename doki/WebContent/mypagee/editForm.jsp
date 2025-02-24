@@ -8,6 +8,12 @@
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/mypagee/css/mypage.css">
 </head>
+<style>
+.main-content {
+	margin: 70px auto;
+	
+}
+</style>
 <body>
 	<%@ include file="../fragments/header.jsp"%>
 	<div class="mypage-container">

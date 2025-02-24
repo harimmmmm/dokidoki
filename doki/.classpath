@@ -9,5 +9,10 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/harim/Downloads/json-20210307.jar"/>
+	<classpathentry kind="lib" path="C:/Users/harim/Downloads/jjwt-orgjson-0.12.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/harim/Downloads/jjwt-impl-0.12.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/harim/Downloads/jjwt-api-0.12.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/harim/Downloads/jackson-databind-2.13.3.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

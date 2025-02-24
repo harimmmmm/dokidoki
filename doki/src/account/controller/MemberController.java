@@ -7,7 +7,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/login/*")
+import account.service.GoogleCallbackServlet;
+import account.service.IdResultService;
+import account.service.LogoutService;
+import account.service.MemberInsertService;
+import account.service.MemberLoginSerivce;
+import account.service.MemberUserIdCheckService;
+import account.service.SendVerificationEmailService;
+
+@WebServlet("/member/*")
 public class MemberController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -23,14 +31,39 @@ public class MemberController extends HttpServlet {
 		String page = null;
 
 		switch (action) {
-		case "/signin.do":	// 로그인
-			page = "/account/signin.jsp";
+		case "/login.do":	// 로그인
+			page = "/account/login.jsp";
 			break;
+		case "/loginpro.do":	// 로그인
+			new MemberLoginSerivce().docommand(request, response);
+//			response.sendRedirect("/");
+			return;
+		case "/callback":	// 구글 로그인
+			new GoogleCallbackServlet().docommand(request, response);
+			return;
+		case "/logout.do":		// 로그아웃
+			new LogoutService().docommand(request, response);
+			response.sendRedirect("/doki");
+			return;
 		case "/signup.do":	// 회원가입
 			page = "/account/signup.jsp";
 			break;
+		case "/signupInsertpro.do":	// 회원가입 저장
+			new MemberInsertService().docommand(request, response);
+			response.sendRedirect("/member/login.do");
+			return;
+		case "/signupro.do":	// 회원가입 아이디체크
+			new MemberUserIdCheckService().docommand(request, response);
+			break;
+		case "/sendVerificationEmail.do":	// 회원가입 이메일
+			new SendVerificationEmailService().docommand(request, response);
+			break;
 		case "/idfind.do":	// 아이디 찾기
 			page = "/account/idfind.jsp";
+			break;
+		case "/idfindpro.do":	// 아이디 찾기
+			new IdResultService().docommand(request, response);
+			page = "/account/idfind2.jsp";
 			break;
 		case "/pwfind.do":	// 비번 찾기
 			page = "/account/pwfind.jsp";

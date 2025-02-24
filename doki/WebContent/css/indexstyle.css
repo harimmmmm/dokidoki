@@ -1,0 +1,8 @@
+@charset "UTF-8";
+.site-nav .site-navigation .site-menu .has-children .dropdown>li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 236px;
+}
+
