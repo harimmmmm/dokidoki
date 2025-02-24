@@ -1,1 +1,4 @@
 /travel/
+# Google OAuth 관련 파일 무시
+GoogleAuth.java
+GoogleCallbackServlet.java
