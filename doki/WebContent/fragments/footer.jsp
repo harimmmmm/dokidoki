@@ -123,6 +123,11 @@
 </div>
 <!-- 사이트 푸터 종료 -->
 
+<!-- 상단 이동 버튼 -->
+<button onclick="scrollToTop()" id="topBtn">
+    <img src="/images/up-arrow.png" alt="TOP">
+</button>
+
 
 <!-- 화면 로딩 오버레이 (로딩 애니메이션을 위한 배경) -->
 <div id="overlayer"></div>
@@ -138,7 +143,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-<script src="<%= request.getContextPath() %>/js/jquery-3.4.1.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="<%= request.getContextPath() %>/js/popper.min.js"></script>
 <script src="<%= request.getContextPath() %>/js/bootstrap.min.js"></script>
 <script src="<%= request.getContextPath() %>/js/owl.carousel.min.js"></script>
@@ -151,7 +156,8 @@
 <script src="<%= request.getContextPath() %>/js/typed.js"></script>
 <script src="<%= request.getContextPath() %>/product/js/dropdown.js"></script>
 <script src="<%= request.getContextPath() %>/product/js/sidebars.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="<%= request.getContextPath() %>/product/js/detailsPackage.js"></script>
 <!-- 페이지별 스크립트 실행 여부 체크 -->
 <c:if test="${not empty typedJs}">
 	<script src="<%= request.getContextPath() %>/js/typed.js"></script>
@@ -202,6 +208,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
+
+<!-- top btn js -->
+<script>
+// 스크롤 이벤트 감지하여 버튼 표시
+window.onscroll = function () {
+    var topBtn = document.getElementById("topBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        topBtn.style.display = "block";  
+    } else {
+        topBtn.style.display = "none";   
+    }
+};
+
+// 버튼 클릭 시 페이지 상단으로 이동
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+<!-- top btn js end -->
+
 
 <script src="<%= request.getContextPath() %>/js/custom.js"></script>
 

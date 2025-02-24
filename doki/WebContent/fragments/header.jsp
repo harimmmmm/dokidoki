@@ -75,29 +75,9 @@
 				<a href="/doki" class="logo m-0">どきどきkorea<span
 					class="text-primary"></span></a>
 				<!-- 네비게이션 메뉴 -->
-				<ul
-					class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right">
+				<ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right">
 					<li class="active"><a href="<%= request.getContextPath() %>/index.jsp">Home</a></li>
-					<!-- 드롭다운 메뉴 -->
-					<li class="has-children">
-						<!-- 상위 메뉴 --> <a href="/product/packagesList.jsp">予約</a> <!-- 드롭다운 하위 메뉴 -->
-						<ul class="dropdown">
-							<li><a href="/product/packagesList.jsp">韓国旅行</a></li>
-							<li><a href="#">チェジュ島</a></li>
-							<li class="has-children">
-								<!-- 또 다른 드롭다운 메뉴 --> <a href="#">内陸</a> <!-- 서브 드롭다운 메뉴 -->
-								<ul class="dropdown">
-									<li><a href="/product/packageSelect.jsp">カンウォン</a></li>
-									<li><a href="#">チョルラ </a></li>
-									<li><a href="#">ソウル／インチョン／キョンギ</a></li>
-									<li><a href="#">ウルルン島</a></li>
-									<li><a href="#">キョンサン </a></li>
-									<li><a href="#">チュンチョン </a></li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<!-- 일반 네비게이션 메뉴 -->
+					<li><a href="/product/packagesList.jsp">予約</a></li>
 					<li><a href="/board/services.jsp">旅行先紹介</a></li>
 					<li><a href="/login/signin.do">ログイン</a></li>
 					<li><a href="/mypage/home.do">마이페이지</a></li>

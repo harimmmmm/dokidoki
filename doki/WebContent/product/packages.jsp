@@ -3,320 +3,267 @@
 <%@ include file="../fragments/header.jsp"%>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="<%=request.getContextPath()%>/product/css/sidebars.css"
 	rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="<%=request.getContextPath()%>/product/css/packages.css"
+
+
+<link href="<%=request.getContextPath()%>/product/css/dropdownstyle.css"
 	rel="stylesheet">
 
-<link href="<%=request.getContextPath()%>/product/css/dropdownstyle.css" rel="stylesheet">
+<!-- slide css -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
 
-
-
+<link
+	href="<%=request.getContextPath()%>/product/css/detailsPackage.css"
+	rel="stylesheet">
 
 <!-- 메인 섹션을 감싸는 div -->
+<!-- 상품 상세 페이지 -->
 <div class="untree_co-section">
-	<div class="container titleunderLine">
+	<div class="container detail-container">
+		<!-- 상품 이미지 슬라이더 -->
+		<div class="slider-container">
+			<div class="slider">
+				<div>
+					<img src="/product/img/jejuslide1.jpg" alt="상품 이미지 1">
+				</div>
+				<div>
+					<img src="/product/img/jejuslide2.jpg" alt="상품 이미지 2">
+				</div>
+				<div>
+					<img src="/product/img/jejuslide3.jpg" alt="상품 이미지 3">
+				</div>
+			</div>
+		</div>
+
+		<!-- 상품 상세 정보 -->
+		<div class="detail-info">
+			<div class="d-flex justify-content-between align-items-center">
+				<small class="text-muted"> 상품코드 <span
+					class="copy-text underline" data-copy="DCNS2OKETQ">DCNS2OKETQ</span>
+					| 단체번호 <span class="copy-text underline" data-copy="89863773">89863773</span>
+				</small>
+
+				<div class="interest-icons">
+					<button id="wishlist">
+						<img src="/product/img/heart.png" alt="찜">
+					</button>
+					<button id="share">
+						<img src="/product/img/share.png" alt="공유">
+					</button>
+					<button id="print" onclick="window.print();">
+						<img src="/product/img/print.png" alt="프린트">
+					</button>
+				</div>
+			</div>
+			<h2 class="mt-2">[모두단독] 제주도 SNS 핫플 3일 &lt;노팁/노옵션/스누피가든/승마/4명부터
+				출발확정&gt;</h2>
+			<div class="tags">#모두단독 #회정식 #흑돼지 #스누피가든 #월정리카페거리 #요트투어 #목장카페</div>
+			<div class="info-price-container">
+				<button class="info-button" id="infoBtn">여행핵심정보</button>
+				<div class="price">900,900 원</div>
+			</div>
+			<div class="additional-info">
+				<span>출발예정</span> | <span>가격예정</span> | <span>일정예정</span> | <span>호텔예정</span>
+				| <span class="text-muted text-decoration-line-through">항공예정</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="infoModal" tabindex="-1"
+	aria-labelledby="infoModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="infoModalLabel">여행 핵심정보</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"
+					aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<h6>상품 기본 정보</h6>
+				<table class="table table-bordered">
+					<tr>
+						<th>상품명</th>
+						<td>[모두단독] 제주도 SNS핫플 3일 &lt;노팁/노옵션/스누피가든/승마/4명부터출발확정&gt;</td>
+					</tr>
+					<tr>
+						<th>여행기간</th>
+						<td>2025.02.28 ~ 2025.03.02 (2박 3일)</td>
+					</tr>
+					<tr>
+						<th>상품종류</th>
+						<td>단독상품</td>
+					</tr>
+					<tr>
+						<th>영업보증 보험</th>
+						<td>가입</td>
+						<th>기획여행 보증보험</th>
+						<td>가입</td>
+					</tr>
+				</table>
+
+				<h6>여행 경비 총액</h6>
+				<table class="table table-bordered">
+					<tr>
+						<th>구분</th>
+						<th>성인</th>
+						<th>아동 Extra Bed</th>
+						<th>아동 No Bed</th>
+						<th>유아</th>
+					</tr>
+					<tr>
+						<td>기본 상품가격</td>
+						<td>885,500원</td>
+						<td>-원</td>
+						<td>804,900원</td>
+						<td>40,000원</td>
+					</tr>
+					<tr>
+						<td>유류할증료</td>
+						<td>15,400원</td>
+						<td>-원</td>
+						<td>15,400원</td>
+						<td>15,400원</td>
+					</tr>
+					<tr>
+						<td>소계</td>
+						<td><strong>900,900원</strong></td>
+						<td>-원</td>
+						<td><strong>820,300원</strong></td>
+						<td><strong>55,400원</strong></td>
+					</tr>
+				</table>
+
+				<h6>쇼핑정보</h6>
+				<p>
+					일정에 포함된 쇼핑 횟수: <span class="text-primary">1회</span> (농수특산&기념품)
+				</p>
+
+				<h6>여행경보</h6>
+				<p>여행경보 단계는 외교부 해외안전여행 사이트에서 확인하세요.</p>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<!-- 상품 가격 및 예약 정보 섹션 추가 -->
+<div class="booking-section">
+	<div class="container">
 		<div class="row">
-			<div class="col-12"> <!-- 전체 너비를 차지하는 컬럼 -->
-				<form class="form topnav"> <!-- 여행 검색을 위한 폼 -->
+			<!-- 왼쪽: 상품 가격 정보 -->
+			<div class="col-md-8">
+				<h3>상품가격</h3>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>구분</th>
+							<th>성인 (만 13세 이상)</th>
+							<th>아동 Extra Bed (만 13세 미만)</th>
+							<th>아동 No Bed (만 13세 미만)</th>
+							<th>유아 (만 2세 미만)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>상품가격</td>
+							<td>879,900원</td>
+							<td>-</td>
+							<td>796,100원</td>
+							<td>55,400원</td>
+						</tr>
+						<tr>
+							<td>유류할증료</td>
+							<td>15,400원 포함</td>
+							<td>-</td>
+							<td>15,400원 포함</td>
+							<td>15,400원 포함</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 
-					<!-- 여행 검색 필드 -->
-					<div class="row mb-2">
-						<div class="col d-flex justify-content-between">
-							<!-- 왼쪽 콘텐츠 (여행지 선택) -->
-							<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
-								<div class="custom-dropdown form-control custom-select packagesSelect">
-									<div class="selected">여행지 선택</div>
-									<div class="dropdown-menu">
-										<!-- 1단계 -->
-										<div class="column first">
-											<div class="option main-option active" data-target="domestic">국내</div>
-										</div>
-										<!-- 2단계 -->
-										<div class="column second">
-											<div class="option sub-option" data-target="jeju">제주도</div>
-											<div class="option sub-option" data-target="ulleung">울릉도</div>
-											<div class="option sub-option" data-target="gangwon">강원</div>
-											<div class="option sub-option" data-target="gyeongsang">경상</div>
-											<div class="option sub-option" data-target="jeolla">전라</div> <!-- 전라 추가 -->
-											<div class="option sub-option" data-target="chungcheong">충청</div>
-											<div class="option sub-option" data-target="seoul">서울/인천/경기</div>
-										</div>
+			<!-- 사이드바 (예약 정보) -->
+			<div class="col-md-4">
+				<div class="sticky-sidebar">
+					<div class="departure-info">
+						<p>
+							<strong>서울(김포) 출발</strong> <span id="departure-date">2025.05.06(화)
+								00:00</span>
+						</p>
+						<p>
+							<strong>서울(김포) 도착</strong> <span id="arrival-date">2025.05.08(목)
+								00:00</span>
+						</p>
+						<button id="change-date-btn">출발일 변경</button>
+					</div>
 
-										<div class="column third">
-											<!-- ✅ "제주도"을 선택하면 보일 3차 메뉴 -->
-											<div class="option detail-option d-none" data-parent="jeju">제주도</div>
-											<!-- ✅ "울릉도"을 선택하면 보일 3차 메뉴 -->
-											<div class="option detail-option d-none" data-parent="ulleung">울릉도</div>
-											<!-- ✅ "강원"을 선택하면 보일 3차 메뉴 -->
-											<div class="option detail-option d-none" data-parent="gangwon">강원</div>
-											<!-- ✅ "경상"을 선택하면 보일 3차 메뉴 -->
-											<div class="option detail-option d-none" data-parent="gyeongsang">경상북도</div>
-											<div class="option detail-option d-none" data-parent="gyeongsang">경상남도</div>
-											<div class="option detail-option d-none" data-parent="gyeongsang">부산</div>
-											<!-- ✅ "전라"를 선택하면 보일 3차 메뉴 -->
-											<div class="option detail-option d-none" data-parent="jeolla">전라북도</div>
-											<div class="option detail-option d-none" data-parent="jeolla">전라남도</div>
-											<!-- ✅ "충청"를 선택하면 보일 3차 메뉴 -->
-											<div class="option detail-option d-none" data-parent="chungcheong">충청북도</div>
-											<div class="option detail-option d-none" data-parent="chungcheong">충청남도</div>
-											<!-- ✅ "서울/인천/경기"를 선택하면 보일 3차 메뉴 -->
-											<div class="option detail-option d-none" data-parent="seoul">서울</div>
-											<div class="option detail-option d-none" data-parent="seoul">인천</div>
-										</div>
-										
-										
-									</div>
-								</div>
-							</div>
-					
-							<!-- 오른쪽 콘텐츠 (출발지 선택과 날짜 입력을 같이 배치) -->
-							<div class="d-flex col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-8">
-								<!-- 출발지 선택 -->
-								<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-6">
-									<select name="" id="" class="form-control custom-select">
-										<option value="">도쿄</option>
-										<option value="">오사카</option>
-										<option value="">후쿠오카</option>
-										<option value="">나고야</option>
-										<option value="">삿포로</option>
-										<option value="">오키나와</option>
-										<option value="">기타</option>
-									</select>
-								</div>
-					
-								<!-- 날짜 입력 -->
-								<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-6">
-									<input type="text" class="form-control" name="daterange">
-								</div>
-							</div>
+					<h4>예약인원 선택</h4>
+					<!-- 예약 인원 선택 -->
+					<div class="booking-options">
+						<div class="booking-item" data-type="adult">
+							<!-- 🔹 성인 data-type 추가 -->
+							<span>성인</span>
+							<button class="minus">-</button>
+							<span class="count">1</span>
+							<button class="plus">+</button>
+							<span>879,900원</span>
+						</div>
+						<div class="booking-item" data-type="child">
+							<!-- 🔹 아동 data-type 추가 -->
+							<span>아동 No Bed</span>
+							<button class="minus">-</button>
+							<span class="count">0</span>
+							<button class="plus">+</button>
+							<span>796,100원</span>
+						</div>
+						<div class="booking-item" data-type="infant">
+							<!-- 🔹 유아 data-type 추가 -->
+							<span>유아</span>
+							<button class="minus">-</button>
+							<span class="count">0</span>
+							<button class="plus">+</button>
+							<span>55,400원</span>
 						</div>
 					</div>
 					
-					
-
-
-						
-
-				</form> <!-- 여행 검색 폼 종료 -->
-			</div>
-		</div> <!-- 검색 폼 영역 종료 -->
-	</div>
-
-	<div class="container">
-		<!-- 부트스트랩 container 클래스: 반응형 컨테이너 -->
-		<!-- Bootstrap의 그리드 시스템을 사용하여 행(row) 생성 -->
-		<div class="row g-5">
-			<!-- g-5: 열(column)과 행(row) 간 간격 설정 (32px) -->
-
-			<!-- 사이드바 (최근 글, 아카이브, SNS 링크) -->
-			<div class="col-md-4">
-				<!-- 중간 크기 이상에서 4/12 너비 차지 -->
-				<div class="position-sticky" style="top: 2rem;">
-					<!-- 스크롤 시 고정되는 스타일 -->
-
-					<div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-						<span
-							class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-							<span class="fs-5 fw-semibold">Collapsible</span>
-						</span>>
-						<ul class="list-unstyled ps-0">
-							<li class="mb-1">
-								<button
-									class="btn btn-toggle align-items-center rounded collapsed"
-									data-bs-toggle="collapse" data-bs-target="#home-collapse"
-									aria-expanded="false">Home</button>
-								<div class="collapse" id="home-collapse" style="">
-									<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-										<li><a href="#" class="link-dark rounded">Overview</a></li>
-										<li><a href="#" class="link-dark rounded">Updates</a></li>
-										<li><a href="#" class="link-dark rounded">Reports</a></li>
-									</ul>
-								</div>
-							</li>
-							<li class="mb-1">
-								<button
-									class="btn btn-toggle align-items-center rounded collapsed"
-									data-bs-toggle="collapse" data-bs-target="#dashboard-collapse"
-									aria-expanded="false">Dashboard</button>
-								<div class="collapse" id="dashboard-collapse" style="">
-									<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-										<li><a href="#" class="link-dark rounded">Overview</a></li>
-										<li><a href="#" class="link-dark rounded">Weekly</a></li>
-										<li><a href="#" class="link-dark rounded">Monthly</a></li>
-										<li><a href="#" class="link-dark rounded">Annually</a></li>
-									</ul>
-								</div>
-							</li>
-							<li class="mb-1">
-								<button class="btn btn-toggle align-items-center rounded"
-									data-bs-toggle="collapse" data-bs-target="#orders-collapse"
-									aria-expanded="true">Orders</button>
-								<div class="collapse show" id="orders-collapse" style="">
-									<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-										<li><a href="#" class="link-dark rounded">New</a></li>
-										<li><a href="#" class="link-dark rounded">Processed</a></li>
-										<li><a href="#" class="link-dark rounded">Shipped</a></li>
-										<li><a href="#" class="link-dark rounded">Returned</a></li>
-									</ul>
-								</div>
-							</li>
-							<li class="border-top my-3"></li>
-							<li class="mb-1">
-								<button class="btn btn-toggle align-items-center rounded"
-									data-bs-toggle="collapse" data-bs-target="#account-collapse"
-									aria-expanded="true">Account</button>
-								<div class="collapse show" id="account-collapse" style="">
-									<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-										<li><a href="#" class="link-dark rounded">New...</a></li>
-										<li><a href="#" class="link-dark rounded">Profile</a></li>
-										<li><a href="#" class="link-dark rounded">Settings</a></li>
-										<li><a href="#" class="link-dark rounded">Sign out</a></li>
-									</ul>
-								</div>
-							</li>
-						</ul>
-					</div>
-
+					<!-- 총 금액 -->
+					<h3 class="total-price">총 금액: 879,900원</h3>
+					<button class="reserve-btn">예약하기</button>
 				</div>
 			</div>
 
-			<!-- 메인 콘텐츠 영역 (블로그 포스트) -->
-			<div class="col-md-8">
-				<!-- col-md-8: 중간 화면(md) 이상에서는 전체 너비의 8/12 차지 -->
-
-				<!-- 블로그 섹션 헤더 -->
-				<h3 class="pb-4 mb-4 fst-italic border-bottom">From the
-					Firehose</h3>
-
-				<!-- 첫 번째 블로그 포스트 -->
-				<article class="blog-post">
-					<h2 class="display-5 link-body-emphasis mb-1">Sample blog post</h2>
-					<p class="blog-post-meta">
-						January 1, 2021 by <a href="#">Mark</a>
-					</p>
-
-					<p>이 블로그 포스트는 부트스트랩에서 지원하는 다양한 콘텐츠 유형(타이포그래피, 목록, 테이블 등)을
-						보여줍니다.</p>
-					<hr>
-					<p>추가적인 더미 텍스트 내용...</p>
-
-					<!-- 블록 인용문 -->
-					<h2>Blockquotes</h2>
-					<p>이것은 블록 인용문 예제입니다:</p>
-					<blockquote class="blockquote">
-						<p>인용된 텍스트가 여기에 표시됩니다.</p>
-					</blockquote>
-
-					<!-- 목록 예제 -->
-					<h3>Example lists</h3>
-					<p>순서 없는 목록(Unordered list):</p>
-					<ul>
-						<li>첫 번째 리스트 아이템</li>
-						<li>설명이 긴 두 번째 리스트 아이템</li>
-						<li>마지막 리스트 아이템</li>
-					</ul>
-
-					<p>순서 있는 목록(Ordered list):</p>
-					<ol>
-						<li>첫 번째 리스트 아이템</li>
-						<li>설명이 긴 두 번째 리스트 아이템</li>
-						<li>마지막 리스트 아이템</li>
-					</ol>
-
-					<!-- 정의 목록 -->
-					<p>정의 목록(Definition list):</p>
-					<dl>
-						<dt>HTML</dt>
-						<dd>웹 페이지의 콘텐츠를 정의하는 마크업 언어</dd>
-						<dt>CSS</dt>
-						<dd>웹 콘텐츠의 스타일을 정의하는 스타일 시트 언어</dd>
-						<dt>JavaScript</dt>
-						<dd>동적 웹 사이트 및 애플리케이션을 구축하는 프로그래밍 언어</dd>
-					</dl>
-
-					<!-- 인라인 HTML 요소 예제 -->
-					<h2>Inline HTML elements</h2>
-					<p>부트스트랩에서 지원하는 인라인 HTML 요소:</p>
-					<ul>
-						<li><strong>굵은 텍스트</strong>는 <code>&lt;strong&gt;</code>을 사용.</li>
-						<li><em>기울임꼴 텍스트</em>는 <code>&lt;em&gt;</code>을 사용.</li>
-						<li>약어(예: <abbr title="HyperText Markup Language">HTML</abbr>)는
-							<code>&lt;abbr&gt;</code>을 사용.
-						</li>
-						<li><cite>인용문</cite>은 <code>&lt;cite&gt;</code>을 사용.</li>
-						<li><del>삭제된 텍스트</del>는 <code>&lt;del&gt;</code>, <ins>추가된
-								텍스트</ins>는 <code>&lt;ins&gt;</code>을 사용.</li>
-						<li>위 첨자 <sup>텍스트</sup>와 아래 첨자 <sub>텍스트</sub>를 사용할 수 있음.
-						</li>
-					</ul>
-
-					<!-- 코드 블록 -->
-					<h3>Sub-heading</h3>
-					<pre>
-						<code>Example code block</code>
-					</pre>
-				</article>
-
-				<!-- 두 번째 블로그 포스트 -->
-				<article class="blog-post">
-					<h2 class="display-5 link-body-emphasis mb-1">Another blog
-						post</h2>
-					<p class="blog-post-meta">
-						December 23, 2020 by <a href="#">Jacob</a>
-					</p>
-
-					<blockquote>
-						<p>
-							긴 인용문 예제, 강조된 <strong>텍스트</strong> 포함.
-						</p>
-					</blockquote>
-
-					<!-- 테이블 예제 -->
-					<h3>Example table</h3>
-					<table class="table">
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Upvotes</th>
-								<th>Downvotes</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Alice</td>
-								<td>10</td>
-								<td>11</td>
-							</tr>
-							<tr>
-								<td>Bob</td>
-								<td>4</td>
-								<td>3</td>
-							</tr>
-						</tbody>
-					</table>
-				</article>
-
-				<!-- 블로그 페이지네이션 -->
-				<nav class="blog-pagination" aria-label="Pagination">
-					<a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
-					<a class="btn btn-outline-secondary rounded-pill disabled"
-						aria-disabled="true">Newer</a>
-				</nav>
+			<!-- 출발일 선택 모달 (ID 및 클래스 변경) -->
+			<div id="date-picker-modal" class="date-picker-container">
+				<div class="date-picker-content">
+					<span class="date-picker-close">&times;</span>
+					<h3>출발일 선택</h3>
+					<div class="calendar-container">
+						<div class="month-selector">
+							<button id="prev-month">&lt;</button>
+							<span id="current-month">2025.05</span>
+							<button id="next-month">&gt;</button>
+						</div>
+						<div id="calendar"></div>
+					</div>
+					<button id="confirm-date-btn" disabled>선택 완료</button>
+				</div>
 			</div>
 
 
-		</div>
 
+		</div>
 	</div>
-	<!-- container 종료 -->
 </div>
-<!-- 메인 섹션 종료 -->
 
 
 

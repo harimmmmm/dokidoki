@@ -15,7 +15,9 @@
 
 <link href="<%=request.getContextPath()%>/product/css/dropdownstyle.css"
 	rel="stylesheet">
-
+<link
+	href="<%=request.getContextPath()%>/product/css/selectPackageList.css"
+	rel="stylesheet">
 
 
 
@@ -119,6 +121,11 @@
 	</div>
 
 	<div class="container">
+		<div class="searchcountform">
+			<p class="searchtotfontsize">
+				검색결과 <span class="searchtotalcolor searchtotfontsize">77</span>
+			</p>
+		</div>
 		<!-- 부트스트랩 container 클래스: 반응형 컨테이너 -->
 		<!-- Bootstrap의 그리드 시스템을 사용하여 행(row) 생성 -->
 		<div class="row g-5">
@@ -137,11 +144,99 @@
 
 					</span>
 
+					<!-- 투어조건 필터 -->
+					<div class="mb-3 filterUnderLine">
+						<button class="btn btn-toggle bordernone"
+							data-bs-toggle="collapse"
+							data-bs-target="#tour-conditions-collapse" aria-expanded="false">
+							투어조건 <span class="toggle-icon"> <img
+								src="/product/img/arrow.png" alt="토글 아이콘">
+							</span>
+						</button>
+						<div class="collapse" id="tour-conditions-collapse">
+
+							<!-- 쇼핑 필터 -->
+							<div class="mb-2">
+								<label class="fw-bold">쇼핑</label>
+								<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+									<li><button class="filter-btn shopping-btn"
+											data-value="없음">없음</button></li>
+									<li><button class="filter-btn shopping-btn"
+											data-value="1회">1회</button></li>
+								</ul>
+							</div>
+
+							<!-- 선택관광 필터 -->
+							<div class="mb-2">
+								<label class="fw-bold">선택관광</label>
+								<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+									<li><button class="filter-btn optional-tour-btn"
+											data-value="없음(노옵션)">없음(노옵션)</button></li>
+								</ul>
+							</div>
+
+							<!-- 자유일정 필터 -->
+							<div class="mb-2">
+								<label class="fw-bold">자유일정</label>
+								<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+									<li><button class="filter-btn free-schedule-btn"
+											data-value="전일정">전일정</button></li>
+									<li><button class="filter-btn free-schedule-btn"
+											data-value="일부(하루이상)">일부(하루이상)</button></li>
+									<li><button class="filter-btn free-schedule-btn"
+											data-value="일부(하루미만)">일부(하루미만)</button></li>
+									<li><button class="filter-btn free-schedule-btn"
+											data-value="없음">없음</button></li>
+								</ul>
+							</div>
+
+							<!-- 현지 필수 경비 필터 -->
+							<div class="mb-2">
+								<label class="fw-bold">현지 필수 경비 (가이드&기사팁)</label>
+								<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+									<li><button class="filter-btn local-expense-btn"
+											data-value="없음(노팁)">없음(노팁)</button></li>
+								</ul>
+							</div>
+
+							<!-- 현지 가이드 필터 -->
+							<div class="mb-2">
+								<label class="fw-bold">현지 가이드</label>
+								<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+									<li><button class="filter-btn local-guide-btn"
+											data-value="전일정포함">전일정포함</button></li>
+									<li><button class="filter-btn local-guide-btn"
+											data-value="전일정불포함">전일정불포함</button></li>
+									<li><button class="filter-btn local-guide-btn"
+											data-value="포함(일부불포함)">포함(일부불포함)</button></li>
+								</ul>
+							</div>
+
+							<!-- 식사료 필터 -->
+							<div class="mb-2">
+								<label class="fw-bold">식사료</label>
+								<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+									<li><button class="filter-btn meal-btn" data-value="불포함">불포함</button></li>
+									<li><button class="filter-btn meal-btn" data-value="일부 포함">일부
+											포함</button></li>
+									<li><button class="filter-btn meal-btn"
+											data-value="전 일정 포함">전 일정 포함</button></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+
 					<!-- 여행기간 필터 -->
 					<div class="mb-3 filterUnderLine">
-						<button class="btn btn-toggle bordernone" data-bs-toggle="collapse"
-							data-bs-target="#home-collapse" aria-expanded="false">
-							여행기간</button>
+						<button class="btn btn-toggle bordernone"
+							data-bs-toggle="collapse" data-bs-target="#home-collapse"
+							aria-expanded="false">
+							여행기간<span class="toggle-icon"> <img
+								src="/product/img/arrow.png" alt="토글 아이콘">
+							</span>
+						</button>
 						<div class="collapse" id="home-collapse">
 							<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 								<li><button class="filter-btn travel-period-btn"
@@ -154,17 +249,39 @@
 
 					<!-- 여행컨셉 필터 -->
 					<div class="mb-3 filterUnderLine">
-						<button class="btn btn-toggle bordernone" data-bs-toggle="collapse"
-							data-bs-target="#dashboard-collapse" aria-expanded="false">
-							여행컨셉</button>
+						<button class="btn btn-toggle bordernone"
+							data-bs-toggle="collapse" data-bs-target="#dashboard-collapse"
+							aria-expanded="false">
+							여행컨셉<span class="toggle-icon"> <img
+								src="/product/img/arrow.png" alt="토글 아이콘">
+							</span>
+						</button>
 						<div class="collapse" id="dashboard-collapse">
 							<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 								<li><button class="filter-btn travel-concept-btn"
 										data-value="관광">관광</button></li>
 								<li><button class="filter-btn travel-concept-btn"
-										data-value="트레킹">트레킹</button></li>
+										data-value="휴양">휴양</button></li>
+								<li><button class="filter-btn travel-concept-btn"
+										data-value="골프">골프</button></li>
+								<li><button class="filter-btn travel-concept-btn"
+										data-value="크루즈">크루즈</button></li>
+								<li><button class="filter-btn travel-concept-btn"
+										data-value="테마파크">테마파크</button></li>
+								<li><button class="filter-btn travel-concept-btn"
+										data-value="축제">축제</button></li>
+								<li><button class="filter-btn travel-concept-btn"
+										data-value="쇼핑">쇼핑</button></li>
+								<li><button class="filter-btn travel-concept-btn"
+										data-value="온천">온천</button></li>
+								<li><button class="filter-btn travel-concept-btn"
+										data-value="전문가">전문가</button></li>
 								<li><button class="filter-btn travel-concept-btn"
 										data-value="아동동반">아동동반</button></li>
+								<li><button class="filter-btn travel-concept-btn"
+										data-value="자유일정">자유일정</button></li>
+								<li><button class="filter-btn travel-concept-btn"
+										data-value="미식">미식</button></li>
 								<li><button class="filter-btn travel-concept-btn"
 										data-value="효도">효도</button></li>
 								<li><button class="filter-btn travel-concept-btn"
@@ -173,142 +290,176 @@
 										data-value="가족">가족</button></li>
 								<li><button class="filter-btn travel-concept-btn"
 										data-value="친구">친구</button></li>
+								<li><button class="filter-btn travel-concept-btn"
+										data-value="리조트">리조트</button></li>
+								<li><button class="filter-btn travel-concept-btn"
+										data-value="관광+휴양">관광+휴양</button></li>
+								<li><button class="filter-btn travel-concept-btn"
+										data-value="직장인">직장인</button></li>
+								<li><button class="filter-btn travel-concept-btn"
+										data-value="문화">문화</button></li>
+								<li><button class="filter-btn travel-concept-btn"
+										data-value="스파">스파</button></li>
+								<li><button class="filter-btn travel-concept-btn"
+										data-value="로컬">로컬</button></li>
+								<li><button class="filter-btn travel-concept-btn"
+										data-value="가톨릭 성지순례">가톨릭 성지순례</button></li>
+								<li><button class="filter-btn travel-concept-btn"
+										data-value="기독교 성지순례">기독교 성지순례</button></li>
 							</ul>
 						</div>
 					</div>
 
 
+					<!-- 출발시간 필터 -->
+					<div class="mb-3 filterUnderLine">
+						<button class="btn btn-toggle bordernone"
+							data-bs-toggle="collapse"
+							data-bs-target="#departure-time-collapse" aria-expanded="false">
+							출발시간<span class="toggle-icon"> <img
+								src="/product/img/arrow.png" alt="토글 아이콘">
+							</span>
+						</button>
+						<div class="collapse" id="departure-time-collapse">
+							<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+								<li><button class="filter-btn departure-time-btn"
+										data-value="오전 0~12시">오전 0~12시</button></li>
+								<li><button class="filter-btn departure-time-btn"
+										data-value="오후 12시~24시">오후 12시~24시</button></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- 항공 필터 -->
+					<div class="mb-3 filterUnderLine">
+						<button class="btn btn-toggle bordernone"
+							data-bs-toggle="collapse" data-bs-target="#airline-collapse"
+							aria-expanded="false">
+							항공<span class="toggle-icon"> <img
+								src="/product/img/arrow.png" alt="토글 아이콘">
+							</span>
+						</button>
+						<div class="collapse" id="airline-collapse">
+
+							<!-- 항공사 필터 -->
+							<div class="mb-2">
+								<label class="fw-bold">항공사</label>
+								<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+									<li><button class="filter-btn airline-btn"
+											data-value="항공불포함">항공불포함</button></li>
+									<li><button class="filter-btn airline-btn"
+											data-value="에어부산">에어부산</button></li>
+									<li><button class="filter-btn airline-btn"
+											data-value="대한항공">대한항공</button></li>
+									<li><button class="filter-btn airline-btn"
+											data-value="진에어">진에어</button></li>
+									<li><button class="filter-btn airline-btn"
+											data-value="아시아나 항공">아시아나 항공</button></li>
+									<li><button class="filter-btn airline-btn"
+											data-value="AERO K AIRLINES">AERO K AIRLINES</button></li>
+									<li><button class="filter-btn airline-btn"
+											data-value="에어서울">에어서울</button></li>
+									<li><button class="filter-btn airline-btn"
+											data-value="티웨이 항공">티웨이 항공</button></li>
+									<li><button class="filter-btn airline-btn"
+											data-value="에어프레미아">에어프레미아</button></li>
+									<li><button class="filter-btn airline-btn"
+											data-value="이스타항공">이스타항공</button></li>
+									<li><button class="filter-btn airline-btn"
+											data-value="제주항공">제주항공</button></li>
+								</ul>
+							</div>
+
+							<!-- 항공 좌석 등급 필터 -->
+							<div class="mb-2">
+								<label class="fw-bold">항공좌석등급</label>
+								<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+									<li><button class="filter-btn seat-class-btn"
+											data-value="이코노미">이코노미</button></li>
+									<li><button class="filter-btn seat-class-btn"
+											data-value="비즈니스">비즈니스</button></li>
+									<li><button class="filter-btn seat-class-btn"
+											data-value="불포함">불포함</button></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+
+
 				</div>
 			</div>
 
+			<!-- /product/img/jeju1.jpg -->
 
-
-			<!-- 메인 콘텐츠 영역 (블로그 포스트) -->
+			<!-- 메인 콘텐츠 영역 (검색 결과 패키지 리스트) -->
 			<div class="col-md-8">
-				<!-- col-md-8: 중간 화면(md) 이상에서는 전체 너비의 8/12 차지 -->
+				<div class="row row-cols-1 row-cols-md-2 g-4">
+					<!-- 여행 패키지 카드 1 -->
+					<div class="col">
+						<div class="card h-100">
+							<img src="/product/img/jeju1.jpg" class="card-img-top"
+								alt="도쿄 패키지 4일">
+							<div class="card-body">
+								<h5 class="card-title">도쿄 패키지 4일</h5>
+								<p class="card-text">도쿄/후지산/하코네/가마쿠라/에노시마/요코하마 포함</p>
+								<p class="card-text">
+									<small class="text-muted">아시아나 항공 | 에어텔</small>
+								</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<span class="fw-bold text-primary">₩799,900 ~</span> <a
+										href="/product/packages.jsp" class="btn btn-outline-primary">상품 상세 보기</a>
+								</div>
+							</div>
+						</div>
+					</div>
 
-				<!-- 블로그 섹션 헤더 -->
-				<h3 class="pb-4 mb-4 fst-italic border-bottom">From the
-					Firehose</h3>
+					<!-- 여행 패키지 카드 2 -->
+					<div class="col">
+						<div class="card h-100">
+							<img src="/product/img/jeju1.jpg" class="card-img-top"
+								alt="도쿄 (1일 자유) 패키지 4일">
+							<div class="card-body">
+								<h5 class="card-title">도쿄 (1일 자유) 패키지 4일</h5>
+								<p class="card-text">핵심 관광 + 1일 자유 (선택 옵션 가능)</p>
+								<p class="card-text">
+									<small class="text-muted">아시아나 항공 | 에어프레미아</small>
+								</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<span class="fw-bold text-primary">₩799,900 ~</span> <a
+										href="#" class="btn btn-outline-primary">상품 상세 보기</a>
+								</div>
+							</div>
+						</div>
+					</div>
 
-				<!-- 첫 번째 블로그 포스트 -->
-				<article class="blog-post">
-					<h2 class="display-5 link-body-emphasis mb-1">Sample blog post</h2>
-					<p class="blog-post-meta">
-						January 1, 2021 by <a href="#">Mark</a>
-					</p>
-
-					<p>이 블로그 포스트는 부트스트랩에서 지원하는 다양한 콘텐츠 유형(타이포그래피, 목록, 테이블 등)을
-						보여줍니다.</p>
-					<hr>
-					<p>추가적인 더미 텍스트 내용...</p>
-
-					<!-- 블록 인용문 -->
-					<h2>Blockquotes</h2>
-					<p>이것은 블록 인용문 예제입니다:</p>
-					<blockquote class="blockquote">
-						<p>인용된 텍스트가 여기에 표시됩니다.</p>
-					</blockquote>
-
-					<!-- 목록 예제 -->
-					<h3>Example lists</h3>
-					<p>순서 없는 목록(Unordered list):</p>
-					<ul>
-						<li>첫 번째 리스트 아이템</li>
-						<li>설명이 긴 두 번째 리스트 아이템</li>
-						<li>마지막 리스트 아이템</li>
-					</ul>
-
-					<p>순서 있는 목록(Ordered list):</p>
-					<ol>
-						<li>첫 번째 리스트 아이템</li>
-						<li>설명이 긴 두 번째 리스트 아이템</li>
-						<li>마지막 리스트 아이템</li>
-					</ol>
-
-					<!-- 정의 목록 -->
-					<p>정의 목록(Definition list):</p>
-					<dl>
-						<dt>HTML</dt>
-						<dd>웹 페이지의 콘텐츠를 정의하는 마크업 언어</dd>
-						<dt>CSS</dt>
-						<dd>웹 콘텐츠의 스타일을 정의하는 스타일 시트 언어</dd>
-						<dt>JavaScript</dt>
-						<dd>동적 웹 사이트 및 애플리케이션을 구축하는 프로그래밍 언어</dd>
-					</dl>
-
-					<!-- 인라인 HTML 요소 예제 -->
-					<h2>Inline HTML elements</h2>
-					<p>부트스트랩에서 지원하는 인라인 HTML 요소:</p>
-					<ul>
-						<li><strong>굵은 텍스트</strong>는 <code>&lt;strong&gt;</code>을 사용.</li>
-						<li><em>기울임꼴 텍스트</em>는 <code>&lt;em&gt;</code>을 사용.</li>
-						<li>약어(예: <abbr title="HyperText Markup Language">HTML</abbr>)는
-							<code>&lt;abbr&gt;</code>을 사용.
-						</li>
-						<li><cite>인용문</cite>은 <code>&lt;cite&gt;</code>을 사용.</li>
-						<li><del>삭제된 텍스트</del>는 <code>&lt;del&gt;</code>, <ins>추가된
-								텍스트</ins>는 <code>&lt;ins&gt;</code>을 사용.</li>
-						<li>위 첨자 <sup>텍스트</sup>와 아래 첨자 <sub>텍스트</sub>를 사용할 수 있음.
-						</li>
-					</ul>
-
-					<!-- 코드 블록 -->
-					<h3>Sub-heading</h3>
-					<pre>
-						<code>Example code block</code>
-					</pre>
-				</article>
-
-				<!-- 두 번째 블로그 포스트 -->
-				<article class="blog-post">
-					<h2 class="display-5 link-body-emphasis mb-1">Another blog
-						post</h2>
-					<p class="blog-post-meta">
-						December 23, 2020 by <a href="#">Jacob</a>
-					</p>
-
-					<blockquote>
-						<p>
-							긴 인용문 예제, 강조된 <strong>텍스트</strong> 포함.
-						</p>
-					</blockquote>
-
-					<!-- 테이블 예제 -->
-					<h3>Example table</h3>
-					<table class="table">
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Upvotes</th>
-								<th>Downvotes</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Alice</td>
-								<td>10</td>
-								<td>11</td>
-							</tr>
-							<tr>
-								<td>Bob</td>
-								<td>4</td>
-								<td>3</td>
-							</tr>
-						</tbody>
-					</table>
-				</article>
-
-				<!-- 블로그 페이지네이션 -->
-				<nav class="blog-pagination" aria-label="Pagination">
-					<a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
-					<a class="btn btn-outline-secondary rounded-pill disabled"
-						aria-disabled="true">Newer</a>
-				</nav>
+					<!-- 여행 패키지 카드 3 -->
+					<div class="col">
+						<div class="card h-100">
+							<img src="/product/img/jeju1.jpg" class="card-img-top"
+								alt="도쿄 디즈니랜드 패키지 3/4일">
+							<div class="card-body">
+								<h5 class="card-title">도쿄 디즈니랜드 패키지 3/4일</h5>
+								<p class="card-text">도쿄 디즈니랜드 & 관광 포함</p>
+								<p class="card-text">
+									<small class="text-muted">에어부산 | 티웨이 항공</small>
+								</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<span class="fw-bold text-primary">₩799,900 ~</span> <a
+										href="#" class="btn btn-outline-primary">상품 상세 보기</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
+
+			<!-- 메인 콘텐츠 영역 (블로그 포스트) end -->
 
 
 		</div>
+		<!-- row end -->
 
 	</div>
 	<!-- container 종료 -->
