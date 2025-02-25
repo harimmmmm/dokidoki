@@ -10,7 +10,7 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="/js/jquery-3.4.1.min.js"></script>
-<title>Payment</title>
+<title>User</title>
 </head>
 <body>
 	<!-- 본문 콘텐츠 -->
@@ -22,39 +22,32 @@
 			</div>
 			<!-- 메인 콘텐츠 영역 -->
 			<div class="col-md-9">
-				<b>결제 관리</b>
+				<b>유저 관리</b>
 				<table class="center">
 					<tr>
-						<th>주문번호</th>
-						<th>패키지명</th>
-						<th>결제일</th>
-						<th>결제 금액</th>
-						<th>구매 고객</th>
-						<th>거래 상세정보</th>
-						<th>결제 관리</th>
+						<th>아이디</th>
+						<th>영문이름</th>
+						<th>한자이름</th>
+						<th>생년월일</th>
+						<th>전화번호</th>
+						<th>이메일</th>
+						<th>가입일</th>
+						<th>권한</th>
+						<th>관리</th>
 					</tr>
 					<tr>
-						<td>001</td>
-						<td>서울-부산 투어</td>
-						<td>2025. 02. 22.</td>
-						<td>109,000원</td>
+						<td>java01</td>
+						<td>yamada</td>
 						<td>山田</td>
-						<td>신용카드</td>
+						<td>2001. 01. 01.</td>
+						<td>010</td>
+						<td>abc@gmail.com</td>
+						<td>2025. 02. 25.</td>
+						<td>유저</td>
 						<td>
-							<button class="deleteBtn" data-mno="${item.mno }">환불</button>  
+							<button class="deleteBtn" data-uno="${item.uno }">삭제</button>  
 						</td>
-					</tr>
-					<tr>
-						<td>002</td>
-						<td>서울-부산 투어</td>
-						<td>2025. 02. 22.</td>
-						<td>109,000원</td>
-						<td>イ</td>
-						<td>카카오페이</td>
-						<td>
-							<button class="deleteBtn" data-mno="${item.mno }">환불</button>
-						</td>
-					</tr>
+					</tr>ㄴ
 				</table>
 			</div>
 		</div>
@@ -64,14 +57,14 @@
 <script>
 	$(function() {
 		$(".deleteBtn").click(function() {
-			var mno = $(this).data("mno");
+			var uno = $(this).data("uno");
 			var $this = $(this);
 
 			$.ajax({
 				url : "",
 				type : "post",
 				data : {
-					mno : mno
+					uno : uno
 				},
 				success : function(response) {
 					if (response.trim() === "success") {
