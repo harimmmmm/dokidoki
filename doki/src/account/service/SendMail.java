@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.json.simple.JSONObject;
 
+@SuppressWarnings("unchecked")
 public class SendMail {
     public static String sendVerificationEmail(String recipientEmail, HttpServletRequest request) {
         final String username = "awdzs8251@gmail.com"; // 발신자 이메일

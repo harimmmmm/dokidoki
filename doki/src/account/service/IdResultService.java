@@ -18,8 +18,8 @@ public class IdResultService implements Command {
 
 		request.setCharacterEncoding("utf-8");
 
-		String name = request.getParameter("name"); // 이름
-		String email = request.getParameter("email"); // 이메일 또는 전화번호
+		String name = request.getParameter("name"); 
+		String email = request.getParameter("email"); 
 
 		AccountVo vo = new LoginDao().idResult(name, email);
 		if (vo != null) {
