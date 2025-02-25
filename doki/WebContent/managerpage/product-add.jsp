@@ -25,7 +25,7 @@
 				<div class="product-addbox">
 					<form name="my" method="post" enctype="" action=""
 						onsubmit="return check();">
-						<table class="product-addtable">
+						<table class="product-addtable" style="width:100%;">
 							<tr>
 								<th style="padding-top: 10px; font-size: 20px;">필수사항</th>
 								<td></td>
@@ -63,27 +63,133 @@
 								<td></td>
 							</tr>
 							<tr>
-								<th>필수 옵션 여부</th>
-								<td><input type="checkbox" id="myCheck"
-									onclick="myFunction()">
-									<p id="text" style="display: none"></p></td>
+								<th>쇼핑</th>
+								<td class="checkbox-group">
+									<button type="button" class="toggle-btn" data-checked="false" data-value="없음">없음</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="1회">1회</button>
+								</td>
+							</tr>
+
+							<tr>
+								<th>선택관광</th>
+								<td class="checkbox-group">
+									<button type="button" class="toggle-btn" data-checked="false" data-value="없음(노옵션)">없음(노옵션)</button>
+								</td>
 							</tr>
 							<tr>
-								<th>옵션 이름</th>
-								<td><input type="text" name="op-name"></td>
+								<th>자유일정</th>
+								<td class="checkbox-group">
+									<button type="button" class="toggle-btn" data-checked="false" data-value="전일정">전일정</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="일부(하루이상)">일부(하루이상)</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="일부(하루미만)">일부(하루미만)</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="없음">없음</button>
+								</td>
 							</tr>
 							<tr>
-								<th>옵션 설명</th>
-								<td><textarea class="form-control" rows="3"></textarea></td>
+								<th>현지 필수 경비 (가이드 & 기사팁)</th>
+								<td class="checkbox-group">
+									<button type="button" class="toggle-btn" data-checked="false" data-value="없음(노팁)">없음(노팁)</button>
+								</td>
 							</tr>
 							<tr>
-								<th>옵션 가격</th>
-								<td><input type="text" name="op-price"></td>
+								<th>현지 가이드</th>
+								<td class="checkbox-group">
+									<button type="button" class="toggle-btn" data-checked="false" data-value="전일정포함">전일정포함</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="전일정불포함">전일정불포함</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="포함(일부불포함)">포함(일부불포함)</button>
+								</td>
 							</tr>
 							<tr>
-								<td colspan="2" class="txtcenter"><input type="submit"
-									value="저장"> <input type="reset" value="다시쓰기"> <input
-									type="button" value="목록" onclick=""></td>
+								<th>식사료</th>
+								<td class="checkbox-group">
+									<button type="button" class="toggle-btn" data-checked="false" data-value="불포함">불포함</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="일부 포함">일부 포함</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="전 일정 포함">전 일정 포함</button>
+								</td>
+							</tr>
+							<tr>
+								<th>여행기간</th>
+								<td class="checkbox-group">
+									<button type="button" class="toggle-btn" data-checked="false" data-value="2박 3일">2박 3일</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="3박 4일">3박 4일</button>
+								</td>
+							</tr>
+							<tr>
+								<th>여행컨셉</th>
+								<td class="checkbox-group" style="border:none;">
+									<button type="button" class="toggle-btn" data-checked="false" data-value="관광">관광</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="휴양">휴양</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="골프">골프</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="크루즈">크루즈</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="테마파크">테마파크</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="축제">축제</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="쇼핑">쇼핑</button>
+								</td>
+								<td class="checkbox-group" style="border:none;">
+									<button type="button" class="toggle-btn" data-checked="false" data-value="온천">온천</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="전문가">전문가</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="아동동반">아동동반</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="자유일정">자유일정</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="미식">미식</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="효도">효도</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="커플">커플</button>
+								</td>
+								<td class="checkbox-group" style="border:none;">
+									<button type="button" class="toggle-btn" data-checked="false" data-value="가족">가족</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="친구">친구</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="리조트">리조트</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="관광+휴양">관광+휴양</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="직장인">직장인</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="문화">문화</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="스파">스파</button>
+								</td>
+								<td class="checkbox-group">
+									<button type="button" class="toggle-btn" data-checked="false" data-value="로컬">로컬</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="가톨릭 성지순례">가톨릭 성지순례</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="기독교 성지순례">기독교 성지순례</button>
+								</td>
+							</tr>
+							<tr>
+								<th>출발시간</th>
+								<td class="checkbox-group">
+									<button type="button" class="toggle-btn" data-checked="false" data-value="오전 0~12시">오전 0~12시</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="오후 12~24시">오후 12~24시</button>
+								</td>
+							</tr>
+							<tr>
+								<th>항공사</th>
+								<td class="checkbox-group" style="border:none;">
+									<button type="button" class="toggle-btn" data-checked="false" data-value="항공불포함">항공불포함</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="에어부산">에어부산</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="대한항공">대한항공</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="진에어">진에어</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="아시아나 항공">아시아나 항공</button>
+								</td>
+								<td class="checkbox-group" style="border:none;">
+									<button type="button" class="toggle-btn" data-checked="false" data-value="AERO K AIRLINES">AERO K AIRLINES</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="에어서울">에어서울</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="티웨이 항공">티웨이 항공</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="에어프레미아">에어프레미아</button>
+								</td>
+								<td class="checkbox-group">
+									<button type="button" class="toggle-btn" data-checked="false" data-value="이스타항공">이스타항공</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="제주항공">제주항공</button>
+								</td>
+							</tr>
+							<tr>
+								<th>항공좌석등급</th>
+								<td class="checkbox-group">
+									<button type="button" class="toggle-btn" data-checked="false" data-value="이코노미">이코노미</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="비즈니스">비즈니스</button>
+									<button type="button" class="toggle-btn" data-checked="false" data-value="불포함">불포함</button>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" class="txtcenter">
+									<input type="submit" value="저장"> 
+									<input type="reset" value="다시쓰기"> 
+									<input type="button" value="목록" onclick="">
+								</td>
 							</tr>
 						</table>
 					</form>
@@ -91,22 +197,17 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<script>
-		function myFunction() {
-			// Get the checkbox
-			var checkBox = document.getElementById("myCheck");
-			// Get the output text
-			var text = document.getElementById("text");
+		document.querySelectorAll('.toggle-btn').forEach(function(btn) {
+		  btn.addEventListener('click', function() {
+		    // 현재 상태를 boolean으로 변환
+		    var isChecked = this.getAttribute('data-checked') === 'true';
+		    // 상태 토글: 독립적으로 변경되도록 함.
+		    this.setAttribute('data-checked', !isChecked);
+		  });
+		});
 
-			// If the checkbox is checked, display the output text
-			if (checkBox.checked == true) {
-				text.style.display = "block";
-			} else {
-				text.style.display = "none";
-			}
-		}
 	</script>
-
 </html>
 <%@ include file="../fragments/footer.jsp"%>

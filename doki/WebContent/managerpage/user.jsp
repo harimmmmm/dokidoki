@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ include file="../fragments/header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +12,7 @@
 <title>User</title>
 </head>
 <body>
+	<%@ include file="../fragments/header.jsp"%>
 	<!-- 본문 콘텐츠 -->
 	<div class="container">
 		<div class="row" style="margin-top: 100px;">
@@ -47,7 +47,7 @@
 						<td>
 							<button class="deleteBtn" data-uno="${item.uno }">삭제</button>  
 						</td>
-					</tr>ㄴ
+					</tr>
 				</table>
 			</div>
 		</div>
