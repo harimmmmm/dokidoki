@@ -1,0 +1,174 @@
+@charset "UTF-8";
+
+* {margin: 0; padding: 0;}
+a {text-decoration: none; color: #333;}
+ul, ol {list-style: none;}
+
+
+/* ------------------------------ side css ------------------------------ */
+.vertical-menu {
+	border-top: 4px solid #486988;
+	display: block; /* Make the links appear below each other */
+	width: 200px; /* Set a width if you like */
+}
+
+.vertical-menu a {
+	color: black; /* Black text color */
+	display: block; /* Make the links appear below each other */
+	padding: 12px; /* Add some padding */
+	text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+	color: #718aa2;
+}
+
+.vertical-menu a.active {
+	color: #486988;
+}
+
+.vertical-submenu {
+  display: block; 
+  margin-left: 20px;
+  border-left: 1px solid #486988;
+}
+
+.has-submenu:hover .vertical-submenu {
+  display: block; /* 호버 시 표시 */
+}
+
+
+/* ------------------------------ side end ------------------------------ */
+.center {
+	width: 100%;
+	table-layout: auto; 
+	border-collapse: collapse;
+}
+
+.center th {
+	background-color: #eeeeee;
+}
+
+.center th, td {
+	padding: 10px;
+	text-align: center;
+	border: 1px solid #ccc;
+	vertical-align: middle;
+	/* white-space: normal; // 기본값, 줄바꿈 허용 */
+}
+/* 첫 번째 열(left)에만 테두리를 없애기 */
+.center tr>*:first-child {
+	border-left: none;
+}
+
+/* 마지막 열(right)에만 테두리를 없애기 */
+.center tr>*:last-child {
+	border-right: none;
+}
+
+b {
+	font-size: 24px;
+	margin-bottom: 20px;
+	display: block;
+}
+
+.updateBtn {
+	border: 0;
+	padding: 6px;
+	background-color: white;
+	color: #486988;
+}
+
+.deleteBtn {
+	border: 0;
+	padding: 6px;
+	background-color: white;
+	color: #ed7464;
+}
+
+/* ------------------------------ product css ------------------------------ */
+
+.product-addlist {flex: 2; padding-right: 10px; border-right: 1px solid #ccc;}
+
+.product-addbox {display: flex; gap: 20px;}
+.product-addbox .context {line-height: 220%; padding-bottom: 40px;}
+.product-addbox .btn-group .btnbutton {border: 1px solid #ccc; padding: 8px 12px;}
+
+.product-addtable {width: 200%;}
+.product-addtable th, .product-addtable td {padding: 8px;	border-bottom: 1px solid #ccc;}
+.product-addtable input[type="text"] {border: 1px solid #ccc; padding: 6px; width: 100%; margin: 1px 0;}
+.product-addtable textarea {width: 100%; height: 190px; padding: 10px;	border: 1px solid #ccc;	padding: 10px;}
+.product-addtable input[type="submit"], .product-addtable input[type="reset"], .product-addtable input[type="button"]{border: 1px solid #ccc; padding: 4px 10px;}
+.product-addtable input[type="file"] 
+.product-addtable {text-align: center;}
+
+/* ------------------------------ product end ------------------------------ */
+
+/* ------------------------------ notice css ------------------------------ */
+
+/* Customize the label (the container) */
+.check-container {
+  display: flax;
+  position: relative;
+  padding-left: 30px;
+  margin-right: 15px;
+	  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.check-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.check-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.check-container input:checked ~ .checkmark {
+  background-color: #486988;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.check-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.check-container .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+/* ------------------------------ notice end ------------------------------ */
