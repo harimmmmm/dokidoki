@@ -85,13 +85,12 @@
 							<li><a href="/member/login.do">ログイン</a></li>
 						</co:when>
 						<co:otherwise>
-							<li><a href="/member/logout.do">로그아웃  , ${sessionScope.user.name}</a></li>
+							<li><a href="/member/logout.do">로그아웃</a></li>
 							<li><a href="/mypage/home.do">마이페이지</a></li>
 						</co:otherwise>
 					</co:choose>
 					<li><a href="/contact.jsp">お問い合わせ</a></li>
 				</ul>
-
 				<!-- 모바일에서 표시되는 햄버거 메뉴 버튼 -->
 				<a href="#"
 					class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light"
