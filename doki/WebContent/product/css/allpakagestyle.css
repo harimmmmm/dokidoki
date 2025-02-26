@@ -7,7 +7,7 @@
 .hero {
     padding: 7rem 0 10rem 0;
     background: white;
-    margin-bottom: 0;
+    margin-bottom: -40px;
 }
 
 /* 슬라이드 */
@@ -53,3 +53,11 @@
     height: 160px;
 }
 
+.btn {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    border-radius: 30px;
+    font-size: 14px;
+}

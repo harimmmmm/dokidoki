@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!doctype html>
 <html lang="ja">
 <head>
@@ -49,6 +50,12 @@
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+<!-- flatpickr CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+<!-- flatpickr JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 
 
 
@@ -72,12 +79,12 @@
 		<div class="container">
 			<div class="site-navigation">
 				<!-- 로고 -->
-				<a href="/doki" class="logo m-0">どきどきkorea<span
+				<a href="/" class="logo m-0">どきどきkorea<span
 					class="text-primary"></span></a>
 				<!-- 네비게이션 메뉴 -->
 				<ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right">
 					<li class="active"><a href="<%= request.getContextPath() %>/index.jsp">Home</a></li>
-					<li><a href="/product/packagesList.jsp">予約</a></li>
+					<li><a href="/pakage/packagesList.do">予約</a></li>
 					<li><a href="/board/services.jsp">旅行先紹介</a></li>
 					<li><a href="/login/signin.do">ログイン</a></li>
 					<li><a href="/mypage/home.do">마이페이지</a></li>

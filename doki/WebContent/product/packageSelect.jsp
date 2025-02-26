@@ -27,7 +27,8 @@
 		<div class="row">
 			<div class="col-12">
 				<!-- 전체 너비를 차지하는 컬럼 -->
-				<form class="form topnav">
+				<form class="form topnav" id="searchForm" action="/pakage/packageSelect.do" method="post">
+
 					<!-- 여행 검색을 위한 폼 -->
 
 					<!-- 여행 검색 필드 -->
@@ -41,13 +42,13 @@
 									<div class="dropdown-menu">
 										<!-- 1단계 -->
 										<div class="column first">
-											<div class="option main-option active" data-target="domestic">국내</div>
+											<div class="option main-option active" data-target="domestic">韓国</div>
 										</div>
 										<!-- 2단계 -->
 										<div class="column second">
-											<div class="option sub-option" data-target="jeju">제주도</div>
-											<div class="option sub-option" data-target="ulleung">울릉도</div>
-											<div class="option sub-option" data-target="gangwon">강원</div>
+											<div class="option sub-option" data-target="jeju">ジェジュ島</div>
+											<div class="option sub-option" data-target="ulleung">ウルルン島</div>
+											<div class="option sub-option" data-target="gangwon">カンウォン</div>
 											<div class="option sub-option" data-target="gyeongsang">경상</div>
 											<div class="option sub-option" data-target="jeolla">전라</div>
 											<!-- 전라 추가 -->
@@ -57,57 +58,53 @@
 
 										<div class="column third">
 											<!-- ✅ "제주도"을 선택하면 보일 3차 메뉴 -->
-											<div class="option detail-option d-none" data-parent="jeju">제주도</div>
+											<div class="option detail-option d-none" data-parent="jeju">ジェジュ島</div>
 											<!-- ✅ "울릉도"을 선택하면 보일 3차 메뉴 -->
-											<div class="option detail-option d-none"
-												data-parent="ulleung">울릉도</div>
+											<div class="option detail-option d-none" data-parent="ulleung">ウルルン島</div>
 											<!-- ✅ "강원"을 선택하면 보일 3차 메뉴 -->
-											<div class="option detail-option d-none"
-												data-parent="gangwon">강원</div>
+											<div class="option detail-option d-none" data-parent="gangwon">カンウォン</div>
 											<!-- ✅ "경상"을 선택하면 보일 3차 메뉴 -->
-											<div class="option detail-option d-none"
-												data-parent="gyeongsang">경상북도</div>
-											<div class="option detail-option d-none"
-												data-parent="gyeongsang">경상남도</div>
-											<div class="option detail-option d-none"
-												data-parent="gyeongsang">부산</div>
+											<div class="option detail-option d-none" data-parent="gyeongsang">キョンサンプク道</div>
+											<div class="option detail-option d-none" data-parent="gyeongsang">キョンサンナム道</div>
+											<div class="option detail-option d-none" data-parent="gyeongsang">プサン</div>
 											<!-- ✅ "전라"를 선택하면 보일 3차 메뉴 -->
-											<div class="option detail-option d-none" data-parent="jeolla">전라북도</div>
-											<div class="option detail-option d-none" data-parent="jeolla">전라남도</div>
+											<div class="option detail-option d-none" data-parent="jeolla">チョルラプク道</div>
+											<div class="option detail-option d-none" data-parent="jeolla">チョルラナム道</div>
 											<!-- ✅ "충청"를 선택하면 보일 3차 메뉴 -->
-											<div class="option detail-option d-none"
-												data-parent="chungcheong">충청북도</div>
-											<div class="option detail-option d-none"
-												data-parent="chungcheong">충청남도</div>
+											<div class="option detail-option d-none" data-parent="chungcheong">チュンチョンプク道</div>
+											<div class="option detail-option d-none" data-parent="chungcheong">チュンチョンナム道</div>
 											<!-- ✅ "서울/인천/경기"를 선택하면 보일 3차 메뉴 -->
-											<div class="option detail-option d-none" data-parent="seoul">서울</div>
-											<div class="option detail-option d-none" data-parent="seoul">인천</div>
+											<div class="option detail-option d-none" data-parent="seoul">ソウル</div>
+											<div class="option detail-option d-none" data-parent="seoul">インチョン</div>
 										</div>
-
-
 									</div>
 								</div>
+								<!-- 선택된 목적지 저장 -->
+  								<input type="hidden" name="destination" id="selectedDestination" value="${param.destination}">
 							</div>
 
 							<!-- 오른쪽 콘텐츠 (출발지 선택과 날짜 입력을 같이 배치) -->
 							<div class="d-flex col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-8">
 								<!-- 출발지 선택 -->
 								<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-6">
-									<select name="" id="" class="form-control custom-select">
-										<option value="">도쿄</option>
-										<option value="">오사카</option>
-										<option value="">후쿠오카</option>
-										<option value="">나고야</option>
-										<option value="">삿포로</option>
-										<option value="">오키나와</option>
-										<option value="">기타</option>
+									<select name="departure" id="departure" class="form-control custom-select">
+									    <option value="東京" ${param.departure == '東京' ? 'selected' : ''}>東京</option>
+									    <option value="大阪" ${param.departure == '大阪' ? 'selected' : ''}>大阪</option>
+									    <option value="福岡" ${param.departure == '福岡' ? 'selected' : ''}>福岡</option>
+									    <option value="名古屋" ${param.departure == '名古屋' ? 'selected' : ''}>名古屋</option>
+									    <option value="札幌" ${param.departure == '札幌' ? 'selected' : ''}>札幌</option>
+									    <option value="沖縄" ${param.departure == '沖縄' ? 'selected' : ''}>沖縄</option>
+									    <option value="その他" ${param.departure == 'その他' ? 'selected' : ''}>その他</option>
 									</select>
 								</div>
 
 								<!-- 날짜 입력 -->
 								<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-6">
-									<input type="text" class="form-control" name="daterange">
+									<input type="text" class="form-control" name="datePicker" id="datePicker">
 								</div>
+								<!-- hidden 필드 추가 -->
+								<input type="hidden" id="startDateHidden" name="startDate">
+								<input type="hidden" id="endDateHidden" name="endDate">
 							</div>
 						</div>
 					</div>
@@ -123,7 +120,7 @@
 	<div class="container">
 		<div class="searchcountform">
 			<p class="searchtotfontsize">
-				검색결과 <span class="searchtotalcolor searchtotfontsize">77</span>
+				검색결과 <span class="searchtotalcolor searchtotfontsize">${searchcnt }</span>
 			</p>
 		</div>
 		<!-- 부트스트랩 container 클래스: 반응형 컨테이너 -->
@@ -397,61 +394,30 @@
 			<div class="col-md-8">
 				<div class="row row-cols-1 row-cols-md-2 g-4">
 					<!-- 여행 패키지 카드 1 -->
-					<div class="col">
-						<div class="card h-100">
-							<img src="/product/img/jeju1.jpg" class="card-img-top"
-								alt="도쿄 패키지 4일">
-							<div class="card-body">
-								<h5 class="card-title">도쿄 패키지 4일</h5>
-								<p class="card-text">도쿄/후지산/하코네/가마쿠라/에노시마/요코하마 포함</p>
-								<p class="card-text">
-									<small class="text-muted">아시아나 항공 | 에어텔</small>
-								</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<span class="fw-bold text-primary">₩799,900 ~</span> <a
-										href="/product/packages.jsp" class="btn btn-outline-primary">상품 상세 보기</a>
+					<c:if test="${empty list}">
+						<p>검색된 결과가 없습니다.</p>
+					</c:if>
+					<c:forEach var="item" items="${list}">
+						<div class="col">
+							<div class="card h-100">
+								<img src="/product/img/jeju1.jpg" class="card-img-top"
+									alt="도쿄 패키지 4일">
+								<div class="card-body">
+									<h5 class="card-title">${item.package_name }</h5>
+									<p class="card-text">${item.package_info}</p>
+									<p class="card-text">
+										<small class="text-muted">아시아나 항공 | 에어텔</small>
+									</p>
+									<div class="d-flex justify-content-between align-items-center">
+										<span class="fw-bold text-primary">₩${item.package_price }
+											~</span> <a href="/product/packages.jsp"
+											class="btn btn-outline-primary">상품 상세 보기</a>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					</c:forEach>
 
-					<!-- 여행 패키지 카드 2 -->
-					<div class="col">
-						<div class="card h-100">
-							<img src="/product/img/jeju1.jpg" class="card-img-top"
-								alt="도쿄 (1일 자유) 패키지 4일">
-							<div class="card-body">
-								<h5 class="card-title">도쿄 (1일 자유) 패키지 4일</h5>
-								<p class="card-text">핵심 관광 + 1일 자유 (선택 옵션 가능)</p>
-								<p class="card-text">
-									<small class="text-muted">아시아나 항공 | 에어프레미아</small>
-								</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<span class="fw-bold text-primary">₩799,900 ~</span> <a
-										href="#" class="btn btn-outline-primary">상품 상세 보기</a>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- 여행 패키지 카드 3 -->
-					<div class="col">
-						<div class="card h-100">
-							<img src="/product/img/jeju1.jpg" class="card-img-top"
-								alt="도쿄 디즈니랜드 패키지 3/4일">
-							<div class="card-body">
-								<h5 class="card-title">도쿄 디즈니랜드 패키지 3/4일</h5>
-								<p class="card-text">도쿄 디즈니랜드 & 관광 포함</p>
-								<p class="card-text">
-									<small class="text-muted">에어부산 | 티웨이 항공</small>
-								</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<span class="fw-bold text-primary">₩799,900 ~</span> <a
-										href="#" class="btn btn-outline-primary">상품 상세 보기</a>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 
