@@ -14,7 +14,7 @@ public class LogoutService implements Command {
 	@Override
 	public void docommand(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession(false);
 		// 기존 세션이 있으면 가져오고(user), 없으면 null 반환

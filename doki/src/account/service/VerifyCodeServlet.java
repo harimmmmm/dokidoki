@@ -14,22 +14,22 @@ public class VerifyCodeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        String sessionCode = (String) session.getAttribute("verificationCode");
-        String inputCode = request.getParameter("code");
+			throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		String sessionCode = (String) session.getAttribute("verificationCode");
+		String inputCode = request.getParameter("code");
 
-        response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
+		response.setContentType("application/json");
+		response.setCharacterEncoding("UTF-8");
 
-        JSONObject jsonResponse = new JSONObject();
+		JSONObject jsonResponse = new JSONObject();
 
-        if (sessionCode != null && sessionCode.equals(inputCode)) {
-            jsonResponse.put("success", true);
-        } else {
-            jsonResponse.put("success", false);
-        }
+		if (sessionCode != null && sessionCode.equals(inputCode)) {
+			jsonResponse.put("success", true);
+		} else {
+			jsonResponse.put("success", false);
+		}
 
-        response.getWriter().write(jsonResponse.toString());
-    }
+		response.getWriter().write(jsonResponse.toString());
+	}
 }

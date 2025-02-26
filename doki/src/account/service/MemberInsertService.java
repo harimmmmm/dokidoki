@@ -11,14 +11,14 @@ import travelService.Command;
 import util.PasswordUtil;
 import vo.AccountVo;
 
-public class MemberInsertService  implements Command{
+public class MemberInsertService implements Command {
 
 	@Override
 	public void docommand(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		request.setCharacterEncoding("utf-8");
-		
+
 		AccountVo vo = new AccountVo();
 		vo.setUser_id(request.getParameter("user_id"));
 		String password = request.getParameter("user_password");
@@ -38,7 +38,7 @@ public class MemberInsertService  implements Command{
 		vo.setSocial_login(request.getParameter("social_login"));
 		vo.setPassport_number(request.getParameter("passport_number"));
 		vo.setPassport_expiry(request.getParameter("passport_expiry"));
-		
+
 		new SignDao().memberInsert(vo);
 	}
 
