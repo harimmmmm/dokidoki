@@ -20,9 +20,9 @@
 
 				<!-- 탭 버튼 -->
 				<div class="tab-container">
-					<a href="/login/idfind.do" class="tab-btn">아이디 찾기</a> <a
-						href="/login/pwfind.do" class="tab-btn"
-						style="background: #9dd1ca; margin-left: 10px; color: white;">비밀번호
+					<a href="/member/idfind.do" class="tab-btn">아이디 찾기</a> <a
+						href="/member/pwfind.do" class="tab-btn"
+						style="background: #486988; margin-left: 10px; color: white;">비밀번호
 						찾기</a>
 				</div>
 
