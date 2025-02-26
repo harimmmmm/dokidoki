@@ -20,7 +20,7 @@ public class DBManager {
 
 		String driver = "oracle.jdbc.driver.OracleDriver";
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String id = "harim";
+		String id = "doki";
 		String pw = "1234";
 
 		try {

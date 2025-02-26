@@ -63,7 +63,7 @@ public class MemberController extends HttpServlet {
 			break;
 		case "/idfindpro.do":	// 아이디 찾기
 			new IdResultService().docommand(request, response);
-			page = "/account/idfind2.jsp";
+			page = "/account/idfindResult.jsp";
 			break;
 		case "/pwfind.do":	// 비번 찾기
 			page = "/account/pwfind.jsp";

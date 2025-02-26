@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import mypages.serivce.AccountListService;
+import mypages.serivce.AccountUpdateService;
+
 @WebServlet("/mypage/*")
 public class MypageController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -27,8 +30,18 @@ public class MypageController extends HttpServlet {
 			page = "/mypagee/home.jsp";
 			break;
 		case "/editform.do":	// 개인정보수정
+			new AccountListService().docommand(request, response);
+			page = "/mypagee/editFormReadonly.jsp";
+			break;
+		case "/editformUpdate.do":	// 개인정보수정
+			new AccountListService().docommand(request, response);
 			page = "/mypagee/editForm.jsp";
 			break;
+		case "/editformUpdatepro.do":	// 개인정보수정
+			new AccountUpdateService().docommand(request, response);
+			response.sendRedirect("/mypage/editform.do");
+			page = "/mypagee/editForm.jsp";
+			return;
 		case "/upcoming.do":	// 예정된여행
 			page = "/mypagee/upcoming.jsp";
 			break;
