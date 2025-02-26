@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
+<%@ include file="../fragments/header.jsp"%>
 <meta charset="UTF-8">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/managerpage/css/managerstyle.css">
@@ -10,9 +9,20 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="/js/jquery-3.4.1.min.js"></script>
 <title>Notice_List</title>
-</head>
-<body>
-	<%@ include file="../fragments/header.jsp"%>
+
+<style>
+.vertical-menu a {color: black; display: block; padding: 12px; text-decoration: none;}
+
+.center {width: 100%; table-layout: auto; border-collapse: collapse;}
+.center th {background-color: #eeeeee;}
+.center th, td {padding: 10px;	text-align: center;	border: 1px solid #ccc;	vertical-align: middle;}
+.center td {padding:0; border:none;}
+/* 첫 번째 열(left)에만 테두리를 없애기 */
+.center tr>*:first-child {border-left: none;}
+/* 마지막 열(right)에만 테두리를 없애기 */
+.center tr>*:last-child {border-right: none;}
+</style>
+
 	<!-- 본문 콘텐츠 -->
 	<div class="container">
 		<div class="row" style="margin-top: 100px;">
@@ -37,8 +47,8 @@
 						<td>대충 개정 내용</td>
 						<td>공지</td>
 						<td>
-							<button class="updateBtn" data-mno="${item.mno }">수정</button>
-							<button class="deleteBtn" data-mno="${item.mno }">삭제</button>
+							<button class="updateBtn" data-nno="${item.nno }">수정</button>
+							<button class="deleteBtn" data-nno="${item.nno }">삭제</button>
 						</td>
 					</tr>
 					<tr>
@@ -47,15 +57,14 @@
 						<td>대충 고객 문의 내용</td>
 						<td>문의</td>
 						<td>
-							<button class="updateBtn" data-mno="${item.mno }">수정</button>
-							<button class="deleteBtn" data-mno="${item.mno }">삭제</button>
+							<button class="updateBtn" data-nno="${item.nno }">수정</button>
+							<button class="deleteBtn" data-nno="${item.nno }">삭제</button>
 						</td>
 					</tr>
 				</table>
 			</div>
 		</div>
 	</div>
-</body>
 
 <script>
 	$(function() {
@@ -80,5 +89,4 @@
 		})
 	})
 </script>
-</html>
 <%@ include file="../fragments/footer.jsp"%>

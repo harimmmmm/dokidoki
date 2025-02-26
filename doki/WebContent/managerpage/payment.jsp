@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
+<%@ include file="../fragments/header.jsp"%>
 <meta charset="UTF-8">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/managerpage/css/managerstyle.css">
@@ -10,9 +9,20 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="/js/jquery-3.4.1.min.js"></script>
 <title>Payment</title>
-</head>
-<body>
-	<%@ include file="../fragments/header.jsp"%>
+
+<style>
+.vertical-menu a {color: black; display: block; padding: 12px; text-decoration: none;}
+
+.center {width: 100%; table-layout: auto; border-collapse: collapse;}
+.center th {background-color: #eeeeee;}
+.center th, td {padding: 10px;	text-align: center;	border: 1px solid #ccc;	vertical-align: middle;}
+.center td {padding:0; border:none;}
+/* 첫 번째 열(left)에만 테두리를 없애기 */
+.center tr>*:first-child {border-left: none;}
+/* 마지막 열(right)에만 테두리를 없애기 */
+.center tr>*:last-child {border-right: none;}
+</style>
+
 	<!-- 본문 콘텐츠 -->
 	<div class="container">
 		<div class="row" style="margin-top: 100px;">
@@ -41,7 +51,7 @@
 						<td>山田</td>
 						<td>신용카드</td>
 						<td>
-							<button class="deleteBtn" data-mno="${item.mno }">환불</button>  
+							<button class="deleteBtn" data-pno="${item.pno }">환불</button>  
 						</td>
 					</tr>
 					<tr>
@@ -52,26 +62,25 @@
 						<td>イ</td>
 						<td>카카오페이</td>
 						<td>
-							<button class="deleteBtn" data-mno="${item.mno }">환불</button>
+							<button class="deleteBtn" data-pno="${item.pno }">환불</button>
 						</td>
 					</tr>
 				</table>
 			</div>
 		</div>
 	</div>
-</body>
 
 <script>
 	$(function() {
 		$(".deleteBtn").click(function() {
-			var mno = $(this).data("mno");
+			var pno = $(this).data("pno");
 			var $this = $(this);
 
 			$.ajax({
 				url : "",
 				type : "post",
 				data : {
-					mno : mno
+					pno : pno
 				},
 				success : function(response) {
 					if (response.trim() === "success") {
@@ -84,5 +93,4 @@
 		})
 	})
 </script>
-</html>
 <%@ include file="../fragments/footer.jsp"%>

@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
+<%@ include file="../fragments/header.jsp"%>
 <meta charset="UTF-8">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/managerpage/css/managerstyle.css">
@@ -10,9 +9,25 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="/js/jquery-3.4.1.min.js"></script>
 <title>Product_Add</title>
-</head>
-<body>
-	<%@ include file="../fragments/header.jsp"%>
+
+<style>
+th, td {border:none;}
+
+.vertical-menu a {color: black; display: block; padding: 12px; text-decoration: none;}
+
+.product-addlist {flex: 2; padding-right: 10px; border-right: 1px solid #ccc;}
+
+.product-addbox {display: flex; gap: 20px;}
+.product-addbox .context {line-height: 220%; padding-bottom: 40px;}
+.product-addbox .btn-group .btnbutton {border: 1px solid #ccc; padding: 8px 12px;}
+
+.product-addtable {width: 200%;}
+.product-addtable th, .product-addtable td {padding: 8px; border-bottom: 1px solid #ccc;}
+.product-addtable input[type="text"] {border: 1px solid #ccc; padding: 6px; width: 100%; margin: 1px 0;}
+.product-addtable textarea {width: 100%; height: 190px; padding: 10px;	border: 1px solid #ccc;	padding: 10px;}
+.product-addtable input[type="submit"], .product-addtable input[type="reset"], .product-addtable input[type="button"]{border: 1px solid #aaa; padding: 8px 16px; background-color:#fff;}
+.product-addtable {text-align: center;}
+</style>
 	<div class="container">
 		<div class="row" style="margin-top: 100px;">
 			<!-- 사이드바 영역 -->
@@ -43,12 +58,12 @@
 								<td><input type="text" name="company"></td>
 							</tr>
 							<tr>
-								<th>여행 시작일</th>
-								<td><input type="text" name="title"></td>
+								<th>여행 시작일 (ex. 250401)</th>
+								<td><input type="text" name="departure"></td>
 							</tr>
 							<tr>
-								<th>여행 종료일</th>
-								<td><input type="text" name="title"></td>
+								<th>여행 종료일 (ex. 250404)</th>
+								<td><input type="text" name="arrival"></td>
 							</tr>
 							<tr>
 								<th>상세내용</th>
@@ -209,5 +224,4 @@
 		});
 
 	</script>
-</html>
 <%@ include file="../fragments/footer.jsp"%>

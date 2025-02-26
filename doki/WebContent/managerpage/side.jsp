@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 
 <b>관리자페이지</b>
-<div class="vertical-menu">
+<div class="vertical-menu" style="height: 500px;">
 
   <!-- Product -->
   <div class="has-submenu">
