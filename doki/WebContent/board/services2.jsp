@@ -7,19 +7,7 @@
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-	<!-- Navbar (sit on top) -->
-	<div class="w3-top">
-		<div class="w3-bar w3-white w3-padding w3-card"
-			style="letter-spacing: 4px;">
-			<a href="#home" class="w3-bar-item w3-button">Gourmet au Catering</a>
-			<!-- Right-sided navbar links. Hide them on small screens -->
-			<div class="w3-right w3-hide-small">
-				<a href="#about" class="w3-bar-item w3-button">About</a> <a
-					href="#menu" class="w3-bar-item w3-button">Menu</a> <a
-					href="#contact" class="w3-bar-item w3-button">Contact</a>
-			</div>
-		</div>
-	</div>
+
 
 	<!-- Header -->
 	<header class="w3-display-container w3-content w3-wide"
@@ -44,16 +32,14 @@
 
 
 
-<div class="w3-col m6 w3-padding-large">
-    <h1 style="text-align: center; margin-top: 50px; font-size: 36px; font-weight: bold;">서울</h1>
+<div class="w3-col m6 w3-padding-large" style="margin-bottom: 200px;">
+    <h1 style="text-align: center; margin-top: 70px; font-size: 36px; font-weight: bold; margin-bottom: 5px;">서울</h1>
     <br>
-    <h5 class="w3-center">Tradition since 1889</h5>
+    <h5 class="w3-center" style="margin-bottom: 40px;">Tradition since 1889</h5>
     <p class="w3-large">
         The Catering was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute iruredolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. We only use <span class="w3-tag w3-light-grey">seasonal</span> ingredients.
     </p>
-    <p class="w3-large w3-text-grey w3-hide-medium" style="margin-bottom: 110px;"> <!-- margin-bottom 추가 -->
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
+    
 </div>
 
 <div style="text-align: center; margin-top: 100px;">

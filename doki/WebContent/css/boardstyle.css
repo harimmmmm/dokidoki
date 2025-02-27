@@ -81,15 +81,7 @@ body {
 	z-index: 10; /* 다른 요소 위에 표시되도록 설정 */
 }
 
-/* Pagination styles */
-.swiper-pagination {
-	bottom: 10px; /* 페이지네이션 위치 조정 */
-}
 
-.swiper-pagination-bullet {
-	background: white; /* 흰색으로 변경 */
-}
 
-.swiper-pagination-bullet-active {
-	opacity: 1; /* 활성화된 페이지네이션의 투명도를 1로 설정 */
-}
+
+

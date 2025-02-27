@@ -9,6 +9,7 @@ public class BoardVo {
 	 private String category;       // 게시판카테고리
 	 private String created_date;   // 작성날짜
 	 private String board_img;		// 이미지
+	 
 	public int getBno() {
 		return bno;
 	}
