@@ -53,7 +53,7 @@ body {
 
 .input-group button {
 	padding: 10px;
-	background: #9dd1ca;
+	background: #486988;
 	color: white;
 	border: none;
 	border-radius: 5px;
@@ -62,7 +62,7 @@ body {
 }
 
 .input-group button:hover {
-	background: #218838;
+	background: #374d61;
 }
 
 /* 우편번호 입력 필드와 버튼 정렬 */
@@ -144,9 +144,9 @@ body {
 	width: 93px;
 	/* padding: 5px 20px; */
 	white-space: nowrap;
-	background-color: #ccc;
+	/* background-color: #ccc */;
 	border: none;
-	cursor: not-allowed; /* 비활성화 상태일 때 커서 변경 */
+	
 }
 
 /* 구분선 */
@@ -184,10 +184,14 @@ body {
 .signupsubmitBtn{
 	width: 642px;
 	height: 45px;
-	background: #9dd1ca;
+	background: #486988;
 	color: white;
 	border: none;
 	border-radius: 5px;
 	font-size: 18px;
 	margin-top: 20px;
+}
+
+.signupsubmitBtn:hover {
+	background: #374d61;
 }
