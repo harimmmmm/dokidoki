@@ -200,7 +200,7 @@ th, td {border:none;}
 								</td>
 							</tr>
 							<tr>
-								<td colspan="2" class="txtcenter">
+								<td colspan="2" class="txtcenter" style="padding-bottom:120px;">
 									<input type="submit" value="저장"> 
 									<input type="reset" value="다시쓰기"> 
 									<input type="button" value="목록" onclick="">
