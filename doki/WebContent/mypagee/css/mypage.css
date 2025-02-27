@@ -1,408 +1,401 @@
 /* 기본 스타일 */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f9;
-/*     display: flex;*/    
+	font-family: Arial, sans-serif;
+	background-color: #f4f6f9;
+	/*     display: flex;*/
 	height: 100vh;
 }
 
 /* 마이페이지 전체 컨테이너 */
 .mypage-container {
-    display: flex;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    flex: 1;
+	display: flex;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+	flex: 1;
 }
 
 /* 마이페이지 메인 콘텐츠 */
 .main-content {
-    flex: 1;
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    /* margin: 70px auto; */
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 필요? */
+	flex: 1;
+	background-color: white;
+	padding: 30px;
+	border-radius: 10px;
+	/* margin: 70px auto; */
+	/* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 필요? */
 }
 
 /* 각 섹션 */
 main header {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 main header h1 {
-    font-size: 32px;
-    color: #333;
+	font-size: 32px;
+	color: #333;
 }
 
 /* 홈 섹션 스타일 (배경 색 추가) */
 section#home {
-    background-color: #f7f7f7;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
+	background-color: #f7f7f7;
+	padding: 20px;
+	border-radius: 8px;
+	border: 1px solid #ddd;
 }
 
 section#home h2 {
-    font-size: 24px;
-    color: #333;
+	font-size: 24px;
+	color: #333;
 }
 
 section#home p {
-    font-size: 16px;
-    color: #666;
+	font-size: 16px;
+	color: #666;
 }
 
 /* 각 섹션 */
 section {
-    margin-bottom: 40px;
+	margin-bottom: 40px;
 }
 
 section h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #333;
+	font-size: 24px;
+	margin-bottom: 10px;
+	color: #333;
 }
 
 section p {
-    font-size: 16px;
-    color: #666;
+	font-size: 16px;
+	color: #666;
 }
-
+/* 
 form {
     display: flex;
-    flex-direction: column;
-    /* gap: 15px; */
-}
-
-form input,
-form textarea {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
+     flex-direction: column;
+    gap: 15px;
+}  */
+form input, form textarea {
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	font-size: 16px;
 }
 
 form button {
-    background-color: #6ab2a9;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+	background-color: #486988;
+	color: white;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
 }
 
 form button:hover {
-    background-color: #d45d50;
+	background-color: #374d61;
 }
 
 /* 구매 목록 테이블 */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
 }
 
 table th, table td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+	padding: 12px;
+	text-align: left;
+	/* border-bottom: 1px solid #ddd; */
 }
 
 table th {
-    background-color: #f5f5f5;
+	background-color: #f5f5f5;
 }
 
-button {
-    background-color: #6ab2a9;
-    color: white;
-    padding: 6px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+/* button {
+	background-color: #486988;
+	color: white;
+	padding: 6px 12px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+} */
 
 button:hover {
-    background-color: #45a049;
+	background-color: #374d61;
 }
-
 
 /* 개인정보 수정 스타일 */
 section#edit {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 section#edit h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: #333;
 }
 
 section#edit label {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 5px;
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 5px;
 }
 
 section#edit input {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-bottom: 15px;
-    width: 100%;
+	padding: 12px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	font-size: 16px;
+	margin-bottom: 15px;
+	width: 100%;
 }
 
 section#edit input[type="password"] {
-    font-family: Arial, sans-serif;
+	font-family: Arial, sans-serif;
 }
 
-section#edit button {
-    background-color: #6ab2a9;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%;
-}
+/* section#edit button {
+	background-color: #486988;
+	color: white;
+	padding: 12px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	width: 100%;
+} */
 
 section#edit button:hover {
-    background-color: #d45d50;
+	background-color: #374d61;
 }
-
-
 
 /* 문의 내역 리스트 */
 section#inquiries {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 section#inquiries h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: #333;
 }
 
 .inquire-btn {
-    background-color: #ED7464;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    float: right;
+	background-color: #ED7464;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	margin-bottom: 20px;
+	float: right;
 }
 
 .inquire-btn:hover {
-    background-color: #d45d50;
+	background-color: #d45d50;
 }
 
 /* 문의 내역 테이블 */
 .inquiries-list table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
 }
 
-.inquiries-list th,
-.inquiries-list td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+.inquiries-list th, .inquiries-list td {
+	padding: 12px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
 }
 
 .inquiries-list th {
-    background-color: #f5f5f5;
+	background-color: #f5f5f5;
 }
 
 /* 모달 스타일 */
 .rModal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
 .rmodal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 10px;
+	width: 50%;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .rmodal-content h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: #333;
 }
 
 .rmodal-content label {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 5px;
-    display: block;
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 5px;
+	display: block;
 }
 
-.rmodal-content input,
-.rmodal-content textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-    /* margin-bottom: 15px; */
+.rmodal-content input, .rmodal-content textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	font-size: 16px;
+	/* margin-bottom: 15px; */
 }
 
 .rmodal-content textarea {
-    height: 150px;
+	height: 150px;
 }
 
 .rmodal-content button {
-    background-color: #9dd1ca;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%;
+	background-color: #9dd1ca;
+	color: white;
+	padding: 12px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	width: 100%;
 }
 
 .rmodal-content button:hover {
-    background-color: #d45d50;
+	background-color: #d45d50;
 }
 
 /* 모달 닫기 버튼 */
 .rclose-btn {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    cursor: pointer;
-    z-index: 10; /* z-index 추가 */
+	color: #aaa;
+	font-size: 28px;
+	font-weight: bold;
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	cursor: pointer;
+	z-index: 10; /* z-index 추가 */
 }
 
 /* 호버 시 색상 변경 */
-.rclose-btn:hover,
-.rclose-btn:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+.rclose-btn:hover, .rclose-btn:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
 }
 
 /* 모달 콘텐츠 */
 .rmodal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative; /* position: relative 추가 */
+	background-color: #fff;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 10px;
+	width: 50%;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	position: relative; /* position: relative 추가 */
 }
 
 /* 카드 스타일 */
 .travel-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 50px;
-    border-left: 5px solid #6ab2a9;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	margin-bottom: 50px;
+	border-left: 5px solid #6ab2a9;
 }
 
 .travel-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 15px;
 }
 
 .travel-date {
-    font-size: 18px;
-    color: #333;
-    font-weight: bold;
+	font-size: 18px;
+	color: #333;
+	font-weight: bold;
 }
 
 .travel-status {
-    font-size: 16px;
-    color: #388e3c;
-    background-color: #e8f5e9;
-    padding: 5px 10px;
-    border-radius: 4px;
+	font-size: 16px;
+	color: #388e3c;
+	background-color: #e8f5e9;
+	padding: 5px 10px;
+	border-radius: 4px;
 }
 
 .travel-details h3 {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 10px;
+	font-size: 20px;
+	color: #333;
+	margin-bottom: 10px;
 }
 
 .flight-info {
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid #ddd;
-    padding-top: 15px;
+	display: flex;
+	justify-content: space-between;
+	border-top: 1px solid #ddd;
+	padding-top: 15px;
 }
 
 .flight-info-left {
-   
+	
 }
 
-..flight-info-right{
-
+.
+.flight-info-right {
+	
 }
 
 .flight-info-left p, .flight-info-right p {
-    font-size: 14px;
-    color: #555;
+	font-size: 14px;
+	color: #555;
 }
 
 .flight-info-left p strong {
-    font-size: 16px;
-    color: #333;
+	font-size: 16px;
+	color: #333;
 }
 
 .flight-info-right p {
-    text-align: right;
-    color: #333;
+	text-align: right;
+	color: #333;
 }
 
 .flight-info-right p strong {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .flight-info-right p span {
-    display: block;
-    margin-top: 5px;
+	display: block;
+	margin-top: 5px;
 }
 
 .flight-info-right p span i {
-    color: #5c6bc0;
+	color: #5c6bc0;
 }

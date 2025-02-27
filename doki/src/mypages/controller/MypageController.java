@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import mypages.serivce.AccountListService;
+import mypages.serivce.AccountUpdateService;
+
 @WebServlet("/mypage/*")
 public class MypageController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -23,25 +26,35 @@ public class MypageController extends HttpServlet {
 		String page = null;
 
 		switch (action) {
-		case "/home.do":	// 마이페이지 홈
+		case "/home.do": // 마이페이지 홈
 			page = "/mypagee/home.jsp";
 			break;
-		case "/editform.do":	// 개인정보수정
+		case "/editform.do": // 개인정보수정
+			new AccountListService().docommand(request, response);
+			page = "/mypagee/editFormReadonly.jsp";
+			break;
+		case "/editformUpdate.do": // 개인정보수정
+			new AccountListService().docommand(request, response);
 			page = "/mypagee/editForm.jsp";
 			break;
-		case "/upcoming.do":	// 예정된여행
+		case "/editformUpdatepro.do": // 개인정보수정
+			new AccountUpdateService().docommand(request, response);
+			response.sendRedirect("/mypage/editform.do");
+			page = "/mypagee/editForm.jsp";
+			return;
+		case "/upcoming.do": // 예정된여행
 			page = "/mypagee/upcoming.jsp";
 			break;
-		case "/past.do":	// 지난여행
+		case "/past.do": // 지난여행
 			page = "/mypagee/past.jsp";
 			break;
-		case "/canceled.do":	// 취소여행
+		case "/canceled.do": // 취소여행
 			page = "/mypagee/canceled.jsp";
 			break;
-		case "/interest.do":	// 관심
+		case "/interest.do": // 관심
 			page = "/mypagee/interest.jsp";
 			break;
-		case "/inquiries.do":	// 문의
+		case "/inquiries.do": // 문의
 			page = "/mypagee/inquiries.jsp";
 			break;
 		}
@@ -49,7 +62,7 @@ public class MypageController extends HttpServlet {
 		if (page != null)
 			request.getRequestDispatcher(page).forward(request, response);
 	}
-	
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doAction(request, response);
