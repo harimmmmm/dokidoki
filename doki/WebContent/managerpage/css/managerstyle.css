@@ -98,9 +98,44 @@ b {
 .product-addtable th, .product-addtable td {padding: 8px;	border-bottom: 1px solid #ccc;}
 .product-addtable input[type="text"] {border: 1px solid #ccc; padding: 6px; width: 100%; margin: 1px 0;}
 .product-addtable textarea {width: 100%; height: 190px; padding: 10px;	border: 1px solid #ccc;	padding: 10px;}
-.product-addtable input[type="submit"], .product-addtable input[type="reset"], .product-addtable input[type="button"]{border: 1px solid #ccc; padding: 4px 10px;}
-.product-addtable input[type="file"] 
+.product-addtable input[type="submit"], .product-addtable input[type="reset"], .product-addtable input[type="button"]{border: 1px solid #aaa; padding: 8px 16px; background-color:#fff;}
+.product-addtable input[type="file"]
 .product-addtable {text-align: center;}
+
+/* td나 래퍼 요소에 flexbox 적용 */
+.checkbox-group {
+  display: flex;
+  gap: 10px; /* 요소 사이 간격 조정 (옵션) */
+  align-items: center; /* 수직 중앙 정렬 */
+}
+
+.toggle-btn {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+  margin-right: 10px;
+  font-size:12px;
+}
+
+/* 마우스 오버 시 스타일 */
+.toggle-btn:hover {
+  background-color: #fff;
+  border-color: #718aa2;
+  color: #718aa2;
+}
+
+
+/* data-checked가 true일 때 스타일 */
+.toggle-btn[data-checked="true"] {
+  background-color: #fff;
+  color: #486988;
+  border: 1px solid #486988;
+}
+
+
 
 /* ------------------------------ product end ------------------------------ */
 
