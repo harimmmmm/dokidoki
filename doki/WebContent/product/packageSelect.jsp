@@ -154,21 +154,21 @@
 
 							<!-- 쇼핑 필터 -->
 							<div class="mb-2">
-								<label class="fw-bold">쇼핑</label>
+								<label class="fw-bold">ショッピング</label>
 								<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 									<li><button class="filter-btn shopping-btn"
-											data-value="없음">없음</button></li>
+											data-value="なし">なし</button></li>
 									<li><button class="filter-btn shopping-btn"
-											data-value="1회">1회</button></li>
+											data-value="1回">1回</button></li>
 								</ul>
 							</div>
 
 							<!-- 선택관광 필터 -->
 							<div class="mb-2">
-								<label class="fw-bold">선택관광</label>
+								<label class="fw-bold">オプショナルツアー</label>
 								<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 									<li><button class="filter-btn optional-tour-btn"
-											data-value="없음(노옵션)">없음(노옵션)</button></li>
+											data-value="なし（ノーオプション）">なし（ノーオプション）</button></li>
 								</ul>
 							</div>
 

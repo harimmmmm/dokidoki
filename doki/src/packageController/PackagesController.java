@@ -39,11 +39,11 @@ public class PackagesController extends HttpServlet {
 		
 		
 		switch (action) {
-		case "/packagesList.do":
+		case "/packagesList.do": // 전체리스트
 			new PackagesList().docommand(request, response);
 			page ="/product/packagesList.jsp";
 			break;
-		case "/packageSelect.do":
+		case "/packageSelect.do": // 검색결과
 			new PackageSearchAll().docommand(request, response);
 			page ="/product/packageSelect.jsp";
 			break;

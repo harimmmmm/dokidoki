@@ -118,6 +118,7 @@
 							<!-- 출발지 선택 -->
 							<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-2">
 								<select name="departure" id="departure" class="form-control custom-select">
+									<option value="#">목적지</option>
 									<option value="東京">東京</option>
 									<option value="大阪">大阪</option>
 									<option value="福岡">福岡</option>
@@ -131,9 +132,11 @@
 
 							<!-- 날짜 입력 -->
 							<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-								<input type="text" class="form-control" name="daterange">
+								<input type="text" class="form-control" name="datePicker" id="datePicker">
 							</div>
-
+								<!-- hidden 필드 추가 -->
+								<input type="hidden" id="startDateHidden" name="startDate">
+								<input type="hidden" id="endDateHidden" name="endDate">
 							<!-- 검색 버튼 -->
 							<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
 								<input type="submit" class="btn btn-primary btn-block"
