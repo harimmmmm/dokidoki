@@ -27,10 +27,10 @@ public class ManagerController extends HttpServlet {
 			page = "/managerpage/user.jsp";
 			break;
 		case "/product_list.do":
-			page = "/managerpage/product_list.jsp";
+			page = "/managerpage/product-list.jsp";
 			break;
 		case "/product_add.do":
-			page = "/managerpage/product_add.jsp";
+			page = "/managerpage/product-add.jsp";
 			break;
 		case "/reservation.do":
 			page = "/managerpage/reservation.jsp";
@@ -39,10 +39,10 @@ public class ManagerController extends HttpServlet {
 			page = "/managerpage/payment.jsp";
 			break;
 		case "/notice_list.do":
-			page = "/managerpage/notice_list.jsp";
+			page = "/managerpage/notice-list.jsp";
 			break;
 		case "/notice_add.do":
-			page = "/managerpage/notice_add.jsp";
+			page = "/managerpage/notice-add.jsp";
 			break;
 		}
 		
