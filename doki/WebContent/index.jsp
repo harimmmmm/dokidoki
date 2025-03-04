@@ -2,7 +2,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:set var="typedJs" value="true" />
-<%@ include file="./fragments/header.jsp"%>
+<%@ include file="fragments/header.jsp"%>
+<link href="<%=request.getContextPath()%>/product/css/dropdownstyle.css"
+	rel="stylesheet">
 
 <!-- index css -->
 <link rel="stylesheet" href="<%= request.getContextPath() %>/css/indexstyle.css">

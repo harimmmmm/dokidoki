@@ -25,16 +25,16 @@ public class MemberLoginSerivce implements Command {
 
 		AccountVo vo = new LoginDao().searchIdPw(userid);
 		
-		System.out.println("아이디 ->>" + userid);
-		System.out.println("비밀번호 ->>" + password);
+//		System.out.println("아이디 ->>" + userid);
+//		System.out.println("비밀번호 ->>" + password);
 
 		if (vo != null && PasswordUtil.checkPassword(password, vo.getUser_password())) {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", vo);
 
-			System.out.println("로그인 성공 - 세션에 저장됨: " + vo.getUser_id());
-			System.out.println("세션에 user 저장됨: " + vo.getName());
-			System.out.println("세션 ID: " + session.getId());
+//			System.out.println("로그인 성공 - 세션에 저장됨: " + vo.getUser_id());
+//			System.out.println("세션에 user 저장됨: " + vo.getName());
+//			System.out.println("세션 ID: " + session.getId());
 
 			response.sendRedirect("/doki");
 		} else {

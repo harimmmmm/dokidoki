@@ -21,6 +21,7 @@ public class PackagesController extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 
+		System.out.println("&&&");
 		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 		rd.forward(request, response);
 	}
@@ -31,5 +32,3 @@ public class PackagesController extends HttpServlet {
 	}
 
 }
-
-// 개정 수정 여권번호

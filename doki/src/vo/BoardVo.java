@@ -1,5 +1,7 @@
 package vo;
 
+import java.util.List;
+
 public class BoardVo {
 	
 	 private int bno;               // 게시글번호
@@ -9,6 +11,9 @@ public class BoardVo {
 	 private String category;       // 게시판카테고리
 	 private String created_date;   // 작성날짜
 	 private String board_img;		// 이미지
+	 
+	 private List<BoardCommentsVo> comments;	// 댓글... 문의 답변
+	 
 	public int getBno() {
 		return bno;
 	}
@@ -51,4 +56,11 @@ public class BoardVo {
 	public void setBoard_img(String board_img) {
 		this.board_img = board_img;
 	}
+	public List<BoardCommentsVo> getComments() {
+		return comments;
+	}
+	public void setComments(List<BoardCommentsVo> comments) {
+		this.comments = comments;
+	}
+	
 }

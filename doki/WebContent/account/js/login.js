@@ -28,8 +28,8 @@ document.getElementById("google-login-btn").addEventListener("click", function()
                 const code = urlParams.get('code');
 
                 if (code) {
-                    alert("Extracted code: " + code);  // code 값을 알림으로 표시
-                    clearInterval(interval);  // 코드 추출 후 인터벌 종료
+                    console.log("Extracted code: " + code);	// code 값을 알림으로 표시
+					clearInterval(interval);  // 코드 추출 후 인터벌 종료
                     popup.close();  // 팝업을 닫음
 
                     // 부모 창으로 메시지 전송
@@ -39,7 +39,9 @@ document.getElementById("google-login-btn").addEventListener("click", function()
                         // 부모 창이 없으면 팝업 창에서 직접 부모 창 리디렉션
                         parent.location.href = "/doki"; // 부모 창으로 리디렉션
                     }
-                }
+                }else{
+		           alert("로그인에 실패했습니다. 다시 시도해주세요.");  // code 값을 알림으로 표시
+				}
             }
         } catch (e) {
             // 팝업이 다른 도메인에 있을 때 발생하는 에러를 무시
