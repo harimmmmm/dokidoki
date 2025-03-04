@@ -38,7 +38,7 @@ th, td {border:none;}
 			<div class="col-md-9">
 				<b>상품 등록</b>
 				<div class="product-addbox">
-					<form name="my" method="post" enctype="" action=""
+					<form name="my" method="post" enctype="multipart/form-data" action="/manager/product_addpro.do"
 						onsubmit="return check();">
 						<table class="product-addtable" style="width:100%;">
 							<tr>
@@ -50,28 +50,71 @@ th, td {border:none;}
 								<td><input type="text" name="name"></td>
 							</tr>
 							<tr>
-								<th>가격</th>
-								<td><input type="text" name="price"></td>
+								<th>목적지</th>
+								<td>
+									<select name="destination" id="destination" class="form-control custom-select">
+										<option value="목적지 선택" selected disabled hidden>목적지 선택</option>
+										<option value="1">ジェジュ島</option>
+										<option value="2">ウルルン島</option>
+										<option value="3">カンウォン</option>
+										<option value="4">キョンサンプク道</option>
+										<option value="5">キョンサンナム道</option>
+										<option value="6">プサン</option>
+										<option value="7">チョルラプク道</option>
+										<option value="8">チョルラナム道</option>
+										<option value="9">チュンチョンプク道</option>
+										<option value="10">チュンチョンナム道</option>
+										<option value="11">ソウル</option>
+										<option value="12">インチョン</option>
+									</select>
+								</td>
 							</tr>
 							<tr>
-								<th>여행사</th>
-								<td><input type="text" name="company"></td>
+								<th>출발지</th>
+							<td>
+								<select name="departure" id="departure" class="form-control custom-select">
+									<option value="출발지 선택" selected disabled hidden>출발지 선택</option>
+									<option value="13">東京</option>
+									<option value="14">大阪</option>
+									<option value="15">福岡</option>
+									<option value="16">名古屋</option>
+									<option value="17">札幌</option>
+									<option value="18">沖縄</option>
+									<option value="19">その他</option>
+								</select>
+							</td>
+						</tr>														
+							<tr>
+								<th>성인 가격</th>
+								<td><input type="text" name="package_price" required></td>
 							</tr>
 							<tr>
-								<th>여행 시작일 (ex. 250401)</th>
-								<td><input type="text" name="departure"></td>
+								<th>아동 가격</th>
+								<td><input type="text" name="child_price" required></td>
 							</tr>
 							<tr>
-								<th>여행 종료일 (ex. 250404)</th>
-								<td><input type="text" name="arrival"></td>
+								<th>유아 가격</th>
+								<td><input type="text" name="baby_price" required></td>
+							</tr>
+							<tr>
+								<th>여행 태그</th>
+								<td><input type="text" name="included_services"></td>
+							</tr>
+							<tr>
+								<th>여행 시작일</th>
+								<td><input type="date" name="start_date"></td>
+							</tr>
+							<tr>
+								<th>여행 종료일</th>
+								<td><input type="date" name="end_date"></td>
 							</tr>
 							<tr>
 								<th>상세내용</th>
-								<td><textarea class="form-control" rows="3"></textarea></td>
+								<td><textarea class="form-control" rows="3" name="content"></textarea></td>
 							</tr>
 							<tr>
 								<th>첨부파일</th>
-								<td><input type="file" name="imgfile"></td>
+								<td><input type="file" name="imgfile" multiple></td>
 							</tr>
 							<tr>
 								<th style="padding-top: 50px; font-size: 20px;">선택사항</th>

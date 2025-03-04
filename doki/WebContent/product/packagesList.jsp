@@ -9,6 +9,9 @@
 	rel="stylesheet">
 <link href="<%=request.getContextPath()%>/product/css/dropdownstyle.css"
 	rel="stylesheet">
+<script>
+  window.autoSubmit = false;
+</script>
 <div class="hero">
 	<!-- 히어로 섹션: 메인 배경 영역 -->
 	<div class="container">
@@ -117,8 +120,8 @@
 
 							<!-- 출발지 선택 -->
 							<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-2">
-								<select name="departure" id="departure" class="form-control custom-select">
-									<option value="#">목적지</option>
+								<select name="departure" id="departure" class="form-control custom-select" >
+									<option value="출발지 선택" selected disabled hidden >출발지 선택</option>
 									<option value="東京">東京</option>
 									<option value="大阪">大阪</option>
 									<option value="福岡">福岡</option>
@@ -137,6 +140,8 @@
 								<!-- hidden 필드 추가 -->
 								<input type="hidden" id="startDateHidden" name="startDate">
 								<input type="hidden" id="endDateHidden" name="endDate">
+							
+							
 							<!-- 검색 버튼 -->
 							<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
 								<input type="submit" class="btn btn-primary btn-block"
@@ -185,9 +190,12 @@
 									<small class="text-muted">여행 패키지</small>
 								</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<span class="fw-bold text-primary">₩${bestitem.package_price}
-										~</span> <a href="/product/packages.jsp"
-										class="btn btn-outline-primary">상품 상세 보기</a>
+									<span class="fw-bold text-primary">₩${bestitem.package_price} ~</span> 
+									<a href="/pakage/packages.do?package_id=${bestitem.package_id}" class="btn btn-outline-primary">상품 상세 보기</a>
+									<!-- 각 상품의 관심버튼 예시 -->
+									<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${bestitem.package_id}">
+									    <img class="wishlist-icon" style=" width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">
+									</button>
 								</div>
 							</div>
 						</div>
@@ -232,6 +240,9 @@
 									<span class="fw-bold text-primary">₩${newitem.package_price}
 										~</span> <a href="/product/packages.jsp"
 										class="btn btn-outline-primary">상품 상세 보기</a>
+									<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${newitem.package_id}">
+									    <img class="wishlist-icon" style=" width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">
+									</button>
 								</div>
 							</div>
 						</div>
@@ -277,6 +288,9 @@
 									<span class="fw-bold text-primary">₩${allitem.package_price}
 										~</span> <a href="/product/packages.jsp"
 										class="btn btn-outline-primary">상품 상세 보기</a>
+									<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${allitem.package_id}">
+									    <img class="wishlist-icon" style=" width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">
+									</button>										
 								</div>
 							</div>
 						</div>
@@ -292,6 +306,8 @@
 </section>
 <!-- 패키지상품 end -->
 
-
+<script>
+    const CONTEXT_PATH = "<%=request.getContextPath()%>";
+</script>
 
 <%@ include file="/fragments/footer.jsp"%>

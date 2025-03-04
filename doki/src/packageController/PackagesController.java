@@ -11,6 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import packageService.PackageSearchAll;
 import packageService.PackagesList;
+import packageService.PayPalCreatePayment;
+import packageService.PayPalExecutePayment;
+import packageService.SelectPackage;
+import packageService.WishlistAdd;
+import packageService.WishlistList;
+import packageService.WishlistRemove;
 
 @WebServlet("/pakage/*")
 public class PackagesController extends HttpServlet {
@@ -47,6 +53,42 @@ public class PackagesController extends HttpServlet {
 			new PackageSearchAll().docommand(request, response);
 			page ="/product/packageSelect.jsp";
 			break;
+		case "/packages.do": // 검색결과
+			new SelectPackage().docommand(request, response);
+			page ="/product/packages.jsp";
+			break;
+		case "/createPayment.do":
+		    new PayPalCreatePayment().docommand(request, response);
+		    return; // AJAX 요청이므로 forward 필요 없음 (즉시 응답)
+		    
+		case "/executePayment.do":
+		    new PayPalExecutePayment().docommand(request, response);
+		    
+		    // 결제 성공 후 간단히 메시지만 보여줄 JSP로 forward
+		    RequestDispatcher rd = request.getRequestDispatcher("/product/paypalComplete.jsp");
+		    rd.forward(request, response);
+		    break;
+
+		case "/cancel.do":
+		    page = "/product/cancel.jsp";
+		    break;
+		    
+		 // 관심 추가
+        case "/wishlist/add.do":
+            new WishlistAdd().docommand(request, response);
+            return;
+
+        // 관심 제거
+        case "/wishlist/remove.do":
+            new WishlistRemove().docommand(request, response);
+            return;
+
+        // 관심상품 리스트 조회
+        case "/wishlist/list.do":
+            new WishlistList().docommand(request, response);
+            return;
+
+
 		}
 		
 		if (page != null) {

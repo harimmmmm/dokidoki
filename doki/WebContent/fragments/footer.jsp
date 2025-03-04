@@ -160,6 +160,7 @@
 <script src="<%= request.getContextPath() %>/product/js/detailsPackage.js"></script>
 <script src="<%= request.getContextPath() %>/product/js/japaneseTranslation.js"></script>
 <script src="<%= request.getContextPath() %>/product/js/customdate.js"></script>
+<script src="<%=request.getContextPath()%>/product/js/wishlist.js"></script>
 <!-- flatpickr JS (CDN 사용) -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="<%= request.getContextPath() %>/product/js/customdate.js"></script>

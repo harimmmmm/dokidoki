@@ -14,6 +14,11 @@
 	gap: 20px;
 }
 
+.taxinfo {
+	color: #979697;
+	font-size: 10px;
+}
+
 .slider-container {
     position: relative; /* 내부 요소를 절대 위치로 배치 가능하게 설정 */
     width: 50%;
@@ -421,3 +426,6 @@
     background: #ccc;
     cursor: not-allowed;
 }
+
+
+

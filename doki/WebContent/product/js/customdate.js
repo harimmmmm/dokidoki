@@ -4,31 +4,54 @@ document.addEventListener('DOMContentLoaded', function () {
     const endDateHidden = document.getElementById("endDateHidden");
     const searchForm = document.getElementById("searchForm");
 
-    // flatpickr 적용
+    const today = new Date();
+    const tomorrow = new Date(today);  // 오늘 날짜 복사
+    tomorrow.setDate(today.getDate() + 1);  // 하루 더하기
+    const formattedToday = formatDate(today);
+
+    // Ensure values are set (including the date range) from JSP
+    if (dateInput.value) {
+        const dates = dateInput.value.split(" - ");
+        if (dates.length === 2) {
+            startDateHidden.value = dates[0];
+            endDateHidden.value = dates[1];
+        }
+    } else {
+        // JSP에서 전달된 값으로 초기화
+        startDateHidden.value = '${param.startDate}';
+        endDateHidden.value = '${param.endDate}';
+    }
+
     flatpickr(dateInput, {
-        mode: "range", // 날짜 범위 선택
-        dateFormat: "Y-m-d", // 날짜 형식 (선택된 날짜는 이 형식으로 저장)
-        onChange: function (selectedDates, dateStr, instance) {
-            if (selectedDates.length > 0) {
-                // 선택된 날짜를 서버에 맞게 변환 (YY/MM/DD 형식으로)
-                const startDate = selectedDates[0];
-                const endDate = selectedDates[1];
+        mode: "range",
+        dateFormat: "Y/m/d",
+        defaultDate: (dateInput.value && dateInput.value.split(" - ").length === 2) 
+            ? dateInput.value.split(" - ") 
+            : [today, tomorrow], // 기존 값이 있으면 그 값 사용, 없으면 오늘과 내일
+        onReady: function(selectedDates, dateStr, instance) {
+            if (!dateInput.value) {
 
-                // YYYY-MM-DD => YY/MM/DD로 변환
-                const formattedStartDate = startDate.getFullYear().toString().slice(2) + '/' + 
-                                           (startDate.getMonth() + 1 < 10 ? '0' : '') + (startDate.getMonth() + 1) + '/' + 
-                                           (startDate.getDate() < 10 ? '0' : '') + startDate.getDate();
-
-                const formattedEndDate = endDate.getFullYear().toString().slice(2) + '/' + 
-                                         (endDate.getMonth() + 1 < 10 ? '0' : '') + (endDate.getMonth() + 1) + '/' + 
-                                         (endDate.getDate() < 10 ? '0' : '') + endDate.getDate();
-
-                // hidden 필드에 변환된 날짜 값 저장
-                startDateHidden.value = formattedStartDate;
-                endDateHidden.value = formattedEndDate;
+                startDateHidden.value = formattedToday;	
+                endDateHidden.value = formattedToday;
             }
-            console.log("선택된 날짜 범위: ", dateStr);
-            searchForm.submit(); // 자동 검색 실행
+        },
+        onChange: function (selectedDates, dateStr, instance) {
+            if (selectedDates.length === 2) {
+                startDateHidden.value = formatDate(selectedDates[0]);
+                endDateHidden.value = formatDate(selectedDates[1]);
+
+                // 페이지별 자동검색 여부 조건 추가
+                if (window.autoSubmit) {
+                    searchForm.submit();
+                }
+            }
         }
     });
+
+    function formatDate(date) {
+        return date.getFullYear().toString().slice(2) + '/' +
+            ('0' + (date.getMonth() + 1)).slice(-2) + '/' +
+            ('0' + date.getDate()).slice(-2);
+    }
+
 });

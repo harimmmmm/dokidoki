@@ -52,84 +52,62 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     const searchForm = document.getElementById("searchForm");
-
-    // 목적지 선택 이벤트 리스너
-    const destinationOptions = document.querySelectorAll(".detail-option");
     const selectedDestinationInput = document.getElementById("selectedDestination");
-    const selectedText = document.querySelector(".selected");
-
-    destinationOptions.forEach(option => {
-        option.addEventListener("click", function () {
-            const selectedValue = this.textContent.trim();
-            selectedDestinationInput.value = selectedValue;
-            selectedText.textContent = selectedValue;
-
-            // 폼 자동 제출 (검색 실행)
-            searchForm.submit();
-        });
-    });
-
-    // 출발지 선택 시 자동 검색 실행
     const departureSelect = document.getElementById("departure");
-    departureSelect.addEventListener("change", function () {
-        searchForm.submit();
-    });
+    const dateInput = document.getElementById("datePicker");
+    const startDateHidden = document.getElementById("startDateHidden");
+    const endDateHidden = document.getElementById("endDateHidden");
 
-    // 날짜 입력 필드 변경 시 자동 검색 실행
-    const dateInput = document.querySelector("input[name='daterange']");
-    if (dateInput) {
-        dateInput.addEventListener("change", function () {
-            searchForm.submit();
+    // 목적지 선택 이벤트 리스너 수정
+    // 목적지 클릭시
+    document.querySelectorAll(".detail-option").forEach(option => {
+        option.addEventListener("click", function () {
+            selectedDestinationInput.value = this.textContent.trim();
+            if (window.autoSubmit) {
+                searchForm.submit();
+            }
         });
-    }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const dateInput = document.getElementById("datePicker");
-    const startDateHidden = document.getElementById("startDateHidden");
-    const endDateHidden = document.getElementById("endDateHidden");
-
-    dateInput.addEventListener("change", function () {
-        const dateRange = this.value.split(" - "); // 예: "2024-03-01 - 2024-03-05"
-        if (dateRange.length === 2) {
-            startDateHidden.value = dateRange[0].trim(); // 출발일
-            endDateHidden.value = dateRange[1].trim(); // 종료일
-        }
-        console.log("출발일: " + startDateHidden.value);
-        console.log("종료일: " + endDateHidden.value);
     });
 
-    // 폼 제출 시 hidden input 값 확인
-    document.getElementById("searchForm").addEventListener("submit", function () {
-        console.log("폼 제출 시 startDate: " + startDateHidden.value);
-        console.log("폼 제출 시 endDate: " + endDateHidden.value);
-    });
-});
-document.addEventListener("DOMContentLoaded", function () {
-    const dateInput = document.getElementById("datePicker");
-    const startDateHidden = document.getElementById("startDateHidden");
-    const endDateHidden = document.getElementById("endDateHidden");
-
-    dateInput.addEventListener("change", function () {
-        console.log("선택된 daterange 값: ", this.value);
-
-        if (this.value.trim() === "") {
-            console.log("⚠️ 날짜가 선택되지 않았음! (공백 상태)");
-        }
-
-        const dateRange = this.value.split(" - "); // 예: "2024-03-01 - 2024-03-05"
-        if (dateRange.length === 2) {
-            startDateHidden.value = dateRange[0].trim(); // 출발일
-            endDateHidden.value = dateRange[1].trim(); // 종료일
-            console.log("출발일:", startDateHidden.value, "종료일:", endDateHidden.value);
-        } else {
-            console.log("⚠️ 날짜 형식이 올바르지 않음!", this.value);
+    // 출발지 선택시
+    departureSelect.addEventListener("change", function () {
+        if (window.autoSubmit) {
+            searchForm.submit();
         }
     });
 
-    // 폼 제출 시 hidden input 값 확인
-    document.getElementById("searchForm").addEventListener("submit", function () {
-        console.log("폼 제출 시 startDate: " + startDateHidden.value);
-        console.log("폼 제출 시 endDate: " + endDateHidden.value);
-    });
+    // 날짜 입력 필드 변경 시 이벤트 리스너 수정 (customdate.js에서 별도 관리 가능)
+
+
+    // 입력값 유지 함수 추가
+    function ensureValues() {
+        // 목적지가 비어있으면 JSP에서 전달된 기존 값으로 복구
+        if (!selectedDestinationInput.value) {
+            selectedDestinationInput.value = '${param.destination}';
+        }
+
+        // 출발지가 비어있으면 JSP에서 전달된 기존 값으로 복구
+        if (!departureSelect.value) {
+            departureSelect.value = '${param.departure}';
+        }
+
+        // 날짜가 비어있으면 JSP에서 전달된 기존 값으로 복구
+	    if (!dateInput.value && '${param.startDate}' && '${param.endDate}') {
+	        dateInput.value = '${param.startDate} - ${param.endDate}';
+	        startDateHidden.value = '${param.startDate}';
+	        endDateHidden.value = '${param.endDate}';
+	        console.log("1" + startDateHidden.value);
+	    } else if (dateInput.value) {
+	        const dates = dateInput.value.split(" - ");
+	        if (dates.length === 2) {
+	            startDateHidden.value = dates[0];
+	            endDateHidden.value = dates[1];
+	            console.log("2" + startDateHidden.value);
+	        }
+	    }
+	}
+// 함수를 글로벌 범위에 등록하여 다른 파일에서 접근 가능하게 합니다.
+window.ensureValues = ensureValues;
 });
+
+

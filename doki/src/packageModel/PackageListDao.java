@@ -31,8 +31,8 @@ public class PackageListDao {
 			while (rs.next()) {
 				PackagesVo vo = new PackagesVo();
 				
-				vo.setPackage_id(rs.getInt("package_id"));
-				vo.setCategory_id(rs.getString("category_name"));
+				vo.setPackage_id(rs.getString("package_id"));
+				vo.setCategory_name(rs.getString("category_name"));
 				vo.setPackage_name(rs.getString("package_name"));
 				vo.setPackage_price(rs.getInt("package_price"));
 				vo.setPackage_info(rs.getString("package_info"));
@@ -78,8 +78,8 @@ public class PackageListDao {
 			while (rs.next()) {
 				PackagesVo vo = new PackagesVo();
 				
-				vo.setPackage_id(rs.getInt("package_id"));
-				vo.setCategory_id(rs.getString("category_name"));
+				vo.setPackage_id(rs.getString("package_id"));
+				vo.setCategory_name(rs.getString("category_name"));
 				vo.setPackage_name(rs.getString("package_name"));
 				vo.setPackage_price(rs.getInt("package_price"));
 				vo.setPackage_info(rs.getString("package_info"));
@@ -116,8 +116,8 @@ public class PackageListDao {
 			while (rs.next()) {
 				PackagesVo vo = new PackagesVo();
 				
-				vo.setPackage_id(rs.getInt("package_id"));
-				vo.setCategory_id(rs.getString("category_name"));
+				vo.setPackage_id(rs.getString("package_id"));
+				vo.setCategory_name(rs.getString("category_name"));
 				vo.setPackage_name(rs.getString("package_name"));
 				vo.setPackage_price(rs.getInt("package_price"));
 				vo.setPackage_info(rs.getString("package_info"));

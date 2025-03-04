@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../fragments/header.jsp"%>
+<%@ page import="vo.PackagesVo" %>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
@@ -31,15 +32,11 @@
 		<!-- 상품 이미지 슬라이더 -->
 		<div class="slider-container">
 			<div class="slider">
-				<div>
-					<img src="/product/img/jejuslide1.jpg" alt="상품 이미지 1">
-				</div>
-				<div>
-					<img src="/product/img/jejuslide2.jpg" alt="상품 이미지 2">
-				</div>
-				<div>
-					<img src="/product/img/jejuslide3.jpg" alt="상품 이미지 3">
-				</div>
+				<c:forEach var="imgPath" items="${imagePaths}">
+					<div>
+				    	<img src="${pageContext.request.contextPath}/${imgPath}">
+				    </div>
+				</c:forEach>
 			</div>
 		</div>
 
@@ -47,13 +44,12 @@
 		<div class="detail-info">
 			<div class="d-flex justify-content-between align-items-center">
 				<small class="text-muted"> 상품코드 <span
-					class="copy-text underline" data-copy="DCNS2OKETQ">DCNS2OKETQ</span>
-					| 단체번호 <span class="copy-text underline" data-copy="89863773">89863773</span>
+					class="copy-text underline" data-copy="${view.package_id }">${view.package_id }</span>
 				</small>
 
 				<div class="interest-icons">
-					<button id="wishlist">
-						<img src="/product/img/heart.png" alt="찜">
+					<button class="wishlist-btn" data-package-id="${view.package_id}">
+					    <img src="${pageContext.request.contextPath}/product/img/heart.png" alt="관심" class="wishlist-icon">
 					</button>
 					<button id="share">
 						<img src="/product/img/share.png" alt="공유">
@@ -63,17 +59,13 @@
 					</button>
 				</div>
 			</div>
-			<h2 class="mt-2">[모두단독] 제주도 SNS 핫플 3일 &lt;노팁/노옵션/스누피가든/승마/4명부터
-				출발확정&gt;</h2>
-			<div class="tags">#모두단독 #회정식 #흑돼지 #스누피가든 #월정리카페거리 #요트투어 #목장카페</div>
+			<h2 class="mt-2">${view.package_name }</h2>
+			<div class="tags">${view.included_services }</div>
 			<div class="info-price-container">
 				<button class="info-button" id="infoBtn">여행핵심정보</button>
-				<div class="price">900,900 원</div>
+				<div class="price">${view.package_price }円～</div>
 			</div>
-			<div class="additional-info">
-				<span>출발예정</span> | <span>가격예정</span> | <span>일정예정</span> | <span>호텔예정</span>
-				| <span class="text-muted text-decoration-line-through">항공예정</span>
-			</div>
+
 		</div>
 	</div>
 </div>
@@ -93,15 +85,15 @@
 				<table class="table table-bordered">
 					<tr>
 						<th>상품명</th>
-						<td>[모두단독] 제주도 SNS핫플 3일 &lt;노팁/노옵션/스누피가든/승마/4명부터출발확정&gt;</td>
+						<td colspan='3'>${view.package_name }</td>
 					</tr>
 					<tr>
 						<th>여행기간</th>
-						<td>2025.02.28 ~ 2025.03.02 (2박 3일)</td>
+						<td colspan='3'>${fn:substring(view.start_date, 0, 10)} ~ ${fn:substring(view.end_date, 0, 10)}</td>
 					</tr>
 					<tr>
 						<th>상품종류</th>
-						<td>단독상품</td>
+						<td colspan='3'>단독상품</td>
 					</tr>
 					<tr>
 						<th>영업보증 보험</th>
@@ -116,37 +108,29 @@
 					<tr>
 						<th>구분</th>
 						<th>성인</th>
-						<th>아동 Extra Bed</th>
-						<th>아동 No Bed</th>
+						<th>아동</th>
 						<th>유아</th>
 					</tr>
 					<tr>
 						<td>기본 상품가격</td>
-						<td>885,500원</td>
-						<td>-원</td>
-						<td>804,900원</td>
-						<td>40,000원</td>
+						<td><fmt:formatNumber value="${basicadult}" type="number"/>円</td>
+						<td><fmt:formatNumber value="${basicchild}" type="number"/>円</td>
+						<td><fmt:formatNumber value="${basicbaby}" type="number"/>円</td>
 					</tr>
 					<tr>
 						<td>유류할증료</td>
-						<td>15,400원</td>
-						<td>-원</td>
-						<td>15,400원</td>
-						<td>15,400원</td>
+						<td>1,540円</td>
+						<td>1,540円</td>
+						<td>1,540円</td>
 					</tr>
 					<tr>
 						<td>소계</td>
-						<td><strong>900,900원</strong></td>
-						<td>-원</td>
-						<td><strong>820,300원</strong></td>
-						<td><strong>55,400원</strong></td>
+						<td><strong><fmt:formatNumber value="${view.package_price}" type="number"/>円</strong></td>
+						<td><strong><fmt:formatNumber value="${view.child_price}" type="number"/>円</strong></td>
+						<td><strong><fmt:formatNumber value="${view.baby_price}" type="number"/>円</strong></td>
 					</tr>
 				</table>
 
-				<h6>쇼핑정보</h6>
-				<p>
-					일정에 포함된 쇼핑 횟수: <span class="text-primary">1회</span> (농수특산&기념품)
-				</p>
 
 				<h6>여행경보</h6>
 				<p>여행경보 단계는 외교부 해외안전여행 사이트에서 확인하세요.</p>
@@ -169,27 +153,21 @@
 							<th>구분</th>
 							<th>성인 (만 13세 이상)</th>
 							<th>아동 Extra Bed (만 13세 미만)</th>
-							<th>아동 No Bed (만 13세 미만)</th>
 							<th>유아 (만 2세 미만)</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<td>상품가격</td>
-							<td>879,900원</td>
-							<td>-</td>
-							<td>796,100원</td>
-							<td>55,400원</td>
-						</tr>
-						<tr>
-							<td>유류할증료</td>
-							<td>15,400원 포함</td>
-							<td>-</td>
-							<td>15,400원 포함</td>
-							<td>15,400원 포함</td>
+							<td><fmt:formatNumber value="${view.package_price}" type="number"/>円<br><span class="taxinfo">유류할증료 1,540円 포함</span></td>
+							<td><fmt:formatNumber value="${view.child_price}" type="number"/>円<br><span class="taxinfo">유류할증료 1,540円 포함</span></td>
+							<td><fmt:formatNumber value="${view.baby_price}" type="number"/>円<br><span class="taxinfo">유류할증료 1,540円 포함</span></td>
 						</tr>
 					</tbody>
 				</table>
+				<p><span class="taxinfo">-当商品は個別航空券を利用するため、予約時点によって航空券代の追加料金が発生する場合があります。詳細につきましては予約後のご相談時にご案内いたします。
+				<br>-予約時期により、航空券やホテルの原価上昇などの理由で販売価格が変更される場合がございます。予約成立時点の価格が適用されます。燃油サーチャージは毎月変動し、航空券発券時点での金額が確定となります。
+				<br>-燃油サーチャージは原油価格や為替レートに応じて随時変動する場合があります。</span></p>
 			</div>
 
 			<!-- 사이드바 (예약 정보) -->
@@ -197,14 +175,12 @@
 				<div class="sticky-sidebar">
 					<div class="departure-info">
 						<p>
-							<strong>서울(김포) 출발</strong> <span id="departure-date">2025.05.06(화)
-								00:00</span>
+							<strong>${view.departure_name } 출발</strong> <span id="departure-date">${fn:substring(view.start_date, 0, 10)}</span>
 						</p>
 						<p>
-							<strong>서울(김포) 도착</strong> <span id="arrival-date">2025.05.08(목)
-								00:00</span>
+							<strong>${view.category_name } 도착</strong> <span id="arrival-date">${fn:substring(view.end_date, 0, 10)}</span>
 						</p>
-						<button id="change-date-btn">출발일 변경</button>
+						
 					</div>
 
 					<h4>예약인원 선택</h4>
@@ -216,15 +192,15 @@
 							<button class="minus">-</button>
 							<span class="count">1</span>
 							<button class="plus">+</button>
-							<span>879,900원</span>
+							<span><fmt:formatNumber value="${view.package_price}" type="number"/>円</span>
 						</div>
 						<div class="booking-item" data-type="child">
 							<!-- 🔹 아동 data-type 추가 -->
-							<span>아동 No Bed</span>
+							<span>아동</span>
 							<button class="minus">-</button>
 							<span class="count">0</span>
 							<button class="plus">+</button>
-							<span>796,100원</span>
+							<span><fmt:formatNumber value="${view.child_price}" type="number"/>円</span>
 						</div>
 						<div class="booking-item" data-type="infant">
 							<!-- 🔹 유아 data-type 추가 -->
@@ -232,12 +208,12 @@
 							<button class="minus">-</button>
 							<span class="count">0</span>
 							<button class="plus">+</button>
-							<span>55,400원</span>
+							<span><fmt:formatNumber value="${view.baby_price}" type="number"/>円</span>
 						</div>
 					</div>
 					
 					<!-- 총 금액 -->
-					<h3 class="total-price">총 금액: 879,900원</h3>
+					<h3 class="total-price">총 금액: ${total.toLocaleString()}円</h3>
 					<button class="reserve-btn">예약하기</button>
 				</div>
 			</div>
@@ -265,7 +241,45 @@
 	</div>
 </div>
 
+<script>
+    const IS_LOGGED_IN = <%= session.getAttribute("user") != null %>;
+    const ADULT_PRICE = parseInt('${view.package_price}');
+    const CHILD_PRICE = parseInt('${view.child_price}');
+    const INFANT_PRICE = parseInt('${view.baby_price}');
+    const CONTEXT_PATH = "<%=request.getContextPath()%>";
+
+    <% if (request.getAttribute("view") != null) { %>
+        const PACKAGE_ID = '<%= ((PackagesVo)request.getAttribute("view")).getPackage_id() %>';
+    <% } else { %>
+        const PACKAGE_ID = null;
+    <% } %>
+</script>
+
+<script src="${pageContext.request.contextPath}/product/js/payment.js"></script>
+
+<script>
+    window.addEventListener('message', function(event){
+        if(event.data === 'payment_success'){
+            let successMessage = document.createElement("div");
+            successMessage.textContent = "결제가 완료되었습니다.";
+            successMessage.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #333;
+                color: #fff;
+                padding: 10px 20px;
+                border-radius: 5px;
+                z-index: 9999;
+            `;
+            document.body.appendChild(successMessage);
+            setTimeout(() => successMessage.remove(), 3000);
+        }
+    });
+</script>
 
 
 
 <%@ include file="../fragments/footer.jsp"%>
+

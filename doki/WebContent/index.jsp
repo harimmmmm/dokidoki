@@ -3,7 +3,8 @@
 
 <c:set var="typedJs" value="true" />
 <%@ include file="./fragments/header.jsp"%>
-
+<link href="<%=request.getContextPath()%>/product/css/dropdownstyle.css"
+	rel="stylesheet">
 <!-- index css -->
 <link rel="stylesheet" href="<%= request.getContextPath() %>/css/indexstyle.css">
 
@@ -25,36 +26,73 @@
 						<!-- 여행 검색 폼 -->
 						<div class="row">
 							<div class="col-12"> <!-- 전체 너비를 차지하는 컬럼 -->
-								<form class="form"> <!-- 여행 검색을 위한 폼 -->
+								<form class="form"  method="get" action="/pakage/packageSelect.do"> <!-- 여행 검색을 위한 폼 -->
 	
 									<!-- 여행 검색 필드 -->
 									<div class="row mb-2">
 										<!-- 목적지 선택 -->
-										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-											<select name="" id="" class="form-control custom-select">
-												<option value="">제주도</option>
-												<option value="">서울</option>
-												<option value="">충청도</option>
-												<option value="">전라도</option>
-												<option value="">경상도</option>
-												<option value="">강원도</option>
-												<option value="">Israel</option>
-												<option value="">China</option>
-												<option value="">Russia</option>
-											</select>
+										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
+											<div class="custom-dropdown form-control custom-select">
+												<div class="selected">여행지</div>
+												<div class="dropdown-menu">
+													<!-- 1단계 -->
+													<div class="column first">
+														<div class="option main-option active" data-target="domestic">국내</div>
+													</div>
+													<!-- 2단계 -->
+													<div class="column second">
+														<div class="option sub-option" data-target="jeju">제주도</div>
+														<div class="option sub-option" data-target="ulleung">울릉도</div>
+														<div class="option sub-option" data-target="gangwon">강원</div>
+														<div class="option sub-option" data-target="gyeongsang">경상</div>
+														<div class="option sub-option" data-target="jeolla">전라</div>
+														<!-- 전라 추가 -->
+														<div class="option sub-option" data-target="chungcheong">충청</div>
+														<div class="option sub-option" data-target="seoul">서울/인천/경기</div>
+													</div>
+			
+													<div class="column third">
+														<div class="option detail-option d-none" data-parent="jeju">ジェジュ島</div>
+														<div class="option detail-option d-none" data-parent="ulleung">ウルルン島</div>
+														<div class="option detail-option d-none" data-parent="gangwon">カンウォン</div>
+														<div class="option detail-option d-none" data-parent="gyeongsang">キョンサンプク道</div>
+														<div class="option detail-option d-none" data-parent="gyeongsang">キョンサンナム道</div>
+														<div class="option detail-option d-none" data-parent="gyeongsang">プサン</div>
+														<div class="option detail-option d-none" data-parent="jeolla">チョルラプク道</div>
+														<div class="option detail-option d-none" data-parent="jeolla">チョルラナム道</div>
+														<div class="option detail-option d-none" data-parent="chungcheong">チュンチョンプク道</div>
+														<div class="option detail-option d-none" data-parent="chungcheong">チュンチョンナム道</div>
+														<div class="option detail-option d-none" data-parent="seoul">ソウル</div>
+														<div class="option detail-option d-none" data-parent="seoul">インチョン</div>
+													</div>
+												</div>
+											</div>
+										    <!-- 선택된 값을 저장할 hidden input -->
+										    <input type="hidden" name="destination" id="selectedDestination">
 										</div>
 										
 										<!-- 인원 수 입력 -->
 										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
-											<input type="text" class="form-control"
-												placeholder="# 参加人数">
+											<select name="departure" id="departure" class="form-control custom-select" >
+												<option value="출발지 " selected disabled hidden >출발지</option>
+												<option value="東京">東京</option>
+												<option value="大阪">大阪</option>
+												<option value="福岡">福岡</option>
+												<option value="名古屋">名古屋</option>
+												<option value="札幌">札幌</option>
+												<option value="沖縄">沖縄</option>
+												<option value="その他">その他</option>
+											</select>
 										</div>
 	
 										<!-- 날짜 입력 -->
-										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
-											<input type="text" class="form-control" name="daterange">
+										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-6">
+											<input type="text" class="form-control" name="datePicker" id="datePicker">
 										</div>
-	
+										<!-- hidden 필드 추가 -->
+										<input type="hidden" id="startDateHidden" name="startDate">
+										<input type="hidden" id="endDateHidden" name="endDate">
+							
 									</div>
 	
 									<!-- 검색 버튼 및 체크박스 -->
@@ -65,14 +103,6 @@
 												value="探す">
 										</div>
 	
-										<!-- 검색 저장 체크박스 -->
-										<div class="col-lg-8">
-											<label class="control control--checkbox mt-3">
-												<span class="caption">この検索を保存する</span> 
-												<input type="checkbox" checked="checked" />
-												<div class="control__indicator"></div> <!-- 체크박스 스타일용 -->
-											</label>
-										</div>
 									</div>
 									
 								</form> <!-- 여행 검색 폼 종료 -->
