@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import mypages.serivce.AccountListService;
 import mypages.serivce.AccountUpdateService;
+import mypages.serivce.InquiriesInsertService;
+import mypages.serivce.InquiriesListService;
 
 @WebServlet("/mypage/*")
 public class MypageController extends HttpServlet {
@@ -37,10 +39,9 @@ public class MypageController extends HttpServlet {
 			new AccountListService().docommand(request, response);
 			page = "/mypagee/editForm.jsp";
 			break;
-		case "/editformUpdatepro.do": // 개인정보수정
+		case "/editformUpdatepro.do": // 개인정보수정 수정
 			new AccountUpdateService().docommand(request, response);
 			response.sendRedirect("/mypage/editform.do");
-			page = "/mypagee/editForm.jsp";
 			return;
 		case "/upcoming.do": // 예정된여행
 			page = "/mypagee/upcoming.jsp";
@@ -51,12 +52,17 @@ public class MypageController extends HttpServlet {
 		case "/canceled.do": // 취소여행
 			page = "/mypagee/canceled.jsp";
 			break;
-		case "/interest.do": // 관심
+		case "/interest.do": // 관심상품
 			page = "/mypagee/interest.jsp";
 			break;
 		case "/inquiries.do": // 문의
+			new InquiriesListService().docommand(request, response);
 			page = "/mypagee/inquiries.jsp";
 			break;
+		case "/inquiriespro.do": // 문의등록
+			new InquiriesInsertService().docommand(request, response);
+			response.sendRedirect("");
+			return;
 		}
 
 		if (page != null)
