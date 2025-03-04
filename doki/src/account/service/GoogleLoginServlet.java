@@ -52,11 +52,15 @@ public class GoogleLoginServlet extends HttpServlet {
 
 			
 	        // 클라이언트로 액세스 토큰 전달
-	        String jsonResponse = "{\"success\": true, \"access_token\": \"" + accessToken + "\"}";
+	        String jsonResponse = "{\"★success\": true, \"access_token\": \"" + accessToken + "\"}";
 	        response.getWriter().write(jsonResponse); // AJAX로 전송된 데이터
 
 			// 클라이언트로부터 메시지 전달받아, 팝업을 닫고 부모 페이지를 갱신하는 작업은
 			// 클라이언트 쪽에서 처리
+	        
+//	        System.out.println("GoogleLoginServlet: Received email -> " + email);
+//	        System.out.println("GoogleLoginServlet: User found in DB -> " + (vo != null));
+
 
 		}
 

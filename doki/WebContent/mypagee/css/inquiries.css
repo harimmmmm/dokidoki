@@ -1,0 +1,204 @@
+.main-content {
+	margin-top: 80px;
+}
+
+/* 문의 내역 리스트 */
+section#inquiries {
+	background-color: #fff;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section#inquiries h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: #333;
+}
+
+.inquire-btn {
+	background-color: #486988;
+	color: white;
+	padding: 8px 10px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	margin-bottom: 20px;
+	float: right;
+	margin-top: -55px;
+}
+
+.inquire-btn:hover {
+	background-color: #374d61;
+}
+
+/* 문의 내역 테이블 */
+.inquiries-list table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+}
+
+.inquiries-list th, .inquiries-list td {
+	padding: 12px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+
+.inquiries-list th {
+	background-color: #f5f5f5;
+}
+
+.showBoardDetailBtn{
+	border: none;
+	background: white;
+}
+
+.showBoardDetailBtn:hover {
+	border: none;
+	background: white;
+}
+
+/* 모달 스타일 */
+.rModal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: -50px;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.rmodal-content {
+	background-color: #fff;
+	margin: 15% auto;
+	padding: 20px;
+	border-radius: 10px;
+	width: 50%;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	position: relative; /* position: relative 추가 */
+}
+
+.rmodal-content h3 {
+	font-size: 24px;
+	margin-bottom: 20px;
+	color: #333;
+}
+
+.rmodal-content label {
+	font-size: 16px;
+	color: #333;
+	margin-bottom: 5px;
+	display: block;
+}
+
+.rmodal-content input, .rmodal-content textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	font-size: 16px;
+	margin-bottom: 15px;
+}
+
+.rmodal-content textarea {
+	height: 150px;
+}
+
+.rmodal-content button {
+	background-color: #486988;
+	color: white;
+	padding: 12px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	width: 100%;
+}
+
+.rmodal-content button:hover {
+	background-color: #374d61;
+}
+
+/* 모달 닫기 버튼 */
+.rclose-btn {
+	color: #aaa;
+	font-size: 28px;
+	font-weight: bold;
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	cursor: pointer;
+	z-index: 10; /* z-index 추가 */
+}
+
+/* 호버 시 색상 변경 */
+.rclose-btn:hover, .rclose-btn:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* 모달 전체 배경 (초기에는 숨김) */
+.custom-board-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검은 배경 */
+    backdrop-filter: blur(5px); /* 배경 흐림 효과 */
+}
+
+/* 모달 활성화 시 표시 */
+.custom-board-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 문의 제목 */
+#board-detail-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* 작성일, 문의 내용 스타일 */
+#board-detail-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* 답변 내용 스타일 */
+#board-detail-content hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+#board-detail-content h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* 답변 날짜 */
+#board-detail-content p strong {
+    color: #333;
+}
+
+/* 답변 상태 텍스트 */
+#board-detail-content .waiting-status {
+    font-size: 16px;
+    color: #c85557;
+    font-weight: bold;
+}

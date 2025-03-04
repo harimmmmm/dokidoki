@@ -36,7 +36,6 @@ public class MemberController extends HttpServlet {
 			break;
 		case "/loginpro.do":	// 로그인
 			new MemberLoginSerivce().docommand(request, response);
-//			response.sendRedirect("/");
 			return;
 		case "/callback":	// 구글 로그인
 			new GoogleCallbackServlet().docommand(request, response);

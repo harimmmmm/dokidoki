@@ -17,9 +17,11 @@ public class SendMail {
         // SMTP 서버 설정
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.starttls.enable", "true");  // STARTTLS 사용
         props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.port", "587");  // STARTTLS는 587 포트 사용
+        props.put("mail.smtp.ssl.protocols", "TLSv1.2"); // TLS 1.2 강제 설정
+        props.put("mail.smtp.ssl.trust", "smtp.gmail.com"); // SSL 인증 문제 방지
 
         Session session = Session.getInstance(props, new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
