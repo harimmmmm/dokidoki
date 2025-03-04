@@ -158,6 +158,12 @@
 <script src="<%= request.getContextPath() %>/product/js/sidebars.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script src="<%= request.getContextPath() %>/product/js/detailsPackage.js"></script>
+<script src="<%= request.getContextPath() %>/product/js/japaneseTranslation.js"></script>
+<script src="<%= request.getContextPath() %>/product/js/customdate.js"></script>
+<script src="<%=request.getContextPath()%>/product/js/wishlist.js"></script>
+<!-- flatpickr JS (CDN 사용) -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="<%= request.getContextPath() %>/product/js/customdate.js"></script>
 <!-- 페이지별 스크립트 실행 여부 체크 -->
 <c:if test="${not empty typedJs}">
 	<script src="<%= request.getContextPath() %>/js/typed.js"></script>
@@ -188,7 +194,6 @@
 	        });
 	    </script>
 </c:if>
-
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function () {
     var swiper = new Swiper(".swiper", {
