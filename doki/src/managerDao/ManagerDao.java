@@ -9,6 +9,9 @@ import java.util.List;
 import util.DBManager;
 import vo.AccountVo;
 import vo.BoardVo;
+import vo.BuyVo;
+import vo.PackagesVo;
+import vo.PaymentVo;
 
 public class ManagerDao {
 	
@@ -50,71 +53,107 @@ public class ManagerDao {
 	}
 	
 	
-	public void productInsert() {
-
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		
-		String sql = "";
-		
-		try {
-			conn = DBManager.getInstence().getConnection();
-			pstmt = conn.prepareStatement(sql);
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		
-	}
-	
-	public void productView() {
+	public List<PackagesVo> packageView() {
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String sql = "";
+		String sql = "select package_id, package_name, package_price, start_date, end_date from packages";
+		
+		List<PackagesVo> list = new ArrayList<PackagesVo>();
 		
 		try {
 			conn = DBManager.getInstence().getConnection();
 			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				PackagesVo vo = new PackagesVo();
+				vo.setPackage_id(rs.getString("package_id"));
+				vo.setPackage_name(rs.getString("package_id"));
+				vo.setPackage_price(rs.getInt("package_price"));
+				vo.setStart_date(rs.getString("start_date"));
+				vo.setEnd_date(rs.getString("end_date"));
+				
+				list.add(vo);
+			}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		
+		return list;
 	}
 	
-	public void paymentView() {
+	public List<PaymentVo> paymentView() {
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String sql = "";
+		String sql = "SELECT p.order_id, " + 
+				"       pk.package_name, " + 
+				"       p.pay_time, " + 
+				"       p.amount, " + 
+				"       p.payment_status " + 
+				"FROM payment p " + 
+				"JOIN packages pk ON p.order_id = pk.package_id";
+		
+		List<PaymentVo> list = new ArrayList<PaymentVo>();
 		
 		try {
 			conn = DBManager.getInstence().getConnection();
 			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				PaymentVo vo = new PaymentVo();
+				vo.setOrder_id(rs.getString("order_id"));
+				vo.setPackage_name(rs.getString("package_name"));
+				vo.setPay_time(rs.getString("pay_time"));
+				vo.setAmount(rs.getInt("amount"));
+				vo.setPayment_status(rs.getString("payment_status"));
+				
+				list.add(vo);
+			}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		
+		return list;
 	}
 	
-	public void reservationView() {
+	public List<BuyVo> reservationView() {
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String sql = "";
+		String sql = "select b.package_id, b.account_id, b.order_date, ac.name_kanji, b.start_date, b.end_date " + 
+				"from buy b " + 
+				"join account ac on b.account_id = ac.account_id";
+		
+		List<BuyVo> list = new ArrayList<BuyVo>();
 		
 		try {
 			conn = DBManager.getInstence().getConnection();
 			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				BuyVo vo = new BuyVo();
+				vo.setPackage_id(rs.getString("package_id"));
+				vo.setAccount_id(rs.getInt("account_id"));
+				vo.setOrder_date(rs.getString("order_date"));
+				vo.setName_kanji(rs.getString("name_kanji"));
+				vo.setStart_date(rs.getString("start_date"));
+				vo.setEnd_date(rs.getString("end_date"));
+				
+				list.add(vo);
+			}
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		
+		return list;
 	}
 
 	public void boardInsert(BoardVo vo) {
