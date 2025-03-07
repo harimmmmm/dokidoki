@@ -209,12 +209,12 @@ section#edit button:hover {
 	color: #333;
 }
 
-.rmodal-content label {
+/* .rmodal-content label {
 	font-size: 16px;
 	color: #333;
 	margin-bottom: 5px;
 	display: block;
-}
+} */
 
 .rmodal-content input, .rmodal-content textarea {
 	width: 100%;
@@ -230,7 +230,7 @@ section#edit button:hover {
 }
 
 .rmodal-content button {
-	background-color: #9dd1ca;
+	background-color: #486988;
 	color: white;
 	padding: 12px;
 	border: none;
@@ -241,7 +241,7 @@ section#edit button:hover {
 }
 
 .rmodal-content button:hover {
-	background-color: #d45d50;
+	background-color: #374d61;
 }
 
 /* 모달 닫기 버튼 */
@@ -280,8 +280,8 @@ section#edit button:hover {
 	padding: 20px;
 	border-radius: 8px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	margin-bottom: 50px;
-	border-left: 5px solid #6ab2a9;
+	margin-bottom: 40px;
+	border-left: 5px solid #486988;
 }
 
 .travel-header {
@@ -298,10 +298,12 @@ section#edit button:hover {
 
 .travel-status {
 	font-size: 16px;
-	color: #388e3c;
-	background-color: #e8f5e9;
+	color: white;
+	/* background-color: #486988; */
 	padding: 5px 10px;
 	border-radius: 4px;
+	float: right;
+    margin-top: -40px;
 }
 
 .travel-details h3 {

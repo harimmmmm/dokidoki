@@ -14,11 +14,13 @@ public class PackagesVo {
 	 private String end_date;           // 여행 종료일
 	 private String included_services;	// 포함된 서비스
 	 private int views; 				// 조회수
-	 private String departure_name;		// 도착지
+	 private String departure_name;		// 도착지		//
 	 private int child_price;			// 아동 가격
 	 private int baby_price;			// 유아 가격
 	 private int category_id;
 	 private int departure_id;
+	 
+	 private WishlistVo WishlistInfo; 
 	 
 	public int getCategory_id() {
 		return category_id;
@@ -123,5 +125,13 @@ public class PackagesVo {
 	public void setIncluded_services(String included_services) {
 		this.included_services = included_services;
 	}
+	public WishlistVo getWishlistInfo() {
+		return WishlistInfo;
+	}
+	public void setWishlistInfo(WishlistVo wishlistInfo) {
+		WishlistInfo = wishlistInfo;
+	}
+	
+	
 	 
 }
