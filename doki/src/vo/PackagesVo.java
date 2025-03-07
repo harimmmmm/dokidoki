@@ -19,7 +19,14 @@ public class PackagesVo {
 	 private int baby_price;			// 유아 가격
 	 private int category_id;
 	 private int departure_id;
+	 private String imageUrl;
 	 
+	public String getImageUrl() {
+		return imageUrl;
+	}
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 	public int getCategory_id() {
 		return category_id;
 	}

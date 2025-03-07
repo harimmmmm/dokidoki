@@ -41,7 +41,7 @@
 							<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
 								<div
 									class="custom-dropdown form-control custom-select packagesSelect">
-									<div class="selected">여행지 선택</div>
+									<div class="selected">旅行先を選ぶ</div>
 									<div class="dropdown-menu">
 										<!-- 1단계 -->
 										<div class="column first">
@@ -52,11 +52,11 @@
 											<div class="option sub-option" data-target="jeju">ジェジュ島</div>
 											<div class="option sub-option" data-target="ulleung">ウルルン島</div>
 											<div class="option sub-option" data-target="gangwon">カンウォン</div>
-											<div class="option sub-option" data-target="gyeongsang">경상</div>
-											<div class="option sub-option" data-target="jeolla">전라</div>
+											<div class="option sub-option" data-target="gyeongsang">キョンサン</div>
+											<div class="option sub-option" data-target="jeolla">チョルラ</div>
 											<!-- 전라 추가 -->
-											<div class="option sub-option" data-target="chungcheong">충청</div>
-											<div class="option sub-option" data-target="seoul">서울/인천/경기</div>
+											<div class="option sub-option" data-target="chungcheong">チュンチョン</div>
+											<div class="option sub-option" data-target="seoul">ソウル/インチョン</div>
 										</div>
 
 										<div class="column third">
@@ -91,7 +91,7 @@
 								<!-- 출발지 선택 -->
 								<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-6">
 									<select name="departure" id="departure" class="form-control custom-select">
-										<option value="" ${param.departure == '' ? 'selected' : ''} selected disabled hidden >출발지 선택</option>
+										<option value="" ${param.departure == '' ? 'selected' : ''} selected disabled hidden >出発地を選ぶ</option>
 									    <option value="東京" ${param.departure == '東京' ? 'selected' : ''}>東京</option>
 									    <option value="大阪" ${param.departure == '大阪' ? 'selected' : ''}>大阪</option>
 									    <option value="福岡" ${param.departure == '福岡' ? 'selected' : ''}>福岡</option>
@@ -139,23 +139,21 @@
 				<div class="row row-cols-1 row-cols-md-3 g-4">
 					<!-- 여행 패키지 카드 1 -->
 					<c:if test="${empty list}">
-						<p>검색된 결과가 없습니다.</p>
+						<p>該当する旅行パッケージが見つかりませんでした。</p>
 					</c:if>
 					<c:forEach var="item" items="${list}">
 						<div class="col">
 							<div class="card h-100">
-								<img src="/product/img/jeju1.jpg" class="card-img-top"
-									alt="도쿄 패키지 4일">
+								<img src="${pageContext.request.contextPath}/${item.imageUrl}" class="card-img-top" alt="도쿄 패키지 4일">
 								<div class="card-body">
 									<h5 class="card-title">${item.package_name }</h5>
 									<p class="card-text">${item.package_info}</p>
 									<p class="card-text">
-										<small class="text-muted">아시아나 항공 | 에어텔</small>
+										<small class="text-muted">${item.category_name }旅行パッケージ</small>
 									</p>
 									<div class="d-flex justify-content-between align-items-center">
-										<span class="fw-bold text-primary">₩${item.package_price }
-											~</span> <a href="/pakage/packages.do?package_id=${item.package_id }"
-											class="btn btn-outline-primary">상품 상세 보기</a>
+										<span class="fw-bold text-primary">${item.package_price }円 ~</span> <a href="/pakage/packages.do?package_id=${item.package_id }"
+											class="btn btn-outline-primary">詳細を見る</a>
 										<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${item.package_id}">
 										    <img class="wishlist-icon" style=" width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">
 										</button>												
