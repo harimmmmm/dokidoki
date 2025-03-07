@@ -5,6 +5,7 @@
 <%@ include file="fragments/header.jsp"%>
 <link href="<%=request.getContextPath()%>/product/css/dropdownstyle.css"
 	rel="stylesheet">
+
 <!-- index css -->
 <link rel="stylesheet" href="<%= request.getContextPath() %>/css/indexstyle.css">
 
@@ -31,24 +32,24 @@
 									<!-- 여행 검색 필드 -->
 									<div class="row mb-2">
 										<!-- 목적지 선택 -->
-										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
+										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
 											<div class="custom-dropdown form-control custom-select">
-												<div class="selected">여행지</div>
+												<div class="selected">旅行先</div>
 												<div class="dropdown-menu">
 													<!-- 1단계 -->
 													<div class="column first">
-														<div class="option main-option active" data-target="domestic">국내</div>
+														<div class="option main-option active" data-target="domestic">韓国</div>
 													</div>
 													<!-- 2단계 -->
 													<div class="column second">
-														<div class="option sub-option" data-target="jeju">제주도</div>
-														<div class="option sub-option" data-target="ulleung">울릉도</div>
-														<div class="option sub-option" data-target="gangwon">강원</div>
-														<div class="option sub-option" data-target="gyeongsang">경상</div>
-														<div class="option sub-option" data-target="jeolla">전라</div>
+														<div class="option sub-option" data-target="jeju">ジェジュ島</div>
+														<div class="option sub-option" data-target="ulleung">ウルルン島</div>
+														<div class="option sub-option" data-target="gangwon">カンウォン</div>
+														<div class="option sub-option" data-target="gyeongsang">キョンサン</div>
+														<div class="option sub-option" data-target="jeolla">チョルラ</div>
 														<!-- 전라 추가 -->
-														<div class="option sub-option" data-target="chungcheong">충청</div>
-														<div class="option sub-option" data-target="seoul">서울/인천/경기</div>
+														<div class="option sub-option" data-target="chungcheong">チュンチョン</div>
+														<div class="option sub-option" data-target="seoul">ソウル/インチョン</div>
 													</div>
 			
 													<div class="column third">
@@ -74,7 +75,7 @@
 										<!-- 인원 수 입력 -->
 										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
 											<select name="departure" id="departure" class="form-control custom-select" >
-												<option value="출발지 " selected disabled hidden >출발지</option>
+												<option value="출발지 " selected disabled hidden >出発地</option>
 												<option value="東京">東京</option>
 												<option value="大阪">大阪</option>
 												<option value="福岡">福岡</option>
@@ -86,7 +87,7 @@
 										</div>
 	
 										<!-- 날짜 입력 -->
-										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-6">
+										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
 											<input type="text" class="form-control" name="datePicker" id="datePicker">
 										</div>
 										<!-- hidden 필드 추가 -->

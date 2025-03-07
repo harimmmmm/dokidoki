@@ -80,22 +80,22 @@
 							<!-- 목적지 선택 -->
 							<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
 								<div class="custom-dropdown form-control custom-select">
-									<div class="selected">여행지 선택</div>
+									<div class="selected">旅行先を選ぶ</div>
 									<div class="dropdown-menu">
 										<!-- 1단계 -->
 										<div class="column first">
-											<div class="option main-option active" data-target="domestic">국내</div>
+											<div class="option main-option active" data-target="domestic">韓国</div>
 										</div>
 										<!-- 2단계 -->
 										<div class="column second">
-											<div class="option sub-option" data-target="jeju">제주도</div>
-											<div class="option sub-option" data-target="ulleung">울릉도</div>
-											<div class="option sub-option" data-target="gangwon">강원</div>
-											<div class="option sub-option" data-target="gyeongsang">경상</div>
-											<div class="option sub-option" data-target="jeolla">전라</div>
+											<div class="option sub-option" data-target="jeju">ジェジュ島</div>
+											<div class="option sub-option" data-target="ulleung">ウルルン島</div>
+											<div class="option sub-option" data-target="gangwon">カンウォン</div>
+											<div class="option sub-option" data-target="gyeongsang">キョンサン</div>
+											<div class="option sub-option" data-target="jeolla">チョルラ</div>
 											<!-- 전라 추가 -->
-											<div class="option sub-option" data-target="chungcheong">충청</div>
-											<div class="option sub-option" data-target="seoul">서울/인천/경기</div>
+											<div class="option sub-option" data-target="chungcheong">>チュンチョン</div>
+											<div class="option sub-option" data-target="seoul">ソウル/インチョン</div>
 										</div>
 
 										<div class="column third">
@@ -121,7 +121,7 @@
 							<!-- 출발지 선택 -->
 							<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-2">
 								<select name="departure" id="departure" class="form-control custom-select" >
-									<option value="출발지 선택" selected disabled hidden >출발지 선택</option>
+									<option value="출발지 선택" selected disabled hidden >出発地を選ぶ</option>
 									<option value="東京">東京</option>
 									<option value="大阪">大阪</option>
 									<option value="福岡">福岡</option>
@@ -168,10 +168,9 @@
 <section id="weeklyBest">
 	<div class="container weeklybesttitle">
 		<h2 class="weeklyBestfont">
-			<img src="/product/img/crown.png" alt="crown" class="weeklyBesticon">주간베스트
-			TOP4
+			<img src="/product/img/crown.png" alt="crown" class="weeklyBesticon">週間ベストTOP4
 		</h2>
-		<p class="textcolorccc">지난 한 주간 인기 많았던 상품!</p>
+		<p class="textcolorccc">先週の人気旅行パッケージ！</p>
 	</div>
 	<div class="untree_co-section">
 		<div class="container">
@@ -181,17 +180,17 @@
 					<!-- 여행 패키지 카드 -->
 					<div class="col">
 						<div class="card h-100">
-							<img src="/images/hero-slider-1.jpg" class="card-img-top"
+							<img src="${pageContext.request.contextPath}/${bestitem.imageUrl}" class="card-img-top"
 								alt="상품 이미지">
 							<div class="card-body">
 								<h5 class="card-title">${bestitem.package_name}</h5>
 								<p class="card-text">${bestitem.package_info}</p>
 								<p class="card-text">
-									<small class="text-muted">여행 패키지</small>
+									<small class="text-muted">${bestitem.category_name }旅行パッケージ</small>
 								</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<span class="fw-bold text-primary">₩${bestitem.package_price} ~</span> 
-									<a href="/pakage/packages.do?package_id=${bestitem.package_id}" class="btn btn-outline-primary">상품 상세 보기</a>
+									<span class="fw-bold text-primary">${bestitem.package_price}円 ~</span> 
+									<a href="/pakage/packages.do?package_id=${bestitem.package_id}" class="btn btn-outline-primary">詳細を見る</a>
 									<!-- 각 상품의 관심버튼 예시 -->
 									<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${bestitem.package_id}">
 									    <img class="wishlist-icon" style=" width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">
@@ -215,10 +214,9 @@
 <section id="weeklyBest">
 	<div class="container weeklybesttitle">
 		<h2 class="weeklyBestfont">
-			<img src="/product/img/star.png" alt="star" class="weeklyBesticon">따끈따끈
-			신규상품
+			<img src="/product/img/star.png" alt="star" class="weeklyBesticon">できたてホヤホヤの新商品！
 		</h2>
-		<p class="textcolorccc">새로 오픈한 여행 상품!</p>
+		<p class="textcolorccc">新登場の旅行パッケージ！</p>
 	</div>
 	<div class="untree_co-section">
 		<div class="container">
@@ -228,18 +226,17 @@
 					<!-- 여행 패키지 카드 -->
 					<div class="col">
 						<div class="card h-100">
-							<img src="/images/hero-slider-1.jpg" class="card-img-top"
+							<img src="${pageContext.request.contextPath}/${newitem.imageUrl}" class="card-img-top"
 								alt="상품 이미지">
 							<div class="card-body">
 								<h5 class="card-title">${newitem.package_name}</h5>
 								<p class="card-text">${newitem.package_info}</p>
 								<p class="card-text">
-									<small class="text-muted">여행 패키지</small>
+									<small class="text-muted">${newitem.category_name }旅行パッケージ</small>
 								</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<span class="fw-bold text-primary">₩${newitem.package_price}
-										~</span> <a href="/product/packages.jsp"
-										class="btn btn-outline-primary">상품 상세 보기</a>
+									<span class="fw-bold text-primary">${newitem.package_price}円 ~</span> 
+									<a href="/pakage/packages.do?package_id=${newitem.package_id }" class="btn btn-outline-primary">詳細を見る</a>
 									<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${newitem.package_id}">
 									    <img class="wishlist-icon" style=" width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">
 									</button>
@@ -263,9 +260,9 @@
 	<div class="container weeklybesttitle">
 		<h2 class="weeklyBestfont">
 			<img src="/product/img/suitcase.png" alt="suitcase"
-				class="weeklyBesticon">모든 패키지 여행
+				class="weeklyBesticon">すべての旅行パッケージ
 		</h2>
-		<p class="textcolorccc">숙소, 식사, 일정 포함! 편하고 알찬 여행!</p>
+		<p class="textcolorccc">宿泊・食事・日程込み！快適で充実した旅！</p>
 	</div>
 
 	<div class="untree_co-section">
@@ -276,18 +273,17 @@
 					<!-- 여행 패키지 카드 -->
 					<div class="col">
 						<div class="card h-100">
-							<img src="/images/hero-slider-1.jpg" class="card-img-top"
+							<img src="${pageContext.request.contextPath}/${allitem.imageUrl}" class="card-img-top"
 								alt="상품 이미지">
 							<div class="card-body">
 								<h5 class="card-title">${allitem.package_name}</h5>
 								<p class="card-text">${allitem.package_info}</p>
 								<p class="card-text">
-									<small class="text-muted">여행 패키지</small>
+									<small class="text-muted">${allitem.category_name }旅行パッケージ</small>
 								</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<span class="fw-bold text-primary">₩${allitem.package_price}
-										~</span> <a href="/product/packages.jsp"
-										class="btn btn-outline-primary">상품 상세 보기</a>
+									<span class="fw-bold text-primary">${allitem.package_price}円 ~</span> <a href="/pakage/packages.do?package_id=${allitem.package_id }"
+										class="btn btn-outline-primary">詳細を見る</a>
 									<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${allitem.package_id}">
 									    <img class="wishlist-icon" style=" width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">
 									</button>										
