@@ -67,40 +67,45 @@
 		<main class="main-content">
 			<br> <br> <br>
 			<section id="home" class="home">
-				<h2>마이 페이지 홈</h2>
-				<p>환영합니다, 홍길동님! 여기서 여행 예약, 개인정보를 관리할 수 있습니다.</p>
+				<h2>マイページ·ホーム</h2>
+				<p>ようこそ、<span style="font-weight: bolder;">${vo.name_kanji}</span>様！ここで旅行の予約、個人情報などを管理できます。</p>
 			</section>
 
 			<section id="inquiries" class="inquiries">
 				<div class="recent-booking">
-					<h3>📅 최근 예약한 여행</h3>
-					<div class="travel-card">
-						<div class="travel-header">
-							<span class="travel-date">2025년 03월 07일 (금)</span> <span
-								class="travel-status"><a href="">모두보기 <i
-									class="bi bi-chevron-right"></i></a></span>
-						</div>
-						<div class="travel-details">
-							<div class="flight-info">
-								<div class="flight-info-left">
-									<p>
-										<strong>[대전] 상품명입니다아아</strong>
-									</p>
-									<p>예약번호 59GFQX / 항공사 예약번호 K4NPWL / 2명</p>
-								</div>
-							</div>
-						</div>
-					</div>
+					<h3>📅 最近予約した旅行</h3>
+							<span class="travel-status"><a href="/mypage/upcoming.do">みんなで見る <i class="bi bi-chevron-right"></i></a></span>
+					<c:choose>
+					    <c:when test="${not empty reservationList}">
+					        <c:set var="reservation" value="${reservationList[0]}" />
+					        <div class="travel-card" data-package-id="${reservation.packageInfo.package_id}">
+					            <div class="travel-header">
+					                <span class="travel-date">${reservation.packageInfo.package_name}</span>
+					            </div>
+					            <div class="travel-details">
+					                <div class="flight-info">
+					                    <div class="flight-info-left">
+					                        <p> 出発. : ${reservation.packageInfo.start_date} | 到着. : ${reservation.packageInfo.end_date}</p>
+					                        <p> 予約番号 :  ${reservation.order_id}/ ${reservation.tot_personnel}名</p>
+					                        <p> パッケージID: ${reservation.packageInfo.package_id}</p>
+					                    </div>
+					                </div>
+					            </div>
+					        </div>
+					    </c:when>
+					    <c:otherwise>
+					        <div class="no-reservations">
+					            <p>現在、予約履歴がありません。</p>
+					        </div>
+					    </c:otherwise>
+					</c:choose>
 				</div>
 			</section>
 			<section id="box-c" class="box-c">
-				<a href="#" class="box"> <i class="bi bi-person-circle"></i> <span>개인정보수정</span>
-				</a> <a href="#" class="box"> <i class="bi bi-headset"></i> <span>고객센터</span>
-				</a> <a href="#" class="box"> <i class="bi bi-question-circle"></i>
-					<span>자주 묻는 질문</span>
-				</a> <a href="#" class="box"> <i class="bi bi-chat-dots"></i> <span>1:1
-						문의</span>
-				</a>
+				<a href="/mypage//editform.do" class="box"> <i class="bi bi-person-circle"></i> <span>個人情報修正</span></a> 
+				<a href="#" class="box" style="font-size: 12px;"> <i class="bi bi-headset"></i> <span>カスタマーサポート</span></a> 
+				<a href="#" class="box"> <i class="bi bi-question-circle"></i><span>よくある質問</span></a> 
+				<a href="/mypage/inquiries.do" class="box"> <i class="bi bi-chat-dots"></i> <span>1:1お問い合わせ</span></a>
 			</section>
 		</main>
 	</div>

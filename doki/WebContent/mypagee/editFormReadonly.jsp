@@ -68,8 +68,8 @@
 		<main class="main-content">
 			<section id="edit" class="edit">
 				<h2>
-					개인정보 수정
-					<a  href="/mypage/editformUpdate.do" class="edit-btnn">수정하기</a>
+					個人情報修正
+					<a  href="/mypage/editformUpdate.do" class="edit-btnn">修正</a>
 				</h2>
 				<p class="idmsg">* IDは変更できません</p>
 				<form action="/mypage/editform.do" method="post">
@@ -103,11 +103,11 @@
 						<td>${vo.email}</td>
 					</tr>
 					<tr>
-						<td><label for="postal_code">우편번호 (郵便番号)</label></td>
+						<td><label for="postal_code">郵便番号</label></td>
 						<td>${vo.postal_code}</td>
 					</tr>
 					<tr>
-						<td><label for="prefecture">도도부현 (都道府県)</label></td>
+						<td><label for="prefecture">都道府県</label></td>
 						<td>${vo.prefecture}</td>
 					</tr>
 					<tr>
@@ -115,11 +115,11 @@
 						<td>${vo.city}</td>
 					</tr>
 					<tr>
-						<td><label for="town">번지 (丁目・番地)</label></td>
+						<td><label for="town">丁目・番地</label></td>
 						<td>${vo.town}</td>
 					</tr>
 					<tr>
-						<td><label for="building">건물명 (建物名)</label></td>
+						<td><label for="building">建物名</label></td>
 						<td>${vo.building}</td>
 					</tr>
 					<tr>

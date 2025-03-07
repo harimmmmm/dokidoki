@@ -93,8 +93,8 @@
 							<li><a href="/member/login.do">ログイン</a></li>
 						</co:when>
 						<co:otherwise>
-							<li><a href="/member/logout.do">로그아웃</a></li>
-							<li><a href="/mypage/home.do">마이페이지</a></li>
+							<li><a href="/member/logout.do">ログアウト</a></li>
+							<li><a href="/mypage/home.do">マイページ</a></li>
 						</co:otherwise>
 					</co:choose>
 					<li><a href="/contact.jsp">お問い合わせ</a></li>

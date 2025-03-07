@@ -9,20 +9,20 @@
 <!-- 사이드바 -->
 <aside class="sidebar">
 	<div class="sidebar-header">
-		<h2>&nbsp;&nbsp;마이 페이지</h2>
+		<h2>&nbsp;&nbsp;マイページ</h2>
 		<br> <br>
 	</div>
 	<ul class="menu">
 		<li id="home-link"><a href="/mypage/home.do">HOME</a></li>
-		<li id="edit-link"><a href="/mypage//editform.do">개인정보수정</a></li>
-		<li class="submenu" id="travel-link"><a href="#">내여행</a>
+		<li id="edit-link"><a href="/mypage//editform.do">個人情報修正</a></li>
+		<li class="submenu" id="travel-link"><a href="#">私の旅行</a>
 			<ul class="submenu-items">
-				<li id="upcoming-link"><a href="/mypage/upcoming.do">예정된 여행</a></li>
-				<li id="past-link"><a href="/mypage/past.do">지난 여행</a></li>
-				<li id="canceled-link"><a href="/mypage/canceled.do">취소된 여행</a></li>
+				<li id="upcoming-link"><a href="/mypage/upcoming.do">予定された旅行</a></li>
+				<li id="past-link"><a href="/mypage/past.do">先達ての旅行</a></li>
+<!-- 				<li id="canceled-link"><a href="/mypage/canceled.do">취소된 여행</a></li>-->			
 			</ul></li>
-		<li id="interest-link"><a href="/mypage/interest.do">관심내역</a></li>
-		<li id="inquiries-link"><a href="/mypage/inquiries.do">문의</a></li>
+		<li id="interest-link"><a href="/mypage/interest.do">関心内訳</a></li>
+		<li id="inquiries-link"><a href="/mypage/inquiries.do">お問い合わせ</a></li>
 	</ul>
 </aside>
 

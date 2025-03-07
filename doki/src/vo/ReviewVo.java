@@ -1,6 +1,7 @@
 package vo;
 
 public class ReviewVo {
+
 	
 	 private int review_id;         // 리뷰번호
 	 private String package_id;        // 패키지 고유 번호
@@ -11,7 +12,7 @@ public class ReviewVo {
 	 private double totrating;		// 총별점
 	 private int totreivew;
 	 private String user_id;
-	 
+	 private String image; // 이미지
 	 
 	public String getUser_id() {
 		return user_id;
@@ -49,23 +50,41 @@ public class ReviewVo {
 	public void setReview_id(int review_id) {
 		this.review_id = review_id;
 	}
+
 	public int getAccount_id() {
 		return account_id;
 	}
+
 	public void setAccount_id(int account_id) {
 		this.account_id = account_id;
 	}
+
 	public String getReview_date() {
 		return review_date;
 	}
+
 	public void setReview_date(String review_date) {
 		this.review_date = review_date;
 	}
+
 	public String getContent() {
 		return content;
 	}
+
 	public void setContent(String content) {
 		this.content = content;
 	}
-	 
+
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+	
+	
+
+
 }
