@@ -183,13 +183,19 @@
 							<img src="${pageContext.request.contextPath}/${bestitem.imageUrl}" class="card-img-top"
 								alt="상품 이미지">
 							<div class="card-body">
+								<div class="d-flex justify-content-end align-items-center paddingtop20">
+									<div>
+										<img class="reviewtitlerating" alt="" src="/product/img/review.png">
+										<span class="fontsize14px reviewcntfontcolor">${bestitem.avgRating }&emsp;|&ensp;レビュー（${bestitem.reviewCount }件）</span>
+									</div>
+								</div>
 								<h5 class="card-title">${bestitem.package_name}</h5>
 								<p class="card-text">${bestitem.package_info}</p>
 								<p class="card-text">
 									<small class="text-muted">${bestitem.category_name }旅行パッケージ</small>
 								</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<span class="fw-bold text-primary">${bestitem.package_price}円 ~</span> 
+									<span class="fw-bold text-primary"><fmt:formatNumber value="${bestitem.package_price}" type="number"/>円 ~</span> 
 									<a href="/pakage/packages.do?package_id=${bestitem.package_id}" class="btn btn-outline-primary">詳細を見る</a>
 									<!-- 각 상품의 관심버튼 예시 -->
 									<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${bestitem.package_id}">
@@ -229,13 +235,19 @@
 							<img src="${pageContext.request.contextPath}/${newitem.imageUrl}" class="card-img-top"
 								alt="상품 이미지">
 							<div class="card-body">
+								<div class="d-flex justify-content-end align-items-center paddingtop20">
+									<div>
+										<img class="reviewtitlerating" alt="" src="/product/img/review.png">
+										<span class="fontsize14px reviewcntfontcolor">${newitem.avgRating }&emsp;|&ensp;レビュー（${newitem.reviewCount }件）</span>
+									</div>
+								</div>
 								<h5 class="card-title">${newitem.package_name}</h5>
 								<p class="card-text">${newitem.package_info}</p>
 								<p class="card-text">
 									<small class="text-muted">${newitem.category_name }旅行パッケージ</small>
 								</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<span class="fw-bold text-primary">${newitem.package_price}円 ~</span> 
+									<span class="fw-bold text-primary"><fmt:formatNumber value="${newitem.package_price}" type="number"/>円 ~</span> 
 									<a href="/pakage/packages.do?package_id=${newitem.package_id }" class="btn btn-outline-primary">詳細を見る</a>
 									<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${newitem.package_id}">
 									    <img class="wishlist-icon" style=" width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">
@@ -276,13 +288,19 @@
 							<img src="${pageContext.request.contextPath}/${allitem.imageUrl}" class="card-img-top"
 								alt="상품 이미지">
 							<div class="card-body">
+								<div class="d-flex justify-content-end align-items-center paddingtop20">
+									<div>
+										<img class="reviewtitlerating" alt="" src="/product/img/review.png">
+										<span class="fontsize14px reviewcntfontcolor">${allitem.avgRating }&emsp;|&ensp;レビュー（${allitem.reviewCount }件）</span>
+									</div>
+								</div>
 								<h5 class="card-title">${allitem.package_name}</h5>
 								<p class="card-text">${allitem.package_info}</p>
 								<p class="card-text">
 									<small class="text-muted">${allitem.category_name }旅行パッケージ</small>
 								</p>
 								<div class="d-flex justify-content-between align-items-center">
-									<span class="fw-bold text-primary">${allitem.package_price}円 ~</span> <a href="/pakage/packages.do?package_id=${allitem.package_id }"
+									<span class="fw-bold text-primary"><fmt:formatNumber value="${allitem.package_price}" type="number"/>円 ~</span> <a href="/pakage/packages.do?package_id=${allitem.package_id }"
 										class="btn btn-outline-primary">詳細を見る</a>
 									<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${allitem.package_id}">
 									    <img class="wishlist-icon" style=" width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">

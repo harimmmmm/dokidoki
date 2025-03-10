@@ -39,14 +39,9 @@
 				</c:forEach>
 			</div>
 		</div>
-
 		<!-- 상품 상세 정보 -->
 		<div class="detail-info">
-			<div class="d-flex justify-content-between align-items-center">
-				<small class="text-muted"> 商品コード <span
-					class="copy-text underline" data-copy="${view.package_id }">${view.package_id }</span>
-				</small>
-
+			<div class="d-flex justify-content-end align-items-center">
 				<div class="interest-icons">
 					<button class="wishlist-btn" data-package-id="${view.package_id}">
 					    <img src="${pageContext.request.contextPath}/product/img/heart.png" alt="관심" class="wishlist-icon">
@@ -59,17 +54,25 @@
 					</button>
 				</div>
 			</div>
-			<h2 class="mt-2">${view.package_name }</h2>
-			<div class="tags">${view.included_services }</div>
+			<div class="d-flex justify-content-between align-items-center paddingtop20">
+				<small class="text-muted fontsize14px"> 商品コード <span
+					class="copy-text underline fontsize14px" data-copy="${view.package_id }">${view.package_id }</span>
+				</small>
+				<div>
+					<img class="reviewtitlerating" alt="" src="/product/img/review.png">
+					<span class="fontsize14px reviewcntfontcolor">${totrating }&emsp;|&ensp;レビュー（${totreivew }件）</span>
+				</div>
+			</div>
+			<h2 class="mt-2 text-break bold">${view.package_name }</h2>
+			<div class="tags fontsize18px paddingbottom20">${view.included_services }</div>
 			<div class="info-price-container">
 				<button class="info-button" id="infoBtn">旅行の基本情報</button>
-				<div class="price">${view.package_price }円～</div>
+				<div class="price"><fmt:formatNumber value="${view.package_price}" type="number"/>円～</div>
 			</div>
 
 		</div>
 	</div>
-</div>
-
+</div> <!-- end untree_co-section -->
 
 <div class="modal fade" id="infoModal" tabindex="-1"
 	aria-labelledby="infoModalLabel" aria-hidden="true">
@@ -281,14 +284,14 @@
 				</div>
 			
 				<!-- 리뷰영역 -->
-				<h3 class="titleunderline paddingtop30">리뷰	<span class="reviewcntfontcolor bold">${totreivew }</span></h3>
+				<h3 class="titleunderline paddingtop30">レビュー	<span class="reviewcntfontcolor bold">${totreivew }</span></h3>
 				<div class="container d-flex justify-content-center gap-2 paddingtop30">
 					<img class="reviewtotstaricon" alt="" src="/product/img/review.png">
 					<span class="reviewtotcnt">${totrating }</span>
 				</div>
 				<div class="container d-flex justify-content-center reviewboxunderline">
 					<div class="reviewcntbox ">
-						<span class="reviewcntboxfont ">${totreivew }개의 리뷰</span>
+						<span class="reviewcntboxfont ">レビュー（${totreivew }件）</span>
 					</div>
 				</div>
 				
@@ -300,27 +303,56 @@
 								<span>${review.user_id }</span><span>${fn:substring(review.review_date, 0, 10)}</span>
 							</div>
 							
-							<!-- 별점이미지 -->
-							<div class="d-flex justify-content-start gap-1 paddingtop20">
-								<img class="reivewstaricon" alt="" src="/product/img/review.png">
-								<img class="reivewstaricon" alt="" src="/product/img/review.png">
-								<img class="reivewstaricon" alt="" src="/product/img/review.png">
-								<img class="reivewstaricon" alt="" src="/product/img/review.png">
-								<img class="reivewstaricon" alt="" src="/product/img/emptyreivew.png">
-							</div>
+							 <!-- 별점 이미지 표시 -->
+						    <div class="d-flex justify-content-start gap-1 paddingtop20">
+						        <c:set var="rating" value="${review.rating}" />
+						        <c:forEach begin="1" end="5" var="i">
+						            <c:choose>
+						                <c:when test="${i <= rating}">
+						                    <img class="reivewstaricon" alt="star" src="/product/img/review.png">
+						                </c:when>
+						                <c:otherwise>
+						                    <img class="reivewstaricon" alt="empty-star" src="/product/img/emptyreivew.png">
+						                </c:otherwise>
+						            </c:choose>
+						        </c:forEach>
+						    </div>
 							
 							<!-- 리뷰 내용 -->
-							<div class="reviewbody">
-								<div class="paddingbottom20">
-									<img class="reviewimg" alt="" src="/product/img/jejuslide1.jpg">
-								</div>
-								<span class="reviewcontentfont">
+							<div class="reviewbody paddingtop20">
+								<!-- 리뷰 이미지 (파일명만 저장되어 있음, uploads 폴더에서 불러옴) -->
+							    <c:if test="${not empty review.image}">
+							        <div class="reviewimg marginbottom20">
+							           <img 
+						                alt="리뷰이미지" 
+						                src="${pageContext.request.contextPath}/uploads/${review.image}" 
+						                style="max-width:100%; height:auto; cursor:pointer;"
+						                onclick="showModal('${pageContext.request.contextPath}/uploads/${review.image}')">
+							        </div>
+							    </c:if>
+								<span class="reviewcontentfont ">
 									${review.content }
 								</span>
 							</div>
 						</div>
 					</div>
 				</c:forEach>
+				<!-- 페이징 -->
+				<div class="paging-container">
+				    <c:forEach begin="1" end="${totalPages}" var="i">
+				        <a href="?package_id=${view.package_id}&page=${i}" class="page-link ${i == currentPage ? 'active' : ''}">
+				            ${i}
+				        </a>
+				    </c:forEach>
+				</div>
+				
+				
+				<!-- 이미지 확대 모달 -->
+				<div id="imageModal" class="modalimg" style="display:none;">
+				    <span class="close" onclick="closeModal()" style="position:absolute; top:10px; right:20px; font-size:40px; cursor:pointer;">&times;</span>
+				    <img class="modal-content" id="modalImg" style="width:auto; max-width:90%; max-height:90%; margin:85px auto; display:block;">
+				</div>
+				
 			
 			</div><!-- end 왼쪽: 상품 가격 정보 -->
 
@@ -331,11 +363,11 @@
 			<!-- 사이드바 (예약 정보) -->
 			<div class="col-md-4">
 				<div class="sticky-sidebar">
-					<div class="departure-info">
-						<p>
+					<div class="departure-info ">
+						<p class="d-flex justify-content-between">
 							<strong>${view.departure_name } 出発</strong> <span id="departure-date">${fn:substring(view.start_date, 0, 10)}</span>
 						</p>
-						<p>
+						<p class="d-flex justify-content-between">
 							<strong>${view.category_name } 到着</strong> <span id="arrival-date">${fn:substring(view.end_date, 0, 10)}</span>
 						</p>
 						
@@ -436,7 +468,27 @@
         }
     });
 </script>
+<script type="text/javascript">
+//모달 열기
+function showModal(imageSrc) {
+    document.getElementById("modalImg").src = imageSrc;
+    document.getElementById("imageModal").style.display = "block";
+}
 
+// 모달 닫기
+function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+}
+
+// 모달 외부 클릭 시 닫기
+window.onclick = function(event) {
+    var modal = document.getElementById("imageModal");
+    if (event.target == modal) {
+        closeModal();
+    }
+}
+
+</script>
 
 
 <%@ include file="../fragments/footer.jsp"%>

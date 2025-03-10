@@ -11,6 +11,19 @@
 .paddingbottom20 {
 	padding-bottom: 20px;
 }
+
+.fontsize14px {
+	font-size: 14px;
+}
+
+.fontsize18px {
+	font-size: 18px;
+}
+
+.reviewtitlerating {
+	width: 14px;
+	height: 14px;
+}
 /* ---------------------------------------리뷰 css-----------------------------------------*/
 .reviewcntfontcolor {
 	color: #486988;
@@ -28,7 +41,7 @@
 }
 
 .reviewcntbox {
-	padding: .25rem .75rem;
+	padding: .25rem 5px .25rem.75rem;
 	background: #f7f7f7;
 	border-radius: 5px;
 }
@@ -55,7 +68,6 @@
 
 .reviewbody {
 	line-height: 1.6;
-	padding: 20px 0;
 }
 
 .reviewcontentfont{
@@ -63,10 +75,32 @@
 }
 
 .reviewimg {
-    height: 220px;
+    height: auto;
     width: 220px;
     background-color: rgb(248, 249, 250);
 }
+
+/*--리뷰이미지모달css--*/
+.modalimg {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    display: block;
+    margin: auto;
+}
+
+.close {
+    color: #fff;
+}
+
 
 /* ---------------------------------------end 리뷰 css-----------------------------------------*/
 .detail-container {
@@ -294,8 +328,8 @@
 }
 
 .interest-icons img {
-	width: 24px; /* 기존 아이콘 크기 유지 */
-	height: 24px;
+	width: 26px; /* 기존 아이콘 크기 유지 */
+	height: 26px;
 	transition: opacity 0.3s ease-in-out; /* 마우스 호버 효과 */
 }
 
@@ -479,7 +513,7 @@
 /* ✅ 예약 버튼 */
 .reserve-btn {
 	width: 100%;
-	background: #007bff;
+	background: #486988;
 	color: white;
 	padding: 10px;
 	border: none;
@@ -490,7 +524,7 @@
 }
 
 .reserve-btn:hover {
-	background: #0056b3;
+	background:  #324A5F;
 }
 
 /* ✅ 달력 모달 스타일 */

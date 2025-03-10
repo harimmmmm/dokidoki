@@ -146,13 +146,19 @@
 							<div class="card h-100">
 								<img src="${pageContext.request.contextPath}/${item.imageUrl}" class="card-img-top" alt="도쿄 패키지 4일">
 								<div class="card-body">
+									<div class="d-flex justify-content-end align-items-center paddingtop20">
+										<div>
+											<img class="reviewtitlerating" alt="" src="/product/img/review.png">
+											<span class="fontsize14px reviewcntfontcolor">${item.avgRating }&emsp;|&ensp;レビュー（${item.reviewCount }件）</span>
+										</div>
+									</div>
 									<h5 class="card-title">${item.package_name }</h5>
 									<p class="card-text">${item.package_info}</p>
 									<p class="card-text">
 										<small class="text-muted">${item.category_name }旅行パッケージ</small>
 									</p>
 									<div class="d-flex justify-content-between align-items-center">
-										<span class="fw-bold text-primary">${item.package_price }円 ~</span> <a href="/pakage/packages.do?package_id=${item.package_id }"
+										<span class="fw-bold text-primary"><fmt:formatNumber value="${item.package_price}" type="number"/>円 ~</span> <a href="/pakage/packages.do?package_id=${item.package_id }"
 											class="btn btn-outline-primary">詳細を見る</a>
 										<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${item.package_id}">
 										    <img class="wishlist-icon" style=" width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">

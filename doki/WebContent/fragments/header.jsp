@@ -81,11 +81,11 @@
 		<div class="container">
 			<div class="site-navigation">
 				<!-- 로고 -->
-				<a href="/" class="logo m-0">どきどきkorea<span
+				<a href="/doki" class="logo m-0">どきどきkorea<span
 					class="text-primary"></span></a>
 				<!-- 네비게이션 메뉴 -->
 				<ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right">
-					<li class="active"><a href="<%= request.getContextPath() %>/index.jsp">Home</a></li>
+					<li class="active"><a href="/doki">Home</a></li>
 					<li><a href="/pakage/packagesList.do">予約</a></li>
 					<li><a href="/board/services.jsp">旅行先紹介</a></li>
 					<co:choose>
