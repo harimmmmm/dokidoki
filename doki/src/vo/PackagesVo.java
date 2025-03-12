@@ -23,7 +23,14 @@ public class PackagesVo {
 	 private WishlistVo WishlistInfo; 
      private double avgRating;
      private int reviewCount;
+     private int bno;
      
+	public int getBno() {
+		return bno;
+	}
+	public void setBno(int bno) {
+		this.bno = bno;
+	}
 	public double getAvgRating() {
 		return avgRating;
 	}

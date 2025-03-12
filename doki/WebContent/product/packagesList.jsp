@@ -190,7 +190,7 @@
 									</div>
 								</div>
 								<h5 class="card-title">${bestitem.package_name}</h5>
-								<p class="card-text">${bestitem.package_info}</p>
+								<p class="card-text" style="font-size: 12px;">${bestitem.package_info}</p>
 								<p class="card-text">
 									<small class="text-muted">${bestitem.category_name }旅行パッケージ</small>
 								</p>
@@ -242,7 +242,7 @@
 									</div>
 								</div>
 								<h5 class="card-title">${newitem.package_name}</h5>
-								<p class="card-text">${newitem.package_info}</p>
+								<p class="card-text" style="font-size: 12px;">${newitem.package_info}</p>
 								<p class="card-text">
 									<small class="text-muted">${newitem.category_name }旅行パッケージ</small>
 								</p>
@@ -295,7 +295,7 @@
 									</div>
 								</div>
 								<h5 class="card-title">${allitem.package_name}</h5>
-								<p class="card-text">${allitem.package_info}</p>
+								<p class="card-text" style="font-size: 12px;">${allitem.package_info}</p>
 								<p class="card-text">
 									<small class="text-muted">${allitem.category_name }旅行パッケージ</small>
 								</p>
