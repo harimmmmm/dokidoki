@@ -48,7 +48,7 @@
 
 		<main class="main-content">
 			<section id="edit" class="edit">
-				<h2>개인정보 수정000</h2>
+				<h2>個人情報修正</h2>
 				<form action="/mypage/editformUpdatepro.do" method="post">
 					<table class="editTable">
 						<tr>
@@ -88,30 +88,30 @@
 						</tr>
 						<tr>
 							<td colspan="2" style="padding-top: 20px; color: #c85557;">*
-								선택입력</td>
+								選択入力</td>
 						</tr>
 						<tr>
-							<td><label for="postal_code">우편번호 (郵便番号)</label></td>
+							<td><label for="postal_code">郵便番号</label></td>
 							<td><input type="text" id="postal_code" name="postal_code"
 								value="${vo.postal_code}"></td>
 						</tr>
 						<tr>
-							<td><label for="prefecture">도도부현 (都道府県)</label></td>
+							<td><label for="prefecture">都道府県</label></td>
 							<td><input type="text" id="prefecture" name="prefecture"
 								value="${vo.prefecture}"></td>
 						</tr>
 						<tr>
-							<td><label for="city">시/구/정/촌 (市区町村)</label></td>
+							<td><label for="city">市区町村</label></td>
 							<td><input type="text" id="city" name="city"
 								value="${vo.city}"></td>
 						</tr>
 						<tr>
-							<td><label for="town">번지 (丁目・番地)</label></td>
+							<td><label for="town">丁目・番地</label></td>
 							<td><input type="text" id="town" name="town"
 								value="${vo.town}"></td>
 						</tr>
 						<tr>
-							<td><label for="building">건물명 (建物名)</label></td>
+							<td><label for="building">建物名</label></td>
 							<td><input type="text" id="building" name="building"
 								value="${vo.building}"></td>
 						</tr>

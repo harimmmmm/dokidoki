@@ -1,9 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:set var="typedJs" value="true" />
-<%@ include file="./fragments/header.jsp"%>
+<%@ include file="fragments/header.jsp"%>
+<link href="<%=request.getContextPath()%>/product/css/dropdownstyle.css"
+	rel="stylesheet">
 
 <!-- index css -->
 <link rel="stylesheet" href="<%= request.getContextPath() %>/css/indexstyle.css">
@@ -26,36 +27,73 @@
 						<!-- 여행 검색 폼 -->
 						<div class="row">
 							<div class="col-12"> <!-- 전체 너비를 차지하는 컬럼 -->
-								<form class="form"> <!-- 여행 검색을 위한 폼 -->
+								<form class="form"  method="get" action="/pakage/packageSelect.do"> <!-- 여행 검색을 위한 폼 -->
 	
 									<!-- 여행 검색 필드 -->
 									<div class="row mb-2">
 										<!-- 목적지 선택 -->
 										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-											<select name="" id="" class="form-control custom-select">
-												<option value="">제주도</option>
-												<option value="">서울</option>
-												<option value="">충청도</option>
-												<option value="">전라도</option>
-												<option value="">경상도</option>
-												<option value="">강원도</option>
-												<option value="">Israel</option>
-												<option value="">China</option>
-												<option value="">Russia</option>
-											</select>
+											<div class="custom-dropdown form-control custom-select">
+												<div class="selected">旅行先</div>
+												<div class="dropdown-menu">
+													<!-- 1단계 -->
+													<div class="column first">
+														<div class="option main-option active" data-target="domestic">韓国</div>
+													</div>
+													<!-- 2단계 -->
+													<div class="column second">
+														<div class="option sub-option" data-target="jeju">ジェジュ島</div>
+														<div class="option sub-option" data-target="ulleung">ウルルン島</div>
+														<div class="option sub-option" data-target="gangwon">カンウォン</div>
+														<div class="option sub-option" data-target="gyeongsang">キョンサン</div>
+														<div class="option sub-option" data-target="jeolla">チョルラ</div>
+														<!-- 전라 추가 -->
+														<div class="option sub-option" data-target="chungcheong">チュンチョン</div>
+														<div class="option sub-option" data-target="seoul">ソウル/インチョン</div>
+													</div>
+			
+													<div class="column third">
+														<div class="option detail-option d-none" data-parent="jeju">ジェジュ島</div>
+														<div class="option detail-option d-none" data-parent="ulleung">ウルルン島</div>
+														<div class="option detail-option d-none" data-parent="gangwon">カンウォン</div>
+														<div class="option detail-option d-none" data-parent="gyeongsang">キョンサンプク道</div>
+														<div class="option detail-option d-none" data-parent="gyeongsang">キョンサンナム道</div>
+														<div class="option detail-option d-none" data-parent="gyeongsang">プサン</div>
+														<div class="option detail-option d-none" data-parent="jeolla">チョルラプク道</div>
+														<div class="option detail-option d-none" data-parent="jeolla">チョルラナム道</div>
+														<div class="option detail-option d-none" data-parent="chungcheong">チュンチョンプク道</div>
+														<div class="option detail-option d-none" data-parent="chungcheong">チュンチョンナム道</div>
+														<div class="option detail-option d-none" data-parent="seoul">ソウル</div>
+														<div class="option detail-option d-none" data-parent="seoul">インチョン</div>
+													</div>
+												</div>
+											</div>
+										    <!-- 선택된 값을 저장할 hidden input -->
+										    <input type="hidden" name="destination" id="selectedDestination">
 										</div>
 										
 										<!-- 인원 수 입력 -->
 										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
-											<input type="text" class="form-control"
-												placeholder="# 参加人数">
+											<select name="departure" id="departure" class="form-control custom-select" >
+												<option value="출발지 " selected disabled hidden >出発地</option>
+												<option value="東京">東京</option>
+												<option value="大阪">大阪</option>
+												<option value="福岡">福岡</option>
+												<option value="名古屋">名古屋</option>
+												<option value="札幌">札幌</option>
+												<option value="沖縄">沖縄</option>
+												<option value="その他">その他</option>
+											</select>
 										</div>
 	
 										<!-- 날짜 입력 -->
 										<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-5">
-											<input type="text" class="form-control" name="daterange">
+											<input type="text" class="form-control" name="datePicker" id="datePicker">
 										</div>
-	
+										<!-- hidden 필드 추가 -->
+										<input type="hidden" id="startDateHidden" name="startDate">
+										<input type="hidden" id="endDateHidden" name="endDate">
+							
 									</div>
 	
 									<!-- 검색 버튼 및 체크박스 -->
@@ -66,14 +104,6 @@
 												value="探す">
 										</div>
 	
-										<!-- 검색 저장 체크박스 -->
-										<div class="col-lg-8">
-											<label class="control control--checkbox mt-3">
-												<span class="caption">この検索を保存する</span> 
-												<input type="checkbox" checked="checked" />
-												<div class="control__indicator"></div> <!-- 체크박스 스타일용 -->
-											</label>
-										</div>
 									</div>
 									
 								</form> <!-- 여행 검색 폼 종료 -->
@@ -106,15 +136,7 @@
 	        <div class="row mb-5 justify-content-center"> <!-- 행을 생성하고 중앙 정렬 -->
 	            <div class="col-lg-6 text-center"> <!-- 너비를 6로 설정하고 텍스트 중앙 정렬 -->
 	                <h2 class="section-title text-center mb-3">私たちのサービス</h2> <!-- 섹션 제목 -->
-	                <p>快適で思い出に残る韓国旅行を、私たちがサポートします！</p> <!-- 섹션 설명 -->
-						<c:if test="${empty sessionScope.user}">
-						    <p>로그인되지 않은 상태입니다.</p>
-						</c:if>
-						
-						<%-- 세션에 user가 있을 경우 사용자 이름을 출력 --%>
-						<c:if test="${not empty sessionScope.user}">
-						    <p>안녕하세요, ${sessionScope.user.name}님!</p> <!-- user_name은 AccountVo의 속성 -->
-						</c:if>
+	                <p>快適で思い出に残る韓国旅行を、私たちがサポートします！</p> <!-- 섹션 설명 -->					
 	            </div>
 	        </div>
 	

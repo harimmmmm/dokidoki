@@ -6,3 +6,6 @@
     min-width: 236px;
 }
 
+input#datePicker {
+    padding: .375rem;
+}

@@ -17,9 +17,11 @@ public class SendMail {
         // SMTP 서버 설정
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.starttls.enable", "true");  // STARTTLS 사용
         props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.port", "587");  // STARTTLS는 587 포트 사용
+        props.put("mail.smtp.ssl.protocols", "TLSv1.2"); // TLS 1.2 강제 설정
+        props.put("mail.smtp.ssl.trust", "smtp.gmail.com"); // SSL 인증 문제 방지
 
         Session session = Session.getInstance(props, new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
@@ -38,7 +40,7 @@ public class SendMail {
             message.setSubject("【どきどきKorea】会員登録の認証コード");
 
             String htmlContent = "<div style='font-family: Arial, sans-serif; padding: 20px; border: 1px solid #ddd; border-radius: 10px;'>"
-                    + "<h2 style='color: #4A90E2;'>どきどきKorea 会員登録 認証番号</h2>"
+                    + "<h2>どきどきKorea 会員登録 認証番号</h2>"
                     + "<p>こんにちは、<strong>どきどきKorea</strong>をご利用いただきありがとうございます！</p>"
                     + "<p>以下の認証番号を入力し、メール認証を完了してください。</p>"
                     + "<div style='background-color: #f8f8f8; padding: 10px; text-align: center; font-size: 18px; font-weight: bold; border-radius: 5px;'>"
@@ -46,9 +48,8 @@ public class SendMail {
                     + "</div>"
                     + "<hr>"
                     + "<p style='font-size: 12px; color: #777;'>このメールは送信専用です。返信できませんのでご了承ください。</p>"
-                    + "<p style='font-size: 12px; color: #777;'>お問い合わせは<a href='mailto:http://localhost:8021/doki' style='color: #4A90E2;'>カスタマーサポート</a>までご連絡ください。</p>"
+                    + "<p style='font-size: 12px; color: #777;'>お問い合わせはカスタマーサポートまでご連絡ください。</p>"
                     + "</div>";
-
 
             message.setContent(htmlContent, "text/html; charset=utf-8");
 

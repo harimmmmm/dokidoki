@@ -13,6 +13,7 @@ import account.service.LogoutService;
 import account.service.MemberInsertService;
 import account.service.MemberLoginSerivce;
 import account.service.MemberUserIdCheckService;
+import account.service.PwResultService;
 import account.service.SendVerificationEmailService;
 
 @WebServlet("/member/*")
@@ -36,7 +37,6 @@ public class MemberController extends HttpServlet {
 			break;
 		case "/loginpro.do":	// 로그인
 			new MemberLoginSerivce().docommand(request, response);
-//			response.sendRedirect("/");
 			return;
 		case "/callback":	// 구글 로그인
 			new GoogleCallbackServlet().docommand(request, response);
@@ -67,6 +67,9 @@ public class MemberController extends HttpServlet {
 			break;
 		case "/pwfind.do":	// 비번 찾기
 			page = "/account/pwfind.jsp";
+			break;
+		case "/pwfindpro.do":	// 비번 찾기
+			new PwResultService().docommand(request, response);
 			break;
 		}
 		if (page != null)

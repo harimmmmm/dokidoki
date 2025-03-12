@@ -87,7 +87,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+
+
 	function updateTotalPrice() {
+
 	    let adultElement = document.querySelector('[data-type="adult"] .count');
 	    let childElement = document.querySelector('[data-type="child"] .count');
 	    let infantElement = document.querySelector('[data-type="infant"] .count');
@@ -96,11 +99,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	    let childCount = childElement ? parseInt(childElement.innerText) : 0;
 	    let infantCount = infantElement ? parseInt(infantElement.innerText) : 0;
 	
-	    let total = (adultCount * 879900) + (childCount * 796100) + (infantCount * 55400);
+	    let total = (adultCount * ADULT_PRICE) + (childCount * CHILD_PRICE) + (infantCount * INFANT_PRICE);
 	    let totalPriceElement = document.querySelector('.total-price');
 	
 	    if (totalPriceElement) {
-	        totalPriceElement.innerText = `총 금액: ${total.toLocaleString()}원`;
+	        totalPriceElement.innerText = `총 금액: ${total.toLocaleString()}円`;
 	    }
 	}
 

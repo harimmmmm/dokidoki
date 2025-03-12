@@ -1,4 +1,4 @@
-
+<<<<<<< HEAD
 @charset "UTF-8";
 .textcolorccc {
     color: #212529a6;
@@ -8,7 +8,7 @@
 .hero {
     padding: 7rem 0 10rem 0;
     background: white;
-    margin-bottom: 0;
+    margin-bottom: -40px;
 }
 
 /* 슬라이드 */
@@ -27,7 +27,22 @@
 	width: 1530px;/*  */
 }
 
+.fontsize14px {
+	font-size: 14px;
+}
 
+.fontsize18px {
+	font-size: 18px;
+}
+
+.reviewtitlerating {
+	width: 14px;
+	height: 14px;
+}
+/* ---------------------------------------리뷰 css-----------------------------------------*/
+.reviewcntfontcolor {
+	color: #486988;
+}
 /* 주간 베스트  */ 
 
 .weeklyBestfont {
@@ -54,4 +69,11 @@
     height: 160px;
 }
 
-
+.btn {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    border-radius: 30px;
+    font-size: 14px;
+}

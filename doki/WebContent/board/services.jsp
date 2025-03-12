@@ -54,204 +54,21 @@
          </div>
       </div>
       <div class="row">
-         <div class="col-6 col-md-6 col-lg-3">
-            <div class="media-1">
-               <a href="#" class="d-block mb-3"><img src="/images/hero-slider-1.jpg" alt="Image" class="img-fluid"></a>
-               <div class="d-flex">
-                  <div>
-                     <h3>
-                        <a href="#">Excellence in Travel</a>
-                     </h3>
-                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-6 col-md-6 col-lg-3">
-            <div class="media-1">
-               <a href="#" class="d-block mb-3"><img src="/images/boardimg/hero-slider-2.jpg" alt="Image" class="img-fluid"></a>
-               <div class="d-flex">
-                  <div>
-                     <h3>
-                        <a href="#">Discovering Best</a>
-                     </h3>
-                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-6 col-md-6 col-lg-3">
-            <div class="media-1">
-               <a href="#" class="d-block mb-3"><img src="/images/hero-slider-3.jpg" alt="Image" class="img-fluid"></a>
-               <div class="d-flex">
-                  <div>
-                     <h3>
-                        <a href="#">A New Moments of Life</a>
-                     </h3>
-                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-6 col-md-6 col-lg-3">
-            <div class="media-1">
-               <a href="#" class="d-block mb-3"><img src="/images/hero-slider-4.jpg" alt="Image" class="img-fluid"></a>
-               <div class="d-flex">
-                  <div>
-                     <h3>
-                        <a href="#">Joy To Your Journey</a>
-                     </h3>
-                     <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
+      	<c:forEach var= "list" items="${list }">
+			<div class="col-6 col-md-6 col-lg-3">
+				<div class="media-1">
+					<a href="/boards/board.do?bno=${list.bno }" ><img src="${request.contextPath}/uploads/${list.board_img}" alt="Image" class="img-fluid d-block mb-3"></a>
+					<h3>${list.title }</h3>
+					<p class="text-break">${list.content.substring(0,50) }..</p>
+				</div>
+			</div>
+		</c:forEach>
+      </div> <!-- row end -->
    </div>
 </div>
 
 
 
-
-
-<div class="untree_co-section2" style="margin-bottom: 40px;">
-   <div class="container">
-      <div class="row">
-         <div class="col-6 col-md-6 col-lg-3">
-            <div class="media-1">
-               <a href="#" class="d-block mb-3"><img
-                  src="/images/boardimg/1.jinhae.png" alt="Image" class="img-fluid"></a>
-               <div class="d-flex">
-                  <div>
-                     <h3>
-                        <a href="#">Excellence in Travel</a>
-                     </h3>
-                     <p>Far far away, behind the word mountains, far from the
-                        countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-6 col-md-6 col-lg-3">
-            <div class="media-1">
-               <a href="#" class="d-block mb-3"><img
-                  src="/images/boardimg/1.sokcho.png" alt="Image" class="img-fluid"></a>
-               <div class="d-flex">
-                  <div>
-                     <h3>
-                        <a href="#">Discovering Best</a>
-                     </h3>
-                     <p>Far far away, behind the word mountains, far from the
-                        countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-6 col-md-6 col-lg-3">
-            <div class="media-1">
-               <a href="#" class="d-block mb-3"><img
-                  src="/images/boardimg/1.daejeon.png" alt="Image" class="img-fluid"></a>
-               <div class="d-flex">
-                  <div>
-                     <h3>
-                        <a href="#">A New Moments of Life</a>
-                     </h3>
-                     <p>Far far away, behind the word mountains, far from the
-                        countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-6 col-md-6 col-lg-3">
-            <div class="media-1">
-               <a href="#" class="d-block mb-3"><img
-                  src="/images/boardimg/1.damyang.png" alt="Image" class="img-fluid"></a>
-               <div class="d-flex">
-                  <div>
-                     <h3>
-                        <a href="#">Joy To Your Journey</a>
-                     </h3>
-                     <p>Far far away, behind the word mountains, far from the
-                        countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
-
-
-
-<div class="untree_co-section3">
-   <div class="container">
-      <div class="row">
-         <div class="col-6 col-md-6 col-lg-3">
-            <div class="media-1">
-               <a href="#" class="d-block mb-3"><img
-                  src="/images/boardimg/1.jeonju.jpg" alt="Image" class="img-fluid"></a>
-               <div class="d-flex">
-                  <div>
-                     <h3>
-                        <a href="#">Excellence in Travel</a>
-                     </h3>
-                     <p>Far far away, behind the word mountains, far from the
-                        countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-6 col-md-6 col-lg-3">
-            <div class="media-1">
-               <a href="#" class="d-block mb-3"><img
-                  src="/images/boardimg/1.yangyang.png" alt="Image"
-                  class="img-fluid"></a>
-               <div class="d-flex">
-                  <div>
-                     <h3>
-                        <a href="#">Discovering Best</a>
-                     </h3>
-                     <p>Far far away, behind the word mountains, far from the
-                        countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-6 col-md-6 col-lg-3">
-            <div class="media-1">
-               <a href="#" class="d-block mb-3"><img
-                  src="/images/boardimg/hero-slider-2.jpg" alt="Image"
-                  class="img-fluid"></a>
-               <div class="d-flex">
-                  <div>
-                     <h3>
-                        <a href="#">A New Moments of Life</a>
-                     </h3>
-                     <p>Far far away, behind the word mountains, far from the
-                        countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-6 col-md-6 col-lg-3">
-            <div class="media-1">
-               <a href="#" class="d-block mb-3"><img
-                  src="/images/boardimg/hero-slider-2.jpg" alt="Image"
-                  class="img-fluid"></a>
-               <div class="d-flex">
-                  <div>
-                     <h3>
-                        <a href="#">Joy To Your Journey</a>
-                     </h3>
-                     <p>Far far away, behind the word mountains, far from the
-                        countries Vokalia and Consonantia, there live the blind texts.</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
 
 
 
@@ -261,19 +78,6 @@
          <div class="col-lg-6 text-center" style="margin-top: 60px;"> <!-- 여백 추가 -->
             <h2 class="section-title text-center mb-3" style=" color: #1b4772;">韓国の人気旅行地を紹介します </h2>
             <p style="margin-top: 30px; color: #365471;">韓国の旅は毎日新しい物語を提供します。海辺では波の音に心が安らぎ、夜は温かな光に包まれます。伝統文化がある場所では過去の美しさを感じることができます。各季節には特別な瞬間があり、春には桜、夏には涼しい風、秋には紅葉、冬には静かな雪景色が広がります。これらすべての瞬間があなたの心を温かく包み、特別な思い出を作ることでしょう あなたの好みに合った旅行地を選んでください</p>
-         </div>
-      </div>
-      <div class="row align-items-stretch">
-         <div class="col-lg-4 order-lg-1">
-            <div class="h-100">
-               <div class="frame h-100">
-                  <div class="feature-img-bg h-100"
-                     style="background-image: url('images/hero-slider-1.jpg');"></div>
-               </div>
-            </div>
-         </div>
-
-         <div class="col-6 col-sm-6 col-lg-4 feature-1-wrap d-md-flex flex-md-column order-lg-1">
          </div>
       </div>
    </div>

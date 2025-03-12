@@ -1,440 +1,327 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-	<%@ include file="/fragments/header.jsp" %>
-		<link href="<%=request.getContextPath()%>/product/css/allpakagestyle.css" rel="stylesheet">
-		<link href="<%=request.getContextPath()%>/product/css/dropdownstyle.css" rel="stylesheet">
-		<div class="hero"> <!-- 히어로 섹션: 메인 배경 영역 -->
-			<div class="container"> <!-- 컨텐츠를 감싸는 부트스트랩 컨테이너 -->
-				<div class="row align-items-center"> <!-- 세로 중앙 정렬된 그리드 행 -->
-					
-					<!-- 왼쪽 컨텐츠 영역 -->
-					<div class="col-lg-7"> <!-- 화면이 큰 경우 7칸을 차지 -->
-						<div class="intro-wrap"> <!-- 여행 소개 문구 및 검색 폼을 감싸는 영역 -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ include file="/fragments/header.jsp"%>
+<link
+	href="<%=request.getContextPath()%>/product/css/selectPackageList.css"
+	rel="stylesheet">
+<link
+	href="<%=request.getContextPath()%>/product/css/allpakagestyle.css"
+	rel="stylesheet">
+<link href="<%=request.getContextPath()%>/product/css/dropdownstyle.css"
+	rel="stylesheet">
+<script>
+  window.autoSubmit = false;
+</script>
+<div class="hero">
+	<!-- 히어로 섹션: 메인 배경 영역 -->
+	<div class="container">
+		<!-- 컨텐츠를 감싸는 부트스트랩 컨테이너 -->
+		<div class="row align-items-center">
+			<!-- 세로 중앙 정렬된 그리드 행 -->
 
-							<!-- 제목 -->
-							<h1 class="mb-5">
-								<!-- 동적으로 변경될 여행지 이름 -->
-								<span class="d-block"></span>  <br>
-								<span class="d-block"> </span> <!-- 동적으로 변경될 여행지 이름 -->
-							</h1>
+			<!-- 왼쪽 컨텐츠 영역 -->
+			<div class="col-lg-7">
+				<!-- 화면이 큰 경우 7칸을 차지 -->
+				<div class="intro-wrap">
+					<!-- 여행 소개 문구 및 검색 폼을 감싸는 영역 -->
 
-							
+					<!-- 제목 -->
+					<h1 class="mb-5">
+						<!-- 동적으로 변경될 여행지 이름 -->
+						<span class="d-block"></span> <br> <span class="d-block">
+						</span>
+						<!-- 동적으로 변경될 여행지 이름 -->
+					</h1>
 
-						</div> <!-- 여행 소개 및 검색 영역 종료 -->
-					</div> <!-- 왼쪽 컨텐츠 영역 종료 -->
 
-					<!-- 오른쪽 이미지 슬라이더 영역 -->
-					<div class="col-lg-5"> <!-- 화면이 큰 경우 5칸을 차지 -->
-						<div class="swiper productslid">
-							<div class="swiper-wrapper ">
-								<div class="swiper-slide"><img src="/product/img/productslidimg1.jpg" alt="이미지1"></div>
-								<div class="swiper-slide"><img src="/product/img/productslidimg2.jpg" alt="이미지2"></div>
-								<div class="swiper-slide"><img src="/product/img/productslidimg3.jpg" alt="이미지3"></div>
-								<div class="swiper-slide"><img src="/product/img/productslidimg4.jpg" alt="이미지4"></div>
-								<div class="swiper-slide"><img src="/product/img/productslidimg5.jpg" alt="이미지5"></div>
-							</div>
-							<!-- 네비게이션 & 페이지네이션 -->
-							<div class="swiper-button-next"></div>
-							<div class="swiper-button-prev"></div>
-							<div class="swiper-pagination"></div>
+
+				</div>
+				<!-- 여행 소개 및 검색 영역 종료 -->
+			</div>
+			<!-- 왼쪽 컨텐츠 영역 종료 -->
+
+			<!-- 오른쪽 이미지 슬라이더 영역 -->
+			<div class="col-lg-5">
+				<!-- 화면이 큰 경우 5칸을 차지 -->
+				<div class="swiper productslid">
+					<div class="swiper-wrapper ">
+						<div class="swiper-slide">
+							<img src="/product/img/productslidimg1.jpg" alt="이미지1">
 						</div>
-					</div> <!-- 이미지 슬라이드 영역 종료 -->
-					<!-- 여행 검색 폼 -->
-					<div class="row">
-						<div class="col-12"> <!-- 전체 너비를 차지하는 컬럼 -->
-							<form class="form" action="/product/packageSelect.jsp"> <!-- 여행 검색을 위한 폼 -->
+						<div class="swiper-slide">
+							<img src="/product/img/productslidimg2.jpg" alt="이미지2">
+						</div>
+						<div class="swiper-slide">
+							<img src="/product/img/productslidimg3.jpg" alt="이미지3">
+						</div>
+						<div class="swiper-slide">
+							<img src="/product/img/productslidimg4.jpg" alt="이미지4">
+						</div>
+						<div class="swiper-slide">
+							<img src="/product/img/productslidimg5.jpg" alt="이미지5">
+						</div>
+					</div>
+					<!-- 네비게이션 & 페이지네이션 -->
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+			<!-- 이미지 슬라이드 영역 종료 -->
+			<!-- 여행 검색 폼 -->
+			<div class="row">
+				<div class="col-12">
+					<!-- 전체 너비를 차지하는 컬럼 -->
+					<form class="form" method="get" action="/pakage/packageSelect.do">
+						<!-- 여행 검색을 위한 폼 -->
 
-								<!-- 여행 검색 필드 -->
-								<div class="row mb-2">
-									<!-- 목적지 선택 -->
-									<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
-										<div class="custom-dropdown form-control custom-select">
-											<div class="selected">여행지 선택</div>
-											<div class="dropdown-menu">
-												<!-- 1단계 -->
-												<div class="column first">
-													<div class="option main-option active" data-target="domestic">국내</div>
-												</div>
-												<!-- 2단계 -->
-												<div class="column second">
-													<div class="option sub-option" data-target="jeju">제주도</div>
-													<div class="option sub-option" data-target="ulleung">울릉도</div>
-													<div class="option sub-option" data-target="gangwon">강원</div>
-													<div class="option sub-option" data-target="gyeongsang">경상</div>
-													<div class="option sub-option" data-target="jeolla">전라</div> <!-- 전라 추가 -->
-													<div class="option sub-option" data-target="chungcheong">충청</div>
-													<div class="option sub-option" data-target="seoul">서울/인천/경기</div>
-												</div>
-
-												<div class="column third">
-													<!-- ✅ "제주도"을 선택하면 보일 3차 메뉴 -->
-													<div class="option detail-option d-none" data-parent="jeju">제주도</div>
-													<!-- ✅ "울릉도"을 선택하면 보일 3차 메뉴 -->
-													<div class="option detail-option d-none" data-parent="ulleung">울릉도</div>
-													<!-- ✅ "강원"을 선택하면 보일 3차 메뉴 -->
-													<div class="option detail-option d-none" data-parent="gangwon">강원</div>
-													<!-- ✅ "경상"을 선택하면 보일 3차 메뉴 -->
-													<div class="option detail-option d-none" data-parent="gyeongsang">경상북도</div>
-													<div class="option detail-option d-none" data-parent="gyeongsang">경상남도</div>
-													<div class="option detail-option d-none" data-parent="gyeongsang">부산</div>
-													<!-- ✅ "전라"를 선택하면 보일 3차 메뉴 -->
-													<div class="option detail-option d-none" data-parent="jeolla">전라북도</div>
-													<div class="option detail-option d-none" data-parent="jeolla">전라남도</div>
-													<!-- ✅ "충청"를 선택하면 보일 3차 메뉴 -->
-													<div class="option detail-option d-none" data-parent="chungcheong">충청북도</div>
-													<div class="option detail-option d-none" data-parent="chungcheong">충청남도</div>
-													<!-- ✅ "서울/인천/경기"를 선택하면 보일 3차 메뉴 -->
-													<div class="option detail-option d-none" data-parent="seoul">서울</div>
-													<div class="option detail-option d-none" data-parent="seoul">인천</div>
-												</div>
-												
-												
-											</div>
+						<!-- 여행 검색 필드 -->
+						<div class="row mb-2">
+							<!-- 목적지 선택 -->
+							<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
+								<div class="custom-dropdown form-control custom-select">
+									<div class="selected">旅行先を選ぶ</div>
+									<div class="dropdown-menu">
+										<!-- 1단계 -->
+										<div class="column first">
+											<div class="option main-option active" data-target="domestic">韓国</div>
 										</div>
-										
-									</div>
+										<!-- 2단계 -->
+										<div class="column second">
+											<div class="option sub-option" data-target="jeju">ジェジュ島</div>
+											<div class="option sub-option" data-target="ulleung">ウルルン島</div>
+											<div class="option sub-option" data-target="gangwon">カンウォン</div>
+											<div class="option sub-option" data-target="gyeongsang">キョンサン</div>
+											<div class="option sub-option" data-target="jeolla">チョルラ</div>
+											<!-- 전라 추가 -->
+											<div class="option sub-option" data-target="chungcheong">>チュンチョン</div>
+											<div class="option sub-option" data-target="seoul">ソウル/インチョン</div>
+										</div>
 
-									<!-- 출발지 선택 -->
-									<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-2">
-										<select name="" id="" class="form-control custom-select">
-											<option value="">도쿄</option>
-											<option value="">오사카</option>
-											<option value="">후쿠오카</option>
-											<option value="">나고야</option>
-											<option value="">삿포로</option>
-											<option value="">오키나와</option>
-											<option value="">기타</option>
-											
-										</select>
-									</div>
-
-									<!-- 날짜 입력 -->
-									<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-										<input type="text" class="form-control" name="daterange">
-									</div>
-
-									<!-- 검색 버튼 -->
-									<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
-										<input type="submit" class="btn btn-primary btn-block" value="探す">
+										<div class="column third">
+											<div class="option detail-option d-none" data-parent="jeju">ジェジュ島</div>
+											<div class="option detail-option d-none" data-parent="ulleung">ウルルン島</div>
+											<div class="option detail-option d-none" data-parent="gangwon">カンウォン</div>
+											<div class="option detail-option d-none" data-parent="gyeongsang">キョンサンプク道</div>
+											<div class="option detail-option d-none" data-parent="gyeongsang">キョンサンナム道</div>
+											<div class="option detail-option d-none" data-parent="gyeongsang">プサン</div>
+											<div class="option detail-option d-none" data-parent="jeolla">チョルラプク道</div>
+											<div class="option detail-option d-none" data-parent="jeolla">チョルラナム道</div>
+											<div class="option detail-option d-none" data-parent="chungcheong">チュンチョンプク道</div>
+											<div class="option detail-option d-none" data-parent="chungcheong">チュンチョンナム道</div>
+											<div class="option detail-option d-none" data-parent="seoul">ソウル</div>
+											<div class="option detail-option d-none" data-parent="seoul">インチョン</div>
+										</div>
 									</div>
 								</div>
+							    <!-- 선택된 값을 저장할 hidden input -->
+							    <input type="hidden" name="destination" id="selectedDestination">
+							</div>
 
+							<!-- 출발지 선택 -->
+							<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-2">
+								<select name="departure" id="departure" class="form-control custom-select" >
+									<option value="출발지 선택" selected disabled hidden >出発地を選ぶ</option>
+									<option value="東京">東京</option>
+									<option value="大阪">大阪</option>
+									<option value="福岡">福岡</option>
+									<option value="名古屋">名古屋</option>
+									<option value="札幌">札幌</option>
+									<option value="沖縄">沖縄</option>
+									<option value="その他">その他</option>
+								</select>
 
-									
+							</div>
 
-							</form> <!-- 여행 검색 폼 종료 -->
+							<!-- 날짜 입력 -->
+							<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
+								<input type="text" class="form-control" name="datePicker" id="datePicker">
+							</div>
+								<!-- hidden 필드 추가 -->
+								<input type="hidden" id="startDateHidden" name="startDate">
+								<input type="hidden" id="endDateHidden" name="endDate">
+							
+							
+							<!-- 검색 버튼 -->
+							<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-3">
+								<input type="submit" class="btn btn-primary btn-block"
+									value="探す">
+							</div>
 						</div>
-					</div> <!-- 검색 폼 영역 종료 -->
-				</div> <!-- 전체 그리드 행 종료 -->
-			</div> <!-- 컨테이너 종료 -->
-		</div> <!-- 히어로 섹션 종료 -->
 
-		<!-- 주간상품 섹션 -->
-		<section id="weeklyBest">
-			<div class="container weeklybesttitle">
-				<h2 class="weeklyBestfont"><img src="/product/img/crown.png" alt="crown" class="weeklyBesticon">주간베스트
-					TOP4</h2>
-				<p class="textcolorccc">지난 한 주간 인기 많았던 상품!</p>
+
+
+
+					</form>
+					<!-- 여행 검색 폼 종료 -->
+				</div>
 			</div>
+			<!-- 검색 폼 영역 종료 -->
+		</div>
+		<!-- 전체 그리드 행 종료 -->
+	</div>
+	<!-- 컨테이너 종료 -->
+</div>
+<!-- 히어로 섹션 종료 -->
 
-			<div class="untree_co-section">
-				<div class="container">
-					<div class="row">
-
-						<div class="col-6 col-md-6 col-lg-3">
-							<div class="media-1">
-								<a href="/product/packages.jsp" class="d-block mb-3">
-									<img src="/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-									<div class="d-flex">
-										<div>
-											<h3>
-												title
-											</h3>
-											<p>price</p>
-										</div>
+<!-- 주간상품 섹션 -->
+<section id="weeklyBest">
+	<div class="container weeklybesttitle">
+		<h2 class="weeklyBestfont">
+			<img src="/product/img/crown.png" alt="crown" class="weeklyBesticon">週間ベストTOP4
+		</h2>
+		<p class="textcolorccc">先週の人気旅行パッケージ！</p>
+	</div>
+	<div class="untree_co-section">
+		<div class="container">
+			<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+				<!-- 4개씩 표시 -->
+				<c:forEach var="bestitem" items="${bestList}">
+					<!-- 여행 패키지 카드 -->
+					<div class="col">
+						<div class="card h-100">
+							<img src="${pageContext.request.contextPath}/${bestitem.imageUrl}" class="card-img-top"
+								alt="상품 이미지">
+							<div class="card-body">
+								<div class="d-flex justify-content-end align-items-center paddingtop20">
+									<div>
+										<img class="reviewtitlerating" alt="" src="/product/img/review.png">
+										<span class="fontsize14px reviewcntfontcolor">${bestitem.avgRating }&emsp;|&ensp;レビュー（${bestitem.reviewCount }件）</span>
 									</div>
-								</a>
+								</div>
+								<h5 class="card-title">${bestitem.package_name}</h5>
+								<p class="card-text" style="font-size: 12px;">${bestitem.package_info}</p>
+								<p class="card-text">
+									<small class="text-muted">${bestitem.category_name }旅行パッケージ</small>
+								</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<span class="fw-bold text-primary"><fmt:formatNumber value="${bestitem.package_price}" type="number"/>円 ~</span> 
+									<a href="/pakage/packages.do?package_id=${bestitem.package_id}" class="btn btn-outline-primary">詳細を見る</a>
+									<!-- 각 상품의 관심버튼 예시 -->
+									<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${bestitem.package_id}">
+									    <img class="wishlist-icon" style=" width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">
+									</button>
+								</div>
 							</div>
 						</div>
-
-						<div class="col-6 col-md-6 col-lg-3">
-							<div class="media-1">
-								<a href="#" class="d-block mb-3">
-									<img src="/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-									<div class="d-flex">
-										<div>
-											<h3>
-												title
-											</h3>
-											<p>price</p>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="col-6 col-md-6 col-lg-3">
-							<div class="media-1">
-								<a href="#" class="d-block mb-3">
-									<img src="/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-									<div class="d-flex">
-										<div>
-											<h3>
-												title
-											</h3>
-											<p>price</p>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="col-6 col-md-6 col-lg-3">
-							<div class="media-1">
-								<a href="#" class="d-block mb-3">
-									<img src="/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-									<div class="d-flex">
-										<div>
-											<h3>
-												title
-											</h3>
-											<p>price</p>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-					</div> <!-- row end -->
-				</div> <!-- container end -->
-			</div> <!-- 상품섹션 end -->
-		</section>
-		<!-- 주간상품 end -->
-
-		<!-- 패키지지상품 섹션 -->
-		<section id="weeklyBest">
-			<div class="container weeklybesttitle">
-				<h2 class="weeklyBestfont"><img src="/product/img/suitcase.png" alt="suitcase" class="weeklyBesticon">제주
-					패키지 여행</h2>
-				<p class="textcolorccc">숙소, 식사, 일정 포함! 편하고 알찬 여행!</p>
+					</div>
+				</c:forEach>
 			</div>
+			<!-- row end -->
+		</div>
+		<!-- container end -->
+	</div>
+	<!-- 상품섹션 end -->
 
-			<div class="untree_co-section">
-				<div class="container">
-					<div class="row">
+</section>
+<!-- 주간상품 end -->
 
-						<div class="col-6 col-md-6 col-lg-3">
-							<div class="media-1">
-								<a href="/product/packages.jsp" class="d-block mb-3">
-									<img src="/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-									<div class="d-flex">
-										<div>
-											<h3>
-												title
-											</h3>
-											<p>price</p>
-										</div>
+<!-- 신상품 섹션 -->
+<section id="weeklyBest">
+	<div class="container weeklybesttitle">
+		<h2 class="weeklyBestfont">
+			<img src="/product/img/star.png" alt="star" class="weeklyBesticon">できたてホヤホヤの新商品！
+		</h2>
+		<p class="textcolorccc">新登場の旅行パッケージ！</p>
+	</div>
+	<div class="untree_co-section">
+		<div class="container">
+			<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+				<!-- 4개씩 표시 -->
+				<c:forEach var="newitem" items="${newList}">
+					<!-- 여행 패키지 카드 -->
+					<div class="col">
+						<div class="card h-100">
+							<img src="${pageContext.request.contextPath}/${newitem.imageUrl}" class="card-img-top"
+								alt="상품 이미지">
+							<div class="card-body">
+								<div class="d-flex justify-content-end align-items-center paddingtop20">
+									<div>
+										<img class="reviewtitlerating" alt="" src="/product/img/review.png">
+										<span class="fontsize14px reviewcntfontcolor">${newitem.avgRating }&emsp;|&ensp;レビュー（${newitem.reviewCount }件）</span>
 									</div>
-								</a>
+								</div>
+								<h5 class="card-title">${newitem.package_name}</h5>
+								<p class="card-text" style="font-size: 12px;">${newitem.package_info}</p>
+								<p class="card-text">
+									<small class="text-muted">${newitem.category_name }旅行パッケージ</small>
+								</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<span class="fw-bold text-primary"><fmt:formatNumber value="${newitem.package_price}" type="number"/>円 ~</span> 
+									<a href="/pakage/packages.do?package_id=${newitem.package_id }" class="btn btn-outline-primary">詳細を見る</a>
+									<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${newitem.package_id}">
+									    <img class="wishlist-icon" style=" width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">
+									</button>
+								</div>
 							</div>
 						</div>
-
-						<div class="col-6 col-md-6 col-lg-3">
-							<div class="media-1">
-								<a href="#" class="d-block mb-3">
-									<img src="/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-									<div class="d-flex">
-										<div>
-											<h3>
-												title
-											</h3>
-											<p>price</p>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="col-6 col-md-6 col-lg-3">
-							<div class="media-1">
-								<a href="#" class="d-block mb-3">
-									<img src="/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-									<div class="d-flex">
-										<div>
-											<h3>
-												title
-											</h3>
-											<p>price</p>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="col-6 col-md-6 col-lg-3">
-							<div class="media-1">
-								<a href="#" class="d-block mb-3">
-									<img src="/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-									<div class="d-flex">
-										<div>
-											<h3>
-												title
-											</h3>
-											<p>price</p>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="col-6 col-md-6 col-lg-3">
-							<div class="media-1">
-								<a href="#" class="d-block mb-3">
-									<img src="/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-									<div class="d-flex">
-										<div>
-											<h3>
-												title
-											</h3>
-											<p>price</p>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="col-6 col-md-6 col-lg-3">
-							<div class="media-1">
-								<a href="#" class="d-block mb-3">
-									<img src="/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-									<div class="d-flex">
-										<div>
-											<h3>
-												title
-											</h3>
-											<p>price</p>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="col-6 col-md-6 col-lg-3">
-							<div class="media-1">
-								<a href="#" class="d-block mb-3">
-									<img src="/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-									<div class="d-flex">
-										<div>
-											<h3>
-												title
-											</h3>
-											<p>price</p>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-						<div class="col-6 col-md-6 col-lg-3">
-							<div class="media-1">
-								<a href="#" class="d-block mb-3">
-									<img src="/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-									<div class="d-flex">
-										<div>
-											<h3>
-												title
-											</h3>
-											<p>price</p>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-					</div> <!-- row end -->
-				</div> <!-- container end -->
-			</div> <!-- 상품섹션 end -->
-		</section>
-		<!-- 패키지상품 end -->
-
-		<!-- 신상품 섹션 -->
-		<section id="weeklyBest">
-			<div class="container weeklybesttitle">
-				<h2 class="weeklyBestfont"><img src="/product/img/star.png" alt="star" class="weeklyBesticon">따끈따끈 신규상품
-				</h2>
-				<p class="textcolorccc">새로 오픈한 제주여행 상품!</p>
+					</div>
+				</c:forEach>
 			</div>
+			<!-- row end -->
+		</div>
+		<!-- container end -->
+	</div>
+	<!-- 상품섹션 end -->
 
-			<div class="untree_co-section">
-				<div class="container">
-					<div class="row">
+</section>
+<!-- 신상품 end -->
 
-						<div class="col-6 col-md-6 col-lg-3">
-							<div class="media-1">
-								<a href="#" class="d-block mb-3">
-									<img src="/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-									<div class="d-flex">
-										<div>
-											<h3>
-												title
-											</h3>
-											<p>price</p>
-										</div>
+<!-- 패키지지상품 섹션 -->
+<section id="weeklyBest">
+	<div class="container weeklybesttitle">
+		<h2 class="weeklyBestfont">
+			<img src="/product/img/suitcase.png" alt="suitcase"
+				class="weeklyBesticon">すべての旅行パッケージ
+		</h2>
+		<p class="textcolorccc">宿泊・食事・日程込み！快適で充実した旅！</p>
+	</div>
+
+	<div class="untree_co-section">
+		<div class="container">
+			<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+				<!-- 4개씩 표시 -->
+				<c:forEach var="allitem" items="${allList}">
+					<!-- 여행 패키지 카드 -->
+					<div class="col">
+						<div class="card h-100">
+							<img src="${pageContext.request.contextPath}/${allitem.imageUrl}" class="card-img-top"
+								alt="상품 이미지">
+							<div class="card-body">
+								<div class="d-flex justify-content-end align-items-center paddingtop20">
+									<div>
+										<img class="reviewtitlerating" alt="" src="/product/img/review.png">
+										<span class="fontsize14px reviewcntfontcolor">${allitem.avgRating }&emsp;|&ensp;レビュー（${allitem.reviewCount }件）</span>
 									</div>
-								</a>
+								</div>
+								<h5 class="card-title">${allitem.package_name}</h5>
+								<p class="card-text" style="font-size: 12px;">${allitem.package_info}</p>
+								<p class="card-text">
+									<small class="text-muted">${allitem.category_name }旅行パッケージ</small>
+								</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<span class="fw-bold text-primary"><fmt:formatNumber value="${allitem.package_price}" type="number"/>円 ~</span> <a href="/pakage/packages.do?package_id=${allitem.package_id }"
+										class="btn btn-outline-primary">詳細を見る</a>
+									<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${allitem.package_id}">
+									    <img class="wishlist-icon" style=" width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">
+									</button>										
+								</div>
 							</div>
 						</div>
+					</div>
+				</c:forEach>
+			</div>
+			<!-- row end -->
+		</div>
+		<!-- container end -->
+	</div>
+	<!-- 상품섹션 end -->
 
-						<div class="col-6 col-md-6 col-lg-3">
-							<div class="media-1">
-								<a href="#" class="d-block mb-3">
-									<img src="/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-									<div class="d-flex">
-										<div>
-											<h3>
-												title
-											</h3>
-											<p>price</p>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
+</section>
+<!-- 패키지상품 end -->
 
-						<div class="col-6 col-md-6 col-lg-3">
-							<div class="media-1">
-								<a href="#" class="d-block mb-3">
-									<img src="/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-									<div class="d-flex">
-										<div>
-											<h3>
-												title
-											</h3>
-											<p>price</p>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
+<script>
+    const CONTEXT_PATH = "<%=request.getContextPath()%>";
+</script>
 
-						<div class="col-6 col-md-6 col-lg-3">
-							<div class="media-1">
-								<a href="#" class="d-block mb-3">
-									<img src="/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-									<div class="d-flex">
-										<div>
-											<h3>
-												title
-											</h3>
-											<p>price</p>
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-
-					</div> <!-- row end -->
-				</div> <!-- container end -->
-			</div> <!-- 상품섹션 end -->
-		</section>
-		<!-- 신상품 end -->
-		
-		<%@ include file="/fragments/footer.jsp" %>
+<%@ include file="/fragments/footer.jsp"%>

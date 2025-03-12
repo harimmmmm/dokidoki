@@ -24,7 +24,7 @@ public class SendVerificationEmailService implements Command {
 
 		if (recipientEmail == null || recipientEmail.isEmpty()) {
 			jsonResponse.put("success", false);
-			jsonResponse.put("message", "이메일을 입력해주세요.");
+			jsonResponse.put("message", "メールアドレスを入力してください。");	//이메일을 입력해주세요.
 		} else {
 			// 이메일 인증 메소드 호출
 			String result = SendMail.sendVerificationEmail(recipientEmail, request);
@@ -32,10 +32,10 @@ public class SendVerificationEmailService implements Command {
 			// 이메일 전송 결과에 따른 응답 처리
 			if (result.equals("success")) {
 				jsonResponse.put("success", true);
-				jsonResponse.put("message", "인증번호가 이메일로 발송되었습니다.");
+				jsonResponse.put("message", "認証番号がメールで送信されました。");	//인증번호가 이메일로 발송되었습니다.
 			} else {
 				jsonResponse.put("success", false);
-				jsonResponse.put("message", "이메일 전송 실패: " + result);
+				jsonResponse.put("message", "電子メール送信失敗: " + result);	//이메일 전송 실패:
 			}
 		}
 

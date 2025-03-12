@@ -82,3 +82,8 @@ body {
 button:hover {
     background: #374d61;
 }
+
+.pwmsg{
+	color: #c85557;
+	text-align: left;
+}

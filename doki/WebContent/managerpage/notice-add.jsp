@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/fragments/header.jsp"%>
+
+<!DOCTYPE html>
+<%@ include file="../fragments/header.jsp"%>
+<meta charset="UTF-8">
+
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/managerpage/css/managerstyle.css">
 <link rel="stylesheet"
@@ -49,6 +53,7 @@ th, td {border:none;}
 								<td><textarea class="form-control" rows="3"></textarea></td>
 							</tr>
 							<tr>
+
 								<th>掲示板カテゴリー</th>
 								<td>
 									<label class="check-container">空地<input type="radio" name="noticeGroup" checked="checked"> 
@@ -93,4 +98,6 @@ th, td {border:none;}
 			}
 		}
 	</script>
+
 <%@ include file="../fragments/footer.jsp"%>
+

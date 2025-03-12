@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .card {
     border-radius: 10px;
     overflow: hidden;
@@ -18,4 +19,9 @@
     color: #fff;
     background-color: #486988;
     border-color: #486988;
+}
+
+#datePicker {
+    color: black; /* 날짜 텍스트 색상 */
+    background-color: white; /* 배경 색상 */
 }

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인</title>
+<title>ログイン</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/account/css/signin.css">
 </head>
@@ -22,17 +22,17 @@
 					<div>
 						<div class="input-container">
 							<input type="text" id="user_id" name="user_id"
-								placeholder="아이디 입력" required> <input type="password"
-								id="password" name="user_password" placeholder="비밀번호 입력"
+								placeholder="ID入力" required> <input type="password"
+								id="password" name="user_password" placeholder="パスワード入力"
 								required>
-							<button class="loginsubmitBtn" type="submit">로그인</button>
+							<button class="loginsubmitBtn" type="submit">ログイン</button>
 						</div>
 					</div>
 				</form>
 				<div class="idpwfind">
-					<a href="/member/idfind.do">아이디 찾기</a> <span class="idpwslash">|</span>
-					<a href="/member/pwfind.do">비밀번호 찾기</a> <span class="idpwslash">|</span>
-					<a href="/member/signup.do">회원가입</a>
+					<a href="/member/idfind.do">IDを探す</a> <span class="idpwslash">|</span>
+					<a href="/member/pwfind.do">パスワード検索</a> <span class="idpwslash">|</span>
+					<a href="/member/signup.do">会員登録</a>
 				</div>
 			</div>
 
@@ -43,11 +43,11 @@
 			<div class="social-login">
 				<button class="google" id="google-login-btn">
 				    <img src="<%=request.getContextPath()%>/account/img/google.png" alt="Google">
-				    Google로 로그인
+				   Googleでログイン
 				</button>
 				<button class="line">
 					<img src="<%=request.getContextPath()%>/account/img/line.jpeg"
-						alt="LINE"> LINE으로 로그인
+						alt="LINE"> LINEでログイン
 				</button>
 				<!-- <button class="kakao">
 					<img src="kakao.png" alt="Kakao"> 카카오로 로그인

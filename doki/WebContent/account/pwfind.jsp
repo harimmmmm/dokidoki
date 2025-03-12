@@ -4,10 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>아이디 찾기</title>
+<title>パスワード検索</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/account/css/find.css">
 </head>
+<style>
+.signin-container {
+	height: 650px;
+}
+</style>
 <body>
 	<%@ include file="../fragments/header.jsp"%>
 
@@ -20,18 +25,19 @@
 
 				<!-- 탭 버튼 -->
 				<div class="tab-container">
-					<a href="/member/idfind.do" class="tab-btn">아이디 찾기</a> <a
+					<a href="/member/idfind.do" class="tab-btn">ID検索</a> <a
 						href="/member/pwfind.do" class="tab-btn"
-						style="background: #486988; margin-left: 10px; color: white;">비밀번호
-						찾기</a>
+						style="background: #486988; margin-left: 10px; color: white;">パスワード検索</a>
 				</div>
 
 				<!-- 비밀번호 찾기 -->
 				<div id="find-password" class="tab-content">
-					<form id="find-password-form">
-						<input type="text" id="ie" placeholder="가입한 아이디 입력" required>
-						<input type="email" id="email" placeholder="가입한 이메일 입력" required>
-						<button type="submit">비밀번호 찾기</button>
+					<p class="pwmsg">* セキュリティのため、新しいランダムパスワードを発行します。 <br> * パスワードでログインした後、必ずパスワードを変更してください。  </p>
+					<form id="find-password-form" action="/member/pwfindpro.do" method="post">
+						<input type="text" id="user_id" name="user_id" placeholder="ID入力" required>
+						<input type="text" id="name_kanji" name="name_kanji" placeholder="名前(漢字)入力" required>
+						<input type="email" id="email" name="email" placeholder="Eメール入力" required>
+						<button type="submit">パスワード検索</button>
 					</form>
 					<p id="find-password-result"></p>
 				</div>

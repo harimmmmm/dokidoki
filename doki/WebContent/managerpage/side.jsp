@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+
 <b>管理者ページ</b>
+
 <div class="vertical-menu" style="height: 500px;">
 
   <!-- Product -->

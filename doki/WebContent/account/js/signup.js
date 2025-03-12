@@ -18,7 +18,7 @@ function validateID() {
         useridError.style.color = "green"; 
         checkDuplicateID(id);
     } else {
-        useridError.textContent = "아이디는 8~20자, 영문과 숫자를 포함해야 합니다."; 
+        useridError.textContent = "IDは8~20文字、英文と数字を含めてください。"; 
         useridError.style.color = "red"; 
     }
 }
@@ -27,10 +27,10 @@ function validateID() {
 function validatePassword() {
     const password = passwordInput.value;
     if (passwordRegex.test(password)) {
-        passwordError.textContent = "비밀번호 형식이 올바릅니다.";
+        passwordError.textContent = "パスワードの形式が正しいです。";
         passwordError.style.color = "green";
     } else {
-        passwordError.textContent = "비밀번호는 10~16자, 영문, 숫자 및 특수문자(@, ., #, -, _, !)를 포함해야 합니다.";
+        passwordError.textContent = "パスワードには10~16文字、英数字、特殊文字(@、.、#、-、_、!)が含まれなければなりません。";
         passwordError.style.color = "red";
     }
 }
@@ -43,9 +43,9 @@ function checkPasswordMatch() {
     // 비밀번호가 일치하는지 확인
     if (password && checkpassword) { // 두 필드 모두 값이 있을 때만 비교
         if (password !== checkpassword) {
-            passwordMsg.innerHTML = "<span style='color:red'>비밀번호 불일치</span>";
+            passwordMsg.innerHTML = "<span style='color:red'>パスワードの不一致</span>";
         } else {
-            passwordMsg.innerHTML = "<span style='color:green'>비밀번호 일치</span>";
+            passwordMsg.innerHTML = "<span style='color:green'>パスワード一致</span>";
         }
     } else {
         passwordMsg.innerHTML = ""; // 값이 없으면 메시지 초기화
@@ -63,9 +63,9 @@ function checkDuplicateID(id) {
             console.log("서버 응답: ", response); 
 
             if (response.trim() === "success") {
-                $("#useridErrormsg").html("<span style='color:green'>사용 가능한 아이디입니다.</span>");
+                $("#useridErrormsg").html("<span style='color:green'>使用可能なIDです。</span>");
             } else {
-                $("#useridErrormsg").html("<span style='color:red'>중복된 아이디입니다.</span>");
+                $("#useridErrormsg").html("<span style='color:red'>重複したIDです。</span>");
             }
         },
         error: function(xhr, status, error) {
@@ -85,7 +85,7 @@ document.getElementById("lookup_button").addEventListener("click", function() {
 
     // 유효한 7자리 우편번호인지 체크
     if (!/^\d{7}$/.test(postalCodeInput)) {
-        alert("올바른 7자리 우편번호를 입력하세요.");
+        alert("正しい7桁の郵便番号を入力してください。");
         return;
     }
 
@@ -107,12 +107,12 @@ document.getElementById("lookup_button").addEventListener("click", function() {
                 document.getElementById("city").value = result.address2;        
                 document.getElementById("town").value = result.address3;        
             } else {
-                alert("주소를 찾을 수 없습니다.");
+                alert("住所が見つかりません。");
             }
         })
         .catch(error => {
             console.error("❌ API 요청 오류:", error);
-            alert("주소 검색 중 오류가 발생했습니다.");
+            alert("アドレスの検索中にエラーが発生しました。");
         });
 });
 
@@ -144,7 +144,7 @@ document.getElementById("email_verify").addEventListener("click", function() {
     console.log("회원가입 이메일: ", email); 
 
     if (!validateEmail(email)) {
-        alert("올바른 이메일 주소를 입력하세요.");
+        alert("有効なメールアドレスを入力してください。");
         return;
     }
 
@@ -165,7 +165,7 @@ document.getElementById("email_verify").addEventListener("click", function() {
             verificationCode = parsedMessage.verificationCode;
         } catch (error) {
             console.error("JSON 파싱 오류:", error);
-            alert("인증번호를 가져오는 중 오류가 발생했습니다.");
+            alert("認証番号の取得中にエラーが発生しました。");
             return;
         }
     } else if (response.success) {
@@ -174,16 +174,16 @@ document.getElementById("email_verify").addEventListener("click", function() {
 
     if (verificationCode) {
         receivedVerificationCode = verificationCode; // 인증번호 저장
-        alert("인증번호가 이메일로 발송되었습니다.");
+        alert("認証番号がメールで送信されました。");
         document.getElementById("verification_code").disabled = false;
         document.getElementById("verify_code_btn").disabled = false;
     } else {
-        alert("이메일 전송 실패: " + response.message);
+        alert("電子メール送信失敗: " + response.message);
     }
 },
 
     error: function(xhr, status, error) {
-        alert("이메일 전송 오류: " + error);
+        alert("Eメール送信エラー: " + error);
     }
 });
 });
@@ -195,7 +195,7 @@ document.getElementById("verify_code_btn").addEventListener("click", function() 
     const verificationMessage = document.getElementById("verificationCodeError");
 
     if (!userEnteredCode) {
-        verificationMessage.innerHTML = "<span style='color: red;'>인증번호를 입력하세요.</span>";
+        verificationMessage.innerHTML = "<span style='color: red;'>認証番号を入力してください。</span>";
         return;
     }
 
@@ -203,9 +203,9 @@ document.getElementById("verify_code_btn").addEventListener("click", function() 
     console.log("서버에서 받은 인증번호:", receivedVerificationCode);
 
     if (userEnteredCode === receivedVerificationCode) {
-        verificationMessage.innerHTML = "<span style='color: green;'>인증번호가 일치합니다.</span>";
+        verificationMessage.innerHTML = "<span style='color: green;'>認証番号が一致します。</span>";
     } else {
-        verificationMessage.innerHTML = "<span style='color: red;'>인증번호가 일치하지 않습니다.</span>";
+        verificationMessage.innerHTML = "<span style='color: red;'>認証番号が一致しません。</span>";
     }
 });
 
@@ -218,7 +218,7 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
     // 아이디 검사
     const id = useridInput.value;
     if (!idRegex.test(id)) {
-        useridError.textContent = "아이디는 8~20자, 영문과 숫자를 포함해야 합니다."; 
+        useridError.textContent = "IDは8~20文字、英文と数字を含めてください。"; 
         useridError.style.color = "red"; 
         useridInput.focus();
         isValid = false;
@@ -226,8 +226,8 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
     }
 
     // 아이디 중복 검사 확인
-    if (!useridError.textContent.includes("사용 가능한 아이디입니다.")) {
-        alert("아이디 중복 검사를 통과해야 합니다.");
+    if (!useridError.textContent.includes("使用可能なIDです。")) {
+        alert("ID重複チェックを通過する必要があります。");
         useridInput.focus();
         isValid = false;
         return;
@@ -236,7 +236,7 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
     // 비밀번호 검사
     const password = passwordInput.value;
     if (!passwordRegex.test(password)) {
-        passwordError.textContent = "비밀번호는 10~16자, 영문, 숫자 및 특수문자(@, ., #, -, _, !)를 포함해야 합니다.";
+        passwordError.textContent = "パスワードには10~16文字、英数字、特殊文字(@、.、#、-、_、!)が含まれなければなりません。";
         passwordError.style.color = "red";
         passwordInput.focus();
         isValid = false;
@@ -246,7 +246,7 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
     // 비밀번호 확인 검사
     const checkpassword = checkpasswordInput.value;
     if (password !== checkpassword) {
-        passwordMsg.innerHTML = "<span style='color:red'>비밀번호 불일치</span>";
+        passwordMsg.innerHTML = "<span style='color:red'>パスワードの不一致</span>";
         checkpasswordInput.focus();
         isValid = false;
         return;
@@ -254,8 +254,8 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
 
     // 이메일 인증 확인
     const verificationMessage = document.getElementById("verificationCodeError").innerHTML;
-    if (!verificationMessage.includes("인증번호가 일치합니다.")) {
-        alert("이메일 인증을 완료해야 합니다.");
+    if (!verificationMessage.includes("認証番号が一致します。")) {
+        alert("メール認証を完了する必要があります。");
         document.getElementById("verification_code").focus();
         isValid = false;
         return;
@@ -263,7 +263,7 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
 
     // 모든 검사를 통과하면 폼 제출
     if (isValid) {
-        alert("회원가입이 완료되었습니다!"); // 가입 성공 알림
+        alert("会員登録が完了しました！");
         document.getElementById("signupForm").submit();
     }
 });

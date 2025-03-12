@@ -4,14 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마이페이지 홈</title>
+<title>関心商品</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/mypagee/css/mypage.css">
 </head>
 <style>
 body {
-	font-family: 'Arial', sans-serif;
-	background-color: #f9f9f9;
 	margin: 0;
 	padding: 0;
 }
@@ -108,13 +106,15 @@ body {
 	font-size: 1.2rem;
 	font-weight: bold;
 	color: #333;
-	margin-bottom: 5px;
+	margin-bottom: 20px;
+	text-align: left;
 }
 
 .product-price {
-	font-size: 1.1rem;
-	color: #888;
-	margin-top: 10px;
+	font-size: 17px;
+	text-align: left;
+	color: black;
+	margin-right: 5px;
 }
 
 /* 별점과 평점을 한 줄로 표시 */
@@ -132,6 +132,7 @@ body {
 .point {
 	font-size: 1.1rem;
 	color: #333;
+	margin-right: 10px;
 }
 
 .wishlist-item {
@@ -152,6 +153,41 @@ body {
 	color: #ff4757;
 	transform: scale(1.1);
 }
+
+.btn btn-outline-primary{
+	border: 1px solid #c9c9c9;
+}
+
+a.btn.btn-outline-primary:hover {
+    border: 1px solid #c9c9c9;
+    background-color: transparent;
+    color: inherit;
+    text-decoration: none;
+}
+
+a.btn.btn-outline-primary:active {
+    border: 1px solid #c9c9c9;
+    background-color: transparent;
+    color: inherit;
+    text-decoration: none;
+}
+
+.fontsize14px {
+	font-size: 14px;
+}
+
+.fontsize18px {
+	font-size: 18px;
+}
+
+.reviewtitlerating {
+	width: 14px;
+	height: 14px;
+}
+/* ---------------------------------------리뷰 css-----------------------------------------*/
+.reviewcntfontcolor {
+	color: #486988;
+}
 </style>
 
 <body>
@@ -162,38 +198,25 @@ body {
 		<main class="main-content">
 
 			<div class="wishlist-container">
-				<h2>관심상품</h2>
-				<ul class="wishlist-list">
-					<li class="wishlist-item"><img
-						src="<%=request.getContextPath()%>/mypagee/img/sa.jpg"
-						alt="상품 이미지" class="product-image">
+				<h2 style="font-size: 24px;">関心商品</h2>
+				<div class="wishlist-list">
+					<c:forEach var="wishlist" items="${wishlist}">
+					
 						<div class="product-info">
-							<h3 class="product-name">
-								[1Day세미팩] 제주도 3일
-								<동서부투어 /1일자유/4명부터출발확정>
-							</h3>
-							<div class="rating">
-								<div class="star" data-value="1">★</div>
-								<div class="point">4.9(43)</div>
-							</div>
-							<p class="product-price">₩100,000</p>
-						</div> <i class="bi bi-bookmark-heart-fill wishlist-icon"></i></li>
-
-					<li class="wishlist-item"><img
-						src="<%=request.getContextPath()%>/mypagee/img/sa.jpg"
-						alt="상품 이미지" class="product-image">
-						<div class="product-info">
-							<h3 class="product-name">
-								[시그니처][포항영일만신항] 울릉도 4일
-								<케렌시아리조트 /전일정 단독택시투어/태하향목모노레일/올식사포함>
-							</h3>
-							<div class="rating">
-								<div class="star" data-value="1">★</div>
-								<div class="point">4.9(43)</div>
-							</div>
-							<p class="product-price">₩100,000</p>
-						</div> <i class="bi bi-bookmark-heart-fill wishlist-icon"></i></li>
-				</ul>
+							<a href="/pakage/packages.do?package_id=${wishlist.package_id}" style="border: 1px solid #c9c9c9; margin: 15px;" class="btn btn-outline-primary">
+								<h3 class="product-name">${wishlist.package_name}</h3>
+								<div class="rating">
+									<div class="star" data-value="1"> <img class="reviewtitlerating" alt="" src="/product/img/review.png"> </div>
+									<div class="point">	<span class="fontsize14px reviewcntfontcolor">${wishlist.avgRating }&emsp;|&ensp;レビュー（${bestitem.reviewCount }件）</span></div> &nbsp;&nbsp;&nbsp;
+									<div class="product-price">価格. : ${wishlist.package_price}円</div>
+								</div>
+							<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${bestitem.package_id}">
+								<img class="wishlist-icon" style=" width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">
+							</button>
+							</a>
+						</div> 
+					</c:forEach>
+				</div>
 			</div>
 		</main>
 	</div>
