@@ -31,7 +31,7 @@ public class PackageAdd {
     }
     
     public void pakageInsert(PackagesVo vo) {
-		String sql = "INSERT INTO packages (package_id,package_name, package_price, child_price, baby_price, start_date, end_date, package_info, included_services,category_id,departure_id) VALUES (?,?,?,?,?,TO_DATE(?, 'YYYY-MM-DD'),TO_DATE(?, 'YYYY-MM-DD'),?,?,?,?)";
+		String sql = "INSERT INTO packages (package_id,package_name, package_price, child_price, baby_price, start_date, end_date, package_info, included_services,category_id,departure_id,bno) VALUES (?,?,?,?,?,TO_DATE(?, 'YYYY-MM-DD'),TO_DATE(?, 'YYYY-MM-DD'),?,?,?,?,PACKAGES_SEQ.nextval)";
 		
 		try {
 			conn=DBManager.getInstence().getConnection();

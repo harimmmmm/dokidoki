@@ -29,7 +29,8 @@ public class PackageListDao {
 				"        FROM package_images pi \r\n" + 
 				"        WHERE pi.package_id = p.package_id AND rownum = 1) AS image_url\r\n" + 
 				"FROM packages p\r\n" + 
-				"JOIN package_categori c ON p.category_id = c.category_id";
+				"JOIN package_categori c ON p.category_id = c.category_id" + 
+				"    ORDER BY p.bno ASC";
 		
 		List<PackagesVo> list = new ArrayList<PackagesVo>();
 		try {
@@ -77,7 +78,7 @@ public class PackageListDao {
 				"            AND ROWNUM = 1) AS image_url -- 썸네일 추가\r\n" + 
 				"    FROM packages p\r\n" + 
 				"    JOIN package_categori c ON p.category_id = c.category_id\r\n" + 
-				"    ORDER BY p.package_id DESC  \r\n" + 
+				"    ORDER BY p.bno DESC  \r\n" + 
 				") \r\n" + 
 				"WHERE ROWNUM <= 4";
 		
@@ -113,20 +114,23 @@ public class PackageListDao {
 	
 	public List<PackagesVo> bestPackageList() {
 		
-		String sql = "SELECT p.package_id,\r\n" + 
-				"       c.category_name,\r\n" + 
-				"       p.package_name,\r\n" + 
-				"       p.package_price,\r\n" + 
-				"       p.package_info,\r\n" + 
-				"       p.start_date,\r\n" + 
-				"       p.end_date,\r\n" + 
-				"       p.views,\r\n" + 
-				"       (SELECT image_url \r\n" + 
-				"        FROM package_images i\r\n" + 
-				"        WHERE i.package_id = p.package_id AND ROWNUM = 1) AS image_url \r\n" + 
-				"FROM packages p\r\n" + 
-				"JOIN package_categori c ON p.category_id = c.category_id\r\n" + 
-				"ORDER BY p.views DESC";
+		String sql = "SELECT * FROM (\r\n" + 
+				"    SELECT p.package_id,\r\n" + 
+				"           c.category_name,\r\n" + 
+				"           p.package_name,\r\n" + 
+				"           p.package_price,\r\n" + 
+				"           p.package_info,\r\n" + 
+				"           p.start_date,\r\n" + 
+				"           p.end_date,\r\n" + 
+				"           p.views,\r\n" + 
+				"           (SELECT image_url \r\n" + 
+				"            FROM package_images i\r\n" + 
+				"            WHERE i.package_id = p.package_id AND ROWNUM = 1) AS image_url \r\n" + 
+				"    FROM packages p\r\n" + 
+				"    JOIN package_categori c ON p.category_id = c.category_id\r\n" + 
+				"    ORDER BY p.views DESC  \r\n" + 
+				")\r\n" + 
+				"WHERE ROWNUM <= 4";
 		
 		List<PackagesVo> list = new ArrayList<PackagesVo>();
 		
