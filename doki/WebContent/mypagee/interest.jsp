@@ -174,7 +174,22 @@ a.btn.btn-outline-primary:active {
     text-decoration: none;
 }
 
+.fontsize14px {
+	font-size: 14px;
+}
 
+.fontsize18px {
+	font-size: 18px;
+}
+
+.reviewtitlerating {
+	width: 14px;
+	height: 14px;
+}
+/* ---------------------------------------리뷰 css-----------------------------------------*/
+.reviewcntfontcolor {
+	color: #486988;
+}
 </style>
 
 <body>
@@ -193,8 +208,8 @@ a.btn.btn-outline-primary:active {
 							<a href="/pakage/packages.do?package_id=${wishlist.package_id}" style="border: 1px solid #c9c9c9; margin: 15px;" class="btn btn-outline-primary">
 								<h3 class="product-name">${wishlist.package_name}</h3>
 								<div class="rating">
-									<div class="star" data-value="1"> ★ </div>
-									<div class="point">4.9(43)</div> &nbsp;&nbsp;&nbsp;
+									<div class="star" data-value="1"> <img class="reviewtitlerating" alt="" src="/product/img/review.png"> </div>
+									<div class="point"><span class="fontsize14px reviewcntfontcolor">${wishlist.avgRating }&emsp;|&ensp;レビュー（${wishlist.reviewCount }件）</span></div> &nbsp;&nbsp;&nbsp;
 									<div class="product-price">가격 : ${wishlist.package_price}円</div>
 								</div>
 							<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${bestitem.package_id}">

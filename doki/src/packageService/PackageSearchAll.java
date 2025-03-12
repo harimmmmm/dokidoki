@@ -26,6 +26,20 @@ public class PackageSearchAll implements Command {
 		
 		List<PackagesVo> list = new PackageSearchDao().searchPackages(destination, departure, startDate, endDate);
 		
+		 // 리뷰 조회를 위한 DAO 객체
+	    PackageSearchDao reviewDao = new PackageSearchDao();
+
+	    // 각 상품의 리뷰 별점 평균과 리뷰 수 설정
+	    for (PackagesVo packageItem : list) {
+	        String pkgId = packageItem.getPackage_id();
+
+	        double avgRating = reviewDao.totreviewrating(pkgId);
+	        int reviewCount = reviewDao.totreivew(pkgId);
+
+	        packageItem.setAvgRating(avgRating);
+	        packageItem.setReviewCount(reviewCount);
+	    }
+	    
 		request.setAttribute("list", list);
 		request.setAttribute("searchcnt", list.size());
 		System.out.println("검색어 - 여행지: " + destination);

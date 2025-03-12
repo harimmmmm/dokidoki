@@ -21,7 +21,21 @@ public class PackagesVo {
 	 private int departure_id;
 	 private String imageUrl;
 	 private WishlistVo WishlistInfo; 
-  
+     private double avgRating;
+     private int reviewCount;
+     
+	public double getAvgRating() {
+		return avgRating;
+	}
+	public void setAvgRating(double avgRating) {
+		this.avgRating = avgRating;
+	}
+	public int getReviewCount() {
+		return reviewCount;
+	}
+	public void setReviewCount(int reviewCount) {
+		this.reviewCount = reviewCount;
+	}
 	public String getImageUrl() {
 		return imageUrl;
 	}

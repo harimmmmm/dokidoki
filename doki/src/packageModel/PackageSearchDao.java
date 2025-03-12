@@ -121,7 +121,7 @@ public class PackageSearchDao {
 
 	public List<ReviewVo> review(String package_id) {
 
-		String sql = "select r.review_id, a.USER_ID, r.package_id, r.review_date, r.rating, r.content\r\n" + 
+		String sql = "select r.review_id, a.USER_ID, r.package_id, r.review_date, r.rating, r.content, r.REVIEW_IMAGE\r\n" + 
 				"from Review r\r\n" + 
 				"join ACCOUNT a on r.account_id = a.account_id\r\n" + 
 				"where package_id = ?";
@@ -144,6 +144,7 @@ public class PackageSearchDao {
 				vo.setRating(rs.getString("rating"));
 				vo.setReview_date(rs.getString("review_date"));
 				vo.setReview_id(rs.getInt("review_id"));
+				vo.setImage(rs.getString("REVIEW_IMAGE"));
 				
 				list.add(vo);
 			}

@@ -24,3 +24,20 @@
     border-bottom: 2px solid;
     margin-bottom: 20px;
 }
+
+.fontsize14px {
+	font-size: 14px;
+}
+
+.fontsize18px {
+	font-size: 18px;
+}
+
+.reviewtitlerating {
+	width: 14px;
+	height: 14px;
+}
+/* ---------------------------------------리뷰 css-----------------------------------------*/
+.reviewcntfontcolor {
+	color: #486988;
+}
