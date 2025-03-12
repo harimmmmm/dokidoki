@@ -219,8 +219,8 @@ function openReviewModal(reviewId, content, rating, image, packageId) {
 
     // 모달 내부 값 설정
     document.getElementById('reviewContent').innerHTML = `
-        <p>후기 내용: ${content}</p>
-        <p>별점: ${"★".repeat(rating)}</p>
+        <p>後記の内容: ${content}</p>
+        <p>星占い: ${"★".repeat(rating)}</p>
         <img src="/uploads/${image}" alt="Review Image" style="max-width: 300px; display: block;">
     `;
 

@@ -99,6 +99,23 @@ public class MyPageDao {
 			DBManager.getInstence().close(pst, conn);
 		}
 	}
+	
+	// 비번수정
+	public void passwordUpdate(String user_id, String hashedPassword) {
+		String sql = "UPDATE ACCOUNT SET USER_PASSWORD = ? WHERE user_id = ?";
+		
+		try {
+			conn = DBManager.getInstence().getConnection();
+			pst = conn.prepareStatement(sql);
+			pst.setString(1, hashedPassword);
+			pst.setString(2, user_id);
+			pst.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.getInstence().close(pst, conn);
+		}
+	}
 
 	// 예정 여행
 	public List<ReservationVo> getcoming(int usernum) {
@@ -421,5 +438,6 @@ public class MyPageDao {
 		}
 		return boardList;
 	}
+
 
 }

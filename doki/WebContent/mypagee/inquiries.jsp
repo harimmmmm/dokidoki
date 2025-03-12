@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마이페이지 홈</title>
+<title>問い合わせの内訳</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/mypagee/css/mypage.css">
 <link rel="stylesheet"
@@ -19,18 +19,18 @@
 		<main class="main-content">
 			<section id="inquiries" class="inquiries">
 			
-				<h2>문의 내역</h2>
-				<button class="inquire-btn" id="open-inquiry-modal">문의하기</button>
+				<h2>問い合わせの内訳</h2>
+				<button class="inquire-btn" id="open-inquiry-modal">問い合わせ</button>
 
 				<!-- 문의 내역 리스트 -->
 				<c:if test="${not empty boardList}">
 					<table>
 						<thead>
 							<tr>
-								<th>제목</th>
-								<th>작성일</th>
-								<th>상태</th>
-								<th>상세</th>
+								<th>題目.</th>
+								<th>作成日</th>
+								<th>状態</th>
+								<th>詳細</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -40,12 +40,12 @@
 									<td>${board.created_date}</td>
 									<td>
 										<c:choose>
-											<c:when test="${empty board.comments}"><span style="color: red;">답변 대기</span></c:when>
-											<c:when test="${not empty board.comments}"><span style="color: green;">답변 완료</span></c:when>
+											<c:when test="${empty board.comments}"><span style="color: red;">返事待ち</span></c:when>
+											<c:when test="${not empty board.comments}"><span style="color: green;">回答完了</span></c:when>
 										</c:choose>
 									</td>
 									<td>
-										<button class="showBoardDetailBtn" data-bno="${board.bno}">상세보기</button>
+										<button class="showBoardDetailBtn" data-bno="${board.bno}">詳細を見る</button>
 									</td>
 								</tr>
 							</c:forEach>
@@ -55,7 +55,7 @@
 
 				<!-- boardList가 비어 있으면 -->
 				<c:if test="${empty boardList}">
-					<p>문의가 없습니다.</p>
+					<p>お問い合わせがありません。</p>
 				</c:if>
 
 
@@ -81,13 +81,13 @@
 					<div id="inquiry-modal" class="modal">
 						<div class="rmodal-content">
 							<span class="rclose-btn" id="close-inquiry-modal">&times;</span>
-							<h3>문의사항을 남겨주세요.</h3>
+							<h3>お問い合わせを残してください。</h3>
 							<form id="inquiry-form" action="/mypage/inquiriespro.do"
 								method="post">
-								<label for="title">제목</label> <input type="text" id="title"
-									name="title" required> <label for="content">메시지</label>
+								<label for="title">題目.</label> <input type="text" id="title"
+									name="title" required> <label for="content">内容.</label>
 								<textarea id="content" name="content" required></textarea>
-								<button type="submit">보내기</button>
+								<button type="submit">堰から水路をひくこと.</button>
 							</form>
 						</div>
 					</div>

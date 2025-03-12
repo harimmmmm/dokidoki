@@ -13,6 +13,7 @@ import mypages.serivce.AccountUpdateService;
 import mypages.serivce.ComingService;
 import mypages.serivce.InquiriesInsertService;
 import mypages.serivce.InquiriesListService;
+import mypages.serivce.PasswordUpdateSerivce;
 import mypages.serivce.PastService;
 import mypages.serivce.Reviewservice;
 import mypages.serivce.WishlistService;
@@ -57,6 +58,12 @@ public class MypageController extends HttpServlet {
 			new AccountUpdateService().docommand(request, response);
 			response.sendRedirect("/mypage/editform.do");
 			return;
+		case "/passwordEdit.do": // 비번수정
+			page = "/mypagee/passwordEditForm.jsp";
+			break;
+		case "/passwordEditpro.do": // 비번수정
+			new PasswordUpdateSerivce().docommand(request, response);
+			break;
 		case "/upcoming.do": // 예정된여행
 			new ComingService().docommand(request, response);
 			page = "/mypagee/upcoming.jsp";
@@ -88,7 +95,7 @@ public class MypageController extends HttpServlet {
 			break;
 		case "/inquiriespro.do": // 문의등록
 			new InquiriesInsertService().docommand(request, response);
-			response.sendRedirect("");
+			response.sendRedirect("/mypage/inquiries.do");
 			return;
 		}
 

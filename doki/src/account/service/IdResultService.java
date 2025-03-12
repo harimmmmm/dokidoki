@@ -18,7 +18,7 @@ public class IdResultService implements Command {
 
 		request.setCharacterEncoding("utf-8");
 
-		String name = request.getParameter("name");
+		String name = request.getParameter("name_kanji");
 		String email = request.getParameter("email");
 
 		AccountVo vo = new LoginDao().idResult(name, email);
