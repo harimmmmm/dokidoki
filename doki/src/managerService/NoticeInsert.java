@@ -11,7 +11,7 @@ import managerDao.ManagerDao;
 import travelService.Command;
 import vo.BoardVo;
 
-public class NoticeView implements Command {
+public class NoticeInsert implements Command {
 
 	@Override
 	public void docommand(HttpServletRequest request, HttpServletResponse response)
@@ -22,11 +22,6 @@ public class NoticeView implements Command {
 		List<BoardVo> list = new ManagerDao().boardView();
 		
 		request.setAttribute("list", list);
-		
-		System.out.println("test");
-		
-		request.getRequestDispatcher("notice-list.jsp").forward(request, response);
-
 
 	}
 
