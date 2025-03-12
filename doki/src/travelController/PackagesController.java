@@ -9,11 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/")
-public class PackagesController extends HttpServlet {
+@WebServlet("/doki")
+public class MainController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public PackagesController() {
+	public MainController() {
 		super();
 	}
 
@@ -21,7 +21,7 @@ public class PackagesController extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 
-		System.out.println("테스트");
+		System.out.println("&&&");
 		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 		rd.forward(request, response);
 	}
@@ -32,5 +32,3 @@ public class PackagesController extends HttpServlet {
 	}
 
 }
-
-// 개정 수정 여권번호
