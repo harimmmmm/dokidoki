@@ -29,16 +29,16 @@
 			</div>
 			<!-- 메인 콘텐츠 영역 -->
 			<div class="col-md-9">
-				<b>공지 관리</b>
+				<b>空地管理</b> <!-- 공지 관리 -->
 				<table class="center">
 					<tr>
-						<th>게시판 번호</th>
-						<th>유저 번호</th>
-						<th>제목</th>
-						<th>내용</th>
-						<th>게시판 카테고리</th>
-						<th>작성날짜</th>
-						<th>관리</th>
+						<th>揭示板番号</th> <!-- 게시판 번호 -->
+						<th>使用者番号</th> <!-- 사용자 번호 -->
+						<th>題目</th> <!-- 제목 -->
+						<th>內容</th> <!-- 내용 --> 
+						<th>揭示板分類</th> <!-- 게시판 카테고리 -->
+						<th>作成日付</th> <!-- 작성날짜 -->
+						<th>管理</th> <!-- 관리 -->
 					</tr>
 					<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 					<p>리스트 크기: ${fn:length(list)}</p>
@@ -52,8 +52,8 @@
 							<td>${item.category}</td>
 							<td>${item.created_date}</td>
 							<td>
-								<button class="updateBtn" data-nno="${item.bno}">수정</button>
-								<button class="deleteBtn" data-nno="${item.bno}">삭제</button>
+								<button class="updateBtn" data-nno="${item.bno}">修整</button> <!-- 수정 -->
+								<button class="deleteBtn" data-nno="${item.bno}">削除</button> <!-- 삭제 -->
 							</td>
 						</tr>
 					</c:forEach>

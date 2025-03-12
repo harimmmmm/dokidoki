@@ -32,37 +32,37 @@
 			</div>
 			<!-- 메인 콘텐츠 영역 -->
 			<div class="col-md-9">
-				<b>상품 관리</b>
-				<table class="center">
-					<tr>
-						<th>고유번호</th>
-						<th>패키지명</th>
-						<th>가격</th>
-						<th>여행사</th>
-						<th>관리</th>
-					</tr>
-					<tr>
-						<td>001</td>
-						<td>서울-부산 투어</td>
-						<td>109,900원</td>
-						<td>하나투어</td>
-						<td>
-							<button class="updateBtn" data-mno="${item.pno }">수정</button>
-							<button class="deleteBtn" data-mno="${item.pno }">삭제</button>
-						</td>
-					</tr>
-					<tr>
-						<td>002</td>
-						<td>서울-대전 투어</td>
-						<td>79,900원</td>
-						<td>모두투어</td>
-						<td>
-							<button class="updateBtn" data-mno="${item.pno }">수정</button>
-							<button class="deleteBtn" data-mno="${item.pno }">삭제</button>
-						</td>
-					</tr>
-				</table>
-			</div>
+				<b>商品管理</b> <!-- 상품 관리 -->
+			<table class="center">
+				<tr>
+					<th>固有番号</th> <!-- 고유번호 -->
+					<th>商品名</th> <!-- 상품명 -->
+					<th>価格</th> <!-- 가격 -->
+					<th>旅行会社</th> <!-- 여행사 -->
+					<th>管理</th> <!-- 관리 -->
+				</tr>
+				<tr>
+					<td>001</td>
+					<td>서울-부산 투어</td>
+					<td>109,900원</td>
+					<td>하나투어</td>
+					<td>
+						<button class="updateBtn" data-mno="${item.pno }">修正</button> <!-- 수정 -->
+						<button class="deleteBtn" data-mno="${item.pno }">削除</button> <!-- 삭제 -->
+					</td>
+				</tr>
+				<tr>
+					<td>002</td>
+					<td>서울-대전 투어</td>
+					<td>79,900원</td>
+					<td>모두투어</td>
+					<td>
+						<button class="updateBtn" data-mno="${item.pno }">修正</button> <!-- 수정 -->
+						<button class="deleteBtn" data-mno="${item.pno }">削除</button> <!-- 삭제 -->
+					</td>
+				</tr>
+			</table>
+		</div>
 		</div>
 	</div>
 
