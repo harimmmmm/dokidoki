@@ -87,7 +87,7 @@
 				<ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right">
 					<li class="active"><a href="/doki">Home</a></li>
 					<li><a href="/pakage/packagesList.do">予約</a></li>
-					<li><a href="/board/services.jsp">旅行先紹介</a></li>
+					<li><a href="/boards/boardlist.do">旅行先紹介</a></li>
 					<co:choose>
 						<co:when test="${empty sessionScope.user}">
 							<li><a href="/member/login.do">ログイン</a></li>
@@ -97,9 +97,11 @@
 							<li><a href="/mypage/home.do">マイページ</a></li>
 						</co:otherwise>
 					</co:choose>
-					<li><a href="/contact.jsp">お問い合わせ</a></li>
+					<li><a href="/boards/noticelist.do">サポート</a></li>
 				</ul>
-
+				
+				
+				
 				<!-- 모바일에서 표시되는 햄버거 메뉴 버튼 -->
 				<a href="#"
 					class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light"
