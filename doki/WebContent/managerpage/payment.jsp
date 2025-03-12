@@ -32,26 +32,24 @@
 			</div>
 			<!-- 메인 콘텐츠 영역 -->
 			<div class="col-md-9">
-				<b>결제 관리</b>
+				<b>決済管理</b>  <!-- 결제 관리 -->
 				<table class="center">
 					<tr>
-						<th>주문번호</th>
-						<th>패키지명</th>
-						<th>결제일</th>
-						<th>결제 금액</th>
-						<th>구매 고객</th>
-						<th>거래 상세정보</th>
-						<th>결제 관리</th>
+						<th>注文番号</th> <!-- 주문번호 -->
+						<th>商品名</th> <!-- 패키지명 -->
+						<th>決済日</th> <!-- 결제일 -->
+						<th>決済金額</th> <!-- 결제 금액 -->
+						<th>決済管理</th> <!-- 결제 관리 -->
 					</tr>
 					<tr>
 						<td>001</td>
 						<td>서울-부산 투어</td>
 						<td>2025. 02. 22.</td>
 						<td>109,000원</td>
-						<td>山田</td>
-						<td>신용카드</td>
 						<td>
-							<button class="deleteBtn" data-pno="${item.pno }">환불</button>  
+
+							<button class="deleteBtn" data-pno="${item.pno }">払い戻す</button> <!-- 환불 -->
+
 						</td>
 					</tr>
 					<tr>
@@ -59,10 +57,10 @@
 						<td>서울-부산 투어</td>
 						<td>2025. 02. 22.</td>
 						<td>109,000원</td>
-						<td>イ</td>
-						<td>카카오페이</td>
 						<td>
-							<button class="deleteBtn" data-pno="${item.pno }">환불</button>
+
+							<button class="deleteBtn" data-pno="${item.pno }">払い戻す</button> <!-- 환불 -->
+
 						</td>
 					</tr>
 				</table>
