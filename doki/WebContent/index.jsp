@@ -136,15 +136,7 @@
 	        <div class="row mb-5 justify-content-center"> <!-- 행을 생성하고 중앙 정렬 -->
 	            <div class="col-lg-6 text-center"> <!-- 너비를 6로 설정하고 텍스트 중앙 정렬 -->
 	                <h2 class="section-title text-center mb-3">私たちのサービス</h2> <!-- 섹션 제목 -->
-	                <p>快適で思い出に残る韓国旅行を、私たちがサポートします！</p> <!-- 섹션 설명 -->
-						<c:if test="${empty sessionScope.user}">
-						    <p>로그인되지 않은 상태입니다.</p>
-						</c:if>
-						
-						<%-- 세션에 user가 있을 경우 사용자 이름을 출력 --%>
-						<c:if test="${not empty sessionScope.user}">
-						    <p>안녕하세요, ${sessionScope.user.name}님!</p> <!-- user_name은 AccountVo의 속성 -->
-						</c:if>
+	                <p>快適で思い出に残る韓国旅行を、私たちがサポートします！</p> <!-- 섹션 설명 -->					
 	            </div>
 	        </div>
 	
