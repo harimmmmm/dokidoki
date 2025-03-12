@@ -95,7 +95,7 @@ public class MypageController extends HttpServlet {
 			break;
 		case "/inquiriespro.do": // 문의등록
 			new InquiriesInsertService().docommand(request, response);
-			response.sendRedirect("");
+			response.sendRedirect("/mypage/inquiries.do");
 			return;
 		}
 

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마이페이지 홈</title>
+<title>関心商品</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/mypagee/css/mypage.css">
 </head>
@@ -198,7 +198,7 @@ a.btn.btn-outline-primary:active {
 		<main class="main-content">
 
 			<div class="wishlist-container">
-				<h2 style="font-size: 24px;">관심상품</h2>
+				<h2 style="font-size: 24px;">関心商品</h2>
 				<div class="wishlist-list">
 					<c:forEach var="wishlist" items="${wishlist}">
 					
@@ -207,8 +207,8 @@ a.btn.btn-outline-primary:active {
 								<h3 class="product-name">${wishlist.package_name}</h3>
 								<div class="rating">
 									<div class="star" data-value="1"> <img class="reviewtitlerating" alt="" src="/product/img/review.png"> </div>
-									<div class="point"><span class="fontsize14px reviewcntfontcolor">${wishlist.avgRating }&emsp;|&ensp;レビュー（${wishlist.reviewCount }件）</span></div> &nbsp;&nbsp;&nbsp;
-									<div class="product-price">가격 : ${wishlist.package_price}円</div>
+									<div class="point">	<span class="fontsize14px reviewcntfontcolor">${wishlist.avgRating }&emsp;|&ensp;レビュー（${bestitem.reviewCount }件）</span></div> &nbsp;&nbsp;&nbsp;
+									<div class="product-price">価格. : ${wishlist.package_price}円</div>
 								</div>
 							<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${bestitem.package_id}">
 								<img class="wishlist-icon" style=" width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">

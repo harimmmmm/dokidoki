@@ -103,8 +103,8 @@
 			</section>
 			<section id="box-c" class="box-c">
 				<a href="/mypage//editform.do" class="box"> <i class="bi bi-person-circle"></i> <span>個人情報修正</span></a> 
-				<a href="#" class="box" style="font-size: 12px;"> <i class="bi bi-headset"></i> <span>カスタマーサポート</span></a> 
-				<a href="#" class="box"> <i class="bi bi-question-circle"></i><span>よくある質問</span></a> 
+				<a href="/boards/noticelist.do" class="box" style="font-size: 12px;"> <i class="bi bi-headset"></i> <span>カスタマーサポート</span></a> 
+				<a href="/notice/frequentlyAsked.jsp" class="box"> <i class="bi bi-question-circle"></i><span>よくある質問</span></a> 
 				<a href="/mypage/inquiries.do" class="box"> <i class="bi bi-chat-dots"></i> <span>1:1お問い合わせ</span></a>
 			</section>
 		</main>

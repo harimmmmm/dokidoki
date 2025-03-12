@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마이페이지 홈</title>
+<title>パスワード変更</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/mypagee/css/mypage.css">
 </head>
@@ -68,21 +68,21 @@ input {
 
 		<main class="main-content">
 			<div class="containerr">
-				<p class="pw-title">비밀번호 변경</p>
+				<p class="pw-title">パスワード変更</p>
 				<form id="passwordForm" action="/mypage/passwordEditpro.do" method="post" onsubmit="return validatePasswords()">
-					<label for="currentPassword">현재 비밀번호</label> 
+					<label for="currentPassword">現在のパスワード</label> 
 					<input type="password" id="currentPassword" name="user_password" placeholder="現在のパスワード入力" required autocomplete="current-password">
 					
 					
-					<label for="newPassword">새로운 비밀번호</label> 
+					<label for="newPassword">新しいパスワード</label> 
 					<input type="password" id="newPassword" name="newPassword" placeholder="パスワード(10~16文字、英文、数字及び特殊文字(@、.、#、-、_、!))" required oninput="validatePassword()">
 					<span class="error-msg" id="passwordErrormsg"></span> <br>
 					
-					<label for="confirmPassword">새로운 비밀번호 확인</label> 
+					<label for="confirmPassword">新しいパスワードの確認</label> 
 					<input type="password" id="confirmPassword" name="confirmPassword" placeholder="パスワード確認" required oninput="checkPasswordMatch()">
 					<span class="error-msg" id="checkpasswordmsg"></span>
 					
-					<button type="submit" class="pwbtn">비밀번호 변경</button>
+					<button type="submit" class="pwbtn">パスワード変更</button>
 				</form>
 			</div>
 		</main>
@@ -109,10 +109,10 @@ const passwordMsg = document.getElementById('checkpasswordmsg');
 function validatePassword() {
     const password = passwordInput.value;
     if (passwordRegex.test(password)) {
-        passwordError.textContent = "비밀번호 형식이 올바릅니다.";
+        passwordError.textContent = "パスワードの形式が正しいです。";
         passwordError.style.color = "green";
     } else {
-        passwordError.textContent = "비밀번호는 10~16자, 영문, 숫자 및 특수문자(@, ., #, -, _, !)를 포함해야 합니다.";
+        passwordError.textContent = "パスワードには10~16文字、英数字、特殊文字(@、.、#、-、_、!)が含まれなければなりません。";
         passwordError.style.color = "red";
     }
 }
@@ -125,9 +125,9 @@ function checkPasswordMatch() {
     // 비밀번호가 일치하는지 확인
     if (password && checkpassword) { // 두 필드 모두 값이 있을 때만 비교
         if (password !== checkpassword) {
-            passwordMsg.innerHTML = "<span style='color:red'>비밀번호 불일치</span>";
+            passwordMsg.innerHTML = "<span style='color:red'>パスワードの不一致</span>";
         } else {
-            passwordMsg.innerHTML = "<span style='color:green'>비밀번호 일치</span>";
+            passwordMsg.innerHTML = "<span style='color:green'>パスワード一致</span>";
         }
     } else {
         passwordMsg.innerHTML = ""; // 값이 없으면 메시지 초기화
@@ -139,13 +139,13 @@ function validatePasswords() {
     var confirmPassword = document.getElementById("confirmPassword").value;
 
     if (newPassword !== confirmPassword) {
-        alert("새로운 비밀번호와 확인 비밀번호가 일치하지 않습니다.");
+        alert("新しいパスワードと確認パスワードが一致しません。");
         return false; // 폼 제출을 막음
     }
 
     // 비밀번호 유효성 검사 추가
     if (!passwordRegex.test(newPassword)) {
-        alert("비밀번호는 10~16자, 영문, 숫자 및 특수문자(@, ., #, -, _, !)를 포함해야 합니다.");
+        alert("パスワードには10~16文字、英数字、特殊文字(@、.、#、-、_、!)が含まれなければなりません。");
         return false;
     }
 

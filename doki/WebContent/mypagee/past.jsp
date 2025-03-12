@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마이페이지 홈</title>
+<title>先達ての旅行</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/mypagee/css/mypage.css">
 </head>
@@ -82,7 +82,7 @@ border: none;
 		  <main class="main-content">
             <br><br><br>
             <section id="past-travel" class="past-travel">
-                <h2>지난 여행</h2>
+                <h2>先達ての旅行</h2>
                 
 				<c:choose>
 				    <c:when test="${not empty reservationList}">
@@ -90,68 +90,67 @@ border: none;
 				            <div class="travel-card" data-package-id="${reservation.packageInfo.package_id}">
 				                <div class="travel-header">
 				                    <span class="travel-date">${reservation.packageInfo.package_name}</span>
-									<button class="info-button" id="infoBtn">예약 상세 보기 > </button>
+									<button class="info-button" id="infoBtn">予約の詳細を見る > </button>
 									      <!-- 패키지상세 모달 -->
 									    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
 										<div class="modal-dialog modal-lg">
 											<div class="modal-content">
 												<div class="modal-header">
-													<h5 class="modal-title" id="infoModalLabel">여행 핵심정보</h5>
+													<h5 class="modal-title" id="infoModalLabel">旅行の核心情報</h5>
 													<button type="button" class="btn-close" data-bs-dismiss="modal"
 														aria-label="Close"></button>
 												</div>
 												<div class="modal-body">
-													<h6>상품 기본 정보</h6>
+													<h6>商品 基本 情報</h6>
 													<table class="table table-bordered">
 														<tr>
-															<th>상품명</th>
+															<th>商品名</th>
 															<td colspan='3'>${reservation.packageInfo.package_name}</td>
 														</tr>
 														<tr>
-															<th>여행기간</th> 
+															<th>旅行期間</th> 
 															<td colspan='3'>${fn:substring(reservation.packageInfo.start_date, 0, 10)} ~ ${fn:substring(reservation.packageInfo.end_date, 0, 10)}</td>
 														</tr>
 														<tr>
-															<th>상품종류</th>
-															<td colspan='3'>단독상품</td>
+															<th>商品の種類</th>
+															<td colspan='3'>単独商品</td>
 														</tr>
 														<tr>
-															<th>영업보증 보험</th>
-															<td>가입</td>
-															<th>기획여행 보증보험</th>
-															<td>가입</td>
+															<th>営業保証保険 </th>
+															<td>加入</td>
+															<th>企画旅行保証保険</th>
+															<td>加入</td>
 														</tr>
 													</table>
 									
-													<h6>금액</h6>
+													<h6>旅行費用</h6>
 													<table class="table table-bordered">
 														<tr>
-															<th>구분</th>
-															<th>성인</th>
-															<th>아동</th>
-															<th>유아</th>
+															<th>区分</th>
+															<th>大人</th>
+															<th>子供</th>
+															<th>幼児</th>
 														</tr>
 														<tr>
-															<td>인원</td>
+															<td>人員.</td>
 															<td>${reservation.adult_number}</td>
 															<td>${reservation.child_number}</td>
 															<td>${reservation.baby_number}</td>
 														</tr>
 														<tr>
-															<td>가격</td>
+															<td>価格.</td>
 															<td>${reservation.packageInfo.package_price}円</td>
 															<td>${reservation.packageInfo.child_price}円</td>
 															<td>${reservation.packageInfo.baby_price}円</td>
 														</tr>
 														<tr>
-															<td>총금액</td>
+															<td>総額</td>
 															<td colspan="3">${reservation.total_amount}円</td>
 														</tr>
 													</table>
-									
-									
-													<h6>여행경보</h6>
-													<p>여행경보 단계는 외교부 해외안전여행 사이트에서 확인하세요.</p>
+													
+													<h6>旅行警報</h6>
+													<p>旅行警報の段階は外務省の海外安全旅行サイトでご確認ください。</p>
 												</div>
 											</div>
 										</div>
@@ -161,9 +160,9 @@ border: none;
 				                <div class="travel-details">
 				                    <div class="flight-info">
 				                        <div class="flight-info-left">  
-				                            <p> 출발 : ${fn:substring(reservation.packageInfo.start_date, 0, 10)} &nbsp;&nbsp; | &nbsp;&nbsp; 도착 : ${fn:substring(reservation.packageInfo.end_date, 0, 10)}</p>
-				                            <p>예약번호 ${reservation.order_id}/ ${reservation.tot_personnel}명</p>
-				                            <p>패키지 ID: ${reservation.packageInfo.package_id}</p>
+				                            <p> 出発. : ${fn:substring(reservation.packageInfo.start_date, 0, 10)} &nbsp;&nbsp; | &nbsp;&nbsp; 到着. : ${fn:substring(reservation.packageInfo.end_date, 0, 10)}</p>
+				                            <p>予約番号 : ${reservation.order_id}/ ${reservation.tot_personnel}人</p>
+				                            <p>パッケージID: ${reservation.packageInfo.package_id}</p>
 				                        </div>
 				                        <div class="flight-info-right">
 				                            <c:if test="${not empty reservation.reviewInfo.review_id}">
@@ -173,7 +172,7 @@ border: none;
 												    data-review-rating="${reservation.reviewInfo.rating}"
 												    data-review-image="${reservation.reviewInfo.image}"
 												    data-package-id="${reservation.packageInfo.package_id}">
-												    후기 보기
+												    レビューを見る
 												</button>
 				
 				                                <!-- 예약별 모달 ID를 고유하게 설정 -->
@@ -202,7 +201,7 @@ border: none;
 				                            </c:if>
 				
 				                            <c:if test="${empty reservation.reviewInfo.review_id}">
-				                                <button class="review-btn" style="margin-top: 20px;" onclick="viewReview('${reservation.packageInfo.package_id}')">후기 작성</button>
+				                                <button class="review-btn" style="margin-top: 20px;" onclick="viewReview('${reservation.packageInfo.package_id}')">レビュー作成</button>
 				                            </c:if>
 				                        </div>
 				                    </div>
