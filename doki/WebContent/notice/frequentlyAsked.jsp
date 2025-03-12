@@ -23,12 +23,13 @@
 				<div class="accordion-item">
 				  <h2 class="accordion-header" id="headingOne">
 				    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-				      항공권 예약 문의는 어느 곳에서 해야 하나요?
+				      航空券の予約に関するお問い合わせはどこで行えますか？
 				    </button>
 				  </h2>
 				  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
 				    <div class="accordion-body">
-				      항공권은 1544-5252 연결 후, 2번 또는 1544-53530으로 연결 요청드립니다. 1544-5252 연결 후, 1번은 패키지 관련 상담입니다.
+				     航空券に関しては、1544-5252にお電話後、2番をご選択いただくか、または1544-53530におかけください。
+					1544-5252にお電話後、1番はパッケージに関する相談です。
 				    </div>
 				  </div>
 				</div>
@@ -36,12 +37,12 @@
 				<div class="accordion-item">
 				  <h2 class="accordion-header" id="headingTwo">
 				    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-				      국내 패키지 일정표 내 항공 시간이 없네요?
+				       パッケージの日程表に航空便の時間が記載されていませんね？
 				    </button>
 				  </h2>
 				  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
 				    <div class="accordion-body">
-				      추가 일정은 패키지 예약 후, 상담원에게 문의해 주세요.
+				     追加の日程については、パッケージ予約後にカスタマーサポートにお問い合わせください。
 				    </div>
 				  </div>
 				</div>
@@ -49,12 +50,12 @@
 				<div class="accordion-item">
 				  <h2 class="accordion-header" id="headingThree">
 				    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-				      지금 해외 패키지 상품 예약이 가능한가요?
+				     現在、パッケージ商品の予約は可能ですか？
 				    </button>
 				  </h2>
 				  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
 				    <div class="accordion-body">
-				      해외 패키지는 현재 예약이 가능합니다. 문의 사항은 고객센터로 연락해 주세요.
+				      現在、予約は可能です。お問い合わせはカスタマーサポートまでご連絡ください。
 				    </div>
 				  </div>
 				</div>
