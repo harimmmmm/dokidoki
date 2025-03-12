@@ -52,14 +52,17 @@ th, td {border:none;}
 							</tr>
 							<tr>
 								<th>게시판 카테고리</th>
-								<td><label class="check-container">공지 <input
-										type="radio" name="noticeGroup" checked="checked"> <span
-										class="checkmark"></span>
-								</label> <label class="check-container">문의 <input type="radio"
-										name="noticeGroup"> <span class="checkmark"></span>
-								</label> <label class="check-container">리뷰 <input type="radio"
-										name="noticeGroup"> <span class="checkmark"></span>
-								</label></td>
+								<td>
+									<label class="check-container">공지 
+										<input type="radio" name="noticeGroup" checked="checked"><span class="checkmark"></span>
+									</label> 
+									<label class="check-container">문의 
+										<input type="radio" name="noticeGroup"> <span class="checkmark"></span>
+									</label> 
+									<label class="check-container">리뷰 
+										<input type="radio" name="noticeGroup"> <span class="checkmark"></span>
+									</label>
+								</td>
 							</tr>
 							<tr>
 								<th>이미지</th>

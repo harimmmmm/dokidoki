@@ -19,9 +19,29 @@ public class PackagesVo {
 	 private int baby_price;			// 유아 가격
 	 private int category_id;
 	 private int departure_id;
-	 
+	 private String imageUrl;
 	 private WishlistVo WishlistInfo; 
-	 
+     private double avgRating;
+     private int reviewCount;
+     
+	public double getAvgRating() {
+		return avgRating;
+	}
+	public void setAvgRating(double avgRating) {
+		this.avgRating = avgRating;
+	}
+	public int getReviewCount() {
+		return reviewCount;
+	}
+	public void setReviewCount(int reviewCount) {
+		this.reviewCount = reviewCount;
+	}
+	public String getImageUrl() {
+		return imageUrl;
+	}
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 	public int getCategory_id() {
 		return category_id;
 	}

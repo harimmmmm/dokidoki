@@ -53,7 +53,7 @@ public class PackagesController extends HttpServlet {
 			new PackageSearchAll().docommand(request, response);
 			page ="/product/packageSelect.jsp";
 			break;
-		case "/packages.do": // 검색결과
+		case "/packages.do": // 상세리스트
 			new SelectPackage().docommand(request, response);
 			page ="/product/packages.jsp";
 			break;

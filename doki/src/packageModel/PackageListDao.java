@@ -17,10 +17,19 @@ public class PackageListDao {
 	// 모든 상품 출력
 	public List<PackagesVo> packageAllList() {
 		
-		String sql = "select p.package_id, c.category_name,p.package_name,p.package_price,p.package_info,p.start_date,p.end_date,p.views\r\n" + 
-				"from packages p\r\n" + 
-				"join package_categori c\r\n" + 
-				"on p.category_id = c.category_id";
+		String sql = "SELECT p.package_id, \r\n" + 
+				"       c.category_name,\r\n" + 
+				"       p.package_name,\r\n" + 
+				"       p.package_price,\r\n" + 
+				"       p.package_info,\r\n" + 
+				"       p.start_date,\r\n" + 
+				"       p.end_date,\r\n" + 
+				"       p.views,\r\n" + 
+				"       (SELECT image_url \r\n" + 
+				"        FROM package_images pi \r\n" + 
+				"        WHERE pi.package_id = p.package_id AND rownum = 1) AS image_url\r\n" + 
+				"FROM packages p\r\n" + 
+				"JOIN package_categori c ON p.category_id = c.category_id";
 		
 		List<PackagesVo> list = new ArrayList<PackagesVo>();
 		try {
@@ -38,7 +47,7 @@ public class PackageListDao {
 				vo.setPackage_info(rs.getString("package_info"));
 				vo.setStart_date(rs.getString("start_date"));
 				vo.setEnd_date(rs.getString("end_date"));
-				
+				vo.setImageUrl(rs.getString("image_url"));
 				list.add(vo);
 			}
 			
@@ -62,7 +71,10 @@ public class PackageListDao {
 				"           p.package_info,\r\n" + 
 				"           p.start_date,\r\n" + 
 				"           p.end_date, \r\n" + 
-				"           p.views\r\n" + 
+				"           p.views,\r\n" + 
+				"           (SELECT image_url FROM package_images i \r\n" + 
+				"            WHERE i.package_id = p.package_id \r\n" + 
+				"            AND ROWNUM = 1) AS image_url -- 썸네일 추가\r\n" + 
 				"    FROM packages p\r\n" + 
 				"    JOIN package_categori c ON p.category_id = c.category_id\r\n" + 
 				"    ORDER BY p.package_id DESC  \r\n" + 
@@ -85,6 +97,7 @@ public class PackageListDao {
 				vo.setPackage_info(rs.getString("package_info"));
 				vo.setStart_date(rs.getString("start_date"));
 				vo.setEnd_date(rs.getString("end_date"));
+				vo.setImageUrl(rs.getString("image_url"));
 				
 				list.add(vo);
 			}
@@ -100,11 +113,20 @@ public class PackageListDao {
 	
 	public List<PackagesVo> bestPackageList() {
 		
-		String sql = "select p.package_id, c.category_name,p.package_name,p.package_price,p.package_info,p.start_date,p.end_date, p.views\r\n" + 
-				"from packages p\r\n" + 
-				"join package_categori c\r\n" + 
-				"on p.category_id = c.category_id\r\n" + 
-				"where rownum <=4 order by p.views desc";
+		String sql = "SELECT p.package_id,\r\n" + 
+				"       c.category_name,\r\n" + 
+				"       p.package_name,\r\n" + 
+				"       p.package_price,\r\n" + 
+				"       p.package_info,\r\n" + 
+				"       p.start_date,\r\n" + 
+				"       p.end_date,\r\n" + 
+				"       p.views,\r\n" + 
+				"       (SELECT image_url \r\n" + 
+				"        FROM package_images i\r\n" + 
+				"        WHERE i.package_id = p.package_id AND ROWNUM = 1) AS image_url \r\n" + 
+				"FROM packages p\r\n" + 
+				"JOIN package_categori c ON p.category_id = c.category_id\r\n" + 
+				"ORDER BY p.views DESC";
 		
 		List<PackagesVo> list = new ArrayList<PackagesVo>();
 		
@@ -123,7 +145,7 @@ public class PackageListDao {
 				vo.setPackage_info(rs.getString("package_info"));
 				vo.setStart_date(rs.getString("start_date"));
 				vo.setEnd_date(rs.getString("end_date"));
-				
+				vo.setImageUrl(rs.getString("image_url"));
 				list.add(vo);
 			}
 			
