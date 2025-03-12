@@ -1,14 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<%@ include file="../fragments/header.jsp"%>
-<meta charset="UTF-8">
+<%@ include file="/fragments/header.jsp"%>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/managerpage/css/managerstyle.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="/js/jquery-3.4.1.min.js"></script>
-<title>Notice_Add</title>
+
 
 <style>
 th, td {border:none;}
