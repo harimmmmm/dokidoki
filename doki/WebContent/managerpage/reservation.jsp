@@ -32,17 +32,17 @@
 			</div>
 			<!-- 메인 콘텐츠 영역 -->
 			<div class="col-md-9">
-				<b>예약 관리</b>
+				<b>予約管理</b> <!-- 예약 관리 -->
 				<table class="center">
 					<tr>
-						<th>패키지 고유번호</th>
-						<th>계정 고유번호</th>
-						<th>결제일</th>
-						<th>결제 금액</th>
-						<th>구매 고객</th>
-						<th>여행 시작일</th>
-						<th>여행 종료일</th>
-						<th>예약 관리</th>
+						<th>商品固有番号</th> <!-- 상품 고유번호 -->
+						<th>使用者固有番号</th> <!-- 사용자 고유번호 -->
+						<th>決済日</th> <!-- 결제일 -->
+						<th>決済金額</th> <!-- 결제 금액 -->
+						<th>購入顧客</th> <!-- 주문 고객 -->
+						<th>旅行開始日</th> <!-- 여행 시작일 -->
+						<th>旅行終了日</th> <!-- 여행 종료일 -->
+						<th>予約管理</th> <!-- 예약 관리 -->
 					</tr>
 					<tr>
 						<td>001</td>
@@ -53,7 +53,7 @@
 						<td>2025. 05. 05.</td>
 						<td>2025. 05. 08.</td>
 						<td>
-							<button class="deleteBtn" data-rno="${item.rno }">예약취소</button>  
+							<button class="deleteBtn" data-rno="${item.rno }">予約キャンセル</button>  <!-- 예약취소 -->
 						</td>
 					</tr>
 				</table>

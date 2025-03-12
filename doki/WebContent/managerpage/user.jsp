@@ -32,18 +32,18 @@
 		</div>
 		<!-- 메인 콘텐츠 영역 -->
 		<div class="col-md-9">
-			<b>유저 관리</b>
+			<b>使用者管理</b> <!-- 사용자 관리 -->
 			<table class="center">
 				<tr>
-					<th>아이디</th>
-					<th>영문이름</th>
-					<th>한자이름</th>
-					<th>생년월일</th>
-					<th>전화번호</th>
-					<th>이메일</th>
-					<th>가입일</th>
-					<th>권한</th>
-					<th>관리</th>
+					<th>ID</th> <!-- 아이디 -->
+					<th>英語名</th> <!-- 영문이름 -->
+					<th>漢字名</th> <!-- 한자이름 -->
+					<th>生年月日</th> <!-- 생년월일 -->
+					<th>電話番号</th> <!-- 전화번호 -->
+					<th>メール</th> <!-- 이메일 -->
+					<th>登録日</th> <!-- 가입일 -->
+					<th>権限</th> <!-- 권한 -->
+					<th>管理</th> <!-- 관리 -->
 				</tr>
 				<tr>
 					<td>java01</td>
@@ -55,7 +55,7 @@
 					<td>2025. 02. 25.</td>
 					<td>유저</td>
 					<td>
-						<button class="deleteBtn" data-uno="${item.uno }">삭제</button>
+						<button class="deleteBtn" data-uno="${item.uno }">削除</button> <!-- 삭제 -->
 					</td>
 				</tr>
 			</table>
