@@ -129,5 +129,5 @@ public class BuyVo {
 	public void setName_kanji(String name_kanji) {
 		this.name_kanji = name_kanji;
 	}
-
+ 
 }
