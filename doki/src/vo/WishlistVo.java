@@ -2,7 +2,7 @@ package vo;
 
 public class WishlistVo {
 	
-	 private int wishlist_id;   // 찜 고유 ID
+	 private int wishlist_id;   // 찜 고유 ID 
 	 private String package_id; // 패키지 고유 번호
 	 private int account_id;    // 계정 고유번호
 	 private String created_at;	// 찜한 날짜
