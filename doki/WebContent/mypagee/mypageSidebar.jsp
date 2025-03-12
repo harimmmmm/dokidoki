@@ -14,7 +14,8 @@
 	</div>
 	<ul class="menu">
 		<li id="home-link"><a href="/mypage/home.do">HOME</a></li>
-		<li id="edit-link"><a href="/mypage//editform.do">個人情報修正</a></li>
+		<li id="edit-link"><a href="/mypage/editform.do">個人情報修正</a></li>
+		<li id="password-edit-link"><a href="/mypage/passwordEdit.do">パスワード変更</a></li>
 		<li class="submenu" id="travel-link"><a href="#">私の旅行</a>
 			<ul class="submenu-items">
 				<li id="upcoming-link"><a href="/mypage/upcoming.do">予定された旅行</a></li>

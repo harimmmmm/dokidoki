@@ -59,6 +59,19 @@ border: none;
 	color: white;
 	padding: 5px 8px;
 }
+.cancelmeg{
+    margin-top: 250px;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+.cancelIcon{
+    margin-bottom: 30px;
+}
 
 </style>
 <body>
@@ -167,10 +180,10 @@ border: none;
 				                                <div id="reviewModalview_${reservation.packageInfo.package_id}" class="modal">
 				                                    <div class="modal-contentt">
 				                                        <span class="close-btn" id="closeModal_${reservation.packageInfo.package_id}">&times;</span>
-				                                        <h2>후기 내용</h2>
+				                                        <h2>後記の内容</h2>
 				                                        <div id="reviewContent">
-				                                            <p> 후기 내용 : ${reservation.reviewInfo.content}</p>
-				                                            <p> 별점  : 
+				                                            <p> 後記の内容 : ${reservation.reviewInfo.content}</p>
+				                                            <p> 星占い  : 
 				                                                <c:forEach var="i" begin="1" end="${reservation.reviewInfo.rating}">
 				                                              	      ★
 				                                                </c:forEach>
@@ -198,9 +211,10 @@ border: none;
 				        </c:forEach>
 				    </c:when>
 				    <c:otherwise>
-				        <div class="no-reservations">
-				            <p>현재 예약 내역이 없습니다.</p>
-				        </div>
+				        <div class="cancelmeg">
+				            <img alt="empty" src="<%=request.getContextPath()%>/mypagee/img/cancel.png" class="cancelIcon">
+				            <p class="op">過去の旅行がありません。</p>
+					    </div>
 				    </c:otherwise>
 				</c:choose>
 
@@ -213,10 +227,10 @@ border: none;
         <div class="rmodal-content">
             <form id="review-form" enctype="multipart/form-data">
             <span class="rclose-btn" id="close-review-modal">&times;</span> <!-- X 버튼 -->
-            <h3>후기 작성</h3>
+            <h3>レビュー作成</h3>
 
             <div class="star-rating">
-                <label>별점</label>
+                <label>星占い</label>
                 <span class="star" data-value="1">★</span>
                 <span class="star" data-value="2">★</span>
                 <span class="star" data-value="3">★</span>
@@ -226,17 +240,16 @@ border: none;
 
                 <input type="hidden" id="package-id" name="package_id">
             
-                <label for="review">후기 내용</label>
-                <textarea id="review" placeholder="후기를 작성하세요" name="content" required></textarea>
-                <p id="char-count" class="char-count">0/500자</p>
+                <label for="review">後記の内容</label>
+                <textarea id="review" placeholder="レビューを書いてください" name="content" required></textarea>
+                <p id="char-count" class="char-count">0/500字</p>
                 <p id="policy-warning" class="policy-warning">
-                    * 상품과 무관한 내용이나 동일한 문자의 반복 등 부적절한 내용은 삭제됩니다. <br>
-                    * 후기 내용에 개인 정보가 노출되지 않도록 주의해주세요.
+                 	 * 商品と関係のない内容や同じ文字の繰り返しなど不適切な内容は削除されます。 <br>
+                	 * レビューの内容に個人情報が漏れないように注意してください。
                 </p>
-                <label for="review-image">사진을 공유해주세요.</label>
+                <label for="review-image">写真を共有してください。</label>
                 <input type="file" id="review-image" accept="image/*">
-                <button type="submit">제출</button>
-                <button type="button" id="edit-review-btn" style="display:none;">수정</button> <!-- 수정 버튼 -->
+                <button type="submit">提出.</button>
             </form>
         </div>
     </div>

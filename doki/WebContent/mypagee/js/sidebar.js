@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('home-link').style.boxShadow = '4px 0 0 0 #486988 inset';
     } else if (currentUrl.includes('edit')) {
         document.getElementById('edit-link').style.boxShadow = '4px 0 0 0 #486988 inset';
+    } else if (currentUrl.includes('password')) {
+        document.getElementById('password-edit-link').style.boxShadow = '4px 0 0 0 #486988 inset';
     } else if (currentUrl.includes('upcoming')) {
         document.getElementById('upcoming-link').style.boxShadow = '4px 0 0 0 #486988 inset';
     } else if (currentUrl.includes('past')) {

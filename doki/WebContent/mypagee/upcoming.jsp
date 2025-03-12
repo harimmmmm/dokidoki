@@ -10,10 +10,23 @@
 </head>
 <style>
 .info-button{
-border: none;
+	border: none;
 	background : #7e9cb8;
 	color: white;
 	padding: 5px 8px;
+}
+.cancelmeg{
+    margin-top: 250px;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+.cancelIcon{
+    margin-bottom: 30px;
 }
 </style>
 <body>
@@ -111,9 +124,10 @@ border: none;
 				        </c:forEach>
 				    </c:when>
 				    <c:otherwise>
-				        <div class="no-reservations">
-				            <p>現在、予約履歴がありません。</p>
-				        </div>
+					    <div class="cancelmeg">
+				            <img alt="empty" src="<%=request.getContextPath()%>/mypagee/img/cancel.png" class="cancelIcon">
+				            <p class="op">予定されている旅行はありません。</p>
+					    </div>
 				    </c:otherwise>
 				</c:choose>
 				

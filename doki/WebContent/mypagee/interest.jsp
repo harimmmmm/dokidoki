@@ -10,8 +10,6 @@
 </head>
 <style>
 body {
-	font-family: 'Arial', sans-serif;
-	background-color: #f9f9f9;
 	margin: 0;
 	padding: 0;
 }
@@ -185,7 +183,7 @@ a.btn.btn-outline-primary:active {
 		<main class="main-content">
 
 			<div class="wishlist-container">
-				<h2>관심상품</h2>
+				<h2 style="font-size: 24px;">관심상품</h2>
 				<div class="wishlist-list">
 					<c:forEach var="wishlist" items="${wishlist}">
 					

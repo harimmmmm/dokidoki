@@ -28,7 +28,7 @@
 				<!-- 아이디 찾기 -->
 				<div id="find-id" class="tab-content active">
 					<form id="find-id-form" action="/member/idfindpro.do" method="post">
-						<input type="text" id="name" name="name" placeholder="名前入力" required> 
+						<input type="text" id="name_kanji" name="name_kanji" placeholder="名前(漢字)入力" required> 
 						<input type="text" id="user-info" name="email" placeholder="Eメール入力" required>
 						<button type="submit">ID検索</button>
 					</form>

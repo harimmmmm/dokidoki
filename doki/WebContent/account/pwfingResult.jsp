@@ -57,8 +57,8 @@ button:hover {
 				<!-- 탭 버튼 -->
 				<div class="tab-container">
 					<a href="/member/idfind.do" class="tab-btn"
-						style="background: #486988; margin-right: 10px; color: white;">ID検索
-					</a> <a href="/member/pwfind.do" class="tab-btn">パスワード検索</a>
+						style="background: #486988; margin-right: 10px; color: white;">아이디
+						찾기</a> <a href="/member/pwfind.do" class="tab-btn">비밀번호 찾기</a>
 				</div>
 
 				<c:choose>
@@ -77,7 +77,7 @@ button:hover {
 					</c:otherwise>
 				</c:choose>
 
-				<a href="/member/login.do" class="loginBtn">ログインしに行く</a>
+				<a href="/member/login.do" class="loginBtn">로그인 하러가기</a>
 			</div>
 		</div>
 	</div>

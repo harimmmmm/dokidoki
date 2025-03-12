@@ -4,70 +4,73 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원가입</title>
+<title>会員登録</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/account/css/signup.css">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
 </head>
 <body>
 	<%@ include file="../fragments/header.jsp"%>
 	<div class="signup-container">
-		<h2 class="signup-title">회원가입</h2>
+		<h2 class="signup-title">会員登録</h2>
 		<!-- 회원가입 제목 -->
 		<form id="signupForm" action="/member/signupInsertpro.do"
 			method="post">
 			<div class="input-container">
 				<!-- 필수 입력 필드 -->
 				<div class="input-group">
-					<label for="userid">아이디</label> <input type="text" id="userid"
-						name="user_id" placeholder="아이디 (8~20자, 영문/숫자)" required>
-					<span class="useridmsg" id="useridErrormsg"></span>
+					<label for="userid">アイディー</label> <input type="text" id="userid"
+						name="user_id" placeholder="ID(8~20文字、英数字)" required> <span
+						class="useridmsg" id="useridErrormsg"></span>
 				</div>
 
 				<div class="input-group">
-					<label for="password">비밀번호</label> <input type="password"
+					<label for="password">パスワード</label> <input type="password"
 						id="password" name="user_password"
-						placeholder="비밀번호 (10~16자, 영문, 숫자 및 특수문자(@, ., #, -, _, !))"
-						required> <span class="error-msg" id="passwordErrormsg"></span>
+						placeholder="パスワード(10~16文字、英文、数字及び特殊文字(@、.、#、-、_、!))" required>
+					<span class="error-msg" id="passwordErrormsg"></span>
 				</div>
 
 				<div class="input-group">
-					<label for="confirm_password">비밀번호 확인</label> <input
+					<label for="confirm_password">パスワード確認</label> <input
 						type="password" id="checkpassword" name="user_password"
-						placeholder="비밀번호 확인" required> <span class="error-msg"
+						placeholder="パスワード確認" required> <span class="error-msg"
 						id="checkpasswordmsg"></span>
 				</div>
 
 				<div class="input-group">
-					<label for="name_en">이름 (영어)</label> <input type="text"
-						id="name_en" name="name" placeholder="이름 (영어)" required>
+					<label for="name_en">お名前(英語)</label> <input type="text"
+						id="name_en" name="name" placeholder="お名前(英語)" required>
 				</div>
 
 				<div class="input-group">
-					<label for="name_kanji">이름 (한자)</label> <input type="text"
-						id="name_kanji" name="name_kanji" placeholder="이름 (한자)" required>
+					<label for="name_kanji">お名前(漢字)</label> <input type="text"
+						id="name_kanji" name="name_kanji" placeholder="お名前(漢字)" required>
 				</div>
 
 				<div class="input-group">
-					<label for="name_kana">이름 (가타카나)</label> <input type="text"
-						id="name_kana" name="name_kana" placeholder="이름 (가타카나)" required>
+					<label for="name_kana">お名前（カタカナ）</label> <input type="text"
+						id="name_kana" name="name_kana" placeholder="お名前（カタカナ）" required>
 				</div>
 
 				<div class="input-group">
-					<label for="birthdate">생년월일</label> <input type="date"
-						id="birthdate" name="birth_date" required>
+					<label for="birthdate">生年月日.</label> 
+					<input type="text" id="birthdate" name="birth_date" placeholder="生年月日" required>
 				</div>
 
 				<div class="input-group">
-					<label for="phone">전화번호</label> <input type="tel" id="phone"
-						name="tel" placeholder="전화번호" required>
+					<label for="phone">電話番号.</label> <input type="tel" id="phone"
+						name="tel" placeholder="電話番号." required>
 				</div>
 
 				<div class="input-group">
-					<label for="email">이메일</label>
+					<label for="email">イーメール</label>
 					<div class="email-container">
-						<input type="hidden" id="full_email" name="email">
-						<input type="text" id="email_prefix" name="email_prefix"
-							placeholder="이메일 아이디" required> <select id="email_domain">
+						<input type="hidden" id="full_email" name="email"> <input
+							type="text" id="email_prefix" name="email_prefix"
+							placeholder="イーメール" required> <select id="email_domain">
 							<option value="gmail.com">@gmail.com</option>
 							<option value="yahoo.co.jp">@yahoo.co.jp</option>
 							<option value="docomo.ne.jp">@docomo.ne.jp</option>
@@ -75,34 +78,34 @@
 							<option value="softbank.ne.jp">@softbank.ne.jp</option>
 							<option value="icloud.com">@icloud.com</option>
 							<option value="outlook.jp">@outlook.jp</option>
-							<option value="custom">직접 입력</option>
-						</select> <input type="text" id="custom_email" placeholder="도메인 입력"
+							<option value="custom">直接入力</option>
+						</select> <input type="text" id="custom_email" placeholder="ドメイン入力"
 							style="display: none;">
-						<button type="button" id="email_verify">이메일 인증</button>
+						<button type="button" id="email_verify">Eメール認証</button>
 					</div>
 				</div>
-				
+
 				<div class="input-group">
-					<label for="verification_code">인증번호</label>
+					<label for="verification_code">認証番号</label>
 					<div class="verification-container">
 						<input type="text" id="verification_code" name="verification_code"
-							placeholder="인증번호 입력" disabled>
-						<button type="button" id="verify_code_btn" disabled>확인</button>
+							placeholder="認証番号入力" disabled>
+						<button type="button" id="verify_code_btn" disabled>確認.</button>
 					</div>
 					<span class="error-msg" id="verificationCodeError"></span>
 				</div>
 
 
 				<div class="separator">
-					<span>선택 입력</span>
+					<span>選択入力</span>
 				</div>
 
 				<div class="input-group">
-					<label for="postal_code">우편번호</label>
+					<label for="postal_code">郵便番号</label>
 					<div class="address-container">
 						<input type="text" id="postal_code" name="postal_code"
-							placeholder="우편번호">
-						<button type="button" id="lookup_button">주소 찾기</button>
+							placeholder="郵便番号">
+						<button type="button" id="lookup_button">住所検索</button>
 						<p id="address_result"></p>
 					</div>
 				</div>
@@ -110,34 +113,48 @@
 
 				<div class="input-group">
 					<label for="prefecture">都道府県 </label> <input type="text"
-						id="prefecture" name="prefecture" placeholder="시/도" readonly>
+						id="prefecture" name="prefecture" placeholder="都道府県" readonly>
 				</div>
 
 				<div class="input-group">
 					<label for="city">市区町村</label> <input type="text" id="city"
-						name="city" placeholder="구/군" readonly>
+						name="city" placeholder="市区町村" readonly>
 				</div>
 
 				<div class="input-group">
 					<label for="town"> 町名・番地</label> <input type="text" id="town"
-						name="town" placeholder="동/읍/면" readonly>
+						name="town" placeholder="町名・番地" readonly>
 				</div>
 
 				<div class="input-group">
-					<label for="passport_number">여권번호</label> <input type="text"
-						id="passport_number" name="passport_number" placeholder="여권번호">
+					<label for="passport_number">パスポート番号</label> <input type="text"
+						id="passport_number" name="passport_number" placeholder="パスポート番号">
 				</div>
 
 				<div class="input-group">
-					<label for="passport_expiry">여권 만료일</label> <input type="date"
-						id="passport_expiry" name="passport_expiry">
+					<label for="passport_expiry">パスポート有効期限</label> 
+					<input type="text" id="passport_expiry" name="passport_expiry" placeholder="パスポート有効期限">
 				</div>
 			</div>
 
-			<button class="signupsubmitBtn" type="submit">회원가입</button>
+			<button class="signupsubmitBtn" type="submit">会員登録</button>
 		</form>
 	</div>
 </body>
 <%@ include file="../fragments/footer.jsp"%>
 <script src="<%=request.getContextPath()%>/account/js/signup.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
+<script>
+	flatpickr("#birthdate", {
+		locale: "ja",
+		dateFormat: "Y-m-d"
+	});
+
+	flatpickr("#passport_expiry", {
+		locale: "ja",
+		dateFormat: "Y-m-d"
+	});
+</script>
+
 </html>
