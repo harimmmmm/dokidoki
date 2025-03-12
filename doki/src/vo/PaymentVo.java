@@ -2,7 +2,7 @@ package vo;
 
 public class PaymentVo {
 
-	private int pay_id; // 결제승인번호
+	private int pay_id; // 결제승인번호 
 	private String order_id; // 주문번호
 	private int amount; // 결제금액
 	private String pay_time; // 결제요청시간

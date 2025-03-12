@@ -32,6 +32,7 @@
 			</div>
 			<!-- 메인 콘텐츠 영역 -->
 			<div class="col-md-9">
+
 				<b>予約管理</b> <!-- 예약 관리 -->
 				<table class="center">
 					<tr>
@@ -43,6 +44,7 @@
 						<th>旅行開始日</th> <!-- 여행 시작일 -->
 						<th>旅行終了日</th> <!-- 여행 종료일 -->
 						<th>予約管理</th> <!-- 예약 관리 -->
+
 					</tr>
 					<tr>
 						<td>001</td>
@@ -53,7 +55,9 @@
 						<td>2025. 05. 05.</td>
 						<td>2025. 05. 08.</td>
 						<td>
+
 							<button class="deleteBtn" data-rno="${item.rno }">予約キャンセル</button>  <!-- 예약취소 -->
+
 						</td>
 					</tr>
 				</table>
