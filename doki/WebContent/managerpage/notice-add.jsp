@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="/fragments/header.jsp"%>
+
+<!DOCTYPE html>
+<%@ include file="../fragments/header.jsp"%>
+<meta charset="UTF-8">
+
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/managerpage/css/managerstyle.css">
 <link rel="stylesheet"
@@ -19,7 +23,7 @@ th, td {border:none;}
 .product-addbox .context {line-height: 220%; padding-bottom: 40px;}
 .product-addbox .btn-group .btnbutton {border: 1px solid #ccc; padding: 8px 12px;}
 
-.product-addtable {width: 315%; height: 420px;}
+.product-addtable {width: 200%;}
 .product-addtable th, .product-addtable td {padding: 8px; border-bottom: 1px solid #ccc;}
 .product-addtable input[type="text"] {border: 1px solid #ccc; padding: 6px; width: 100%; margin: 1px 0;}
 .product-addtable textarea {width: 100%; height: 190px; padding: 10px;	border: 1px solid #ccc;	padding: 10px;}
@@ -37,32 +41,34 @@ th, td {border:none;}
 			<div class="col-md-9">
 				<b>空地登録</b> <!-- 공지 등록 -->
 				<div class="product-addbox">
-					<form name="my" method="post" action="/manager/notice_addpro.do" ><!-- onsubmit="return check();" -->
+					<form name="my" method="post" enctype="" action=""
+						onsubmit="return check();">
 						<table class="product-addtable">
 							<tr>
 								<th>題目</th> <!-- 제목 -->
-								<td><input type="text" name="title" required></td>
+								<td><input type="text" name="price"></td>
 							</tr>
 							<tr>
 								<th>內容</th> <!-- 내용 -->
-								<td><textarea class="form-control" rows="3" name="content" required></textarea></td>
+								<td><textarea class="form-control" rows="3"></textarea></td>
 							</tr>
 							<tr>
+
 								<th>掲示板カテゴリー</th>
 								<td>
 									<label class="check-container">空地<input type="radio" name="noticeGroup" checked="checked"> 
-									<span class="checkmark"></span> 공지
+									<span class="checkmark"></span> <!-- 공지 -->
 									</label> 
 									<label class="check-container">問合せ <input type="radio" name="noticeGroup"> 
-									<span class="checkmark"></span> 문의
+									<span class="checkmark"></span> <!-- 문의 -->
 									</label> 
-									<label class="check-container">旅先紹介  여행지 소개
+									<label class="check-container">旅先紹介  <!-- 여행지 소개 -->
 									<input type="radio" name="noticeGroup"> <span class="checkmark"></span>
 									</label>
 								</td>
-							</tr> 
+							</tr>
 							<tr>
-								<th>イメージ</th>
+								<th>イメージ</th> <!-- 이미지 -->
 								<td><input type="file" name="imgfile"></td>
 							</tr>
 							<tr>
@@ -92,4 +98,5 @@ th, td {border:none;}
 			}
 		}
 	</script>
+
 <%@ include file="../fragments/footer.jsp"%>

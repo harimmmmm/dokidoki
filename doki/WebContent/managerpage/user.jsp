@@ -32,6 +32,7 @@
 		</div>
 		<!-- 메인 콘텐츠 영역 -->
 		<div class="col-md-9">
+
 			<b>使用者管理</b> <!-- 사용자 관리 -->
 			<table class="center">
 				<tr>
@@ -44,6 +45,7 @@
 					<th>登録日</th> <!-- 가입일 -->
 					<th>権限</th> <!-- 권한 -->
 					<th>管理</th> <!-- 관리 -->
+
 				</tr>
 				<tr>
 					<td>java01</td>
@@ -55,7 +57,9 @@
 					<td>2025. 02. 25.</td>
 					<td>유저</td>
 					<td>
+
 						<button class="deleteBtn" data-uno="${item.uno }">削除</button> <!-- 삭제 -->
+
 					</td>
 				</tr>
 			</table>

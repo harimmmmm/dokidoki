@@ -47,7 +47,9 @@
 						<td>2025. 02. 22.</td>
 						<td>109,000원</td>
 						<td>
+
 							<button class="deleteBtn" data-pno="${item.pno }">払い戻す</button> <!-- 환불 -->
+
 						</td>
 					</tr>
 					<tr>
@@ -56,7 +58,9 @@
 						<td>2025. 02. 22.</td>
 						<td>109,000원</td>
 						<td>
+
 							<button class="deleteBtn" data-pno="${item.pno }">払い戻す</button> <!-- 환불 -->
+
 						</td>
 					</tr>
 				</table>
