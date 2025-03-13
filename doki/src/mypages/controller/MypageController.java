@@ -39,7 +39,7 @@ public class MypageController extends HttpServlet {
 		String action = request.getPathInfo();
 		System.out.println("Action: " + action);
 		String page = null;
-
+		
 		switch (action) {
 		case "/home.do": // 마이페이지 홈
 			new AccountListService().docommand(request, response);
