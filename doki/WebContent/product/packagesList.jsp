@@ -179,32 +179,33 @@
 				<c:forEach var="bestitem" items="${bestList}">
 					<!-- 여행 패키지 카드 -->
 					<div class="col">
-						<div class="card h-100">
-							<img src="${pageContext.request.contextPath}/${bestitem.imageUrl}" class="card-img-top"
-								alt="상품 이미지">
-							<div class="card-body">
-								<div class="d-flex justify-content-end align-items-center paddingtop20">
-									<div>
-										<img class="reviewtitlerating" alt="" src="/product/img/review.png">
-										<span class="fontsize14px reviewcntfontcolor">${bestitem.avgRating }&emsp;|&ensp;レビュー（${bestitem.reviewCount }件）</span>
-									</div>
-								</div>
-								<h5 class="card-title">${bestitem.package_name}</h5>
-								<p class="card-text" style="font-size: 12px;">${bestitem.package_info}</p>
-								<p class="card-text">
-									<small class="text-muted">${bestitem.category_name }旅行パッケージ</small>
-								</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<span class="fw-bold text-primary"><fmt:formatNumber value="${bestitem.package_price}" type="number"/>円 ~</span> 
-									<a href="/pakage/packages.do?package_id=${bestitem.package_id}" class="btn btn-outline-primary">詳細を見る</a>
-									<!-- 각 상품의 관심버튼 예시 -->
-									<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${bestitem.package_id}">
-									    <img class="wishlist-icon" style=" width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">
-									</button>
-								</div>
-							</div>
-						</div>
+					    <div class="card h-100 d-flex flex-column"> <!-- d-flex와 flex-column을 사용하여 카드 안에서 자동으로 콘텐츠 크기 조정 -->
+					        <img src="${pageContext.request.contextPath}/${bestitem.imageUrl}" class="card-img-top" alt="상품 이미지">
+					        <div class="card-body d-flex flex-column"> <!-- 카드 본문도 flex로 설정 -->
+					            <div class="d-flex justify-content-end align-items-center paddingtop20">
+					                <div>
+					                    <img class="reviewtitlerating" alt="" src="/product/img/review.png">
+					                    <span class="fontsize14px reviewcntfontcolor">${bestitem.avgRating }&emsp;|&ensp;レビュー（${bestitem.reviewCount }件）</span>
+					                </div>
+					            </div>
+					            <h5 class="card-title">${bestitem.package_name}</h5>
+					            <p class="card-text" style="font-size: 12px;">${bestitem.package_info}</p>
+					            <p class="card-text">
+					                <small class="text-muted">${bestitem.category_name }旅行パッケージ</small>
+					            </p>
+					            <div class="mt-auto"> <!-- 콘텐츠 끝에서 버튼을 고정하려면 여기서부터 위치 지정 -->
+					                <div class="d-flex justify-content-between align-items-center">
+					                    <span class="fw-bold text-primary"><fmt:formatNumber value="${bestitem.package_price}" type="number"/>円 ~</span> 
+					                    <a href="/pakage/packages.do?package_id=${bestitem.package_id}" class="btn btn-outline-primary">詳細を見る</a>
+					                    <button class="wishlist-btn" style="border: none; background: none;" data-package-id="${bestitem.package_id}">
+					                        <img class="wishlist-icon" style="width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">
+					                    </button>
+					                </div>
+					            </div>
+					        </div> <!-- 카드 본문 끝 -->
+					    </div>
 					</div>
+
 				</c:forEach>
 			</div>
 			<!-- row end -->
@@ -231,10 +232,10 @@
 				<c:forEach var="newitem" items="${newList}">
 					<!-- 여행 패키지 카드 -->
 					<div class="col">
-						<div class="card h-100">
+						<div class="card h-100 d-flex flex-column"> <!-- d-flex와 flex-column을 사용하여 카드 안에서 자동으로 콘텐츠 크기 조정 -->
 							<img src="${pageContext.request.contextPath}/${newitem.imageUrl}" class="card-img-top"
 								alt="상품 이미지">
-							<div class="card-body">
+							<div class="card-body d-flex flex-column"> <!-- 카드 본문도 flex로 설정 -->
 								<div class="d-flex justify-content-end align-items-center paddingtop20">
 									<div>
 										<img class="reviewtitlerating" alt="" src="/product/img/review.png">
@@ -246,12 +247,14 @@
 								<p class="card-text">
 									<small class="text-muted">${newitem.category_name }旅行パッケージ</small>
 								</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<span class="fw-bold text-primary"><fmt:formatNumber value="${newitem.package_price}" type="number"/>円 ~</span> 
-									<a href="/pakage/packages.do?package_id=${newitem.package_id }" class="btn btn-outline-primary">詳細を見る</a>
-									<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${newitem.package_id}">
-									    <img class="wishlist-icon" style=" width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">
-									</button>
+								<div class="mt-auto"> <!-- 콘텐츠 끝에서 버튼을 고정하려면 여기서부터 위치 지정 -->
+									<div class="d-flex justify-content-between align-items-center">
+										<span class="fw-bold text-primary"><fmt:formatNumber value="${newitem.package_price}" type="number"/>円 ~</span> 
+										<a href="/pakage/packages.do?package_id=${newitem.package_id }" class="btn btn-outline-primary">詳細を見る</a>
+										<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${newitem.package_id}">
+										    <img class="wishlist-icon" style=" width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">
+										</button>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -284,10 +287,10 @@
 				<c:forEach var="allitem" items="${allList}">
 					<!-- 여행 패키지 카드 -->
 					<div class="col">
-						<div class="card h-100">
+						<div class="card h-100 d-flex flex-column"> <!-- d-flex와 flex-column을 사용하여 카드 안에서 자동으로 콘텐츠 크기 조정 -->
 							<img src="${pageContext.request.contextPath}/${allitem.imageUrl}" class="card-img-top"
 								alt="상품 이미지">
-							<div class="card-body">
+							<div class="card-body d-flex flex-column"> <!-- 카드 본문도 flex로 설정 -->
 								<div class="d-flex justify-content-end align-items-center paddingtop20">
 									<div>
 										<img class="reviewtitlerating" alt="" src="/product/img/review.png">
@@ -299,12 +302,14 @@
 								<p class="card-text">
 									<small class="text-muted">${allitem.category_name }旅行パッケージ</small>
 								</p>
-								<div class="d-flex justify-content-between align-items-center">
-									<span class="fw-bold text-primary"><fmt:formatNumber value="${allitem.package_price}" type="number"/>円 ~</span> <a href="/pakage/packages.do?package_id=${allitem.package_id }"
-										class="btn btn-outline-primary">詳細を見る</a>
-									<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${allitem.package_id}">
-									    <img class="wishlist-icon" style=" width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">
-									</button>										
+								<div class="mt-auto"> <!-- 콘텐츠 끝에서 버튼을 고정하려면 여기서부터 위치 지정 -->
+									<div class="d-flex justify-content-between align-items-center">
+										<span class="fw-bold text-primary"><fmt:formatNumber value="${allitem.package_price}" type="number"/>円 ~</span> <a href="/pakage/packages.do?package_id=${allitem.package_id }"
+											class="btn btn-outline-primary">詳細を見る</a>
+										<button class="wishlist-btn" style="border: none; background: none;" data-package-id="${allitem.package_id}">
+										    <img class="wishlist-icon" style=" width: 15px; height: auto;" src="${pageContext.request.contextPath}/product/img/heart.png">
+										</button>										
+									</div>
 								</div>
 							</div>
 						</div>

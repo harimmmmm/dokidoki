@@ -27,11 +27,11 @@ document.addEventListener('DOMContentLoaded', function() {
             var pageUrl = window.location.href;
             navigator.clipboard.writeText(pageUrl)
                 .then(() => {
-                    showToast("URL 복사 성공! 🎉");
+                    showToast("URLコピー成功! 🎉");
                 })
                 .catch(err => {
-                    console.error("URL 복사 실패:", err);
-                    showToast("URL 복사 실패! 😢");
+                    console.error("URLコピー失敗:", err);
+                    showToast("URLコピー失敗! 😢");
                 });
         });
     }
@@ -42,11 +42,11 @@ document.addEventListener('DOMContentLoaded', function() {
             var textToCopy = this.getAttribute('data-copy');
             navigator.clipboard.writeText(textToCopy)
                 .then(() => {
-                    showToast("복사 완료: " + textToCopy);
+                    showToast("コピー完了: " + textToCopy);
                 })
                 .catch(err => {
-                    console.error("복사 실패:", err);
-                    showToast("복사 실패! 😢");
+                    console.error("コピー失敗:", err);
+                    showToast("コピー失敗! 😢");
                 });
         });
     });
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
         calendarContainer.innerHTML = '';
         currentMonth.innerText = `${year}.${String(month + 1).padStart(2, '0')}`;
 
-        const daysOfWeek = ['일', '월', '화', '수', '목', '금', '토'];
+        const daysOfWeek = ['日', '月', '火', '水', '木', '金', '土'];
         daysOfWeek.forEach(day => {
             let dayElement = document.createElement('div');
             dayElement.innerText = day;
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function getDayOfWeek(date) {
-        const days = ["일", "월", "화", "수", "목", "금", "토"];
+        const days = ["日", "月", "火", "水", "木", "金", "土"];
         return days[date.getDay()];
     }
 

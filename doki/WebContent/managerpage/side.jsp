@@ -8,23 +8,23 @@
 
   <!-- Product -->
   <div class="has-submenu">
-    <a href="/managerpage/user.jsp">使用者</a> <!-- 유저 -->
-    <a href="/managerpage/product-list.jsp">商品</a> <!-- 상품 -->
+    <a href="/manager/user.do">使用者</a> <!-- 유저 -->
+    <a href="/manager/product_list.do">商品</a> <!-- 상품 -->
     <div class="vertical-submenu">
-      <a href="/managerpage/product-list.jsp">商品管理</a> <!-- 상품 목록 -->
-      <a href="/managerpage/product-add.jsp">商品登録</a> <!-- 상품 등록 -->
+      <a href="/manager/product_list.do">商品管理</a> <!-- 상품 목록 -->
+      <a href="/manager/product_add.do">商品登録</a> <!-- 상품 등록 -->
     </div>
   </div>
 
-  <a href="/managerpage/reservation.jsp">予約管理</a> <!-- 예약 관리 -->
-  <a href="/managerpage/payment.jsp">決済管理</a> <!-- 결제 관리 -->
+  <a href="/manager/reservation.do">予約管理</a> <!-- 예약 관리 -->
+  <a href="/manager/payment.do">決済管理</a> <!-- 결제 관리 -->
 
   <!-- Notice (수정된 부분) -->
   <div class="has-submenu">
-    <a href="/managerpage/notice-list.jsp">空地</a> <!-- 공지 -->
+    <a href="/manager/notice_list.do">空地</a> <!-- 공지 -->
     <div class="vertical-submenu">
-      <a href="/managerpage/notice-list.jsp">空地管理</a> <!-- 공지 목록 -->
-      <a href="/managerpage/notice-add.jsp">空地登録</a> <!-- 공지 등록 -->
+      <a href="/manager/notice_list.do">空地管理</a> <!-- 공지 목록 -->
+      <a href="/manager/notice_add.do">空地登録</a> <!-- 공지 등록 -->
     </div>
   </div>
 </div>

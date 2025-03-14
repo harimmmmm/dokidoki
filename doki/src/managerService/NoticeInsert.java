@@ -21,6 +21,9 @@ public class NoticeInsert implements Command {
 		
 		List<BoardVo> list = new ManagerDao().boardView();
 		
+		
+		System.out.println("test");
+		
 		request.setAttribute("list", list);
 
 	}

@@ -1,14 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <%@ include file="../fragments/header.jsp"%>
-<meta charset="UTF-8">
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/managerpage/css/managerstyle.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="/js/jquery-3.4.1.min.js"></script>
-<title>Payment</title>
 
 <style>
 .vertical-menu a {color: black; display: block; padding: 12px; text-decoration: none;}
@@ -17,6 +13,7 @@
 .center th {background-color: #eeeeee;}
 .center th, td {padding: 10px;	text-align: center;	border: 1px solid #ccc;	vertical-align: middle;}
 .center td {padding:0; border:none;}
+.underline {border-bottom: 1px solid #ccc;}
 /* 첫 번째 열(left)에만 테두리를 없애기 */
 .center tr>*:first-child {border-left: none;}
 /* 마지막 열(right)에만 테두리를 없애기 */
@@ -35,34 +32,31 @@
 				<b>決済管理</b>  <!-- 결제 관리 -->
 				<table class="center">
 					<tr>
-						<th>注文番号</th> <!-- 주문번호 -->
-						<th>商品名</th> <!-- 패키지명 -->
-						<th>決済日</th> <!-- 결제일 -->
-						<th>決済金額</th> <!-- 결제 금액 -->
-						<th>決済管理</th> <!-- 결제 관리 -->
+						<th>注文番号</th> 	<!-- 주문번호 -->
+						<th>商品コード</th>		<!-- 패키지코드 -->
+						<th>USER ID</th>		<!-- 유저아이디 -->
+						<th>決済金額</th> 	<!-- 결제 금액 -->
+						<th>決済時間</th>	<!-- 결제시간 -->
+						<th>決済状態</th>	<!-- 결제상태 -->
+						<th>PAYPAL ID</th>		<!-- 페이팔아이디 -->
+						<th>決済管理</th> 	<!-- 결제 관리 -->
 					</tr>
-					<tr>
-						<td>001</td>
-						<td>서울-부산 투어</td>
-						<td>2025. 02. 22.</td>
-						<td>109,000원</td>
-						<td>
-
-							<button class="deleteBtn" data-pno="${item.pno }">払い戻す</button> <!-- 환불 -->
-
-						</td>
-					</tr>
-					<tr>
-						<td>002</td>
-						<td>서울-부산 투어</td>
-						<td>2025. 02. 22.</td>
-						<td>109,000원</td>
-						<td>
-
-							<button class="deleteBtn" data-pno="${item.pno }">払い戻す</button> <!-- 환불 -->
-
-						</td>
-					</tr>
+					<c:forEach var="list" items="${paylist }">
+						<tr class="underline">
+							<td>${list.order_id }</td>
+							<td>${list.PACKAGE_ID }</td>
+							<td>${list.USER_ID }</td>
+							<td>${list.amount }</td>
+							<td>${fn:substring(list.pay_time, 2, 16)}</td>
+							<td><span style="color: green;">${list.paypal_status }</span></td>
+							<td>${list.paypal_payer_id }</td>
+							<td>
+	
+								<button class="deleteBtn" data-pno="">払い戻す</button> <!-- 환불 -->
+	
+							</td>
+						</tr>
+					</c:forEach>
 				</table>
 			</div>
 		</div>

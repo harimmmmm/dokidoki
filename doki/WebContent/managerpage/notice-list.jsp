@@ -2,13 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../fragments/header.jsp"%>
 
-<meta charset="UTF-8">
-<title>Notice_List</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/managerpage/css/managerstyle.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="/js/jquery-3.4.1.min.js"></script>
 
 <%-- JSTL 태그 선언 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
