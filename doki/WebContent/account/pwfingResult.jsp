@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>아이디 찾기</title>
+<title>どきどきkorea</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/account/css/find.css">
 <style type="text/css">

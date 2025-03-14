@@ -17,16 +17,11 @@ public class NoticeView implements Command {
 	public void docommand(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		request.setCharacterEncoding("utf-8");
-		
-		List<BoardVo> list = new ManagerDao().boardView();
-		
-		request.setAttribute("list", list);
-		
-		System.out.println("test");
-		
-		request.getRequestDispatcher("notice-list.jsp").forward(request, response);
 
+		request.setCharacterEncoding("utf-8");
+
+		List<BoardVo> list = new ManagerDao().boardView();
+		request.setAttribute("list", list);
 
 	}
 

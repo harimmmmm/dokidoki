@@ -29,6 +29,7 @@ document.querySelectorAll(".showBoardDetailBtn").forEach(button => {
 });
 
 function showBoardDetail(bno) {
+    console.log("조회할 bno:", bno);
     const boardList = window.boardListJson; // JSP에서 전달된 boardListJson 사용
     const boardDetail = boardList.find(board => board.bno === Number(bno)); // 해당 bno에 맞는 게시글 찾기
 
@@ -48,11 +49,15 @@ function showBoardDetail(bno) {
                 <p><strong>답변 내용:</strong> ${comment.comment_content}</p>
             `;
         } else {
-           content += "<p class='waiting-status'>* 아직 답변이 등록되지 않았습니다. 잠시만 기다려 주세요.</p>";
+            content += "<p class='waiting-status'>* 아직 답변이 등록되지 않았습니다. 잠시만 기다려 주세요.</p>";
         }
 
-        // 모달에 내용 채우기
-        document.getElementById("board-detail-content").innerHTML = content;
+        const boardDetailContent = document.getElementById("board-detail-content");
+        if (boardDetailContent) {
+            boardDetailContent.innerHTML = content;
+        } else {
+            console.error('ID가 "board-detail-content"인 요소를 찾을 수 없습니다!');
+        }
 
         // 모달 띄우기
         document.getElementById("detail-modal").style.display = "block";

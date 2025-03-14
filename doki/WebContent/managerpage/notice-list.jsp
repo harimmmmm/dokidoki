@@ -41,8 +41,8 @@
 						<th>管理</th> <!-- 관리 -->
 
 					</tr>
-					<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-					<p>리스트 크기: ${fn:length(list)}</p>
+<%-- 					<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+					<p>리스트 크기: ${fn:length(list)}</p> --%>
 					<c:forEach var="item" items="${list}">
 						<!-- 각 item에 대한 출력 -->
 						<tr>

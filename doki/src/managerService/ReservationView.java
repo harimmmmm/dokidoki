@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import travelService.Command;
 
+import vo.ReservationVo;
+
+
 public class ReservationView implements Command {
 
 	@Override
@@ -16,7 +19,10 @@ public class ReservationView implements Command {
 		
 		request.setCharacterEncoding("utf-8");
 		
+
+		List<ReservationVo> buylist = new ManagerDao().getReservations();
 		
+		request.setAttribute("buylist", buylist);
 
 	}
 

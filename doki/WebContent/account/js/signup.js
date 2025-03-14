@@ -14,7 +14,7 @@ const passwordMsg = document.getElementById('checkpasswordmsg');
 function validateID() {
     const id = useridInput.value;
     if (idRegex.test(id)) {
-        useridError.textContent = "아이디 형식이 올바릅니다.";
+        useridError.textContent = "IDの形式が正しいです。";
         useridError.style.color = "green"; 
         checkDuplicateID(id);
     } else {

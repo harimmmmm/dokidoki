@@ -22,6 +22,12 @@ public class UserView implements Command {
 		List<AccountVo> list = new ManagerDao().userView();
 		
 		request.setAttribute("list", list);
+		
+		 // 로그 추가
+        System.out.println("NoticeView: docommand method is called");
+
+        // 추가적인 로그로 흐름 추적
+        System.out.println("NoticeView: Before any DB operation");
 
 	}
 
