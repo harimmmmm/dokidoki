@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>予定された旅行</title>
+<title>どきどきkorea</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/mypagee/css/mypage.css">
 </head>

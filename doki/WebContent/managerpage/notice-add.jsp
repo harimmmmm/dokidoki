@@ -41,35 +41,36 @@ th, td {border:none;}
 			<div class="col-md-9">
 				<b>空地登録</b> <!-- 공지 등록 -->
 				<div class="product-addbox">
-					<form name="my" method="post" enctype="" action=""
+					<form name="my" method="post"  enctype="multipart/form-data" action="/manager/notice_addpro.do"
 						onsubmit="return check();">
 						<table class="product-addtable">
 							<tr>
 								<th>題目</th> <!-- 제목 -->
-								<td><input type="text" name="price"></td>
+								<td><input type="text" name="title"></td>
 							</tr>
 							<tr>
 								<th>內容</th> <!-- 내용 -->
-								<td><textarea class="form-control" rows="3"></textarea></td>
+								<td><textarea class="form-control" rows="3" name="content"></textarea></td>
 							</tr>
 							<tr>
 
 								<th>掲示板カテゴリー</th>
 								<td>
-									<label class="check-container">空地<input type="radio" name="noticeGroup" checked="checked"> 
+									<label class="check-container">空地<input type="radio" name="category" checked="checked" value="1"> 
 									<span class="checkmark"></span> <!-- 공지 -->
 									</label> 
-									<label class="check-container">問合せ <input type="radio" name="noticeGroup"> 
+									<label class="check-container">問合せ 
+									<input type="radio" name="category" value="2"> 
 									<span class="checkmark"></span> <!-- 문의 -->
 									</label> 
 									<label class="check-container">旅先紹介  <!-- 여행지 소개 -->
-									<input type="radio" name="noticeGroup"> <span class="checkmark"></span>
+									<input type="radio" name="category" value="3"> <span class="checkmark"></span>
 									</label>
 								</td>
 							</tr>
 							<tr>
 								<th>イメージ</th> <!-- 이미지 -->
-								<td><input type="file" name="imgfile"></td>
+								<td><input type="file" name="board_img"></td>
 							</tr>
 							<tr>
 								<td colspan="2" class="txtcenter"><input type="submit" value="貯藏"> <!-- 저장 -->

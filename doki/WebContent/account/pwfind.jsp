@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>パスワード検索</title>
+<title>どきどきkorea</title>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/account/css/find.css">
 </head>

@@ -18,6 +18,7 @@ public class ReservationVo {
 
 	private PackagesVo packageInfo;
 	private ReviewVo reviewInfo;
+	private AccountVo accountInfo;
 	
 
 	public String getOrder_id() {
@@ -139,6 +140,16 @@ public class ReservationVo {
 	public void setReviewInfo(ReviewVo reviewInfo) {
 		this.reviewInfo = reviewInfo;
 	}
+
+	public AccountVo getAccountInfo() {
+		return accountInfo;
+	}
+
+	public void setAccountInfo(AccountVo accountInfo) {
+		this.accountInfo = accountInfo;
+	}
+	
+	
 
 
 

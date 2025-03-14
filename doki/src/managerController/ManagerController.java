@@ -9,8 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import managerService.InquiriesInsert;
+import managerService.InquiriesList;
 import managerService.NoticeInsert;
 import managerService.NoticeView;
+import managerService.ReservationView;
+import mypages.serivce.InquiriesListService;
 import packageService.PackageAdd;
 
 @WebServlet("/manager/*")
@@ -48,6 +52,7 @@ public class ManagerController extends HttpServlet {
 			response.sendRedirect("/manager/product_list.do");
 			return; // 아래 부분 실행 암함
 		case "/reservation.do":
+			new  ReservationView().docommand(request, response);
 			page = "/managerpage/reservation.jsp";
 			break;
 		case "/payment.do":
@@ -64,6 +69,14 @@ public class ManagerController extends HttpServlet {
 			new NoticeInsert().docommand(request, response);
 			response.sendRedirect("/manager/notice_list.do");
 			return;
+		case "/Inquiry.do": // 문의 리스트
+			new InquiriesList().docommand(request, response);
+			page = "/managerpage/InquiryList.jsp";
+			break;
+		case "/Inquirypro.do": // 문의 답변
+			new InquiriesInsert().docommand(request, response);
+			response.sendRedirect("/manager/Inquiry.do");
+			break;
 		}
 
 		if (page != null)

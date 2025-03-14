@@ -27,6 +27,13 @@
       <a href="/manager/notice_add.do">空地登録</a> <!-- 공지 등록 -->
     </div>
   </div>
+  
+  <div class="has-submenu">
+    <a href="/manager//Inquiry.do">お問い合わせ</a> <!-- 문의 -->
+    <div class="vertical-submenu">
+      <a href="/manager//Inquiry.do">お問い合わせリスト</a> <!-- 문의등록 -->
+    </div>
+  </div>
 </div>
 
 

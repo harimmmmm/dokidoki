@@ -9,8 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import managerDao.ManagerDao;
 import travelService.Command;
-import vo.BoardVo;
-import vo.BuyVo;
+import vo.ReservationVo;
 
 public class ReservationView implements Command {
 
@@ -20,10 +19,9 @@ public class ReservationView implements Command {
 		
 		request.setCharacterEncoding("utf-8");
 		
-		List<BuyVo> buylist = new ManagerDao().reservationView();
+		List<ReservationVo> buylist = new ManagerDao().getReservations();
 		
 		request.setAttribute("buylist", buylist);
-
 	}
 
 }
