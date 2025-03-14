@@ -584,7 +584,7 @@
 	
 	                <!-- "Get in touch" 버튼 (문의 페이지로 이동) -->
 	                <p class="mb-0">
-	                    <a href="booking.html"
+	                    <a href="/boards/noticelist.do"
 	                        class="btn btn-outline-white text-white btn-md font-weight-bold">
 	                        	お問い合わせはこちら
 	                    </a>

@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         })
-        .catch(err => console.error("초기 관심목록 조회 오류:", err));
+        .catch(err => console.error("初期関心リスト照会エラー:", err));
 
     // ⭐️ 관심 버튼 클릭 이벤트 처리
     document.querySelectorAll('.wishlist-btn').forEach(button => {
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .then(resp => {
                 if(resp.status === 401){
-                    alert("로그인이 필요합니다.");
+                    alert("ログインが必要です。");
                     location.href = `${CONTEXT_PATH}/member/login.do`;
                     return null;
                 }
@@ -56,11 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         icon.src = `${CONTEXT_PATH}/product/img/heart.png`;
                     }
                 } else {
-                    console.error("결과가 올바르지 않습니다:", result);
+                    console.error("結果が正しくありません:", result);
                 }
             })
             .catch(err => {
-                console.error("서버 에러:", err);
+                console.error("サーバーエラー:", err);
             });
         });
     });

@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import managerDao.ManagerDao;
 import travelService.Command;
-import vo.BoardVo;
 import vo.PackagesVo;
 
 public class PackageView implements Command {

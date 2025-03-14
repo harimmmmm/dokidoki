@@ -53,10 +53,10 @@ th, td {border:none;}
 							</tr>
 							<tr>
 
-								<th>목적지</th>
+								<th>旅行先</th>
 								<td>
 									<select name="destination" id="destination" class="form-control custom-select">
-										<option value="목적지 선택" selected disabled hidden>목적지 선택</option>
+										<option value="목적지 선택" selected disabled hidden>旅行先選択</option>
 										<option value="1">ジェジュ島</option>
 										<option value="2">ウルルン島</option>
 										<option value="3">カンウォン</option>
@@ -73,10 +73,10 @@ th, td {border:none;}
 								</td>
 							</tr>
 							<tr>
-								<th>출발지</th>
+								<th>出発地</th>
 							<td>
 								<select name="departure" id="departure" class="form-control custom-select">
-									<option value="출발지 선택" selected disabled hidden>출발지 선택</option>
+									<option value="出発地選択" selected disabled hidden>出発地選択</option>
 									<option value="13">東京</option>
 									<option value="14">大阪</option>
 									<option value="15">福岡</option>
@@ -88,41 +88,37 @@ th, td {border:none;}
 							</td>
 						</tr>														
 							<tr>
-								<th>성인 가격</th>
+								<th>大人値段</th>
 								<td><input type="text" name="package_price" required></td>
 							</tr>
 							<tr>
-								<th>아동 가격</th>
+								<th>児童価格</th>
 								<td><input type="text" name="child_price" required></td>
 							</tr>
 							<tr>
-								<th>유아 가격</th>
+								<th>幼児価格</th>
 								<td><input type="text" name="baby_price" required></td>
 							</tr>
 							<tr>
-								<th>여행 태그</th>
+								<th>旅行タグ</th>
 								<td><input type="text" name="included_services"></td>
 							</tr>
 							<tr>
-								<th>여행 시작일</th>
+								<th>旅行開始日</th>
 								<td><input type="date" name="start_date"></td>
 							</tr>
 							<tr>
-								<th>여행 종료일</th>
+								<th>旅行の終了日</th>
 								<td><input type="date" name="end_date"></td>
 							</tr>
 							<tr>
-								<th>상세내용</th>
+								<th>詳細</th>
 								<td><textarea class="form-control" rows="3" name="content"></textarea></td>
 							</tr>
 							<tr>
-								<th>첨부파일</th>
+								<th>添付ファイル</th>
 								<td><input type="file" name="imgfile" multiple></td>
 
-							</tr>
-							<tr>
-								<th style="padding-top: 50px; font-size: 20px;">選択事項</th> <!-- 선택사항 -->
-								<td></td>
 							</tr>
 
 							<tr>

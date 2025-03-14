@@ -104,7 +104,9 @@
 
 								<!-- 날짜 입력 -->
 								<div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-6">
-									<input type="text" class="form-control" name="datePicker" id="datePicker" >
+									<input type="text" class="form-control" name="datePicker" id="datePicker"
+									 value="${param.startDate} to ${param.endDate}">
+
 								</div>
 								<!-- hidden 필드 추가 -->
 								<input type="hidden" id="startDateHidden" name="startDate" value="${param.startDate}">

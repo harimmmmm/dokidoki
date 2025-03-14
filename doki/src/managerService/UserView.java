@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import managerDao.ManagerDao;
 import travelService.Command;
-import vo.BoardVo;
+import vo.AccountVo;
 
 public class UserView implements Command {
 
@@ -19,7 +19,7 @@ public class UserView implements Command {
 		
 		request.setCharacterEncoding("utf-8");
 		
-		List<BoardVo> list = new ManagerDao().boardView();
+		List<AccountVo> list = new ManagerDao().userView();
 		
 		request.setAttribute("list", list);
 

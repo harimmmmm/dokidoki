@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import managerDao.ManagerDao;
 import travelService.Command;
-import vo.BoardVo;
-import vo.BuyVo;
 import vo.PaymentVo;
 
 public class PaymentView implements Command {
@@ -22,6 +20,8 @@ public class PaymentView implements Command {
 		request.setCharacterEncoding("utf-8");
 		
 		List<PaymentVo> paylist = new ManagerDao().paymentView();
+		
+		System.out.println("payment");
 		
 		request.setAttribute("paylist", paylist);
 
