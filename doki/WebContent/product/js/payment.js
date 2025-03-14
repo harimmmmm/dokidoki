@@ -1,6 +1,6 @@
 document.querySelector('.reserve-btn').addEventListener('click', function(){
 	if(!IS_LOGGED_IN) {
-        alert("로그인 후 예약이 가능합니다.");
+        alert("ログイン後、ご予約いただけます。");
         window.location.href = CONTEXT_PATH + "/member/login.do"; // 로그인 페이지 경로
         return;
     }
@@ -32,7 +32,7 @@ document.querySelector('.reserve-btn').addEventListener('click', function(){
     })
     .then(res => {
 	    if (!res.ok) {
-	        throw new Error("서버에서 처리 중 오류가 발생했습니다.");
+	        throw new Error("サーバーでの処理中にエラーが発生しました。");
 	    }
 	    return res.json();
 	})
@@ -41,11 +41,11 @@ document.querySelector('.reserve-btn').addEventListener('click', function(){
             paymentPopup.location.href = data.approvalLink;
         } else {
             paymentPopup.close();
-            alert("결제 링크 생성 실패");
+            alert("決済リンク作成失敗");
         }
     })
     .catch(err => {
         paymentPopup.close();
-		alert("오류가 발생했습니다: " + err.message);
+		alert("エラーが発生しました: " + err.message);
     });
 });

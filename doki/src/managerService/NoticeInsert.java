@@ -22,6 +22,7 @@ public class NoticeInsert implements Command {
 		
 		request.setCharacterEncoding("utf-8");
 		
+
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		String category = request.getParameter("category");
@@ -42,6 +43,7 @@ public class NoticeInsert implements Command {
          if (imagePart != null && imagePart.getSize() > 0) {
              filename = UUID.randomUUID().toString() + "_" + imagePart.getSubmittedFileName();
              System.out.println("Uploaded file name: " + filename);
+
 
              // 업로드 경로 설정
              String uploadPath = request.getServletContext().getRealPath("") + "uploads"; 

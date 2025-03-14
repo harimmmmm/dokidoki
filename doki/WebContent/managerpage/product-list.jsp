@@ -17,6 +17,7 @@
 .center th {background-color: #eeeeee;}
 .center th, td {padding: 10px;	text-align: center;	border: 1px solid #ccc;	vertical-align: middle;}
 .center td {padding:0; border:none;}
+.underline {border-bottom: 1px solid #ccc;}
 /* 첫 번째 열(left)에만 테두리를 없애기 */
 .center tr>*:first-child {border-left: none;}
 /* 마지막 열(right)에만 테두리를 없애기 */
@@ -38,29 +39,21 @@
 					<th>固有番号</th> <!-- 고유번호 -->
 					<th>商品名</th> <!-- 상품명 -->
 					<th>価格</th> <!-- 가격 -->
-					<th>旅行会社</th> <!-- 여행사 -->
+					<th>出発日/到着日</th> <!-- 출발일/도착일 -->
 					<th>管理</th> <!-- 관리 -->
 				</tr>
-				<tr>
-					<td>001</td>
-					<td>서울-부산 투어</td>
-					<td>109,900원</td>
-					<td>하나투어</td>
-					<td>
-						<button class="updateBtn" data-mno="${item.pno }">修正</button> <!-- 수정 -->
-						<button class="deleteBtn" data-mno="${item.pno }">削除</button> <!-- 삭제 -->
-					</td>
-				</tr>
-				<tr>
-					<td>002</td>
-					<td>서울-대전 투어</td>
-					<td>79,900원</td>
-					<td>모두투어</td>
-					<td>
-						<button class="updateBtn" data-mno="${item.pno }">修正</button> <!-- 수정 -->
-						<button class="deleteBtn" data-mno="${item.pno }">削除</button> <!-- 삭제 -->
-					</td>
-				</tr>
+				<c:forEach var="list" items="${palist }">
+					<tr class="underline">
+						<td>${list.package_id }</td>
+						<td>${list.package_name }</td>
+						<td>${list.package_price }</td>
+						<td>${fn:substring(list.start_date, 0, 10)}<br> ~ <br>${fn:substring(list.end_date, 0, 10)}</td>
+						<td>
+							<button class="updateBtn" data-mno="${item.pno }">修正</button> <!-- 수정 -->
+							<button class="deleteBtn" data-mno="${item.pno }">削	除</button> <!-- 삭제 -->
+						</td>
+					</tr>
+				</c:forEach>
 			</table>
 		</div>
 		</div>

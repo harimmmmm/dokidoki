@@ -25,6 +25,7 @@
     <div class="vertical-submenu">
       <a href="/manager/notice_list.do">空地管理</a> <!-- 공지 목록 -->
       <a href="/manager/notice_add.do">空地登録</a> <!-- 공지 등록 -->
+
     </div>
   </div>
   
@@ -32,6 +33,7 @@
     <a href="/manager//Inquiry.do">お問い合わせ</a> <!-- 문의 -->
     <div class="vertical-submenu">
       <a href="/manager//Inquiry.do">お問い合わせリスト</a> <!-- 문의등록 -->
+
     </div>
   </div>
 </div>

@@ -1,15 +1,15 @@
 package managerService;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import managerDao.ManagerDao;
 import travelService.Command;
+
 import vo.ReservationVo;
+
 
 public class ReservationView implements Command {
 
@@ -19,9 +19,11 @@ public class ReservationView implements Command {
 		
 		request.setCharacterEncoding("utf-8");
 		
+
 		List<ReservationVo> buylist = new ManagerDao().getReservations();
 		
 		request.setAttribute("buylist", buylist);
+
 	}
 
 }

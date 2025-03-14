@@ -16,6 +16,26 @@ public class PaymentVo {
 	private int refund_amount; // 환불 금액
 	private String refund_time; // 환불 완료 시간
 	private String package_name; // 패키지 이름 (join으로 가져올 예정)
+	private String PACKAGE_ID;
+	private String USER_ID;
+	 
+
+
+	public String getPACKAGE_ID() {
+		return PACKAGE_ID;
+	}
+
+	public void setPACKAGE_ID(String pACKAGE_ID) {
+		PACKAGE_ID = pACKAGE_ID;
+	}
+
+	public String getUSER_ID() {
+		return USER_ID;
+	}
+
+	public void setUSER_ID(String uSER_ID) {
+		USER_ID = uSER_ID;
+	}
 
 	public int getPay_id() {
 		return pay_id;

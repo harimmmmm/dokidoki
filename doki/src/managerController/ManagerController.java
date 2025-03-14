@@ -9,12 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 import managerService.InquiriesInsert;
 import managerService.InquiriesList;
 import managerService.NoticeInsert;
 import managerService.NoticeView;
 import managerService.ReservationView;
 import mypages.serivce.InquiriesListService;
+
+
+import managerService.PackageView;
+import managerService.PaymentView;
+import managerService.UserView;
+
 import packageService.PackageAdd;
 
 @WebServlet("/manager/*")
@@ -39,9 +46,11 @@ public class ManagerController extends HttpServlet {
 
 		switch (action) {
 		case "/user.do":
+			new UserView().docommand(request, response);
 			page = "/managerpage/user.jsp";
 			break;
 		case "/product_list.do":
+			new PackageView().docommand(request, response);
 			page = "/managerpage/product-list.jsp";
 			break;
 		case "/product_add.do":
@@ -56,10 +65,13 @@ public class ManagerController extends HttpServlet {
 			page = "/managerpage/reservation.jsp";
 			break;
 		case "/payment.do":
+			new PaymentView().docommand(request, response);
 			page = "/managerpage/payment.jsp";
 			break;
+
 		case "/notice_list.do": // 공지 리스트
 			new NoticeView().docommand(request, response);
+
 			page = "/managerpage/notice-list.jsp";
 			break;
 		case "/notice_add.do": // 공지등록 페이지
